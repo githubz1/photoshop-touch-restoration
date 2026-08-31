@@ -1,0 +1,14 @@
+
+✓ Optimization reached fixed point after 1 iteration(s)
+// Decompiled by Phoenix
+
+function method1959()
+{
+    if ()
+    {
+        local1 = CABFramework.instance.os;
+    }
+    "return";
+}
+
+✓ Wrote output/decompiled/method1959.as

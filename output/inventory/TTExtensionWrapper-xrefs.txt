@@ -1,0 +1,33 @@
+output/decompiled/TTApplication/method1900.as:8:    local1 = TTExtensionWrapper.instance.getSystemInfo(TTExtensionWrapper.SYSINFO_HW_MEMORY);
+output/decompiled/TTApplication/method1905.as:5:    TTExtensionWrapper.instance.createContext();
+output/decompiled/TTApplication/method1905.as:6:    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+output/decompiled/TTApplication/method1905.as:7:    TTExtensionWrapper.instance.destroyContext();
+output/decompiled/TTApplication/method1905.as:12:    TTExtensionWrapper.instance.createContext();
+output/decompiled/TTApplication/method1905.as:13:    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+output/decompiled/TTApplication/method1905.as:14:    TTExtensionWrapper.instance.destroyContext();
+output/decompiled/TTApplication/method1905.txt:7:    TTExtensionWrapper.instance.createContext();
+output/decompiled/TTApplication/method1905.txt:8:    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+output/decompiled/TTApplication/method1905.txt:9:    TTExtensionWrapper.instance.destroyContext();
+output/decompiled/TTApplication/method1905.txt:14:    TTExtensionWrapper.instance.createContext();
+output/decompiled/TTApplication/method1905.txt:15:    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+output/decompiled/TTApplication/method1905.txt:16:    TTExtensionWrapper.instance.destroyContext();
+output/decompiled/TTApplication/method1900.txt:10:    local1 = TTExtensionWrapper.instance.getSystemInfo(TTExtensionWrapper.SYSINFO_HW_MEMORY);
+output/decompiled/method1900.as:8:    local1 = TTExtensionWrapper.instance.getSystemInfo(TTExtensionWrapper.SYSINFO_HW_MEMORY);
+output/decompiled/method1905.as:5:    TTExtensionWrapper.instance.createContext();
+output/decompiled/method1905.as:6:    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+output/decompiled/method1905.as:7:    TTExtensionWrapper.instance.destroyContext();
+output/decompiled/method1905.as:12:    TTExtensionWrapper.instance.createContext();
+output/decompiled/method1905.as:13:    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+output/decompiled/method1905.as:14:    TTExtensionWrapper.instance.destroyContext();
+output/decompiled/method1902.as:5:    if (!!com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext())
+output/decompiled/method1902.as:7:        com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext().addEventListener(StatusEvent.STATUS, local0.handleOSNotification);
+output/decompiled/TTApplication/method1902.as:5:    if (!!com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext())
+output/decompiled/TTApplication/method1902.as:7:        com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext().addEventListener(StatusEvent.STATUS, local0.handleOSNotification);
+output/decompiled/TTApplication/method1902.txt:7:    if (!!com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext())
+output/decompiled/TTApplication/method1902.txt:9:        com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext().addEventListener(StatusEvent.STATUS, local0.handleOSNotification);
+output/decompiled/method1902.as:5:    if (!!com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext())
+output/decompiled/method1902.as:7:        com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext().addEventListener(StatusEvent.STATUS, local0.handleOSNotification);
+output/decompiled/TTApplication/method1902.as:5:    if (!!com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext())
+output/decompiled/TTApplication/method1902.as:7:        com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext().addEventListener(StatusEvent.STATUS, local0.handleOSNotification);
+output/decompiled/TTApplication/method1902.txt:7:    if (!!com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext())
+output/decompiled/TTApplication/method1902.txt:9:        com.adobe.ttpixel.extension::TTNEUtils.getExtensionContext().addEventListener(StatusEvent.STATUS, local0.handleOSNotification);

@@ -1,0 +1,24 @@
+digraph CFG {
+  node [shape=box, fontname="Courier"];
+  B0 [label="B0\l0000: getlocal0\l0001: pushscope\l0002: pushnull\l0003: coerce\l0005: setlocal\l0007: pushundefined\l0008: coerce_a\l0009: setlocal\l000B: pushnull\l000C: coerce\l000E: setlocal\l0010: getlocal2\l0011: pushnull\l0012: ifeq\l"];
+  B1 [label="B1\l0016: getlocal0\l0017: getproperty\l001A: getlex\l001D: getproperty\l0021: getlocal1\l0022: getproperty\l0026: getlex\l0029: getproperty\l002D: coerce\l002F: setlocal\l0031: findpropstrict\l0033: constructprop\l0036: coerce\l0038: setlocal\l003A: pushbyte\l003C: setlocal\l003E: getlocal2\l003F: coerce_a\l0040: setlocal\l0042: jump\l"];
+  B2 [label="B2\l0046: label\l0047: getlocal\l0049: getlocal\l004B: nextname\l004C: coerce_a\l004D: setlocal\l004F: getlocal3\l0050: convert_b\l0051: dup\l0052: iftrue\l"];
+  B3 [label="B3\l0056: pop\l0057: getlocal\l0059: pushbyte\l005B: equals\l005C: not\l"];
+  B4 [label="B4\l005D: iffalse\l"];
+  B5 [label="B5\l0061: getlocal\l0063: getlocal\l0065: getlocal\l0067: getproperty\l006B: callpropvoid\l"];
+  B6 [label="B6\l006F: hasnext2\l0072: iftrue\l"];
+  B7 [label="B7\l0076: kill\l0078: kill\l007A: getlocal\l007C: getlex\l007E: getproperty\l0082: callproperty\l0086: coerce\l0088: setlocal\l"];
+  B8 [label="B8\l008A: getlocal\l008C: returnvalue\l"];
+  B0 -> B1;
+  B0 -> B8;
+  B1 -> B6;
+  B2 -> B3;
+  B2 -> B4;
+  B3 -> B4;
+  B4 -> B5;
+  B4 -> B6;
+  B5 -> B6;
+  B6 -> B7;
+  B6 -> B2;
+  B7 -> B8;
+}

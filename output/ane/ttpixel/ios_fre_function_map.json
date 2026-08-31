@@ -1,0 +1,5337 @@
+{
+  "binary": "output/extracted/ios/PSTouchPhone",
+  "operations": {
+    "CAFGetResult": {
+      "as3": [
+        {
+          "abc": "doabc_032.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCAF"
+          ],
+          "method": 3,
+          "native_argc": 2
+        }
+      ],
+      "registrations": []
+    },
+    "accessCheck": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 13,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965488,
+          "entry_vm": 20981872,
+          "function_data": 0,
+          "function_file": 16550960,
+          "function_vm": 16567344,
+          "name_vm": 19982533,
+          "operation": "accessCheck"
+        }
+      ]
+    },
+    "acknowledgeTransaction": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 13,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965968,
+          "entry_vm": 20982352,
+          "function_data": 0,
+          "function_file": 16547900,
+          "function_vm": 16564284,
+          "name_vm": 19979653,
+          "operation": "acknowledgeTransaction"
+        }
+      ]
+    },
+    "addImage": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 10,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965452,
+          "entry_vm": 20981836,
+          "function_data": 0,
+          "function_file": 16553312,
+          "function_vm": 16569696,
+          "name_vm": 19980169,
+          "operation": "addImage"
+        }
+      ]
+    },
+    "alphaBlend": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 29,
+          "native_argc": 6
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965152,
+          "entry_vm": 20981536,
+          "function_data": 0,
+          "function_file": 16594132,
+          "function_vm": 16610516,
+          "name_vm": 19980930,
+          "operation": "alphaBlend"
+        }
+      ]
+    },
+    "applyFilter": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 15,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964204,
+          "entry_vm": 20980588,
+          "function_data": 0,
+          "function_file": 16567292,
+          "function_vm": 16583676,
+          "name_vm": 19981332,
+          "operation": "applyFilter"
+        }
+      ]
+    },
+    "asyncExecuteSequence": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 32,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964408,
+          "entry_vm": 20980792,
+          "function_data": 0,
+          "function_file": 16570484,
+          "function_vm": 16586868,
+          "name_vm": 19981626,
+          "operation": "asyncExecuteSequence"
+        }
+      ]
+    },
+    "asyncInterrupt": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 34,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964432,
+          "entry_vm": 20980816,
+          "function_data": 0,
+          "function_file": 16570792,
+          "function_vm": 16587176,
+          "name_vm": 19981657,
+          "operation": "asyncInterrupt"
+        }
+      ]
+    },
+    "asyncJoin": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 33,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964420,
+          "entry_vm": 20980804,
+          "function_data": 0,
+          "function_file": 16570888,
+          "function_vm": 16587272,
+          "name_vm": 19981647,
+          "operation": "asyncJoin"
+        }
+      ]
+    },
+    "asyncReadPixels": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 35,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964444,
+          "entry_vm": 20980828,
+          "function_data": 0,
+          "function_file": 16570984,
+          "function_vm": 16587368,
+          "name_vm": 19981672,
+          "operation": "asyncReadPixels"
+        }
+      ]
+    },
+    "bitmapDataCopy": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 38,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965092,
+          "entry_vm": 20981476,
+          "function_data": 0,
+          "function_file": 16592056,
+          "function_vm": 16608440,
+          "name_vm": 19980859,
+          "operation": "bitmapDataCopy"
+        }
+      ]
+    },
+    "bitmapDataFromFileEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 32,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965008,
+          "entry_vm": 20981392,
+          "function_data": 0,
+          "function_file": 16586804,
+          "function_vm": 16603188,
+          "name_vm": 19980717,
+          "operation": "bitmapDataFromFileEx"
+        }
+      ]
+    },
+    "bitmapDataResample": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 39,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965104,
+          "entry_vm": 20981488,
+          "function_data": 0,
+          "function_file": 16592684,
+          "function_vm": 16609068,
+          "name_vm": 19980874,
+          "operation": "bitmapDataResample"
+        }
+      ]
+    },
+    "bitmapDataToFileEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 31,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964996,
+          "entry_vm": 20981380,
+          "function_data": 0,
+          "function_file": 16586308,
+          "function_vm": 16602692,
+          "name_vm": 19980698,
+          "operation": "bitmapDataToFileEx"
+        }
+      ]
+    },
+    "bitmapFileCreateEmpty": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 33,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965032,
+          "entry_vm": 20981416,
+          "function_data": 0,
+          "function_file": 16588328,
+          "function_vm": 16604712,
+          "name_vm": 19980756,
+          "operation": "bitmapFileCreateEmpty"
+        }
+      ]
+    },
+    "bitmapFileCreateFromBitmapData": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 34,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965044,
+          "entry_vm": 20981428,
+          "function_data": 0,
+          "function_file": 16588484,
+          "function_vm": 16604868,
+          "name_vm": 19980778,
+          "operation": "bitmapFileCreateFromBitmapData"
+        }
+      ]
+    },
+    "bitmapFileRead": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 36,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965068,
+          "entry_vm": 20981452,
+          "function_data": 0,
+          "function_file": 16589212,
+          "function_vm": 16605596,
+          "name_vm": 19980825,
+          "operation": "bitmapFileRead"
+        }
+      ]
+    },
+    "bitmapFileResample": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 37,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965080,
+          "entry_vm": 20981464,
+          "function_data": 0,
+          "function_file": 16589856,
+          "function_vm": 16606240,
+          "name_vm": 19980840,
+          "operation": "bitmapFileResample"
+        }
+      ]
+    },
+    "bitmapFileWrite": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 35,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965056,
+          "entry_vm": 20981440,
+          "function_data": 0,
+          "function_file": 16588616,
+          "function_vm": 16605000,
+          "name_vm": 19980809,
+          "operation": "bitmapFileWrite"
+        }
+      ]
+    },
+    "browseImages": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 3,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965368,
+          "entry_vm": 20981752,
+          "function_data": 0,
+          "function_file": 16551140,
+          "function_vm": 16567524,
+          "name_vm": 19982520,
+          "operation": "browseImages"
+        }
+      ]
+    },
+    "brushHit": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 7,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966052,
+          "entry_vm": 20982436,
+          "function_data": 0,
+          "function_file": 16635076,
+          "function_vm": 16651460,
+          "name_vm": 19979532,
+          "operation": "brushHit"
+        }
+      ]
+    },
+    "brushHits": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 8,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966064,
+          "entry_vm": 20982448,
+          "function_data": 0,
+          "function_file": 16635648,
+          "function_vm": 16652032,
+          "name_vm": 19979541,
+          "operation": "brushHits"
+        }
+      ]
+    },
+    "c": {
+      "as3": [
+        {
+          "abc": "doabc_019.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTLicensing"
+          ],
+          "method": 5,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20464336,
+          "entry_vm": 20480720,
+          "function_data": 19353441,
+          "function_file": 19337265,
+          "function_vm": 19353649,
+          "name_vm": 19353439,
+          "operation": "c"
+        },
+        {
+          "entry_file": 20935648,
+          "entry_vm": 20952032,
+          "function_data": 19729013,
+          "function_file": 19878055,
+          "function_vm": 19894439,
+          "name_vm": 19894437,
+          "operation": "c"
+        },
+        {
+          "entry_file": 20940432,
+          "entry_vm": 20956816,
+          "function_data": 19729013,
+          "function_file": 19878055,
+          "function_vm": 19894439,
+          "name_vm": 19894437,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195056,
+          "entry_vm": 21211440,
+          "function_data": 20237228,
+          "function_file": 20220798,
+          "function_vm": 20237182,
+          "name_vm": 20237322,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195172,
+          "entry_vm": 21211556,
+          "function_data": 20236966,
+          "function_file": 20220642,
+          "function_vm": 20237026,
+          "name_vm": 20236960,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195288,
+          "entry_vm": 21211672,
+          "function_data": 20237528,
+          "function_file": 20221162,
+          "function_vm": 20237546,
+          "name_vm": 20237510,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195292,
+          "entry_vm": 21211676,
+          "function_data": 20237546,
+          "function_file": 20221178,
+          "function_vm": 20237562,
+          "name_vm": 20237528,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195332,
+          "entry_vm": 21211716,
+          "function_data": 20237682,
+          "function_file": 20221310,
+          "function_vm": 20237694,
+          "name_vm": 20237666,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195448,
+          "entry_vm": 21211832,
+          "function_data": 20238124,
+          "function_file": 20221752,
+          "function_vm": 20238136,
+          "name_vm": 20238104,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195532,
+          "entry_vm": 21211916,
+          "function_data": 20238464,
+          "function_file": 20222096,
+          "function_vm": 20238480,
+          "name_vm": 20238456,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195704,
+          "entry_vm": 21212088,
+          "function_data": 20239104,
+          "function_file": 20222730,
+          "function_vm": 20239114,
+          "name_vm": 20239080,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195708,
+          "entry_vm": 21212092,
+          "function_data": 20239114,
+          "function_file": 20222742,
+          "function_vm": 20239126,
+          "name_vm": 20239104,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195712,
+          "entry_vm": 21212096,
+          "function_data": 20239126,
+          "function_file": 20222762,
+          "function_vm": 20239146,
+          "name_vm": 20239114,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195740,
+          "entry_vm": 21212124,
+          "function_data": 20239224,
+          "function_file": 20222852,
+          "function_vm": 20239236,
+          "name_vm": 20239206,
+          "operation": "c"
+        },
+        {
+          "entry_file": 21195756,
+          "entry_vm": 21212140,
+          "function_data": 20239272,
+          "function_file": 20222904,
+          "function_vm": 20239288,
+          "name_vm": 20239264,
+          "operation": "c"
+        }
+      ]
+    },
+    "canLaunchApp": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 7,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964720,
+          "entry_vm": 20981104,
+          "function_data": 0,
+          "function_file": 16577988,
+          "function_vm": 16594372,
+          "name_vm": 19980338,
+          "operation": "canLaunchApp"
+        }
+      ]
+    },
+    "canMakePurchases": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 8,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965932,
+          "entry_vm": 20982316,
+          "function_data": 0,
+          "function_file": 16547196,
+          "function_vm": 16563580,
+          "name_vm": 19979606,
+          "operation": "canMakePurchases"
+        },
+        {
+          "entry_file": 21029184,
+          "entry_vm": 21045568,
+          "function_data": 20117160,
+          "function_file": 16500908,
+          "function_vm": 16517292,
+          "name_vm": 20077886,
+          "operation": "canMakePurchases"
+        },
+        {
+          "entry_file": 21054400,
+          "entry_vm": 21070784,
+          "function_data": 20083349,
+          "function_file": 20061816,
+          "function_vm": 20078200,
+          "name_vm": 20077886,
+          "operation": "canMakePurchases"
+        }
+      ]
+    },
+    "cancel": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 14,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20732352,
+          "entry_vm": 20748736,
+          "function_data": 19771061,
+          "function_file": 19754684,
+          "function_vm": 19771068,
+          "name_vm": 19980203,
+          "operation": "cancel"
+        },
+        {
+          "entry_file": 20965272,
+          "entry_vm": 20981656,
+          "function_data": 0,
+          "function_file": 16618552,
+          "function_vm": 16634936,
+          "name_vm": 19980203,
+          "operation": "cancel"
+        },
+        {
+          "entry_file": 21030388,
+          "entry_vm": 21046772,
+          "function_data": 20117153,
+          "function_file": 16504128,
+          "function_vm": 16520512,
+          "name_vm": 20029115,
+          "operation": "cancel"
+        },
+        {
+          "entry_file": 21047912,
+          "entry_vm": 21064296,
+          "function_data": 20029122,
+          "function_file": 20012767,
+          "function_vm": 20029151,
+          "name_vm": 20029115,
+          "operation": "cancel"
+        }
+      ]
+    },
+    "cancelPendingRequests": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 9,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965440,
+          "entry_vm": 20981824,
+          "function_data": 0,
+          "function_file": 16553232,
+          "function_vm": 16569616,
+          "name_vm": 19980147,
+          "operation": "cancelPendingRequests"
+        },
+        {
+          "entry_file": 21032060,
+          "entry_vm": 21048444,
+          "function_data": 20117153,
+          "function_file": 16510580,
+          "function_vm": 16526964,
+          "name_vm": 20079634,
+          "operation": "cancelPendingRequests"
+        },
+        {
+          "entry_file": 21033024,
+          "entry_vm": 21049408,
+          "function_data": 20117153,
+          "function_file": 16524888,
+          "function_vm": 16541272,
+          "name_vm": 20079634,
+          "operation": "cancelPendingRequests"
+        },
+        {
+          "entry_file": 21054140,
+          "entry_vm": 21070524,
+          "function_data": 20079656,
+          "function_file": 20064250,
+          "function_vm": 20080634,
+          "name_vm": 20079634,
+          "operation": "cancelPendingRequests"
+        }
+      ]
+    },
+    "cleanup": {
+      "as3": [
+        {
+          "abc": "doabc_018.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTPrinter"
+          ],
+          "method": 4,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965524,
+          "entry_vm": 20981908,
+          "function_data": 0,
+          "function_file": 16634276,
+          "function_vm": 16650660,
+          "name_vm": 19980082,
+          "operation": "cleanup"
+        },
+        {
+          "entry_file": 20992864,
+          "entry_vm": 21009248,
+          "function_data": 20117153,
+          "function_file": 13396960,
+          "function_vm": 13413344,
+          "name_vm": 20042986,
+          "operation": "cleanup"
+        },
+        {
+          "entry_file": 21049476,
+          "entry_vm": 21065860,
+          "function_data": 20042994,
+          "function_file": 20018964,
+          "function_vm": 20035348,
+          "name_vm": 20042986,
+          "operation": "cleanup"
+        }
+      ]
+    },
+    "clear": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 29,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20733108,
+          "entry_vm": 20749492,
+          "function_data": 19772910,
+          "function_file": 19966832,
+          "function_vm": 19983216,
+          "name_vm": 19979265,
+          "operation": "clear"
+        },
+        {
+          "entry_file": 20964372,
+          "entry_vm": 20980756,
+          "function_data": 0,
+          "function_file": 16569816,
+          "function_vm": 16586200,
+          "name_vm": 19979265,
+          "operation": "clear"
+        },
+        {
+          "entry_file": 20999616,
+          "entry_vm": 21016000,
+          "function_data": 20117153,
+          "function_file": 16221857,
+          "function_vm": 16238241,
+          "name_vm": 20047199,
+          "operation": "clear"
+        },
+        {
+          "entry_file": 21257800,
+          "entry_vm": 21274184,
+          "function_data": 19984733,
+          "function_file": 19966370,
+          "function_vm": 19982754,
+          "name_vm": 19979265,
+          "operation": "clear"
+        }
+      ]
+    },
+    "clearEncodedData": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 13,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964048,
+          "entry_vm": 20980432,
+          "function_data": 0,
+          "function_file": 16627756,
+          "function_vm": 16644140,
+          "name_vm": 19981926,
+          "operation": "clearEncodedData"
+        }
+      ]
+    },
+    "clearVertexAttribData": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 20,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964264,
+          "entry_vm": 20980648,
+          "function_data": 0,
+          "function_file": 16568296,
+          "function_vm": 16584680,
+          "name_vm": 19981416,
+          "operation": "clearVertexAttribData"
+        }
+      ]
+    },
+    "clipboardGetFormatData": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 15,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964852,
+          "entry_vm": 20981236,
+          "function_data": 0,
+          "function_file": 16581256,
+          "function_vm": 16597640,
+          "name_vm": 19980510,
+          "operation": "clipboardGetFormatData"
+        }
+      ]
+    },
+    "clipboardHasFormat": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 12,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964816,
+          "entry_vm": 20981200,
+          "function_data": 0,
+          "function_file": 16579220,
+          "function_vm": 16595604,
+          "name_vm": 19980446,
+          "operation": "clipboardHasFormat"
+        }
+      ]
+    },
+    "clipboardSetFormatData": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 13,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964828,
+          "entry_vm": 20981212,
+          "function_data": 0,
+          "function_file": 16579788,
+          "function_vm": 16596172,
+          "name_vm": 19980465,
+          "operation": "clipboardSetFormatData"
+        }
+      ]
+    },
+    "clipboardSetMultiData": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 14,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964840,
+          "entry_vm": 20981224,
+          "function_data": 0,
+          "function_file": 16580516,
+          "function_vm": 16596900,
+          "name_vm": 19980488,
+          "operation": "clipboardSetMultiData"
+        }
+      ]
+    },
+    "close": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 5,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20707496,
+          "entry_vm": 20723880,
+          "function_data": 19975317,
+          "function_file": 19709701,
+          "function_vm": 19726085,
+          "name_vm": 19979911,
+          "operation": "close"
+        },
+        {
+          "entry_file": 20732372,
+          "entry_vm": 20748756,
+          "function_data": 19771097,
+          "function_file": 19754721,
+          "function_vm": 19771105,
+          "name_vm": 19979911,
+          "operation": "close"
+        },
+        {
+          "entry_file": 20853344,
+          "entry_vm": 20869728,
+          "function_data": 19777594,
+          "function_file": 19761218,
+          "function_vm": 19777602,
+          "name_vm": 19979911,
+          "operation": "close"
+        },
+        {
+          "entry_file": 20860956,
+          "entry_vm": 20877340,
+          "function_data": 19777594,
+          "function_file": 19761218,
+          "function_vm": 19777602,
+          "name_vm": 19979911,
+          "operation": "close"
+        },
+        {
+          "entry_file": 20965644,
+          "entry_vm": 20982028,
+          "function_data": 0,
+          "function_file": 16549016,
+          "function_vm": 16565400,
+          "name_vm": 19979911,
+          "operation": "close"
+        },
+        {
+          "entry_file": 21007184,
+          "entry_vm": 21023568,
+          "function_data": 20117153,
+          "function_file": 16301321,
+          "function_vm": 16317705,
+          "name_vm": 20053956,
+          "operation": "close"
+        },
+        {
+          "entry_file": 21052708,
+          "entry_vm": 21069092,
+          "function_data": 20053577,
+          "function_file": 20037216,
+          "function_vm": 20053600,
+          "name_vm": 20053956,
+          "operation": "close"
+        },
+        {
+          "entry_file": 21164824,
+          "entry_vm": 21181208,
+          "function_data": 19811411,
+          "function_file": 19795039,
+          "function_vm": 19811423,
+          "name_vm": 19979911,
+          "operation": "close"
+        }
+      ]
+    },
+    "closeStore": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 9,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965992,
+          "entry_vm": 20982376,
+          "function_data": 0,
+          "function_file": 16548220,
+          "function_vm": 16564604,
+          "name_vm": 19979702,
+          "operation": "closeStore"
+        },
+        {
+          "entry_file": 21030008,
+          "entry_vm": 21046392,
+          "function_data": 20117160,
+          "function_file": 16501612,
+          "function_vm": 16517996,
+          "name_vm": 20078291,
+          "operation": "closeStore"
+        },
+        {
+          "entry_file": 21054424,
+          "entry_vm": 21070808,
+          "function_data": 20082110,
+          "function_file": 20065891,
+          "function_vm": 20082275,
+          "name_vm": 20078291,
+          "operation": "closeStore"
+        }
+      ]
+    },
+    "compressBitmapRLE": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 19,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964876,
+          "entry_vm": 20981260,
+          "function_data": 0,
+          "function_file": 16582252,
+          "function_vm": 16598636,
+          "name_vm": 19980550,
+          "operation": "compressBitmapRLE"
+        }
+      ]
+    },
+    "copyFile": {
+      "as3": [
+        {
+          "abc": "doabc_033.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTMail"
+          ],
+          "method": 5,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964660,
+          "entry_vm": 20981044,
+          "function_data": 0,
+          "function_file": 16574804,
+          "function_vm": 16591188,
+          "name_vm": 19981058,
+          "operation": "copyFile"
+        }
+      ]
+    },
+    "copyURIContentToFile": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 17,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964792,
+          "entry_vm": 20981176,
+          "function_data": 0,
+          "function_file": 16581852,
+          "function_vm": 16598236,
+          "name_vm": 19980412,
+          "operation": "copyURIContentToFile"
+        }
+      ]
+    },
+    "createContext": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 3,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964060,
+          "entry_vm": 20980444,
+          "function_data": 0,
+          "function_file": 16564484,
+          "function_vm": 16580868,
+          "name_vm": 19981118,
+          "operation": "createContext"
+        }
+      ]
+    },
+    "createFilter": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 7,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964108,
+          "entry_vm": 20980492,
+          "function_data": 0,
+          "function_file": 16564768,
+          "function_vm": 16581152,
+          "name_vm": 19981180,
+          "operation": "createFilter"
+        }
+      ]
+    },
+    "createQuickSelectTool": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 3,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966004,
+          "entry_vm": 20982388,
+          "function_data": 0,
+          "function_file": 16634284,
+          "function_vm": 16650668,
+          "name_vm": 19979463,
+          "operation": "createQuickSelectTool"
+        }
+      ]
+    },
+    "destroyContext": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 4,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964072,
+          "entry_vm": 20980456,
+          "function_data": 0,
+          "function_file": 16564572,
+          "function_vm": 16580956,
+          "name_vm": 19981132,
+          "operation": "destroyContext"
+        }
+      ]
+    },
+    "destroyFilter": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 28,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964336,
+          "entry_vm": 20980720,
+          "function_data": 0,
+          "function_file": 16569108,
+          "function_vm": 16585492,
+          "name_vm": 19981554,
+          "operation": "destroyFilter"
+        }
+      ]
+    },
+    "disposeQuickSelectTool": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 4,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966016,
+          "entry_vm": 20982400,
+          "function_data": 0,
+          "function_file": 16634508,
+          "function_vm": 16650892,
+          "name_vm": 19979485,
+          "operation": "disposeQuickSelectTool"
+        },
+        {
+          "entry_file": 21045752,
+          "entry_vm": 21062136,
+          "function_data": 20117153,
+          "function_file": 16646900,
+          "function_vm": 16663284,
+          "name_vm": 20089155,
+          "operation": "disposeQuickSelectTool"
+        },
+        {
+          "entry_file": 21055192,
+          "entry_vm": 21071576,
+          "function_data": 20089280,
+          "function_file": 20072911,
+          "function_vm": 20089295,
+          "name_vm": 20089155,
+          "operation": "disposeQuickSelectTool"
+        }
+      ]
+    },
+    "drawArrays": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 26,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964348,
+          "entry_vm": 20980732,
+          "function_data": 0,
+          "function_file": 16569204,
+          "function_vm": 16585588,
+          "name_vm": 19981568,
+          "operation": "drawArrays"
+        }
+      ]
+    },
+    "enableVertexAttrib": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 25,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964324,
+          "entry_vm": 20980708,
+          "function_data": 0,
+          "function_file": 16568944,
+          "function_vm": 16585328,
+          "name_vm": 19981535,
+          "operation": "enableVertexAttrib"
+        }
+      ]
+    },
+    "enumerateCameras": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 4,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965224,
+          "entry_vm": 20981608,
+          "function_data": 0,
+          "function_file": 16623552,
+          "function_vm": 16639936,
+          "name_vm": 19980289,
+          "operation": "enumerateCameras"
+        }
+      ]
+    },
+    "executeSequence": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 31,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964396,
+          "entry_vm": 20980780,
+          "function_data": 0,
+          "function_file": 16570328,
+          "function_vm": 16586712,
+          "name_vm": 19981610,
+          "operation": "executeSequence"
+        }
+      ]
+    },
+    "getCapabilities": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 10,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965284,
+          "entry_vm": 20981668,
+          "function_data": 0,
+          "function_file": 16618664,
+          "function_vm": 16635048,
+          "name_vm": 19980210,
+          "operation": "getCapabilities"
+        }
+      ]
+    },
+    "getDeviceID": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 5,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964708,
+          "entry_vm": 20981092,
+          "function_data": 0,
+          "function_file": 16576836,
+          "function_vm": 16593220,
+          "name_vm": 19980326,
+          "operation": "getDeviceID"
+        }
+      ]
+    },
+    "getDeviceName": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 6,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964696,
+          "entry_vm": 20981080,
+          "function_data": 0,
+          "function_file": 16577860,
+          "function_vm": 16594244,
+          "name_vm": 19980312,
+          "operation": "getDeviceName"
+        }
+      ]
+    },
+    "getEncodedData": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 9,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964000,
+          "entry_vm": 20980384,
+          "function_data": 0,
+          "function_file": 16627272,
+          "function_vm": 16643656,
+          "name_vm": 19981856,
+          "operation": "getEncodedData"
+        }
+      ]
+    },
+    "getEncodedDataSize": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 8,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20963988,
+          "entry_vm": 20980372,
+          "function_data": 0,
+          "function_file": 16627176,
+          "function_vm": 16643560,
+          "name_vm": 19981837,
+          "operation": "getEncodedDataSize"
+        }
+      ]
+    },
+    "getEncodingProgress": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 7,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20963976,
+          "entry_vm": 20980360,
+          "function_data": 0,
+          "function_file": 16627076,
+          "function_vm": 16643460,
+          "name_vm": 19981817,
+          "operation": "getEncodingProgress"
+        }
+      ]
+    },
+    "getExifHeader": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 7,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965404,
+          "entry_vm": 20981788,
+          "function_data": 0,
+          "function_file": 16552968,
+          "function_vm": 16569352,
+          "name_vm": 19980103,
+          "operation": "getExifHeader"
+        }
+      ]
+    },
+    "getFinishCode": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 22,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965356,
+          "entry_vm": 20981740,
+          "function_data": 0,
+          "function_file": 16623300,
+          "function_vm": 16639684,
+          "name_vm": 19980275,
+          "operation": "getFinishCode"
+        }
+      ]
+    },
+    "getImage": {
+      "as3": [
+        {
+          "abc": "doabc_001.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraUI"
+          ],
+          "method": 4,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 6,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965392,
+          "entry_vm": 20981776,
+          "function_data": 0,
+          "function_file": 16552740,
+          "function_vm": 16569124,
+          "name_vm": 19980047,
+          "operation": "getImage"
+        },
+        {
+          "entry_file": 20965548,
+          "entry_vm": 20981932,
+          "function_data": 0,
+          "function_file": 16561788,
+          "function_vm": 16578172,
+          "name_vm": 19980047,
+          "operation": "getImage"
+        },
+        {
+          "entry_file": 21039012,
+          "entry_vm": 21055396,
+          "function_data": 20117146,
+          "function_file": 16564020,
+          "function_vm": 16580404,
+          "name_vm": 20084327,
+          "operation": "getImage"
+        },
+        {
+          "entry_file": 21054616,
+          "entry_vm": 21071000,
+          "function_data": 20084336,
+          "function_file": 20068079,
+          "function_vm": 20084463,
+          "name_vm": 20084327,
+          "operation": "getImage"
+        }
+      ]
+    },
+    "getLastGLErrorCode": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 5,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964084,
+          "entry_vm": 20980468,
+          "function_data": 0,
+          "function_file": 16564660,
+          "function_vm": 16581044,
+          "name_vm": 19981147,
+          "operation": "getLastGLErrorCode"
+        }
+      ]
+    },
+    "getLocalIP": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 43,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965140,
+          "entry_vm": 20981524,
+          "function_data": 0,
+          "function_file": 16593636,
+          "function_vm": 16610020,
+          "name_vm": 19980919,
+          "operation": "getLocalIP"
+        }
+      ]
+    },
+    "getMask": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 10,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966088,
+          "entry_vm": 20982472,
+          "function_data": 0,
+          "function_file": 16636880,
+          "function_vm": 16653264,
+          "name_vm": 19979563,
+          "operation": "getMask"
+        }
+      ]
+    },
+    "getMemoryStatsEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 27,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964972,
+          "entry_vm": 20981356,
+          "function_data": 0,
+          "function_file": 16588104,
+          "function_vm": 16604488,
+          "name_vm": 19980658,
+          "operation": "getMemoryStatsEx"
+        }
+      ]
+    },
+    "getNetworkState": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 42,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20928404,
+          "entry_vm": 20944788,
+          "function_data": 0,
+          "function_file": 15156904,
+          "function_vm": 15173288,
+          "name_vm": 19850322,
+          "operation": "getNetworkState"
+        },
+        {
+          "entry_file": 20964768,
+          "entry_vm": 20981152,
+          "function_data": 0,
+          "function_file": 16578696,
+          "function_vm": 16595080,
+          "name_vm": 19850322,
+          "operation": "getNetworkState"
+        }
+      ]
+    },
+    "getNextPreviewFrame": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 21,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965320,
+          "entry_vm": 20981704,
+          "function_data": 0,
+          "function_file": 16622676,
+          "function_vm": 16639060,
+          "name_vm": 19980240,
+          "operation": "getNextPreviewFrame"
+        }
+      ]
+    },
+    "getNumVertices": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 17,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964228,
+          "entry_vm": 20980612,
+          "function_data": 0,
+          "function_file": 16567700,
+          "function_vm": 16584084,
+          "name_vm": 19981361,
+          "operation": "getNumVertices"
+        }
+      ]
+    },
+    "getParameters": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 15,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965296,
+          "entry_vm": 20981680,
+          "function_data": 0,
+          "function_file": 16620684,
+          "function_vm": 16637068,
+          "name_vm": 19980226,
+          "operation": "getParameters"
+        },
+        {
+          "entry_file": 21040472,
+          "entry_vm": 21056856,
+          "function_data": 20117146,
+          "function_file": 16601672,
+          "function_vm": 16618056,
+          "name_vm": 20086188,
+          "operation": "getParameters"
+        },
+        {
+          "entry_file": 21055028,
+          "entry_vm": 21071412,
+          "function_data": 20086340,
+          "function_file": 20069992,
+          "function_vm": 20086376,
+          "name_vm": 20086188,
+          "operation": "getParameters"
+        }
+      ]
+    },
+    "getPickedImage": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 12,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965476,
+          "entry_vm": 20981860,
+          "function_data": 0,
+          "function_file": 16554576,
+          "function_vm": 16570960,
+          "name_vm": 19980188,
+          "operation": "getPickedImage"
+        }
+      ]
+    },
+    "getPictureData": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 20,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965344,
+          "entry_vm": 20981728,
+          "function_data": 0,
+          "function_file": 16623084,
+          "function_vm": 16639468,
+          "name_vm": 19980260,
+          "operation": "getPictureData"
+        }
+      ]
+    },
+    "getPixelsBitmapEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 26,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964960,
+          "entry_vm": 20981344,
+          "function_data": 0,
+          "function_file": 16585104,
+          "function_vm": 16601488,
+          "name_vm": 19980640,
+          "operation": "getPixelsBitmapEx"
+        }
+      ]
+    },
+    "getPixelsEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 20,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964888,
+          "entry_vm": 20981272,
+          "function_data": 0,
+          "function_file": 16582456,
+          "function_vm": 16598840,
+          "name_vm": 19980568,
+          "operation": "getPixelsEx"
+        }
+      ]
+    },
+    "getProgress": {
+      "as3": [
+        {
+          "abc": "doabc_028.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTAM"
+          ],
+          "method": 5,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_030.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTSS"
+          ],
+          "method": 5,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964540,
+          "entry_vm": 20980924,
+          "function_data": 0,
+          "function_file": 16546736,
+          "function_vm": 16563120,
+          "name_vm": 19981088,
+          "operation": "getProgress"
+        },
+        {
+          "entry_file": 20964600,
+          "entry_vm": 20980984,
+          "function_data": 0,
+          "function_file": 16576472,
+          "function_vm": 16592856,
+          "name_vm": 19981088,
+          "operation": "getProgress"
+        }
+      ]
+    },
+    "getRequestedOrientation": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 46,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965200,
+          "entry_vm": 20981584,
+          "function_data": 0,
+          "function_file": 16595672,
+          "function_vm": 16612056,
+          "name_vm": 19980987,
+          "operation": "getRequestedOrientation"
+        }
+      ]
+    },
+    "getResult": {
+      "as3": [
+        {
+          "abc": "doabc_028.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTAM"
+          ],
+          "method": 6,
+          "native_argc": 1
+        },
+        {
+          "abc": "doabc_030.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTSS"
+          ],
+          "method": 6,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964552,
+          "entry_vm": 20980936,
+          "function_data": 0,
+          "function_file": 16546820,
+          "function_vm": 16563204,
+          "name_vm": 19981100,
+          "operation": "getResult"
+        },
+        {
+          "entry_file": 20964612,
+          "entry_vm": 20980996,
+          "function_data": 0,
+          "function_file": 16576556,
+          "function_vm": 16592940,
+          "name_vm": 19981100,
+          "operation": "getResult"
+        }
+      ]
+    },
+    "getScaledPixelsEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 28,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965020,
+          "entry_vm": 20981404,
+          "function_data": 0,
+          "function_file": 16587300,
+          "function_vm": 16603684,
+          "name_vm": 19980738,
+          "operation": "getScaledPixelsEx"
+        }
+      ]
+    },
+    "getShaderInfoLog": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 16,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964216,
+          "entry_vm": 20980600,
+          "function_data": 0,
+          "function_file": 16567564,
+          "function_vm": 16583948,
+          "name_vm": 19981344,
+          "operation": "getShaderInfoLog"
+        }
+      ]
+    },
+    "getStringInfo": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 6,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964096,
+          "entry_vm": 20980480,
+          "function_data": 0,
+          "function_file": 16571204,
+          "function_vm": 16587588,
+          "name_vm": 19981166,
+          "operation": "getStringInfo"
+        }
+      ]
+    },
+    "getSystemInfo": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 40,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965116,
+          "entry_vm": 20981500,
+          "function_data": 0,
+          "function_file": 16590640,
+          "function_vm": 16607024,
+          "name_vm": 19980893,
+          "operation": "getSystemInfo"
+        }
+      ]
+    },
+    "getThumbnail": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 5,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965380,
+          "entry_vm": 20981764,
+          "function_data": 0,
+          "function_file": 16552200,
+          "function_vm": 16568584,
+          "name_vm": 19980090,
+          "operation": "getThumbnail"
+        }
+      ]
+    },
+    "getTimestamp": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 3,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965164,
+          "entry_vm": 20981548,
+          "function_data": 0,
+          "function_file": 16595116,
+          "function_vm": 16611500,
+          "name_vm": 19980941,
+          "operation": "getTimestamp"
+        }
+      ]
+    },
+    "getVertexAttribDataRangeCount": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 22,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964288,
+          "entry_vm": 20980672,
+          "function_data": 0,
+          "function_file": 16568540,
+          "function_vm": 16584924,
+          "name_vm": 19981468,
+          "operation": "getVertexAttribDataRangeCount"
+        }
+      ]
+    },
+    "getVertexAttribDataRangeStart": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 21,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964276,
+          "entry_vm": 20980660,
+          "function_data": 0,
+          "function_file": 16568428,
+          "function_vm": 16584812,
+          "name_vm": 19981438,
+          "operation": "getVertexAttribDataRangeStart"
+        }
+      ]
+    },
+    "hasFinishedEncoding": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 11,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964024,
+          "entry_vm": 20980408,
+          "function_data": 0,
+          "function_file": 16627560,
+          "function_vm": 16643944,
+          "name_vm": 19981885,
+          "operation": "hasFinishedEncoding"
+        }
+      ]
+    },
+    "hideActivityUI": {
+      "as3": [
+        {
+          "abc": "doabc_021.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTActivityUI"
+          ],
+          "method": 4,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965584,
+          "entry_vm": 20981968,
+          "function_data": 0,
+          "function_file": 16545868,
+          "function_vm": 16562252,
+          "name_vm": 19980015,
+          "operation": "hideActivityUI"
+        }
+      ]
+    },
+    "init": {
+      "as3": [
+        {
+          "abc": "doabc_028.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTAM"
+          ],
+          "method": 3,
+          "native_argc": 4
+        },
+        {
+          "abc": "doabc_030.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTSS"
+          ],
+          "method": 3,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20732440,
+          "entry_vm": 20748824,
+          "function_data": 19771242,
+          "function_file": 19754866,
+          "function_vm": 19771250,
+          "name_vm": 19981079,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20964516,
+          "entry_vm": 20980900,
+          "function_data": 0,
+          "function_file": 16546416,
+          "function_vm": 16562800,
+          "name_vm": 19981079,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20964576,
+          "entry_vm": 20980960,
+          "function_data": 0,
+          "function_file": 16576072,
+          "function_vm": 16592456,
+          "name_vm": 19981079,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20972272,
+          "entry_vm": 20988656,
+          "function_data": 20117146,
+          "function_file": 10514488,
+          "function_vm": 10530872,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20976204,
+          "entry_vm": 20992588,
+          "function_data": 20117146,
+          "function_file": 10580348,
+          "function_vm": 10596732,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20978716,
+          "entry_vm": 20995100,
+          "function_data": 20117146,
+          "function_file": 11371520,
+          "function_vm": 11387904,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20982936,
+          "entry_vm": 20999320,
+          "function_data": 20117146,
+          "function_file": 12776000,
+          "function_vm": 12792384,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20983764,
+          "entry_vm": 21000148,
+          "function_data": 20117146,
+          "function_file": 12777400,
+          "function_vm": 12793784,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20987884,
+          "entry_vm": 21004268,
+          "function_data": 20117146,
+          "function_file": 13028960,
+          "function_vm": 13045344,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20988832,
+          "entry_vm": 21005216,
+          "function_data": 20117146,
+          "function_file": 13046452,
+          "function_vm": 13062836,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20990184,
+          "entry_vm": 21006568,
+          "function_data": 20117146,
+          "function_file": 13209864,
+          "function_vm": 13226248,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20992840,
+          "entry_vm": 21009224,
+          "function_data": 20117146,
+          "function_file": 13396640,
+          "function_vm": 13413024,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 20998720,
+          "entry_vm": 21015104,
+          "function_data": 20117146,
+          "function_file": 16215617,
+          "function_vm": 16232001,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21000000,
+          "entry_vm": 21016384,
+          "function_data": 20117146,
+          "function_file": 16222529,
+          "function_vm": 16238913,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21001096,
+          "entry_vm": 21017480,
+          "function_data": 20117146,
+          "function_file": 16226353,
+          "function_vm": 16242737,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21001844,
+          "entry_vm": 21018228,
+          "function_data": 20117146,
+          "function_file": 16231649,
+          "function_vm": 16248033,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21002560,
+          "entry_vm": 21018944,
+          "function_data": 20117146,
+          "function_file": 16235897,
+          "function_vm": 16252281,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21003100,
+          "entry_vm": 21019484,
+          "function_data": 20117146,
+          "function_file": 16238101,
+          "function_vm": 16254485,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21003400,
+          "entry_vm": 21019784,
+          "function_data": 20117146,
+          "function_file": 16238481,
+          "function_vm": 16254865,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21005268,
+          "entry_vm": 21021652,
+          "function_data": 20117146,
+          "function_file": 16248241,
+          "function_vm": 16264625,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21005648,
+          "entry_vm": 21022032,
+          "function_data": 20117146,
+          "function_file": 16248337,
+          "function_vm": 16264721,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21020128,
+          "entry_vm": 21036512,
+          "function_data": 20117146,
+          "function_file": 16415405,
+          "function_vm": 16431789,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21021736,
+          "entry_vm": 21038120,
+          "function_data": 20117146,
+          "function_file": 16427361,
+          "function_vm": 16443745,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21028176,
+          "entry_vm": 21044560,
+          "function_data": 20117146,
+          "function_file": 16487545,
+          "function_vm": 16503929,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21028432,
+          "entry_vm": 21044816,
+          "function_data": 20117146,
+          "function_file": 16488569,
+          "function_vm": 16504953,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21028852,
+          "entry_vm": 21045236,
+          "function_data": 20117153,
+          "function_file": 16493928,
+          "function_vm": 16510312,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21030268,
+          "entry_vm": 21046652,
+          "function_data": 20117146,
+          "function_file": 16503496,
+          "function_vm": 16519880,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21030768,
+          "entry_vm": 21047152,
+          "function_data": 20117146,
+          "function_file": 16505968,
+          "function_vm": 16522352,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21031196,
+          "entry_vm": 21047580,
+          "function_data": 20117146,
+          "function_file": 16506828,
+          "function_vm": 16523212,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21031756,
+          "entry_vm": 21048140,
+          "function_data": 20117146,
+          "function_file": 16509316,
+          "function_vm": 16525700,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21031964,
+          "entry_vm": 21048348,
+          "function_data": 20117146,
+          "function_file": 16510112,
+          "function_vm": 16526496,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21032404,
+          "entry_vm": 21048788,
+          "function_data": 20117146,
+          "function_file": 16514252,
+          "function_vm": 16530636,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21032540,
+          "entry_vm": 21048924,
+          "function_data": 20117146,
+          "function_file": 16514556,
+          "function_vm": 16530940,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21032748,
+          "entry_vm": 21049132,
+          "function_data": 20117146,
+          "function_file": 16516348,
+          "function_vm": 16532732,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21036512,
+          "entry_vm": 21052896,
+          "function_data": 20117146,
+          "function_file": 16555988,
+          "function_vm": 16572372,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21036696,
+          "entry_vm": 21053080,
+          "function_data": 20117146,
+          "function_file": 16556448,
+          "function_vm": 16572832,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21039376,
+          "entry_vm": 21055760,
+          "function_data": 20117146,
+          "function_file": 16596136,
+          "function_vm": 16612520,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21045280,
+          "entry_vm": 21061664,
+          "function_data": 20117146,
+          "function_file": 16641664,
+          "function_vm": 16658048,
+          "name_vm": 20019895,
+          "operation": "init"
+        },
+        {
+          "entry_file": 21046576,
+          "entry_vm": 21062960,
+          "function_data": 20019900,
+          "function_file": 20003527,
+          "function_vm": 20019911,
+          "name_vm": 20019895,
+          "operation": "init"
+        }
+      ]
+    },
+    "isOpen": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 6,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965656,
+          "entry_vm": 20982040,
+          "function_data": 0,
+          "function_file": 16549180,
+          "function_vm": 16565564,
+          "name_vm": 19979016,
+          "operation": "isOpen"
+        },
+        {
+          "entry_file": 21034580,
+          "entry_vm": 21050964,
+          "function_data": 20117160,
+          "function_file": 16531552,
+          "function_vm": 16547936,
+          "name_vm": 20082275,
+          "operation": "isOpen"
+        },
+        {
+          "entry_file": 21034800,
+          "entry_vm": 21051184,
+          "function_data": 19979023,
+          "function_file": 19962652,
+          "function_vm": 19979036,
+          "name_vm": 19979016,
+          "operation": "isOpen"
+        },
+        {
+          "entry_file": 21054432,
+          "entry_vm": 21070816,
+          "function_data": 20083366,
+          "function_file": 20065731,
+          "function_vm": 20082115,
+          "name_vm": 20082275,
+          "operation": "isOpen"
+        }
+      ]
+    },
+    "isPrintingAvailable": {
+      "as3": [
+        {
+          "abc": "doabc_018.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTPrinter"
+          ],
+          "method": 2,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965500,
+          "entry_vm": 20981884,
+          "function_data": 0,
+          "function_file": 16632832,
+          "function_vm": 16649216,
+          "name_vm": 19980056,
+          "operation": "isPrintingAvailable"
+        },
+        {
+          "entry_file": 21055072,
+          "entry_vm": 21071456,
+          "function_data": 20088522,
+          "function_file": 20072160,
+          "function_vm": 20088544,
+          "name_vm": 20088502,
+          "operation": "isPrintingAvailable"
+        }
+      ]
+    },
+    "isolateColor": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 11,
+          "native_argc": 7
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964804,
+          "entry_vm": 20981188,
+          "function_data": 0,
+          "function_file": 16578916,
+          "function_vm": 16595300,
+          "name_vm": 19980433,
+          "operation": "isolateColor"
+        }
+      ]
+    },
+    "launch": {
+      "as3": [
+        {
+          "abc": "doabc_001.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraUI"
+          ],
+          "method": 3,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965536,
+          "entry_vm": 20981920,
+          "function_data": 0,
+          "function_file": 16561316,
+          "function_vm": 16577700,
+          "name_vm": 19980040,
+          "operation": "launch"
+        },
+        {
+          "entry_file": 20986744,
+          "entry_vm": 21003128,
+          "function_data": 20117153,
+          "function_file": 12912664,
+          "function_vm": 12929048,
+          "name_vm": 20037967,
+          "operation": "launch"
+        },
+        {
+          "entry_file": 21048908,
+          "entry_vm": 21065292,
+          "function_data": 20037974,
+          "function_file": 20021608,
+          "function_vm": 20037992,
+          "name_vm": 20037967,
+          "operation": "launch"
+        }
+      ]
+    },
+    "launchApp": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 8,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964732,
+          "entry_vm": 20981116,
+          "function_data": 0,
+          "function_file": 16578192,
+          "function_vm": 16594576,
+          "name_vm": 19980351,
+          "operation": "launchApp"
+        }
+      ]
+    },
+    "leaveApp": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 10,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964744,
+          "entry_vm": 20981128,
+          "function_data": 0,
+          "function_file": 16578392,
+          "function_vm": 16594776,
+          "name_vm": 19980361,
+          "operation": "leaveApp"
+        }
+      ]
+    },
+    "lz4Compress": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 22,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964912,
+          "entry_vm": 20981296,
+          "function_data": 0,
+          "function_file": 16583724,
+          "function_vm": 16600108,
+          "name_vm": 19980592,
+          "operation": "lz4Compress"
+        }
+      ]
+    },
+    "lz4Deflate": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 24,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964936,
+          "entry_vm": 20981320,
+          "function_data": 0,
+          "function_file": 16584432,
+          "function_vm": 16600816,
+          "name_vm": 19980618,
+          "operation": "lz4Deflate"
+        }
+      ]
+    },
+    "lz4Inflate": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 25,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964948,
+          "entry_vm": 20981332,
+          "function_data": 0,
+          "function_file": 16584772,
+          "function_vm": 16601156,
+          "name_vm": 19980629,
+          "operation": "lz4Inflate"
+        }
+      ]
+    },
+    "lz4Uncompress": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 23,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964924,
+          "entry_vm": 20981308,
+          "function_data": 0,
+          "function_file": 16584240,
+          "function_vm": 16600624,
+          "name_vm": 19980604,
+          "operation": "lz4Uncompress"
+        }
+      ]
+    },
+    "modifyPasswdFile": {
+      "as3": [
+        {
+          "abc": "doabc_013.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTWebServer"
+          ],
+          "method": 3,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965620,
+          "entry_vm": 20982004,
+          "function_data": 0,
+          "function_file": 16572568,
+          "function_vm": 16588952,
+          "name_vm": 19979983,
+          "operation": "modifyPasswdFile"
+        }
+      ]
+    },
+    "mouseUp": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 11,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20732504,
+          "entry_vm": 20748888,
+          "function_data": 19771396,
+          "function_file": 19755027,
+          "function_vm": 19771411,
+          "name_vm": 19979571,
+          "operation": "mouseUp"
+        },
+        {
+          "entry_file": 20966100,
+          "entry_vm": 20982484,
+          "function_data": 0,
+          "function_file": 16637392,
+          "function_vm": 16653776,
+          "name_vm": 19979571,
+          "operation": "mouseUp"
+        }
+      ]
+    },
+    "open": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 4,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 13,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20733368,
+          "entry_vm": 20749752,
+          "function_data": 19716019,
+          "function_file": 19756941,
+          "function_vm": 19773325,
+          "name_vm": 19983507,
+          "operation": "open"
+        },
+        {
+          "entry_file": 20965236,
+          "entry_vm": 20981620,
+          "function_data": 0,
+          "function_file": 16617612,
+          "function_vm": 16633996,
+          "name_vm": 19983507,
+          "operation": "open"
+        },
+        {
+          "entry_file": 20965632,
+          "entry_vm": 20982016,
+          "function_data": 0,
+          "function_file": 16548892,
+          "function_vm": 16565276,
+          "name_vm": 19983507,
+          "operation": "open"
+        },
+        {
+          "entry_file": 21034328,
+          "entry_vm": 21050712,
+          "function_data": 20117160,
+          "function_file": 16527336,
+          "function_vm": 16543720,
+          "name_vm": 20082110,
+          "operation": "open"
+        },
+        {
+          "entry_file": 21054428,
+          "entry_vm": 21070812,
+          "function_data": 20082275,
+          "function_file": 20066982,
+          "function_vm": 20083366,
+          "name_vm": 20082110,
+          "operation": "open"
+        }
+      ]
+    },
+    "openPath": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 44,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965176,
+          "entry_vm": 20981560,
+          "function_data": 0,
+          "function_file": 16595184,
+          "function_vm": 16611568,
+          "name_vm": 19980954,
+          "operation": "openPath"
+        }
+      ]
+    },
+    "openStore": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 10,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965920,
+          "entry_vm": 20982304,
+          "function_data": 0,
+          "function_file": 16547072,
+          "function_vm": 16563456,
+          "name_vm": 19979596,
+          "operation": "openStore"
+        },
+        {
+          "entry_file": 21029948,
+          "entry_vm": 21046332,
+          "function_data": 20117160,
+          "function_file": 16500936,
+          "function_vm": 16517320,
+          "name_vm": 20078190,
+          "operation": "openStore"
+        },
+        {
+          "entry_file": 21054396,
+          "entry_vm": 21070780,
+          "function_data": 20077886,
+          "function_file": 20066965,
+          "function_vm": 20083349,
+          "name_vm": 20078190,
+          "operation": "openStore"
+        }
+      ]
+    },
+    "pickImage": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 11,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965464,
+          "entry_vm": 20981848,
+          "function_data": 0,
+          "function_file": 16554080,
+          "function_vm": 16570464,
+          "name_vm": 19980178,
+          "operation": "pickImage"
+        }
+      ]
+    },
+    "plistToXMLString": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 16,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964864,
+          "entry_vm": 20981248,
+          "function_data": 0,
+          "function_file": 16581888,
+          "function_vm": 16598272,
+          "name_vm": 19980533,
+          "operation": "plistToXMLString"
+        }
+      ]
+    },
+    "preflight": {
+      "as3": [
+        {
+          "abc": "doabc_005.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBigDataExtension"
+          ],
+          "method": 9,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965560,
+          "entry_vm": 20981944,
+          "function_data": 0,
+          "function_file": 16548344,
+          "function_vm": 16564728,
+          "name_vm": 19980030,
+          "operation": "preflight"
+        }
+      ]
+    },
+    "prepareTextureEmpty": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 8,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964168,
+          "entry_vm": 20980552,
+          "function_data": 0,
+          "function_file": 16566080,
+          "function_vm": 16582464,
+          "name_vm": 19981255,
+          "operation": "prepareTextureEmpty"
+        }
+      ]
+    },
+    "prepareTextureFromBitmapData": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 9,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964180,
+          "entry_vm": 20980564,
+          "function_data": 0,
+          "function_file": 16566344,
+          "function_vm": 16582728,
+          "name_vm": 19981275,
+          "operation": "prepareTextureFromBitmapData"
+        }
+      ]
+    },
+    "print": {
+      "as3": [
+        {
+          "abc": "doabc_018.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTPrinter"
+          ],
+          "method": 3,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20733600,
+          "entry_vm": 20749984,
+          "function_data": 19773615,
+          "function_file": 19757237,
+          "function_vm": 19773621,
+          "name_vm": 19980076,
+          "operation": "print"
+        },
+        {
+          "entry_file": 20922168,
+          "entry_vm": 20938552,
+          "function_data": 19845308,
+          "function_file": 19756181,
+          "function_vm": 19772565,
+          "name_vm": 19980076,
+          "operation": "print"
+        },
+        {
+          "entry_file": 20965512,
+          "entry_vm": 20981896,
+          "function_data": 0,
+          "function_file": 16633184,
+          "function_vm": 16649568,
+          "name_vm": 19980076,
+          "operation": "print"
+        }
+      ]
+    },
+    "programCreate": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 38,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964480,
+          "entry_vm": 20980864,
+          "function_data": 0,
+          "function_file": 16571732,
+          "function_vm": 16588116,
+          "name_vm": 19981715,
+          "operation": "programCreate"
+        }
+      ]
+    },
+    "programDispose": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 39,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964492,
+          "entry_vm": 20980876,
+          "function_data": 0,
+          "function_file": 16571952,
+          "function_vm": 16588336,
+          "name_vm": 19981729,
+          "operation": "programDispose"
+        }
+      ]
+    },
+    "programUse": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 40,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964504,
+          "entry_vm": 20980888,
+          "function_data": 0,
+          "function_file": 16572108,
+          "function_vm": 16588492,
+          "name_vm": 19981744,
+          "operation": "programUse"
+        }
+      ]
+    },
+    "provider_connect": {
+      "as3": [
+        {
+          "abc": "doabc_020.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+          ],
+          "method": 5,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965776,
+          "entry_vm": 20982160,
+          "function_data": 0,
+          "function_file": 16631344,
+          "function_vm": 16647728,
+          "name_vm": 19979874,
+          "operation": "provider_connect"
+        }
+      ]
+    },
+    "provider_createPressureSource": {
+      "as3": [
+        {
+          "abc": "doabc_015.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo"
+          ],
+          "method": 15,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965752,
+          "entry_vm": 20982136,
+          "function_data": 0,
+          "function_file": 16630820,
+          "function_vm": 16647204,
+          "name_vm": 19979814,
+          "operation": "provider_createPressureSource"
+        }
+      ]
+    },
+    "provider_disconnect": {
+      "as3": [
+        {
+          "abc": "doabc_020.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+          ],
+          "method": 6,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965788,
+          "entry_vm": 20982172,
+          "function_data": 0,
+          "function_file": 16631604,
+          "function_vm": 16647988,
+          "name_vm": 19979891,
+          "operation": "provider_disconnect"
+        }
+      ]
+    },
+    "provider_getButtonState": {
+      "as3": [
+        {
+          "abc": "doabc_010.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourceJaja"
+          ],
+          "method": 7,
+          "native_argc": 1
+        },
+        {
+          "abc": "doabc_020.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+          ],
+          "method": 7,
+          "native_argc": 2
+        },
+        {
+          "abc": "doabc_029.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourceJotTouch"
+          ],
+          "method": 7,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965800,
+          "entry_vm": 20982184,
+          "function_data": 0,
+          "function_file": 16631864,
+          "function_vm": 16648248,
+          "name_vm": 19979742,
+          "operation": "provider_getButtonState"
+        },
+        {
+          "entry_file": 20965848,
+          "entry_vm": 20982232,
+          "function_data": 0,
+          "function_file": 16628492,
+          "function_vm": 16644876,
+          "name_vm": 19979742,
+          "operation": "provider_getButtonState"
+        },
+        {
+          "entry_file": 20965896,
+          "entry_vm": 20982280,
+          "function_data": 0,
+          "function_file": 16629468,
+          "function_vm": 16645852,
+          "name_vm": 19979742,
+          "operation": "provider_getButtonState"
+        }
+      ]
+    },
+    "provider_getPressure": {
+      "as3": [
+        {
+          "abc": "doabc_010.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourceJaja"
+          ],
+          "method": 8,
+          "native_argc": 1
+        },
+        {
+          "abc": "doabc_020.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+          ],
+          "method": 8,
+          "native_argc": 2
+        },
+        {
+          "abc": "doabc_029.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourceJotTouch"
+          ],
+          "method": 8,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965812,
+          "entry_vm": 20982196,
+          "function_data": 0,
+          "function_file": 16632148,
+          "function_vm": 16648532,
+          "name_vm": 19979766,
+          "operation": "provider_getPressure"
+        },
+        {
+          "entry_file": 20965860,
+          "entry_vm": 20982244,
+          "function_data": 0,
+          "function_file": 16628660,
+          "function_vm": 16645044,
+          "name_vm": 19979766,
+          "operation": "provider_getPressure"
+        },
+        {
+          "entry_file": 20965908,
+          "entry_vm": 20982292,
+          "function_data": 0,
+          "function_file": 16629636,
+          "function_vm": 16646020,
+          "name_vm": 19979766,
+          "operation": "provider_getPressure"
+        }
+      ]
+    },
+    "provider_invokeConfigureUI": {
+      "as3": [
+        {
+          "abc": "doabc_015.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo"
+          ],
+          "method": 14,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965740,
+          "entry_vm": 20982124,
+          "function_data": 0,
+          "function_file": 16630444,
+          "function_vm": 16646828,
+          "name_vm": 19979787,
+          "operation": "provider_invokeConfigureUI"
+        }
+      ]
+    },
+    "provider_start": {
+      "as3": [
+        {
+          "abc": "doabc_004.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderJaja"
+          ],
+          "method": 8,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_015.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo"
+          ],
+          "method": 12,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_034.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderJotTouch"
+          ],
+          "method": 10,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965716,
+          "entry_vm": 20982100,
+          "function_data": 0,
+          "function_file": 16629812,
+          "function_vm": 16646196,
+          "name_vm": 19979713,
+          "operation": "provider_start"
+        },
+        {
+          "entry_file": 20965824,
+          "entry_vm": 20982208,
+          "function_data": 0,
+          "function_file": 16627860,
+          "function_vm": 16644244,
+          "name_vm": 19979713,
+          "operation": "provider_start"
+        },
+        {
+          "entry_file": 20965872,
+          "entry_vm": 20982256,
+          "function_data": 0,
+          "function_file": 16628836,
+          "function_vm": 16645220,
+          "name_vm": 19979713,
+          "operation": "provider_start"
+        }
+      ]
+    },
+    "provider_stop": {
+      "as3": [
+        {
+          "abc": "doabc_004.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderJaja"
+          ],
+          "method": 9,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_015.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo"
+          ],
+          "method": 13,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_034.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureProviderJotTouch"
+          ],
+          "method": 11,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965728,
+          "entry_vm": 20982112,
+          "function_data": 0,
+          "function_file": 16630128,
+          "function_vm": 16646512,
+          "name_vm": 19979728,
+          "operation": "provider_stop"
+        },
+        {
+          "entry_file": 20965836,
+          "entry_vm": 20982220,
+          "function_data": 0,
+          "function_file": 16628176,
+          "function_vm": 16644560,
+          "name_vm": 19979728,
+          "operation": "provider_stop"
+        },
+        {
+          "entry_file": 20965884,
+          "entry_vm": 20982268,
+          "function_data": 0,
+          "function_file": 16629152,
+          "function_vm": 16645536,
+          "name_vm": 19979728,
+          "operation": "provider_stop"
+        }
+      ]
+    },
+    "provider_updatePressureSource": {
+      "as3": [
+        {
+          "abc": "doabc_020.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+          ],
+          "method": 9,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965764,
+          "entry_vm": 20982148,
+          "function_data": 0,
+          "function_file": 16632448,
+          "function_vm": 16648832,
+          "name_vm": 19979844,
+          "operation": "provider_updatePressureSource"
+        }
+      ]
+    },
+    "publishService": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 7,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965668,
+          "entry_vm": 20982052,
+          "function_data": 0,
+          "function_file": 16549304,
+          "function_vm": 16565688,
+          "name_vm": 19979917,
+          "operation": "publishService"
+        }
+      ]
+    },
+    "purchaseProduct": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 11,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965956,
+          "entry_vm": 20982340,
+          "function_data": 0,
+          "function_file": 16547680,
+          "function_vm": 16564064,
+          "name_vm": 19979637,
+          "operation": "purchaseProduct"
+        }
+      ]
+    },
+    "qsBrushHits": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 9,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966076,
+          "entry_vm": 20982460,
+          "function_data": 0,
+          "function_file": 16636284,
+          "function_vm": 16652668,
+          "name_vm": 19979551,
+          "operation": "qsBrushHits"
+        }
+      ]
+    },
+    "queryProducts": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 14,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965944,
+          "entry_vm": 20982328,
+          "function_data": 0,
+          "function_file": 16547288,
+          "function_vm": 16563672,
+          "name_vm": 19979623,
+          "operation": "queryProducts"
+        }
+      ]
+    },
+    "readPixels": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 27,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964360,
+          "entry_vm": 20980744,
+          "function_data": 0,
+          "function_file": 16569368,
+          "function_vm": 16585752,
+          "name_vm": 19981579,
+          "operation": "readPixels"
+        }
+      ]
+    },
+    "release": {
+      "as3": [
+        {
+          "abc": "doabc_028.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTAM"
+          ],
+          "method": 7,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_030.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTSS"
+          ],
+          "method": 7,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964564,
+          "entry_vm": 20980948,
+          "function_data": 0,
+          "function_file": 16546984,
+          "function_vm": 16563368,
+          "name_vm": 19981110,
+          "operation": "release"
+        },
+        {
+          "entry_file": 20964624,
+          "entry_vm": 20981008,
+          "function_data": 0,
+          "function_file": 16576644,
+          "function_vm": 16593028,
+          "name_vm": 19981110,
+          "operation": "release"
+        },
+        {
+          "entry_file": 21046608,
+          "entry_vm": 21062992,
+          "function_data": 20020023,
+          "function_file": 20003647,
+          "function_vm": 20020031,
+          "name_vm": 20020015,
+          "operation": "release"
+        }
+      ]
+    },
+    "releaseFile": {
+      "as3": [
+        {
+          "abc": "doabc_033.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTMail"
+          ],
+          "method": 6,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964672,
+          "entry_vm": 20981056,
+          "function_data": 0,
+          "function_file": 16575828,
+          "function_vm": 16592212,
+          "name_vm": 19981067,
+          "operation": "releaseFile"
+        }
+      ]
+    },
+    "requestCancel": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 10,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964012,
+          "entry_vm": 20980396,
+          "function_data": 0,
+          "function_file": 16627448,
+          "function_vm": 16643832,
+          "name_vm": 19981871,
+          "operation": "requestCancel"
+        }
+      ]
+    },
+    "requestImage": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 8,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965416,
+          "entry_vm": 20981800,
+          "function_data": 0,
+          "function_file": 16552428,
+          "function_vm": 16568812,
+          "name_vm": 19980117,
+          "operation": "requestImage"
+        }
+      ]
+    },
+    "requestThumbnail": {
+      "as3": [
+        {
+          "abc": "doabc_011.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCameraRoll"
+          ],
+          "method": 4,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965428,
+          "entry_vm": 20981812,
+          "function_data": 0,
+          "function_file": 16551888,
+          "function_vm": 16568272,
+          "name_vm": 19980130,
+          "operation": "requestThumbnail"
+        }
+      ]
+    },
+    "reset": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 12,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966112,
+          "entry_vm": 20982496,
+          "function_data": 0,
+          "function_file": 16637616,
+          "function_vm": 16654000,
+          "name_vm": 19979579,
+          "operation": "reset"
+        },
+        {
+          "entry_file": 21020140,
+          "entry_vm": 21036524,
+          "function_data": 20117153,
+          "function_file": 16415517,
+          "function_vm": 16431901,
+          "name_vm": 20070169,
+          "operation": "reset"
+        },
+        {
+          "entry_file": 21052748,
+          "entry_vm": 21069132,
+          "function_data": 20065035,
+          "function_file": 20010135,
+          "function_vm": 20026519,
+          "name_vm": 20070169,
+          "operation": "reset"
+        }
+      ]
+    },
+    "resolveImageContentURI": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 18,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964780,
+          "entry_vm": 20981164,
+          "function_data": 0,
+          "function_file": 16581816,
+          "function_vm": 16598200,
+          "name_vm": 19980389,
+          "operation": "resolveImageContentURI"
+        }
+      ]
+    },
+    "run": {
+      "as3": [
+        {
+          "abc": "doabc_028.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTAM"
+          ],
+          "method": 4,
+          "native_argc": 0
+        },
+        {
+          "abc": "doabc_030.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTSS"
+          ],
+          "method": 4,
+          "native_argc": 6
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964528,
+          "entry_vm": 20980912,
+          "function_data": 0,
+          "function_file": 16546648,
+          "function_vm": 16563032,
+          "name_vm": 19981084,
+          "operation": "run"
+        },
+        {
+          "entry_file": 20964588,
+          "entry_vm": 20980972,
+          "function_data": 0,
+          "function_file": 16576160,
+          "function_vm": 16592544,
+          "name_vm": 19981084,
+          "operation": "run"
+        },
+        {
+          "entry_file": 21051024,
+          "entry_vm": 21067408,
+          "function_data": 20052624,
+          "function_file": 20036268,
+          "function_vm": 20052652,
+          "name_vm": 20052620,
+          "operation": "run"
+        }
+      ]
+    },
+    "saveFile": {
+      "as3": [
+        {
+          "abc": "doabc_033.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTMail"
+          ],
+          "method": 4,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964648,
+          "entry_vm": 20981032,
+          "function_data": 0,
+          "function_file": 16573840,
+          "function_vm": 16590224,
+          "name_vm": 19981049,
+          "operation": "saveFile"
+        }
+      ]
+    },
+    "sendMail": {
+      "as3": [
+        {
+          "abc": "doabc_033.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTMail"
+          ],
+          "method": 3,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964636,
+          "entry_vm": 20981020,
+          "function_data": 0,
+          "function_file": 16572784,
+          "function_vm": 16589168,
+          "name_vm": 19981040,
+          "operation": "sendMail"
+        }
+      ]
+    },
+    "setDrawMode": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 24,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964312,
+          "entry_vm": 20980696,
+          "function_data": 0,
+          "function_file": 16568812,
+          "function_vm": 16585196,
+          "name_vm": 19981523,
+          "operation": "setDrawMode"
+        }
+      ]
+    },
+    "setMask": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 5,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966028,
+          "entry_vm": 20982412,
+          "function_data": 0,
+          "function_file": 16634620,
+          "function_vm": 16651004,
+          "name_vm": 19979508,
+          "operation": "setMask"
+        }
+      ]
+    },
+    "setMaskWithARGB": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 6,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966040,
+          "entry_vm": 20982424,
+          "function_data": 0,
+          "function_file": 16634796,
+          "function_vm": 16651180,
+          "name_vm": 19979516,
+          "operation": "setMaskWithARGB"
+        }
+      ]
+    },
+    "setNumVertices": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 18,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964240,
+          "entry_vm": 20980624,
+          "function_data": 0,
+          "function_file": 16567804,
+          "function_vm": 16584188,
+          "name_vm": 19981376,
+          "operation": "setNumVertices"
+        }
+      ]
+    },
+    "setParamFloat": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 11,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964120,
+          "entry_vm": 20980504,
+          "function_data": 0,
+          "function_file": 16565036,
+          "function_vm": 16581420,
+          "name_vm": 19981193,
+          "operation": "setParamFloat"
+        }
+      ]
+    },
+    "setParamFloatMatrix": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 30,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964384,
+          "entry_vm": 20980768,
+          "function_data": 0,
+          "function_file": 16569936,
+          "function_vm": 16586320,
+          "name_vm": 19981590,
+          "operation": "setParamFloatMatrix"
+        }
+      ]
+    },
+    "setParamFloatMulti": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 13,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964132,
+          "entry_vm": 20980516,
+          "function_data": 0,
+          "function_file": 16565228,
+          "function_vm": 16581612,
+          "name_vm": 19981207,
+          "operation": "setParamFloatMulti"
+        }
+      ]
+    },
+    "setParamInt": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 12,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964144,
+          "entry_vm": 20980528,
+          "function_data": 0,
+          "function_file": 16565572,
+          "function_vm": 16581956,
+          "name_vm": 19981226,
+          "operation": "setParamInt"
+        }
+      ]
+    },
+    "setParamIntMulti": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 14,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964156,
+          "entry_vm": 20980540,
+          "function_data": 0,
+          "function_file": 16565748,
+          "function_vm": 16582132,
+          "name_vm": 19981238,
+          "operation": "setParamIntMulti"
+        }
+      ]
+    },
+    "setParameters": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 16,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965308,
+          "entry_vm": 20981692,
+          "function_data": 0,
+          "function_file": 16621444,
+          "function_vm": 16637828,
+          "name_vm": 19983734,
+          "operation": "setParameters"
+        }
+      ]
+    },
+    "setPixelsEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 21,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964900,
+          "entry_vm": 20981284,
+          "function_data": 0,
+          "function_file": 16583104,
+          "function_vm": 16599488,
+          "name_vm": 19980580,
+          "operation": "setPixelsEx"
+        }
+      ]
+    },
+    "setRequestedOrientation": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 45,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965188,
+          "entry_vm": 20981572,
+          "function_data": 0,
+          "function_file": 16595664,
+          "function_vm": 16612048,
+          "name_vm": 19980963,
+          "operation": "setRequestedOrientation"
+        }
+      ]
+    },
+    "setStatusBarHidden": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 9,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964756,
+          "entry_vm": 20981140,
+          "function_data": 0,
+          "function_file": 16578432,
+          "function_vm": 16594816,
+          "name_vm": 19980370,
+          "operation": "setStatusBarHidden"
+        }
+      ]
+    },
+    "setVertexAttribDataFloat": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 19,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964252,
+          "entry_vm": 20980636,
+          "function_data": 0,
+          "function_file": 16567936,
+          "function_vm": 16584320,
+          "name_vm": 19981391,
+          "operation": "setVertexAttribDataFloat"
+        }
+      ]
+    },
+    "setVertexAttribDataRange": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 23,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964300,
+          "entry_vm": 20980684,
+          "function_data": 0,
+          "function_file": 16568656,
+          "function_vm": 16585040,
+          "name_vm": 19981498,
+          "operation": "setVertexAttribDataRange"
+        }
+      ]
+    },
+    "setWakeLock": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 41,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965128,
+          "entry_vm": 20981512,
+          "function_data": 0,
+          "function_file": 16593496,
+          "function_vm": 16609880,
+          "name_vm": 19980907,
+          "operation": "setWakeLock"
+        }
+      ]
+    },
+    "shaderCreate": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 36,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964456,
+          "entry_vm": 20980840,
+          "function_data": 0,
+          "function_file": 16571360,
+          "function_vm": 16587744,
+          "name_vm": 19981688,
+          "operation": "shaderCreate"
+        }
+      ]
+    },
+    "shaderDispose": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 37,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964468,
+          "entry_vm": 20980852,
+          "function_data": 0,
+          "function_file": 16571576,
+          "function_vm": 16587960,
+          "name_vm": 19981701,
+          "operation": "shaderDispose"
+        }
+      ]
+    },
+    "showActivityUI": {
+      "as3": [
+        {
+          "abc": "doabc_021.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTActivityUI"
+          ],
+          "method": 3,
+          "native_argc": 5
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965572,
+          "entry_vm": 20981956,
+          "function_data": 0,
+          "function_file": 16544148,
+          "function_vm": 16560532,
+          "name_vm": 19980000,
+          "operation": "showActivityUI"
+        }
+      ]
+    },
+    "showNetworkActivityIndicator": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 47,
+          "native_argc": 1
+        },
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 48,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965212,
+          "entry_vm": 20981596,
+          "function_data": 0,
+          "function_file": 16595728,
+          "function_vm": 16612112,
+          "name_vm": 19981011,
+          "operation": "showNetworkActivityIndicator"
+        }
+      ]
+    },
+    "start": {
+      "as3": [
+        {
+          "abc": "doabc_013.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTWebServer"
+          ],
+          "method": 4,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20733076,
+          "entry_vm": 20749460,
+          "function_data": 19772875,
+          "function_file": 19756497,
+          "function_vm": 19772881,
+          "name_vm": 19979972,
+          "operation": "start"
+        },
+        {
+          "entry_file": 20928444,
+          "entry_vm": 20944828,
+          "function_data": 0,
+          "function_file": 15164648,
+          "function_vm": 15181032,
+          "name_vm": 19979972,
+          "operation": "start"
+        },
+        {
+          "entry_file": 20965596,
+          "entry_vm": 20981980,
+          "function_data": 0,
+          "function_file": 16572264,
+          "function_vm": 16588648,
+          "name_vm": 19979972,
+          "operation": "start"
+        },
+        {
+          "entry_file": 20998816,
+          "entry_vm": 21015200,
+          "function_data": 20117146,
+          "function_file": 16217649,
+          "function_vm": 16234033,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 20999964,
+          "entry_vm": 21016348,
+          "function_data": 20117160,
+          "function_file": 16222217,
+          "function_vm": 16238601,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21003496,
+          "entry_vm": 21019880,
+          "function_data": 20117146,
+          "function_file": 16238821,
+          "function_vm": 16255205,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21024120,
+          "entry_vm": 21040504,
+          "function_data": 20117153,
+          "function_file": 16441081,
+          "function_vm": 16457465,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21024784,
+          "entry_vm": 21041168,
+          "function_data": 20117153,
+          "function_file": 16456293,
+          "function_vm": 16472677,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21042160,
+          "entry_vm": 21058544,
+          "function_data": 20117160,
+          "function_file": 16613520,
+          "function_vm": 16629904,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21042952,
+          "entry_vm": 21059336,
+          "function_data": 20117160,
+          "function_file": 16615412,
+          "function_vm": 16631796,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21044932,
+          "entry_vm": 21061316,
+          "function_data": 20117160,
+          "function_file": 16639100,
+          "function_vm": 16655484,
+          "name_vm": 20038179,
+          "operation": "start"
+        },
+        {
+          "entry_file": 21048960,
+          "entry_vm": 21065344,
+          "function_data": 20038185,
+          "function_file": 20021437,
+          "function_vm": 20037821,
+          "name_vm": 20038179,
+          "operation": "start"
+        }
+      ]
+    },
+    "startBrowse": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 9,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965692,
+          "entry_vm": 20982076,
+          "function_data": 0,
+          "function_file": 16550344,
+          "function_vm": 16566728,
+          "name_vm": 19979949,
+          "operation": "startBrowse"
+        },
+        {
+          "entry_file": 21023576,
+          "entry_vm": 21039960,
+          "function_data": 20117153,
+          "function_file": 16438021,
+          "function_vm": 16454405,
+          "name_vm": 20073460,
+          "operation": "startBrowse"
+        }
+      ]
+    },
+    "startEncodeJPEG": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 5,
+          "native_argc": 3
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20963952,
+          "entry_vm": 20980336,
+          "function_data": 0,
+          "function_file": 16625648,
+          "function_vm": 16642032,
+          "name_vm": 19981786,
+          "operation": "startEncodeJPEG"
+        }
+      ]
+    },
+    "startEncodeLz4": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 4,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20963928,
+          "entry_vm": 20980312,
+          "function_data": 0,
+          "function_file": 16624144,
+          "function_vm": 16640528,
+          "name_vm": 19981755,
+          "operation": "startEncodeLz4"
+        }
+      ]
+    },
+    "startEncodePNG": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 6,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20963964,
+          "entry_vm": 20980348,
+          "function_data": 0,
+          "function_file": 16626416,
+          "function_vm": 16642800,
+          "name_vm": 19981802,
+          "operation": "startEncodePNG"
+        }
+      ]
+    },
+    "startEncodeZLib": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 3,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20963940,
+          "entry_vm": 20980324,
+          "function_data": 0,
+          "function_file": 16625020,
+          "function_vm": 16641404,
+          "name_vm": 19981770,
+          "operation": "startEncodeZLib"
+        }
+      ]
+    },
+    "startPreview": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 17,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965248,
+          "entry_vm": 20981632,
+          "function_data": 0,
+          "function_file": 16618096,
+          "function_vm": 16634480,
+          "name_vm": 19983562,
+          "operation": "startPreview"
+        }
+      ]
+    },
+    "stop": {
+      "as3": [
+        {
+          "abc": "doabc_013.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTWebServer"
+          ],
+          "method": 5,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20928456,
+          "entry_vm": 20944840,
+          "function_data": 0,
+          "function_file": 15165660,
+          "function_vm": 15182044,
+          "name_vm": 19979978,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 20965608,
+          "entry_vm": 20981992,
+          "function_data": 0,
+          "function_file": 16572548,
+          "function_vm": 16588932,
+          "name_vm": 19979978,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 20993020,
+          "entry_vm": 21009404,
+          "function_data": 20117153,
+          "function_file": 13403388,
+          "function_vm": 13419772,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 20998828,
+          "entry_vm": 21015212,
+          "function_data": 20117153,
+          "function_file": 16218153,
+          "function_vm": 16234537,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 20999976,
+          "entry_vm": 21016360,
+          "function_data": 20117153,
+          "function_file": 16222333,
+          "function_vm": 16238717,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21003508,
+          "entry_vm": 21019892,
+          "function_data": 20117153,
+          "function_file": 16238853,
+          "function_vm": 16255237,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21023588,
+          "entry_vm": 21039972,
+          "function_data": 20117153,
+          "function_file": 16438473,
+          "function_vm": 16454857,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21024144,
+          "entry_vm": 21040528,
+          "function_data": 20117153,
+          "function_file": 16442321,
+          "function_vm": 16458705,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21024796,
+          "entry_vm": 21041180,
+          "function_data": 20117153,
+          "function_file": 16456689,
+          "function_vm": 16473073,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21042172,
+          "entry_vm": 21058556,
+          "function_data": 20117160,
+          "function_file": 16613764,
+          "function_vm": 16630148,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21042964,
+          "entry_vm": 21059348,
+          "function_data": 20117160,
+          "function_file": 16615724,
+          "function_vm": 16632108,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21044944,
+          "entry_vm": 21061328,
+          "function_data": 20117160,
+          "function_file": 16639344,
+          "function_vm": 16655728,
+          "name_vm": 20042994,
+          "operation": "stop"
+        },
+        {
+          "entry_file": 21049480,
+          "entry_vm": 21065864,
+          "function_data": 20035348,
+          "function_file": 20026615,
+          "function_vm": 20042999,
+          "name_vm": 20042994,
+          "operation": "stop"
+        }
+      ]
+    },
+    "stopBrowse": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 10,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965704,
+          "entry_vm": 20982088,
+          "function_data": 0,
+          "function_file": 16550652,
+          "function_vm": 16567036,
+          "name_vm": 19979961,
+          "operation": "stopBrowse"
+        }
+      ]
+    },
+    "stopPreview": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 18,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965260,
+          "entry_vm": 20981644,
+          "function_data": 0,
+          "function_file": 16618324,
+          "function_vm": 16634708,
+          "name_vm": 19983575,
+          "operation": "stopPreview"
+        }
+      ]
+    },
+    "switchMode": {
+      "as3": [
+        {
+          "abc": "doabc_023.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTQuickSelection"
+          ],
+          "method": 13,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20966124,
+          "entry_vm": 20982508,
+          "function_data": 0,
+          "function_file": 16637744,
+          "function_vm": 16654128,
+          "name_vm": 19979585,
+          "operation": "switchMode"
+        }
+      ]
+    },
+    "takePicture": {
+      "as3": [
+        {
+          "abc": "doabc_031.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTCamera"
+          ],
+          "method": 19,
+          "native_argc": 2
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965332,
+          "entry_vm": 20981716,
+          "function_data": 0,
+          "function_file": 16622892,
+          "function_vm": 16639276,
+          "name_vm": 19983722,
+          "operation": "takePicture"
+        },
+        {
+          "entry_file": 20990196,
+          "entry_vm": 21006580,
+          "function_data": 20117153,
+          "function_file": 13209896,
+          "function_vm": 13226280,
+          "name_vm": 20041134,
+          "operation": "takePicture"
+        },
+        {
+          "entry_file": 21049332,
+          "entry_vm": 21065716,
+          "function_data": 20041146,
+          "function_file": 20024774,
+          "function_vm": 20041158,
+          "name_vm": 20041134,
+          "operation": "takePicture"
+        }
+      ]
+    },
+    "trace": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 4,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964684,
+          "entry_vm": 20981068,
+          "function_data": 0,
+          "function_file": 16576736,
+          "function_vm": 16593120,
+          "name_vm": 19980306,
+          "operation": "trace"
+        }
+      ]
+    },
+    "transferPurchasedProducts": {
+      "as3": [
+        {
+          "abc": "doabc_008.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+          ],
+          "method": 12,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965980,
+          "entry_vm": 20982364,
+          "function_data": 0,
+          "function_file": 16548096,
+          "function_vm": 16564480,
+          "name_vm": 19979676,
+          "operation": "transferPurchasedProducts"
+        },
+        {
+          "entry_file": 21029984,
+          "entry_vm": 21046368,
+          "function_data": 20117160,
+          "function_file": 16501456,
+          "function_vm": 16517840,
+          "name_vm": 20078241,
+          "operation": "transferPurchasedProducts"
+        },
+        {
+          "entry_file": 21054420,
+          "entry_vm": 21070804,
+          "function_data": 20078291,
+          "function_file": 20065726,
+          "function_vm": 20082110,
+          "name_vm": 20078241,
+          "operation": "transferPurchasedProducts"
+        }
+      ]
+    },
+    "uncompressBitmapDataEx": {
+      "as3": [
+        {
+          "abc": "doabc_035.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTNEUtils"
+          ],
+          "method": 30,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964984,
+          "entry_vm": 20981368,
+          "function_data": 0,
+          "function_file": 16585724,
+          "function_vm": 16602108,
+          "name_vm": 19980675,
+          "operation": "uncompressBitmapDataEx"
+        }
+      ]
+    },
+    "unpublishService": {
+      "as3": [
+        {
+          "abc": "doabc_016.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTBonjour"
+          ],
+          "method": 8,
+          "native_argc": 1
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20965680,
+          "entry_vm": 20982064,
+          "function_data": 0,
+          "function_file": 16550140,
+          "function_vm": 16566524,
+          "name_vm": 19979932,
+          "operation": "unpublishService"
+        }
+      ]
+    },
+    "updateTextureFromBitmapData": {
+      "as3": [
+        {
+          "abc": "doabc_022.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTGL"
+          ],
+          "method": 10,
+          "native_argc": 4
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964192,
+          "entry_vm": 20980576,
+          "function_data": 0,
+          "function_file": 16566680,
+          "function_vm": 16583064,
+          "name_vm": 19981304,
+          "operation": "updateTextureFromBitmapData"
+        }
+      ]
+    },
+    "waitFinishedEncoding": {
+      "as3": [
+        {
+          "abc": "doabc_012.abc",
+          "classes": [
+            "com.adobe.ttpixel.extension::TTImpExp"
+          ],
+          "method": 12,
+          "native_argc": 0
+        }
+      ],
+      "registrations": [
+        {
+          "entry_file": 20964036,
+          "entry_vm": 20980420,
+          "function_data": 0,
+          "function_file": 16627656,
+          "function_vm": 16644040,
+          "name_vm": 19981905,
+          "operation": "waitFinishedEncoding"
+        }
+      ]
+    }
+  },
+  "record_layout": {
+    "function_data_offset": 4,
+    "function_offset": 8,
+    "name_offset": 0,
+    "size": 12
+  },
+  "statistics": {
+    "ane_unique_operations": 171,
+    "registration_coverage_percent": 99.42,
+    "registration_mapped": 170,
+    "registration_missing": 1
+  }
+}

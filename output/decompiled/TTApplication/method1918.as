@@ -1,0 +1,22 @@
+// Decompiled by Phoenix
+
+function method1918()
+{
+    local0.iShowMode = SHOW_MODE_EDITOR;
+    com.adobe.cab.application::CABModule.createFromResource("model").iModel = com.adobe.ttpixel.editor.app::TTModel;
+    local0.iModel.containerView.removeFromSuperview();
+    local0.iModel.containerView.moveTo(0, 0);
+    local0.iModel.containerView.sizeTo(local0.iContentView.width, local0.iContentView.height);
+    local0.iModel.deleteWindows();
+    "return";
+    if ()
+    {
+    }
+    local0.iShowMode = SHOW_MODE_EDITOR;
+    com.adobe.cab.application::CABModule.createFromResource("model").iModel = com.adobe.ttpixel.editor.app::TTModel;
+    local0.iModel.containerView.removeFromSuperview();
+    local0.iModel.containerView.moveTo(0, 0);
+    local0.iModel.containerView.sizeTo(local0.iContentView.width, local0.iContentView.height);
+    local0.iModel.deleteWindows();
+    "return";
+}

@@ -1,0 +1,1743 @@
+         (undefined) external _ALAssetPropertyOrientation (from AssetsLibrary)
+         (undefined) external _ALAssetsGroupPropertyName (from AssetsLibrary)
+         (undefined) external _ALAssetsGroupPropertyPersistentID (from AssetsLibrary)
+         (undefined) external _ALAssetsGroupPropertyType (from AssetsLibrary)
+         (undefined) external _AUGraphAddNode (from AudioToolbox)
+         (undefined) external _AUGraphInitialize (from AudioToolbox)
+         (undefined) external _AUGraphNodeInfo (from AudioToolbox)
+         (undefined) external _AUGraphOpen (from AudioToolbox)
+         (undefined) external _AUGraphStart (from AudioToolbox)
+         (undefined) external _AUGraphStop (from AudioToolbox)
+         (undefined) external _AUGraphUninitialize (from AudioToolbox)
+         (undefined) external _AVAudioSessionCategoryPlayAndRecord (from AVFoundation)
+         (undefined) external _AVCaptureSessionDidStartRunningNotification (from AVFoundation)
+         (undefined) external _AVCaptureSessionDidStopRunningNotification (from AVFoundation)
+         (undefined) external _AVCaptureSessionInterruptionEndedNotification (from AVFoundation)
+         (undefined) external _AVCaptureSessionPreset1280x720 (from AVFoundation)
+         (undefined) external _AVCaptureSessionPreset1920x1080 (from AVFoundation)
+         (undefined) external _AVCaptureSessionPreset640x480 (from AVFoundation)
+         (undefined) external _AVCaptureSessionPresetLow (from AVFoundation)
+         (undefined) external _AVCaptureSessionPresetMedium (from AVFoundation)
+         (undefined) external _AVCaptureSessionRuntimeErrorNotification (from AVFoundation)
+         (undefined) external _AVCaptureSessionWasInterruptedNotification (from AVFoundation)
+         (undefined) external _AVLayerVideoGravityResize (from AVFoundation)
+         (undefined) external _AVMediaTypeText (from AVFoundation)
+         (undefined) external _AVMediaTypeVideo (from AVFoundation)
+         (undefined) external _AVPlayerItemDidPlayToEndTimeNotification (from AVFoundation)
+         (undefined) external _AVVideoCodecJPEG (from AVFoundation)
+         (undefined) external _AVVideoCodecKey (from AVFoundation)
+         (undefined) external _AudioComponentFindNext (from AudioToolbox)
+         (undefined) external _AudioComponentInstanceNew (from AudioToolbox)
+         (undefined) external _AudioOutputUnitStart (from AudioToolbox)
+         (undefined) external _AudioOutputUnitStop (from AudioToolbox)
+         (undefined) external _AudioQueueAllocateBuffer (from AudioToolbox)
+         (undefined) external _AudioQueueDispose (from AudioToolbox)
+         (undefined) external _AudioQueueEnqueueBuffer (from AudioToolbox)
+         (undefined) external _AudioQueueEnqueueBufferWithParameters (from AudioToolbox)
+         (undefined) external _AudioQueueFlush (from AudioToolbox)
+         (undefined) external _AudioQueueFreeBuffer (from AudioToolbox)
+         (undefined) external _AudioQueueGetParameter (from AudioToolbox)
+         (undefined) external _AudioQueueGetProperty (from AudioToolbox)
+         (undefined) external _AudioQueueNewInput (from AudioToolbox)
+         (undefined) external _AudioQueueNewOutput (from AudioToolbox)
+         (undefined) external _AudioQueueSetParameter (from AudioToolbox)
+         (undefined) external _AudioQueueStart (from AudioToolbox)
+         (undefined) external _AudioQueueStop (from AudioToolbox)
+         (undefined) external _AudioSessionAddPropertyListener (from AudioToolbox)
+         (undefined) external _AudioSessionGetProperty (from AudioToolbox)
+         (undefined) external _AudioSessionGetPropertySize (from AudioToolbox)
+         (undefined) external _AudioSessionInitialize (from AudioToolbox)
+         (undefined) external _AudioSessionSetActive (from AudioToolbox)
+         (undefined) external _AudioSessionSetProperty (from AudioToolbox)
+         (undefined) external _AudioUnitGetProperty (from AudioToolbox)
+         (undefined) external _AudioUnitInitialize (from AudioToolbox)
+         (undefined) external _AudioUnitRender (from AudioToolbox)
+         (undefined) external _AudioUnitSetProperty (from AudioToolbox)
+         (undefined) external _CACurrentMediaTime (from QuartzCore)
+         (undefined) external _CATransform3DIdentity (from QuartzCore)
+         (undefined) external _CATransform3DScale (from QuartzCore)
+         (undefined) weak external _CBCentralManagerOptionShowPowerAlertKey (from CoreBluetooth)
+         (undefined) external _CBCentralManagerScanOptionAllowDuplicatesKey (from CoreBluetooth)
+         (undefined) external _CBConnectPeripheralOptionNotifyOnDisconnectionKey (from CoreBluetooth)
+         (undefined) external _CC_MD5 (from libSystem)
+         (undefined) external _CC_SHA1 (from libSystem)
+         (undefined) external _CFAbsoluteTimeGetCurrent (from CoreFoundation)
+         (undefined) external _CFArrayGetCount (from CoreFoundation)
+         (undefined) external _CFArrayGetTypeID (from CoreFoundation)
+         (undefined) external _CFArrayGetValueAtIndex (from CoreFoundation)
+         (undefined) external _CFBooleanGetValue (from CoreFoundation)
+         (undefined) external _CFBundleGetBundleWithIdentifier (from CoreFoundation)
+         (undefined) external _CFBundleGetFunctionPointerForName (from CoreFoundation)
+         (undefined) external _CFCalendarCreateWithIdentifier (from CoreFoundation)
+         (undefined) external _CFCalendarGetFirstWeekday (from CoreFoundation)
+         (undefined) external _CFDataCreate (from CoreFoundation)
+         (undefined) external _CFDataGetBytePtr (from CoreFoundation)
+         (undefined) external _CFDataGetLength (from CoreFoundation)
+         (undefined) external _CFDateFormatterCopyProperty (from CoreFoundation)
+         (undefined) external _CFDateFormatterCreate (from CoreFoundation)
+         (undefined) external _CFDateFormatterCreateStringWithAbsoluteTime (from CoreFoundation)
+         (undefined) external _CFDateFormatterGetFormat (from CoreFoundation)
+         (undefined) external _CFDateFormatterSetFormat (from CoreFoundation)
+         (undefined) external _CFDateFormatterSetProperty (from CoreFoundation)
+         (undefined) external _CFDictionaryApplyFunction (from CoreFoundation)
+         (undefined) external _CFDictionaryCreateMutable (from CoreFoundation)
+         (undefined) external _CFDictionaryGetCount (from CoreFoundation)
+         (undefined) external _CFDictionaryGetCountOfKey (from CoreFoundation)
+         (undefined) external _CFDictionaryGetTypeID (from CoreFoundation)
+         (undefined) external _CFDictionaryGetValue (from CoreFoundation)
+         (undefined) external _CFDictionaryRemoveValue (from CoreFoundation)
+         (undefined) external _CFDictionarySetValue (from CoreFoundation)
+         (undefined) external _CFEqual (from CoreFoundation)
+         (undefined) external _CFGetTypeID (from CoreFoundation)
+         (undefined) external _CFGregorianDateGetAbsoluteTime (from CoreFoundation)
+         (undefined) external _CFHTTPMessageCopyAllHeaderFields (from CFNetwork)
+         (undefined) external _CFHTTPMessageCreateRequest (from CFNetwork)
+         (undefined) external _CFHTTPMessageGetResponseStatusCode (from CFNetwork)
+         (undefined) external _CFHTTPMessageGetTypeID (from CFNetwork)
+         (undefined) external _CFHTTPMessageSetBody (from CFNetwork)
+         (undefined) external _CFHTTPMessageSetHeaderFieldValue (from CFNetwork)
+         (undefined) external _CFLocaleCopyAvailableLocaleIdentifiers (from CoreFoundation)
+         (undefined) external _CFLocaleCopyCurrent (from CoreFoundation)
+         (undefined) external _CFLocaleCreate (from CoreFoundation)
+         (undefined) external _CFLocaleCreateCopy (from CoreFoundation)
+         (undefined) external _CFLocaleGetIdentifier (from CoreFoundation)
+         (undefined) external _CFMakeCollectable (from CoreFoundation)
+         (undefined) external _CFNetworkCopyProxiesForURL (from CFNetwork)
+         (undefined) external _CFNetworkCopySystemProxySettings (from CFNetwork)
+         (undefined) external _CFNetworkExecuteProxyAutoConfigurationURL (from CFNetwork)
+         (undefined) external _CFNotificationCenterAddObserver (from CoreFoundation)
+         (undefined) external _CFNotificationCenterGetDarwinNotifyCenter (from CoreFoundation)
+         (undefined) external _CFNotificationCenterRemoveEveryObserver (from CoreFoundation)
+         (undefined) external _CFNumberCreate (from CoreFoundation)
+         (undefined) external _CFNumberFormatterCopyProperty (from CoreFoundation)
+         (undefined) external _CFNumberFormatterCreate (from CoreFoundation)
+         (undefined) external _CFNumberFormatterCreateStringWithValue (from CoreFoundation)
+         (undefined) external _CFNumberFormatterSetProperty (from CoreFoundation)
+         (undefined) external _CFNumberGetTypeID (from CoreFoundation)
+         (undefined) external _CFNumberGetValue (from CoreFoundation)
+         (undefined) external _CFPropertyListCreateData (from CoreFoundation)
+         (undefined) external _CFPropertyListCreateWithData (from CoreFoundation)
+         (undefined) external _CFReadStreamClose (from CoreFoundation)
+         (undefined) external _CFReadStreamCopyError (from CoreFoundation)
+         (undefined) external _CFReadStreamCopyProperty (from CoreFoundation)
+         (undefined) external _CFReadStreamCreateForHTTPRequest (from CFNetwork)
+         (undefined) external _CFReadStreamCreateForStreamedHTTPRequest (from CFNetwork)
+         (undefined) external _CFReadStreamCreateWithBytesNoCopy (from CoreFoundation)
+         (undefined) external _CFReadStreamGetError (from CoreFoundation)
+         (undefined) external _CFReadStreamGetStatus (from CoreFoundation)
+         (undefined) external _CFReadStreamHasBytesAvailable (from CoreFoundation)
+         (undefined) external _CFReadStreamOpen (from CoreFoundation)
+         (undefined) external _CFReadStreamRead (from CoreFoundation)
+         (undefined) external _CFReadStreamScheduleWithRunLoop (from CoreFoundation)
+         (undefined) external _CFReadStreamSetClient (from CoreFoundation)
+         (undefined) external _CFReadStreamSetProperty (from CoreFoundation)
+         (undefined) external _CFReadStreamUnscheduleFromRunLoop (from CoreFoundation)
+         (undefined) external _CFRelease (from CoreFoundation)
+         (undefined) external _CFRetain (from CoreFoundation)
+         (undefined) external _CFRunLoopAddSource (from CoreFoundation)
+         (undefined) external _CFRunLoopGetCurrent (from CoreFoundation)
+         (undefined) external _CFRunLoopRemoveSource (from CoreFoundation)
+         (undefined) external _CFRunLoopRunInMode (from CoreFoundation)
+         (undefined) external _CFRunLoopStop (from CoreFoundation)
+         (undefined) external _CFSocketCreateRunLoopSource (from CoreFoundation)
+         (undefined) external _CFSocketCreateWithNative (from CoreFoundation)
+         (undefined) external _CFSocketGetSocketFlags (from CoreFoundation)
+         (undefined) external _CFSocketInvalidate (from CoreFoundation)
+         (undefined) external _CFSocketSetSocketFlags (from CoreFoundation)
+         (undefined) external _CFStreamCreatePairWithSocket (from CoreFoundation)
+         (undefined) external _CFStreamCreatePairWithSocketToHost (from CoreFoundation)
+         (undefined) external _CFStringAppend (from CoreFoundation)
+         (undefined) external _CFStringAppendCString (from CoreFoundation)
+         (undefined) external _CFStringAppendCharacters (from CoreFoundation)
+         (undefined) external _CFStringCompare (from CoreFoundation)
+         (undefined) external _CFStringCompareWithOptionsAndLocale (from CoreFoundation)
+         (undefined) external _CFStringConvertEncodingToNSStringEncoding (from CoreFoundation)
+         (undefined) external _CFStringConvertEncodingToWindowsCodepage (from CoreFoundation)
+         (undefined) external _CFStringConvertWindowsCodepageToEncoding (from CoreFoundation)
+         (undefined) external _CFStringCreateCopy (from CoreFoundation)
+         (undefined) external _CFStringCreateMutable (from CoreFoundation)
+         (undefined) external _CFStringCreateMutableCopy (from CoreFoundation)
+         (undefined) external _CFStringCreateWithBytes (from CoreFoundation)
+         (undefined) external _CFStringCreateWithCString (from CoreFoundation)
+         (undefined) external _CFStringCreateWithCStringNoCopy (from CoreFoundation)
+         (undefined) external _CFStringCreateWithCharacters (from CoreFoundation)
+         (undefined) external _CFStringGetBytes (from CoreFoundation)
+         (undefined) external _CFStringGetCString (from CoreFoundation)
+         (undefined) external _CFStringGetCStringPtr (from CoreFoundation)
+         (undefined) external _CFStringGetCharacters (from CoreFoundation)
+         (undefined) external _CFStringGetLength (from CoreFoundation)
+         (undefined) external _CFStringGetMaximumSizeForEncoding (from CoreFoundation)
+         (undefined) external _CFStringGetSystemEncoding (from CoreFoundation)
+         (undefined) external _CFStringGetTypeID (from CoreFoundation)
+         (undefined) external _CFStringLowercase (from CoreFoundation)
+         (undefined) external _CFStringNormalize (from CoreFoundation)
+         (undefined) external _CFStringUppercase (from CoreFoundation)
+         (undefined) external _CFTimeZoneCopyDefault (from CoreFoundation)
+         (undefined) external _CFTimeZoneCopySystem (from CoreFoundation)
+         (undefined) external _CFTimeZoneCreateWithTimeIntervalFromGMT (from CoreFoundation)
+         (undefined) external _CFTimeZoneGetSecondsFromGMT (from CoreFoundation)
+         (undefined) external _CFTimeZoneIsDaylightSavingTime (from CoreFoundation)
+         (undefined) external _CFURLCopyNetLocation (from CoreFoundation)
+         (undefined) external _CFURLCreateAbsoluteURLWithBytes (from CoreFoundation)
+         (undefined) external _CFURLCreateFromFileSystemRepresentation (from CoreFoundation)
+         (undefined) external _CFURLCreateStringByAddingPercentEscapes (from CoreFoundation)
+         (undefined) external _CFURLCreateStringByReplacingPercentEscapesUsingEncoding (from CoreFoundation)
+         (undefined) external _CFURLCreateWithBytes (from CoreFoundation)
+         (undefined) external _CFURLCreateWithFileSystemPath (from CoreFoundation)
+         (undefined) external _CFURLCreateWithString (from CoreFoundation)
+         (undefined) external _CFURLGetFileSystemRepresentation (from CoreFoundation)
+         (undefined) external _CFURLGetTypeID (from CoreFoundation)
+         (undefined) external _CFUUIDCreateString (from CoreFoundation)
+         (undefined) external _CFWriteStreamCanAcceptBytes (from CoreFoundation)
+         (undefined) external _CFWriteStreamClose (from CoreFoundation)
+         (undefined) external _CFWriteStreamCopyError (from CoreFoundation)
+         (undefined) external _CFWriteStreamOpen (from CoreFoundation)
+         (undefined) external _CFWriteStreamScheduleWithRunLoop (from CoreFoundation)
+         (undefined) external _CFWriteStreamSetClient (from CoreFoundation)
+         (undefined) external _CFWriteStreamSetProperty (from CoreFoundation)
+         (undefined) external _CFWriteStreamUnscheduleFromRunLoop (from CoreFoundation)
+         (undefined) external _CFWriteStreamWrite (from CoreFoundation)
+         (undefined) external _CGAffineTransformConcat (from CoreGraphics)
+         (undefined) external _CGAffineTransformEqualToTransform (from CoreGraphics)
+         (undefined) external _CGAffineTransformIdentity (from CoreGraphics)
+         (undefined) external _CGAffineTransformInvert (from CoreGraphics)
+         (undefined) external _CGAffineTransformIsIdentity (from CoreGraphics)
+         (undefined) external _CGAffineTransformMakeRotation (from CoreGraphics)
+         (undefined) external _CGAffineTransformMakeScale (from CoreGraphics)
+         (undefined) external _CGAffineTransformMakeTranslation (from CoreGraphics)
+         (undefined) external _CGAffineTransformRotate (from CoreGraphics)
+         (undefined) external _CGAffineTransformScale (from CoreGraphics)
+         (undefined) external _CGAffineTransformTranslate (from CoreGraphics)
+         (undefined) external _CGBitmapContextCreate (from CoreGraphics)
+         (undefined) external _CGBitmapContextCreateImage (from CoreGraphics)
+         (undefined) external _CGBitmapContextGetBytesPerRow (from CoreGraphics)
+         (undefined) external _CGBitmapContextGetData (from CoreGraphics)
+         (undefined) external _CGColorGetComponents (from CoreGraphics)
+         (undefined) external _CGColorGetNumberOfComponents (from CoreGraphics)
+         (undefined) external _CGColorSpaceCreateDeviceRGB (from CoreGraphics)
+         (undefined) external _CGColorSpaceRelease (from CoreGraphics)
+         (undefined) external _CGContextAddArc (from CoreGraphics)
+         (undefined) external _CGContextClipToRect (from CoreGraphics)
+         (undefined) external _CGContextConcatCTM (from CoreGraphics)
+         (undefined) external _CGContextDrawImage (from CoreGraphics)
+         (undefined) external _CGContextDrawPath (from CoreGraphics)
+         (undefined) external _CGContextFillPath (from CoreGraphics)
+         (undefined) external _CGContextFillRect (from CoreGraphics)
+         (undefined) external _CGContextFlush (from CoreGraphics)
+         (undefined) external _CGContextGetCTM (from CoreGraphics)
+         (undefined) external _CGContextMoveToPoint (from CoreGraphics)
+         (undefined) external _CGContextRelease (from CoreGraphics)
+         (undefined) external _CGContextRestoreGState (from CoreGraphics)
+         (undefined) external _CGContextRotateCTM (from CoreGraphics)
+         (undefined) external _CGContextSaveGState (from CoreGraphics)
+         (undefined) external _CGContextScaleCTM (from CoreGraphics)
+         (undefined) external _CGContextSetCharacterSpacing (from CoreGraphics)
+         (undefined) external _CGContextSetFont (from CoreGraphics)
+         (undefined) external _CGContextSetFontSize (from CoreGraphics)
+         (undefined) external _CGContextSetLineWidth (from CoreGraphics)
+         (undefined) external _CGContextSetRGBFillColor (from CoreGraphics)
+         (undefined) external _CGContextSetRGBStrokeColor (from CoreGraphics)
+         (undefined) external _CGContextSetStrokeColorWithColor (from CoreGraphics)
+         (undefined) external _CGContextSetTextDrawingMode (from CoreGraphics)
+         (undefined) external _CGContextSetTextMatrix (from CoreGraphics)
+         (undefined) external _CGContextSetTextPosition (from CoreGraphics)
+         (undefined) external _CGContextShowGlyphsAtPositions (from CoreGraphics)
+         (undefined) external _CGContextShowGlyphsWithAdvances (from CoreGraphics)
+         (undefined) external _CGContextStrokeLineSegments (from CoreGraphics)
+         (undefined) external _CGContextStrokePath (from CoreGraphics)
+         (undefined) external _CGContextTranslateCTM (from CoreGraphics)
+         (undefined) external _CGDataProviderCreateWithCFData (from CoreGraphics)
+         (undefined) external _CGDataProviderCreateWithData (from CoreGraphics)
+         (undefined) external _CGDataProviderRelease (from CoreGraphics)
+         (undefined) external _CGFontCopyTableForTag (from CoreGraphics)
+         (undefined) external _CGFontCopyTableTags (from CoreGraphics)
+         (undefined) external _CGFontCreateWithFontName (from CoreGraphics)
+         (undefined) external _CGFontRelease (from CoreGraphics)
+         (undefined) external _CGImageCreate (from CoreGraphics)
+         (undefined) external _CGImageCreateWithImageInRect (from CoreGraphics)
+         (undefined) external _CGImageGetAlphaInfo (from CoreGraphics)
+         (undefined) external _CGImageGetBitmapInfo (from CoreGraphics)
+         (undefined) external _CGImageGetBitsPerComponent (from CoreGraphics)
+         (undefined) external _CGImageGetBitsPerPixel (from CoreGraphics)
+         (undefined) external _CGImageGetBytesPerRow (from CoreGraphics)
+         (undefined) external _CGImageGetHeight (from CoreGraphics)
+         (undefined) external _CGImageGetWidth (from CoreGraphics)
+         (undefined) external _CGImageRelease (from CoreGraphics)
+         (undefined) external _CGPathAddLineToPoint (from CoreGraphics)
+         (undefined) external _CGPathCreateMutable (from CoreGraphics)
+         (undefined) external _CGPathMoveToPoint (from CoreGraphics)
+         (undefined) external _CGPathRelease (from CoreGraphics)
+         (undefined) external _CGPointZero (from CoreGraphics)
+         (undefined) external _CGRectApplyAffineTransform (from CoreGraphics)
+         (undefined) external _CGRectContainsPoint (from CoreGraphics)
+         (undefined) external _CGRectGetHeight (from CoreGraphics)
+         (undefined) external _CGRectGetMinX (from CoreGraphics)
+         (undefined) external _CGRectGetMinY (from CoreGraphics)
+         (undefined) external _CGRectGetWidth (from CoreGraphics)
+         (undefined) external _CGRectIntersectsRect (from CoreGraphics)
+         (undefined) external _CGRectOffset (from CoreGraphics)
+         (undefined) external _CGRectZero (from CoreGraphics)
+         (undefined) external _CMCopyDictionaryOfAttachments (from CoreMedia)
+         (undefined) external _CMSampleBufferGetImageBuffer (from CoreMedia)
+         (undefined) external _CMTimeCompare (from CoreMedia)
+         (undefined) external _CMTimeGetSeconds (from CoreMedia)
+         (undefined) external _CMTimeMake (from CoreMedia)
+         (undefined) external _CVPixelBufferGetBaseAddress (from CoreVideo)
+         (undefined) external _CVPixelBufferGetBytesPerRow (from CoreVideo)
+         (undefined) external _CVPixelBufferGetDataSize (from CoreVideo)
+         (undefined) external _CVPixelBufferGetHeight (from CoreVideo)
+         (undefined) external _CVPixelBufferGetPixelFormatType (from CoreVideo)
+         (undefined) external _CVPixelBufferGetWidth (from CoreVideo)
+         (undefined) external _CVPixelBufferLockBaseAddress (from CoreVideo)
+         (undefined) external _CVPixelBufferRelease (from CoreVideo)
+         (undefined) external _CVPixelBufferRetain (from CoreVideo)
+         (undefined) external _CVPixelBufferUnlockBaseAddress (from CoreVideo)
+         (undefined) external _DNSServiceBrowse (from libSystem)
+         (undefined) external _DNSServiceProcessResult (from libSystem)
+         (undefined) external _DNSServiceQueryRecord (from libSystem)
+         (undefined) external _DNSServiceRefDeallocate (from libSystem)
+         (undefined) external _DNSServiceRefSockFD (from libSystem)
+         (undefined) external _DNSServiceRegister (from libSystem)
+         (undefined) external _DNSServiceResolve (from libSystem)
+         (undefined) external _DNSServiceSetDispatchQueue (from libSystem)
+         (undefined) external _DisposeAUGraph (from AudioToolbox)
+         (undefined) external _NSClassFromString (from Foundation)
+         (undefined) external _NSCocoaErrorDomain (from Foundation)
+         (undefined) external _NSDefaultRunLoopMode (from CoreFoundation)
+         (undefined) external _NSFileCreationDate (from Foundation)
+         (undefined) external _NSFileGroupOwnerAccountID (from Foundation)
+         (undefined) external _NSFileGroupOwnerAccountName (from Foundation)
+         (undefined) external _NSFileHFSCreatorCode (from Foundation)
+         (undefined) external _NSFileModificationDate (from Foundation)
+         (undefined) external _NSFileOwnerAccountID (from Foundation)
+         (undefined) external _NSFileOwnerAccountName (from Foundation)
+         (undefined) external _NSFilePosixPermissions (from Foundation)
+         (undefined) external _NSFileSize (from Foundation)
+         (undefined) external _NSFileSystemFreeSize (from Foundation)
+         (undefined) external _NSFileSystemSize (from Foundation)
+         (undefined) external _NSFileTypeSymbolicLink (from Foundation)
+         (undefined) external _NSHomeDirectory (from Foundation)
+         (undefined) external _NSInvalidArgumentException (from CoreFoundation)
+         (undefined) external _NSLocalizedDescriptionKey (from Foundation)
+         (undefined) external _NSLocalizedFailureReasonErrorKey (from Foundation)
+         (undefined) external _NSLog (from Foundation)
+         (undefined) external _NSLogv (from Foundation)
+         (undefined) external _NSNetServicesErrorDomain (from Foundation)
+         (undefined) external _NSOSStatusErrorDomain (from Foundation)
+         (undefined) external _NSPOSIXErrorDomain (from Foundation)
+         (undefined) external _NSSearchPathForDirectoriesInDomains (from Foundation)
+         (undefined) external _NSStringFromSelector (from Foundation)
+         (undefined) external _NSTemporaryDirectory (from Foundation)
+         (undefined) external _NSThreadWillExitNotification (from Foundation)
+         (undefined) external _NSURLAuthenticationMethodServerTrust (from Foundation)
+         (undefined) external _NSURLErrorDomain (from Foundation)
+         (undefined) external _NSURLErrorFailingURLStringErrorKey (from Foundation)
+         (undefined) weak external _NSURLIsExcludedFromBackupKey (from CoreFoundation)
+         (undefined) external _NewAUGraph (from AudioToolbox)
+         (undefined) external _OBJC_CLASS_$_ALAssetsFilter (from AssetsLibrary)
+         (undefined) external _OBJC_CLASS_$_ALAssetsLibrary (from AssetsLibrary)
+         (undefined) external _OBJC_CLASS_$_AVAudioPlayer (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVAudioSession (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVCaptureDevice (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVCaptureDeviceInput (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVCaptureSession (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVCaptureStillImageOutput (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVCaptureVideoDataOutput (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVPlayer (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVPlayerItem (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVPlayerLayer (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_AVURLAsset (from AVFoundation)
+         (undefined) external _OBJC_CLASS_$_CABasicAnimation (from QuartzCore)
+         (undefined) external _OBJC_CLASS_$_CAEAGLLayer (from QuartzCore)
+         (undefined) external _OBJC_CLASS_$_CAKeyframeAnimation (from QuartzCore)
+         (undefined) external _OBJC_CLASS_$_CALayer (from QuartzCore)
+         (undefined) external _OBJC_CLASS_$_CATransaction (from QuartzCore)
+         (undefined) external _OBJC_CLASS_$_CBCentralManager (from CoreBluetooth)
+         (undefined) external _OBJC_CLASS_$_CBUUID (from CoreBluetooth)
+         (undefined) external _OBJC_CLASS_$_CIContext (from CoreImage)
+         (undefined) external _OBJC_CLASS_$_CIFilter (from CoreImage)
+         (undefined) external _OBJC_CLASS_$_CIImage (from CoreImage)
+         (undefined) external _OBJC_CLASS_$_CLLocation (from CoreLocation)
+         (undefined) external _OBJC_CLASS_$_CLLocationManager (from CoreLocation)
+         (undefined) external _OBJC_CLASS_$_EAGLContext (from OpenGLES)
+         (undefined) external _OBJC_CLASS_$_MFMailComposeViewController (from MessageUI)
+         (undefined) external _OBJC_CLASS_$_NSArray (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSAssertionHandler (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSAutoreleasePool (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSBundle (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSCharacterSet (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSData (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSDate (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSDateFormatter (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSDictionary (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSError (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSException (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSFileHandle (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSFileManager (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSHTTPCookie (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSHTTPCookieStorage (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSHTTPURLResponse (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSInvocation (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSJSONSerialization (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSKeyedUnarchiver (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSLocale (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSLock (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSMachPort (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableArray (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableData (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableDictionary (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableIndexSet (from Foundation)
+         (undefined) weak external _OBJC_CLASS_$_NSMutableOrderedSet (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableSet (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableString (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSMutableURLRequest (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSNetService (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSNetServiceBrowser (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSNotificationCenter (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSNull (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSNumber (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSNumberFormatter (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSObject (from CoreFoundation)
+         (undefined) weak external _OBJC_CLASS_$_NSOrderedSet (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSPipe (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSProcessInfo (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSPropertyListSerialization (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSRecursiveLock (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSRegularExpression (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSRunLoop (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSSet (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSString (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSThread (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSTimer (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSURL (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSURLCache (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSURLConnection (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSURLCredential (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSURLProtectionSpace (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSURLRequest (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSUserDefaults (from CoreFoundation)
+         (undefined) external _OBJC_CLASS_$_NSValue (from Foundation)
+         (undefined) external _OBJC_CLASS_$_NSXMLParser (from Foundation)
+         (undefined) external _OBJC_CLASS_$_SKMutablePayment (from StoreKit)
+         (undefined) external _OBJC_CLASS_$_SKPaymentQueue (from StoreKit)
+         (undefined) external _OBJC_CLASS_$_SKProductsRequest (from StoreKit)
+         (undefined) external _OBJC_CLASS_$_UIAccelerometer (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIActivityIndicatorView (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIAlertView (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIApplication (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIBarButtonItem (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIColor (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIDevice (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIDocumentInteractionController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIFont (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIGestureRecognizer (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIImage (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIImagePickerController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIImageView (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UILabel (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UINavigationController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIPasteboard (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIPopoverController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIPrintInfo (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIPrintInteractionController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIResponder (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIScreen (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UISwitch (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UITableViewCell (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UITableViewController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UITapGestureRecognizer (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UITextField (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UITextView (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIView (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIViewController (from UIKit)
+         (undefined) external _OBJC_CLASS_$_UIWebView (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_MFMailComposeViewController (from MessageUI)
+         (undefined) external _OBJC_METACLASS_$_NSObject (from CoreFoundation)
+         (undefined) external _OBJC_METACLASS_$_NSThread (from Foundation)
+         (undefined) external _OBJC_METACLASS_$_UIApplication (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_UIGestureRecognizer (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_UITableViewController (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_UITextField (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_UITextView (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_UIView (from UIKit)
+         (undefined) external _OBJC_METACLASS_$_UIViewController (from UIKit)
+         (undefined) external _OSAtomicAdd32 (from libSystem)
+         (undefined) external _OSAtomicAdd32Barrier (from libSystem)
+         (undefined) external _OSAtomicCompareAndSwap32Barrier (from libSystem)
+         (undefined) external _OSMemoryBarrier (from libSystem)
+         (undefined) external _OSSpinLockLock (from libSystem)
+         (undefined) external _OSSpinLockTry (from libSystem)
+         (undefined) external _OSSpinLockUnlock (from libSystem)
+         (undefined) external _SCNetworkReachabilityCreateWithAddress (from SystemConfiguration)
+         (undefined) external _SCNetworkReachabilityGetFlags (from SystemConfiguration)
+         (undefined) external _SCNetworkReachabilityScheduleWithRunLoop (from SystemConfiguration)
+         (undefined) external _SCNetworkReachabilitySetCallback (from SystemConfiguration)
+         (undefined) external _SCNetworkReachabilityUnscheduleFromRunLoop (from SystemConfiguration)
+         (undefined) external _SecItemAdd (from Security)
+         (undefined) external _SecItemCopyMatching (from Security)
+         (undefined) external _SecItemDelete (from Security)
+         (undefined) external _SecItemUpdate (from Security)
+         (undefined) external _SecRandomCopyBytes (from Security)
+         (undefined) external _SecTrustEvaluate (from Security)
+         (undefined) external _UIApplicationDidChangeStatusBarOrientationNotification (from UIKit)
+         (undefined) external _UIApplicationDidEnterBackgroundNotification (from UIKit)
+         (undefined) external _UIApplicationDidReceiveMemoryWarningNotification (from UIKit)
+         (undefined) external _UIApplicationLaunchOptionsRemoteNotificationKey (from UIKit)
+         (undefined) external _UIApplicationMain (from UIKit)
+         (undefined) external _UIApplicationWillEnterForegroundNotification (from UIKit)
+         (undefined) external _UIApplicationWillResignActiveNotification (from UIKit)
+         (undefined) external _UIApplicationWillTerminateNotification (from UIKit)
+         (undefined) external _UIBackgroundTaskInvalid (from UIKit)
+         (undefined) external _UIDeviceOrientationDidChangeNotification (from UIKit)
+         (undefined) external _UIGraphicsBeginImageContextWithOptions (from UIKit)
+         (undefined) external _UIGraphicsEndImageContext (from UIKit)
+         (undefined) external _UIGraphicsGetCurrentContext (from UIKit)
+         (undefined) external _UIGraphicsGetImageFromCurrentImageContext (from UIKit)
+         (undefined) external _UIGraphicsPopContext (from UIKit)
+         (undefined) external _UIGraphicsPushContext (from UIKit)
+         (undefined) external _UIImageJPEGRepresentation (from UIKit)
+         (undefined) external _UIImagePNGRepresentation (from UIKit)
+         (undefined) external _UIImagePickerControllerMediaMetadata (from UIKit)
+         (undefined) external _UIImagePickerControllerMediaType (from UIKit)
+         (undefined) external _UIImagePickerControllerMediaURL (from UIKit)
+         (undefined) external _UIImagePickerControllerOriginalImage (from UIKit)
+         (undefined) external _UIImagePickerControllerReferenceURL (from UIKit)
+         (undefined) external _UIImageWriteToSavedPhotosAlbum (from UIKit)
+         (undefined) external _UIKeyboardBoundsUserInfoKey (from UIKit)
+         (undefined) external _UIKeyboardDidHideNotification (from UIKit)
+         (undefined) external _UIKeyboardDidShowNotification (from UIKit)
+         (undefined) external _UIKeyboardFrameEndUserInfoKey (from UIKit)
+         (undefined) external _UIKeyboardWillHideNotification (from UIKit)
+         (undefined) external _UIKeyboardWillShowNotification (from UIKit)
+         (undefined) external _UIPasteboardNameGeneral (from UIKit)
+         (undefined) external _UIPasteboardTypeListString (from UIKit)
+         (undefined) external _UITextFieldTextDidChangeNotification (from UIKit)
+         (undefined) external _UTTypeCopyPreferredTagWithClass (from MobileCoreServices)
+         (undefined) external _UTTypeCreatePreferredIdentifierForTag (from MobileCoreServices)
+         (undefined) external __Block_copy (from libSystem)
+         (undefined) external __Block_object_assign (from libSystem)
+         (undefined) external __Block_object_dispose (from libSystem)
+         (undefined) external __DefaultRuneLocale (from libSystem)
+         (undefined) external __NSConcreteGlobalBlock (from libSystem)
+         (undefined) external __NSConcreteStackBlock (from libSystem)
+         (undefined) external __NSGetExecutablePath (from libSystem)
+         (undefined) external __Unwind_SjLj_Register (from libgcc_s)
+         (undefined) external __Unwind_SjLj_Resume (from libgcc_s)
+         (undefined) external __Unwind_SjLj_Unregister (from libgcc_s)
+         (undefined) external __ZNSs4_Rep10_M_destroyERKSaIcE (from libstdc++)
+         (undefined) external __ZNSs4_Rep20_S_empty_rep_storageE (from libstdc++)
+         (undefined) external __ZNSsC1EPKcRKSaIcE (from libstdc++)
+         (undefined) external __ZNSt11logic_errorD2Ev (from libstdc++)
+         (undefined) external __ZNSt13runtime_errorC1ERKSs (from libstdc++)
+         (undefined) external __ZNSt13runtime_errorD1Ev (from libstdc++)
+         (undefined) external __ZNSt13runtime_errorD2Ev (from libstdc++)
+         (undefined) external __ZNSt15_List_node_base4hookEPS_ (from libstdc++)
+         (undefined) external __ZNSt15_List_node_base6unhookEv (from libstdc++)
+         (undefined) external __ZNSt8ios_base4InitC1Ev (from libstdc++)
+         (undefined) external __ZNSt8ios_base4InitD1Ev (from libstdc++)
+         (undefined) external __ZNSt9bad_allocD1Ev (from libstdc++)
+         (undefined) external __ZSt17__throw_bad_allocv (from libstdc++)
+         (undefined) external __ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base (from libstdc++)
+         (undefined) external __ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base (from libstdc++)
+         (undefined) external __ZSt20__throw_length_errorPKc (from libstdc++)
+         (undefined) external __ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_ (from libstdc++)
+         (undefined) external __ZSt9terminatev (from libstdc++)
+         (undefined) external __ZTISt13runtime_error (from libstdc++)
+         (undefined) external __ZTISt9bad_alloc (from libstdc++)
+         (undefined) external __ZTISt9exception (from libstdc++)
+         (undefined) external __ZTVN10__cxxabiv117__class_type_infoE (from libstdc++)
+         (undefined) external __ZTVN10__cxxabiv120__si_class_type_infoE (from libstdc++)
+         (undefined) external __ZTVN10__cxxabiv121__vmi_class_type_infoE (from libstdc++)
+         (undefined) external __ZTVSt9bad_alloc (from libstdc++)
+         (undefined) weak external __ZdaPv (from libstdc++)
+         (undefined) weak external __ZdlPv (from libstdc++)
+         (undefined) weak external __Znam (from libstdc++)
+         (undefined) weak external __Znwm (from libstdc++)
+         (undefined) external ___CFConstantStringClassReference (from CoreFoundation)
+         (undefined) external ___assert_rtn (from libSystem)
+         (undefined) external ___cxa_allocate_exception (from libstdc++)
+         (undefined) external ___cxa_atexit (from libSystem)
+         (undefined) external ___cxa_begin_catch (from libstdc++)
+         (undefined) external ___cxa_call_unexpected (from libstdc++)
+         (undefined) external ___cxa_end_catch (from libstdc++)
+         (undefined) external ___cxa_free_exception (from libstdc++)
+         (undefined) external ___cxa_get_exception_ptr (from libstdc++)
+         (undefined) external ___cxa_guard_abort (from libstdc++)
+         (undefined) external ___cxa_guard_acquire (from libstdc++)
+         (undefined) external ___cxa_guard_release (from libstdc++)
+         (undefined) external ___cxa_pure_virtual (from libstdc++)
+         (undefined) external ___cxa_rethrow (from libstdc++)
+         (undefined) external ___cxa_throw (from libstdc++)
+         (undefined) external ___divdi3 (from libgcc_s)
+         (undefined) external ___divmodsi4 (from libSystem)
+         (undefined) external ___divsi3 (from libgcc_s)
+         (undefined) external ___error (from libSystem)
+         (undefined) external ___fixdfdi (from libgcc_s)
+         (undefined) external ___fixunsdfdi (from libgcc_s)
+         (undefined) external ___floatdidf (from libgcc_s)
+         (undefined) external ___floatdisf (from libgcc_s)
+         (undefined) external ___floatundidf (from libgcc_s)
+         (undefined) external ___floatundisf (from libgcc_s)
+         (undefined) external ___gxx_personality_sj0 (from libstdc++)
+         (undefined) external ___maskrune (from libSystem)
+         (undefined) external ___memcpy_chk (from libSystem)
+         (undefined) external ___memset_chk (from libSystem)
+         (undefined) external ___moddi3 (from libgcc_s)
+         (undefined) external ___modsi3 (from libgcc_s)
+         (undefined) external ___objc_personality_v0 (from libobjc)
+         (undefined) external ___sprintf_chk (from libSystem)
+         (undefined) external ___stack_chk_fail (from libSystem)
+         (undefined) external ___stack_chk_guard (from libSystem)
+         (undefined) external ___stderrp (from libSystem)
+         (undefined) external ___stdinp (from libSystem)
+         (undefined) external ___stdoutp (from libSystem)
+         (undefined) external ___strcat_chk (from libSystem)
+         (undefined) external ___strncat_chk (from libSystem)
+         (undefined) external ___tolower (from libSystem)
+         (undefined) external ___udivdi3 (from libgcc_s)
+         (undefined) external ___udivmodsi4 (from libSystem)
+         (undefined) external ___udivsi3 (from libgcc_s)
+         (undefined) external ___umoddi3 (from libgcc_s)
+         (undefined) external ___umodsi3 (from libgcc_s)
+         (undefined) external ___vsnprintf_chk (from libSystem)
+         (undefined) external __dispatch_main_q (from libSystem)
+         (undefined) external __dispatch_source_type_read (from libSystem)
+         (undefined) external __dispatch_source_type_timer (from libSystem)
+         (undefined) external __dispatch_source_type_write (from libSystem)
+         (undefined) external __dyld_register_func_for_add_image (from libSystem)
+         (undefined) external __longjmp (from libSystem)
+         (undefined) external __objc_empty_cache (from libobjc)
+         (undefined) external __objc_empty_vtable (from libobjc)
+         (undefined) external __setjmp (from libSystem)
+         (undefined) external _abort (from libSystem)
+         (undefined) external _accept (from libSystem)
+         (undefined) external _access (from libSystem)
+         (undefined) external _acos (from libSystem)
+         (undefined) external _arc4random (from libSystem)
+         (undefined) external _asin (from libSystem)
+         (undefined) external _atan (from libSystem)
+         (undefined) external _atan2 (from libSystem)
+         (undefined) external _atan2f (from libSystem)
+         (undefined) external _atexit (from libSystem)
+         (undefined) external _atof (from libSystem)
+         (undefined) external _atoi (from libSystem)
+         (undefined) external _bind (from libSystem)
+         (undefined) external _bzero (from libSystem)
+         (undefined) external _calloc (from libSystem)
+         (undefined) external _ceil (from libSystem)
+         (undefined) external _ceilf (from libSystem)
+         (undefined) external _chmod (from libSystem)
+         (undefined) external _chown (from libSystem)
+         (undefined) external _class_addMethod (from libobjc)
+         (undefined) external _class_getInstanceMethod (from libobjc)
+         (undefined) external _class_getInstanceSize (from libobjc)
+         (undefined) external _class_getInstanceVariable (from libobjc)
+         (undefined) external _class_getIvarLayout (from libobjc)
+         (undefined) external _class_getSuperclass (from libobjc)
+         (undefined) external _clock (from libSystem)
+         (undefined) external _close (from libSystem)
+         (undefined) external _closedir (from libSystem)
+         (undefined) external _confstr (from libSystem)
+         (undefined) external _connect (from libSystem)
+         (undefined) external _cos (from libSystem)
+         (undefined) external _dispatch_after (from libSystem)
+         (undefined) external _dispatch_async (from libSystem)
+         (undefined) external _dispatch_get_global_queue (from libSystem)
+         (undefined) external _dispatch_get_specific (from libSystem)
+         (undefined) external _dispatch_once (from libSystem)
+         (undefined) external _dispatch_queue_create (from libSystem)
+         (undefined) external _dispatch_queue_set_specific (from libSystem)
+         (undefined) external _dispatch_release (from libSystem)
+         (undefined) external _dispatch_resume (from libSystem)
+         (undefined) external _dispatch_retain (from libSystem)
+         (undefined) external _dispatch_semaphore_create (from libSystem)
+         (undefined) external _dispatch_semaphore_signal (from libSystem)
+         (undefined) external _dispatch_semaphore_wait (from libSystem)
+         (undefined) external _dispatch_source_cancel (from libSystem)
+         (undefined) external _dispatch_source_create (from libSystem)
+         (undefined) external _dispatch_source_get_data (from libSystem)
+         (undefined) external _dispatch_source_set_cancel_handler (from libSystem)
+         (undefined) external _dispatch_source_set_event_handler (from libSystem)
+         (undefined) external _dispatch_source_set_timer (from libSystem)
+         (undefined) external _dispatch_suspend (from libSystem)
+         (undefined) external _dispatch_sync (from libSystem)
+         (undefined) external _dispatch_time (from libSystem)
+         (undefined) external _dlclose (from libSystem)
+         (undefined) external _dlopen (from libSystem)
+         (undefined) external _dlsym (from libSystem)
+         (undefined) external _exit (from libSystem)
+         (undefined) external _exp (from libSystem)
+         (undefined) external _exp2 (from libSystem)
+         (undefined) external _expf (from libSystem)
+         (undefined) external _fchmod (from libSystem)
+         (undefined) external _fclose (from libSystem)
+         (undefined) external _fcntl (from libSystem)
+         (undefined) external _feof (from libSystem)
+         (undefined) external _ferror (from libSystem)
+         (undefined) external _fflush (from libSystem)
+         (undefined) external _fgetc (from libSystem)
+         (undefined) external _fgets (from libSystem)
+         (undefined) external _fileno (from libSystem)
+         (undefined) external _flock (from libSystem)
+         (undefined) external _flockfile (from libSystem)
+         (undefined) external _floor (from libSystem)
+         (undefined) external _floorf (from libSystem)
+         (undefined) external _fmaxf (from libSystem)
+         (undefined) external _fminf (from libSystem)
+         (undefined) external _fmod (from libSystem)
+         (undefined) external _fnmatch (from libSystem)
+         (undefined) external _fopen (from libSystem)
+         (undefined) external _fprintf (from libSystem)
+         (undefined) external _fputc (from libSystem)
+         (undefined) external _fputs (from libSystem)
+         (undefined) external _fread (from libSystem)
+         (undefined) external _free (from libSystem)
+         (undefined) external _freeaddrinfo (from libSystem)
+         (undefined) external _freeifaddrs (from libSystem)
+         (undefined) external _freopen (from libSystem)
+         (undefined) external _frexp (from libSystem)
+         (undefined) external _fsctl (from libSystem)
+         (undefined) external _fseek (from libSystem)
+         (undefined) external _fseeko (from libSystem)
+         (undefined) external _fstat (from libSystem)
+         (undefined) external _fstatfs (from libSystem)
+         (undefined) external _fsync (from libSystem)
+         (undefined) external _ftell (from libSystem)
+         (undefined) external _ftruncate (from libSystem)
+         (undefined) external _funlockfile (from libSystem)
+         (undefined) external _futimes (from libSystem)
+         (undefined) external _fwrite (from libSystem)
+         (undefined) external _gai_strerror (from libSystem)
+         (undefined) external _getaddrinfo (from libSystem)
+         (undefined) external _getcwd (from libSystem)
+         (undefined) external _getenv (from libSystem)
+         (undefined) external _getfsstat (from libSystem)
+         (undefined) external _gethostname (from libSystem)
+         (undefined) external _getifaddrs (from libSystem)
+         (undefined) external _getpeername (from libSystem)
+         (undefined) external _getpid (from libSystem)
+         (undefined) external _getpwnam (from libSystem)
+         (undefined) external _getsockname (from libSystem)
+         (undefined) external _getsockopt (from libSystem)
+         (undefined) external _gettimeofday (from libSystem)
+         (undefined) external _getuid (from libSystem)
+         (undefined) external _getxattr (from libSystem)
+         (undefined) external _glActiveTexture (from OpenGLES)
+         (undefined) external _glAttachShader (from OpenGLES)
+         (undefined) external _glBindAttribLocation (from OpenGLES)
+         (undefined) external _glBindBuffer (from OpenGLES)
+         (undefined) external _glBindFramebuffer (from OpenGLES)
+         (undefined) external _glBindRenderbuffer (from OpenGLES)
+         (undefined) external _glBindTexture (from OpenGLES)
+         (undefined) external _glBlendEquationSeparate (from OpenGLES)
+         (undefined) external _glBlendFunc (from OpenGLES)
+         (undefined) external _glBlendFuncSeparate (from OpenGLES)
+         (undefined) weak external _glBlitFramebuffer (from OpenGLES)
+         (undefined) external _glBufferData (from OpenGLES)
+         (undefined) external _glBufferSubData (from OpenGLES)
+         (undefined) external _glCheckFramebufferStatus (from OpenGLES)
+         (undefined) external _glClear (from OpenGLES)
+         (undefined) external _glClearColor (from OpenGLES)
+         (undefined) external _glClearDepthf (from OpenGLES)
+         (undefined) external _glClearStencil (from OpenGLES)
+         (undefined) external _glColorMask (from OpenGLES)
+         (undefined) external _glCompileShader (from OpenGLES)
+         (undefined) external _glCompressedTexImage2D (from OpenGLES)
+         (undefined) external _glCopyTexImage2D (from OpenGLES)
+         (undefined) external _glCopyTexSubImage2D (from OpenGLES)
+         (undefined) external _glCreateProgram (from OpenGLES)
+         (undefined) external _glCreateShader (from OpenGLES)
+         (undefined) external _glCullFace (from OpenGLES)
+         (undefined) external _glDeleteBuffers (from OpenGLES)
+         (undefined) external _glDeleteFramebuffers (from OpenGLES)
+         (undefined) external _glDeleteProgram (from OpenGLES)
+         (undefined) external _glDeleteRenderbuffers (from OpenGLES)
+         (undefined) external _glDeleteShader (from OpenGLES)
+         (undefined) external _glDeleteTextures (from OpenGLES)
+         (undefined) external _glDepthFunc (from OpenGLES)
+         (undefined) external _glDepthMask (from OpenGLES)
+         (undefined) external _glDetachShader (from OpenGLES)
+         (undefined) external _glDisable (from OpenGLES)
+         (undefined) external _glDisableClientState (from OpenGLES)
+         (undefined) external _glDisableVertexAttribArray (from OpenGLES)
+         (undefined) external _glDiscardFramebufferEXT (from OpenGLES)
+         (undefined) external _glDrawArrays (from OpenGLES)
+         (undefined) weak external _glDrawBuffers (from OpenGLES)
+         (undefined) external _glDrawElements (from OpenGLES)
+         (undefined) external _glEnable (from OpenGLES)
+         (undefined) external _glEnableClientState (from OpenGLES)
+         (undefined) external _glEnableVertexAttribArray (from OpenGLES)
+         (undefined) external _glFlush (from OpenGLES)
+         (undefined) external _glFramebufferRenderbuffer (from OpenGLES)
+         (undefined) external _glFramebufferTexture2D (from OpenGLES)
+         (undefined) external _glGenBuffers (from OpenGLES)
+         (undefined) external _glGenFramebuffers (from OpenGLES)
+         (undefined) external _glGenRenderbuffers (from OpenGLES)
+         (undefined) external _glGenTextures (from OpenGLES)
+         (undefined) external _glGenerateMipmap (from OpenGLES)
+         (undefined) external _glGetAttribLocation (from OpenGLES)
+         (undefined) external _glGetError (from OpenGLES)
+         (undefined) external _glGetFloatv (from OpenGLES)
+         (undefined) external _glGetIntegerv (from OpenGLES)
+         (undefined) external _glGetProgramiv (from OpenGLES)
+         (undefined) external _glGetRenderbufferParameteriv (from OpenGLES)
+         (undefined) external _glGetShaderInfoLog (from OpenGLES)
+         (undefined) external _glGetShaderiv (from OpenGLES)
+         (undefined) external _glGetString (from OpenGLES)
+         (undefined) external _glGetTexParameteriv (from OpenGLES)
+         (undefined) external _glGetUniformLocation (from OpenGLES)
+         (undefined) external _glHint (from OpenGLES)
+         (undefined) weak external _glInvalidateFramebuffer (from OpenGLES)
+         (undefined) external _glLineWidth (from OpenGLES)
+         (undefined) external _glLinkProgram (from OpenGLES)
+         (undefined) external _glLoadIdentity (from OpenGLES)
+         (undefined) external _glMatrixMode (from OpenGLES)
+         (undefined) external _glPixelStorei (from OpenGLES)
+         (undefined) external _glReadPixels (from OpenGLES)
+         (undefined) external _glRenderbufferStorage (from OpenGLES)
+         (undefined) weak external _glRenderbufferStorageMultisample (from OpenGLES)
+         (undefined) external _glRenderbufferStorageMultisampleAPPLE (from OpenGLES)
+         (undefined) external _glResolveMultisampleFramebufferAPPLE (from OpenGLES)
+         (undefined) external _glScissor (from OpenGLES)
+         (undefined) external _glShaderSource (from OpenGLES)
+         (undefined) external _glStencilFunc (from OpenGLES)
+         (undefined) external _glStencilFuncSeparate (from OpenGLES)
+         (undefined) external _glStencilMask (from OpenGLES)
+         (undefined) external _glStencilOp (from OpenGLES)
+         (undefined) external _glStencilOpSeparate (from OpenGLES)
+         (undefined) external _glTexCoordPointer (from OpenGLES)
+         (undefined) external _glTexImage2D (from OpenGLES)
+         (undefined) external _glTexParameterf (from OpenGLES)
+         (undefined) external _glTexParameteri (from OpenGLES)
+         (undefined) external _glTexSubImage2D (from OpenGLES)
+         (undefined) external _glUniform1f (from OpenGLES)
+         (undefined) external _glUniform1fv (from OpenGLES)
+         (undefined) external _glUniform1i (from OpenGLES)
+         (undefined) external _glUniform1iv (from OpenGLES)
+         (undefined) external _glUniform2f (from OpenGLES)
+         (undefined) external _glUniform2fv (from OpenGLES)
+         (undefined) external _glUniform2iv (from OpenGLES)
+         (undefined) external _glUniform3f (from OpenGLES)
+         (undefined) external _glUniform3fv (from OpenGLES)
+         (undefined) external _glUniform3iv (from OpenGLES)
+         (undefined) external _glUniform4f (from OpenGLES)
+         (undefined) external _glUniform4fv (from OpenGLES)
+         (undefined) external _glUniform4iv (from OpenGLES)
+         (undefined) external _glUniformMatrix2fv (from OpenGLES)
+         (undefined) external _glUniformMatrix3fv (from OpenGLES)
+         (undefined) external _glUniformMatrix4fv (from OpenGLES)
+         (undefined) external _glUseProgram (from OpenGLES)
+         (undefined) external _glVertexAttrib4f (from OpenGLES)
+         (undefined) external _glVertexAttribPointer (from OpenGLES)
+         (undefined) external _glVertexPointer (from OpenGLES)
+         (undefined) external _glViewport (from OpenGLES)
+         (undefined) external _gmtime (from libSystem)
+         (undefined) external _gmtime_r (from libSystem)
+         (undefined) external _gzclose (from libz)
+         (undefined) external _gzeof (from libz)
+         (undefined) external _gzflush (from libz)
+         (undefined) external _gzgetc (from libz)
+         (undefined) external _gzopen (from libz)
+         (undefined) external _gzputc (from libz)
+         (undefined) external _gzungetc (from libz)
+         (undefined) external _host_page_size (from libSystem)
+         (undefined) external _host_statistics (from libSystem)
+         (undefined) external _if_indextoname (from libSystem)
+         (undefined) external _if_nametoindex (from libSystem)
+         (undefined) external _in6addr_any (from libSystem)
+         (undefined) external _in6addr_loopback (from libSystem)
+         (undefined) external _inet_addr (from libSystem)
+         (undefined) external _inet_ntoa (from libSystem)
+         (undefined) external _inet_ntop (from libSystem)
+         (undefined) external _ioctl (from libSystem)
+         (undefined) external _ivar_getName (from libobjc)
+         (undefined) external _ivar_getOffset (from libobjc)
+         (undefined) external _kCAAnimationDiscrete (from QuartzCore)
+         (undefined) external _kCAFillModeForwards (from QuartzCore)
+         (undefined) external _kCATransactionDisableActions (from QuartzCore)
+         (undefined) external _kCFAbsoluteTimeIntervalSince1970 (from CoreFoundation)
+         (undefined) external _kCFAllocatorDefault (from CoreFoundation)
+         (undefined) external _kCFAllocatorNull (from CoreFoundation)
+         (undefined) external _kCFBooleanFalse (from CoreFoundation)
+         (undefined) external _kCFBooleanTrue (from CoreFoundation)
+         (undefined) external _kCFDateFormatterCalendar (from CoreFoundation)
+         (undefined) external _kCFDateFormatterMonthSymbols (from CoreFoundation)
+         (undefined) external _kCFDateFormatterShortMonthSymbols (from CoreFoundation)
+         (undefined) external _kCFDateFormatterShortWeekdaySymbols (from CoreFoundation)
+         (undefined) external _kCFDateFormatterStandaloneMonthSymbols (from CoreFoundation)
+         (undefined) external _kCFDateFormatterTimeZone (from CoreFoundation)
+         (undefined) external _kCFDateFormatterVeryShortStandaloneWeekdaySymbols (from CoreFoundation)
+         (undefined) external _kCFDateFormatterWeekdaySymbols (from CoreFoundation)
+         (undefined) external _kCFHTTPVersion1_1 (from CFNetwork)
+         (undefined) external _kCFNetworkProxiesHTTPEnable (from CFNetwork)
+         (undefined) external _kCFNetworkProxiesHTTPPort (from CFNetwork)
+         (undefined) external _kCFNetworkProxiesHTTPProxy (from CFNetwork)
+         (undefined) external _kCFNumberFormatterCurrencyCode (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterCurrencyDecimalSeparator (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterCurrencyGroupingSeparator (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterCurrencySymbol (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterDecimalSeparator (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterGroupingSeparator (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterGroupingSize (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterMaxFractionDigits (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterMinFractionDigits (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterMinIntegerDigits (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterMinusSign (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterNegativePrefix (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterNegativeSuffix (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterPositivePrefix (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterPositiveSuffix (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterRoundingIncrement (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterSecondaryGroupingSize (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterUseGroupingSeparator (from CoreFoundation)
+         (undefined) external _kCFNumberFormatterZeroSymbol (from CoreFoundation)
+         (undefined) external _kCFProxyAutoConfigurationURLKey (from CFNetwork)
+         (undefined) external _kCFProxyHostNameKey (from CFNetwork)
+         (undefined) external _kCFProxyPasswordKey (from CFNetwork)
+         (undefined) external _kCFProxyPortNumberKey (from CFNetwork)
+         (undefined) external _kCFProxyTypeAutoConfigurationURL (from CFNetwork)
+         (undefined) external _kCFProxyTypeKey (from CFNetwork)
+         (undefined) external _kCFProxyTypeNone (from CFNetwork)
+         (undefined) external _kCFProxyUsernameKey (from CFNetwork)
+         (undefined) external _kCFRunLoopCommonModes (from CoreFoundation)
+         (undefined) external _kCFRunLoopDefaultMode (from CoreFoundation)
+         (undefined) external _kCFStreamPropertyHTTPProxy (from CFNetwork)
+         (undefined) external _kCFStreamPropertyShouldCloseNativeSocket (from CoreFoundation)
+         (undefined) external _kCFStreamPropertySocketSecurityLevel (from CoreFoundation)
+         (undefined) external _kCFStreamSocketSecurityLevelNegotiatedSSL (from CoreFoundation)
+         (undefined) external _kCFTypeDictionaryKeyCallBacks (from CoreFoundation)
+         (undefined) external _kCFTypeDictionaryValueCallBacks (from CoreFoundation)
+         (undefined) external _kCGImagePropertyExifDateTimeDigitized (from ImageIO)
+         (undefined) external _kCGImagePropertyExifDateTimeOriginal (from ImageIO)
+         (undefined) external _kCGImagePropertyExifDictionary (from ImageIO)
+         (undefined) external _kCGImagePropertyExifDigitalZoomRatio (from ImageIO)
+         (undefined) external _kCGImagePropertyExifUserComment (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSAltitude (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSDOP (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSDictionary (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSImgDirection (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSImgDirectionRef (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSLatitude (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSLatitudeRef (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSLongitude (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSLongitudeRef (from ImageIO)
+         (undefined) external _kCGImagePropertyGPSTimeStamp (from ImageIO)
+         (undefined) external _kCGImagePropertyIPTCDictionary (from ImageIO)
+         (undefined) external _kCGImagePropertyIPTCKeywords (from ImageIO)
+         (undefined) external _kCGImagePropertyOrientation (from ImageIO)
+         (undefined) external _kCGImagePropertyPNGCreationTime (from ImageIO)
+         (undefined) external _kCGImagePropertyPNGDescription (from ImageIO)
+         (undefined) external _kCGImagePropertyPNGDictionary (from ImageIO)
+         (undefined) external _kCGImagePropertyPNGSoftware (from ImageIO)
+         (undefined) external _kCGImagePropertyPNGTitle (from ImageIO)
+         (undefined) external _kCGImagePropertyTIFFDateTime (from ImageIO)
+         (undefined) external _kCGImagePropertyTIFFDictionary (from ImageIO)
+         (undefined) external _kCGImagePropertyTIFFImageDescription (from ImageIO)
+         (undefined) external _kCGImagePropertyTIFFMake (from ImageIO)
+         (undefined) external _kCGImagePropertyTIFFModel (from ImageIO)
+         (undefined) external _kCGImagePropertyTIFFSoftware (from ImageIO)
+         (undefined) external _kCIInputImageKey (from CoreImage)
+         (undefined) external _kCVPixelBufferPixelFormatTypeKey (from CoreVideo)
+         (undefined) external _kEAGLColorFormatRGB565 (from OpenGLES)
+         (undefined) external _kEAGLColorFormatRGBA8 (from OpenGLES)
+         (undefined) external _kEAGLDrawablePropertyColorFormat (from OpenGLES)
+         (undefined) external _kEAGLDrawablePropertyRetainedBacking (from OpenGLES)
+         (undefined) external _kSecAttrAccessGroup (from Security)
+         (undefined) external _kSecAttrAccessible (from Security)
+         (undefined) external _kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly (from Security)
+         (undefined) external _kSecAttrAccount (from Security)
+         (undefined) external _kSecAttrLabel (from Security)
+         (undefined) external _kSecAttrService (from Security)
+         (undefined) external _kSecClass (from Security)
+         (undefined) external _kSecClassGenericPassword (from Security)
+         (undefined) external _kSecRandomDefault (from Security)
+         (undefined) external _kSecReturnAttributes (from Security)
+         (undefined) external _kSecReturnData (from Security)
+         (undefined) external _kSecValueData (from Security)
+         (undefined) external _kUTTagClassFilenameExtension (from MobileCoreServices)
+         (undefined) external _kUTTagClassMIMEType (from MobileCoreServices)
+         (undefined) external _kUTTypeData (from MobileCoreServices)
+         (undefined) external _kUTTypeImage (from MobileCoreServices)
+         (undefined) external _kUTTypeJPEG (from MobileCoreServices)
+         (undefined) external _kUTTypeMovie (from MobileCoreServices)
+         (undefined) external _kUTTypePNG (from MobileCoreServices)
+         (undefined) external _kUTTypeText (from MobileCoreServices)
+         (undefined) external _kUTTypeUTF8PlainText (from MobileCoreServices)
+         (undefined) external _ldexp (from libSystem)
+         (undefined) external _listen (from libSystem)
+         (undefined) external _listxattr (from libSystem)
+         (undefined) external _localtime (from libSystem)
+         (undefined) external _localtime_r (from libSystem)
+         (undefined) external _log (from libSystem)
+         (undefined) external _log10 (from libSystem)
+         (undefined) external _log2f (from libSystem)
+         (undefined) external _longjmp (from libSystem)
+         (undefined) external _lrint (from libSystem)
+         (undefined) external _lrintf (from libSystem)
+         (undefined) external _lroundf (from libSystem)
+         (undefined) external _lseek (from libSystem)
+         (undefined) external _lstat (from libSystem)
+         (undefined) external _lutimes (from libSystem)
+         (undefined) external _mach_absolute_time (from libSystem)
+         (undefined) external _mach_error (from libSystem)
+         (undefined) external _mach_host_self (from libSystem)
+         (undefined) external _mach_task_self_ (from libSystem)
+         (undefined) external _mach_thread_self (from libSystem)
+         (undefined) external _mach_timebase_info (from libSystem)
+         (undefined) external _malloc (from libSystem)
+         (undefined) external _memchr (from libSystem)
+         (undefined) external _memcmp (from libSystem)
+         (undefined) external _memcpy (from libSystem)
+         (undefined) external _memmove (from libSystem)
+         (undefined) external _memset (from libSystem)
+         (undefined) external _memset_pattern16 (from libSystem)
+         (undefined) external _mkdir (from libSystem)
+         (undefined) external _mkdtemp (from libSystem)
+         (undefined) external _mkstemp (from libSystem)
+         (undefined) external _mktime (from libSystem)
+         (undefined) external _mmap (from libSystem)
+         (undefined) external _modf (from libSystem)
+         (undefined) external _munmap (from libSystem)
+         (undefined) external _nanosleep (from libSystem)
+         (undefined) external _objc_autorelease (from libobjc)
+         (undefined) external _objc_autoreleasePoolPop (from libobjc)
+         (undefined) external _objc_autoreleasePoolPush (from libobjc)
+         (undefined) external _objc_autoreleaseReturnValue (from libobjc)
+         (undefined) external _objc_copyStruct (from libobjc)
+         (undefined) external _objc_destroyWeak (from libobjc)
+         (undefined) external _objc_enumerationMutation (from libobjc)
+         (undefined) external _objc_getAssociatedObject (from libobjc)
+         (undefined) external _objc_getProperty (from libobjc)
+         (undefined) external _objc_loadWeakRetained (from libobjc)
+         (undefined) external _objc_msgSend (from libobjc)
+         (undefined) external _objc_msgSendSuper2 (from libobjc)
+         (undefined) external _objc_msgSendSuper2_stret (from libobjc)
+         (undefined) external _objc_msgSend_stret (from libobjc)
+         (undefined) external _objc_release (from libobjc)
+         (undefined) external _objc_retain (from libobjc)
+         (undefined) external _objc_retainAutorelease (from libobjc)
+         (undefined) external _objc_retainAutoreleaseReturnValue (from libobjc)
+         (undefined) external _objc_retainAutoreleasedReturnValue (from libobjc)
+         (undefined) external _objc_retainBlock (from libobjc)
+         (undefined) external _objc_setAssociatedObject (from libobjc)
+         (undefined) external _objc_setProperty (from libobjc)
+         (undefined) external _objc_storeStrong (from libobjc)
+         (undefined) external _objc_storeWeak (from libobjc)
+         (undefined) external _objc_sync_enter (from libobjc)
+         (undefined) external _objc_sync_exit (from libobjc)
+         (undefined) external _object_getClass (from libobjc)
+         (undefined) external _object_setIvar (from libobjc)
+         (undefined) external _open (from libSystem)
+         (undefined) external _opendir (from libSystem)
+         (undefined) external _pclose (from libSystem)
+         (undefined) external _pipe (from libSystem)
+         (undefined) external _poll (from libSystem)
+         (undefined) external _popen (from libSystem)
+         (undefined) external _pow (from libSystem)
+         (undefined) external _pread (from libSystem)
+         (undefined) external _printf (from libSystem)
+         (undefined) external _protocol_getMethodDescription (from libobjc)
+         (undefined) external _pthread_attr_init (from libSystem)
+         (undefined) external _pthread_attr_setdetachstate (from libSystem)
+         (undefined) external _pthread_cancel (from libSystem)
+         (undefined) external _pthread_cond_broadcast (from libSystem)
+         (undefined) external _pthread_cond_destroy (from libSystem)
+         (undefined) external _pthread_cond_init (from libSystem)
+         (undefined) external _pthread_cond_signal (from libSystem)
+         (undefined) external _pthread_cond_timedwait (from libSystem)
+         (undefined) external _pthread_cond_timedwait_relative_np (from libSystem)
+         (undefined) external _pthread_cond_wait (from libSystem)
+         (undefined) external _pthread_create (from libSystem)
+         (undefined) external _pthread_detach (from libSystem)
+         (undefined) external _pthread_equal (from libSystem)
+         (undefined) external _pthread_exit (from libSystem)
+         (undefined) external _pthread_get_stackaddr_np (from libSystem)
+         (undefined) external _pthread_getspecific (from libSystem)
+         (undefined) external _pthread_join (from libSystem)
+         (undefined) external _pthread_key_create (from libSystem)
+         (undefined) external _pthread_key_delete (from libSystem)
+         (undefined) external _pthread_mach_thread_np (from libSystem)
+         (undefined) external _pthread_mutex_destroy (from libSystem)
+         (undefined) external _pthread_mutex_init (from libSystem)
+         (undefined) external _pthread_mutex_lock (from libSystem)
+         (undefined) external _pthread_mutex_trylock (from libSystem)
+         (undefined) external _pthread_mutex_unlock (from libSystem)
+         (undefined) external _pthread_mutexattr_destroy (from libSystem)
+         (undefined) external _pthread_mutexattr_init (from libSystem)
+         (undefined) external _pthread_mutexattr_settype (from libSystem)
+         (undefined) external _pthread_self (from libSystem)
+         (undefined) external _pthread_setname_np (from libSystem)
+         (undefined) external _pthread_setspecific (from libSystem)
+         (undefined) external _puts (from libSystem)
+         (undefined) external _pwrite (from libSystem)
+         (undefined) external _qsort (from libSystem)
+         (undefined) external _rand (from libSystem)
+         (undefined) external _random (from libSystem)
+         (undefined) external _read (from libSystem)
+         (undefined) external _readdir (from libSystem)
+         (undefined) external _readlink (from libSystem)
+         (undefined) external _realloc (from libSystem)
+         (undefined) external _recv (from libSystem)
+         (undefined) external _recvfrom (from libSystem)
+         (undefined) external _remove (from libSystem)
+         (undefined) external _rename (from libSystem)
+         (undefined) external _rintf (from libSystem)
+         (undefined) external _rmdir (from libSystem)
+         (undefined) external _round (from libSystem)
+         (undefined) external _roundf (from libSystem)
+         (undefined) external _sched_yield (from libSystem)
+         (undefined) external _select (from libSystem)
+         (undefined) external _sem_close (from libSystem)
+         (undefined) external _sem_open (from libSystem)
+         (undefined) external _sem_post (from libSystem)
+         (undefined) external _sem_wait (from libSystem)
+         (undefined) external _send (from libSystem)
+         (undefined) external _sendto (from libSystem)
+         (undefined) external _setgid (from libSystem)
+         (undefined) external _setjmp (from libSystem)
+         (undefined) external _setsockopt (from libSystem)
+         (undefined) external _setuid (from libSystem)
+         (undefined) external _setxattr (from libSystem)
+         (undefined) external _shutdown (from libSystem)
+         (undefined) external _sigaction (from libSystem)
+         (undefined) external _signal (from libSystem)
+         (undefined) external _sigprocmask (from libSystem)
+         (undefined) external _sin (from libSystem)
+         (undefined) external _sleep (from libSystem)
+         (undefined) external _snprintf (from libSystem)
+         (undefined) external _socket (from libSystem)
+         (undefined) external _sprintf (from libSystem)
+         (undefined) external _srand (from libSystem)
+         (undefined) external _srandomdev (from libSystem)
+         (undefined) external _sscanf (from libSystem)
+         (undefined) external _stat (from libSystem)
+         (undefined) external _statfs (from libSystem)
+         (undefined) external _statvfs (from libSystem)
+         (undefined) external _strcasecmp (from libSystem)
+         (undefined) external _strcat (from libSystem)
+         (undefined) external _strchr (from libSystem)
+         (undefined) external _strcmp (from libSystem)
+         (undefined) external _strcpy (from libSystem)
+         (undefined) external _strcspn (from libSystem)
+         (undefined) external _strdup (from libSystem)
+         (undefined) external _strerror (from libSystem)
+         (undefined) external _strftime (from libSystem)
+         (undefined) external _strlcat (from libSystem)
+         (undefined) external _strlcpy (from libSystem)
+         (undefined) external _strlen (from libSystem)
+         (undefined) external _strncasecmp (from libSystem)
+         (undefined) external _strncat (from libSystem)
+         (undefined) external _strncmp (from libSystem)
+         (undefined) external _strncpy (from libSystem)
+         (undefined) external _strrchr (from libSystem)
+         (undefined) external _strspn (from libSystem)
+         (undefined) external _strstr (from libSystem)
+         (undefined) external _strtol (from libSystem)
+         (undefined) external _strtoll (from libSystem)
+         (undefined) external _strtoul (from libSystem)
+         (undefined) external _symlink (from libSystem)
+         (undefined) external _sysconf (from libSystem)
+         (undefined) external _sysctl (from libSystem)
+         (undefined) external _sysctlbyname (from libSystem)
+         (undefined) external _tan (from libSystem)
+         (undefined) external _task_info (from libSystem)
+         (undefined) external _task_threads (from libSystem)
+         (undefined) external _tcgetattr (from libSystem)
+         (undefined) external _tcsetattr (from libSystem)
+         (undefined) external _thread_info (from libSystem)
+         (undefined) external _thread_policy_set (from libSystem)
+         (undefined) external _time (from libSystem)
+         (undefined) external _timegm (from libSystem)
+         (undefined) external _unlink (from libSystem)
+         (undefined) external _usleep (from libSystem)
+         (undefined) external _utime (from libSystem)
+         (undefined) external _utimes (from libSystem)
+         (undefined) external _vDSP_create_fftsetup (from Accelerate)
+         (undefined) external _vDSP_ctoz (from Accelerate)
+         (undefined) external _vDSP_destroy_fftsetup (from Accelerate)
+         (undefined) external _vDSP_fft_zrip (from Accelerate)
+         (undefined) external _vDSP_sve (from Accelerate)
+         (undefined) external _vDSP_vflt16 (from Accelerate)
+         (undefined) external _vDSP_zvmags (from Accelerate)
+         (undefined) external _valloc (from libSystem)
+         (undefined) external _vfprintf (from libSystem)
+         (undefined) external _vm_deallocate (from libSystem)
+         (undefined) external _vm_map (from libSystem)
+         (undefined) external _vm_region_64 (from libSystem)
+         (undefined) external _vsnprintf (from libSystem)
+         (undefined) external _vsscanf (from libSystem)
+         (undefined) external _write (from libSystem)
+         (undefined) external dyld_stub_binder (from libSystem)
+00a17b90 (__TEXT,__text) external _main
+00e77db8 (__TEXT,__text) external _AdobeAPNAirInitializer
+00e77f30 (__TEXT,__text) external _AdobeAPNAirFinalizer
+00e7ad20 (__TEXT,__text) external _AdobeSyncEngineBridgeInitializer
+00e7ad54 (__TEXT,__text) external _AdobeSyncEngineBridgeFinalizer
+00fc9398 (__TEXT,__text) external _TTPixelExtensionInitializer
+00fc9c1c (__TEXT,__text) external _TTPixelExtensionFinalizer
+01098264 (__TEXT,__text) non-external [Thumb] ___ARCLite__load
+01098578 (__TEXT,__text) non-external [Thumb] ___arclite_objc_autoreleasePoolPop
+01098738 (__TEXT,__text) non-external [Thumb] ___arclite_objc_autoreleasePoolPush
+0109875c (__TEXT,__text) non-external [Thumb] ___arclite_object_setInstanceVariable
+010987a0 (__TEXT,__text) non-external [Thumb] ___arclite_object_setIvar
+01098880 (__TEXT,__text) non-external [Thumb] ___arclite_object_copy
+0109897c (__TEXT,__text) non-external [Thumb] ___arclite_objc_retain
+01098994 (__TEXT,__text) non-external [Thumb] ___arclite_objc_retainBlock
+010989a0 (__TEXT,__text) non-external [Thumb] ___arclite_objc_release
+010989b8 (__TEXT,__text) non-external [Thumb] ___arclite_objc_autorelease
+010989d0 (__TEXT,__text) non-external [Thumb] ___arclite_objc_retainAutorelease
+010989f8 (__TEXT,__text) non-external [Thumb] ___arclite_objc_autoreleaseReturnValue
+01098a10 (__TEXT,__text) non-external [Thumb] ___arclite_objc_retainAutoreleaseReturnValue
+01098a38 (__TEXT,__text) non-external [Thumb] ___arclite_objc_retainAutoreleasedReturnValue
+01098a50 (__TEXT,__text) non-external [Thumb] ___arclite_objc_storeStrong
+013289fe (__TEXT,__objc_methname) non-external __load_method_name
+013297f0 (__TEXT,__objc_classname) non-external __class_name
+0133f01a (__TEXT,__objc_methtype) non-external __load_method_type
+013c0ef0 (__DATA,__const) non-external ___block_descriptor_tmp
+013ef210 (__DATA,__const) non-external ___block_descriptor_tmp
+01400d44 (__DATA,__const) non-external ___block_descriptor_tmp
+01400d54 (__DATA,__const) non-external ___block_literal_global
+01400d70 (__DATA,__const) non-external ___block_descriptor_tmp
+01400e10 (__DATA,__const) non-external ___block_descriptor_tmp
+01401a90 (__DATA,__const) non-external ___block_descriptor_tmp
+01401ce0 (__DATA,__const) non-external ___block_descriptor_tmp
+01401e80 (__DATA,__const) non-external ___block_descriptor_tmp
+01401ea0 (__DATA,__const) non-external ___block_descriptor_tmp
+01401ec0 (__DATA,__const) non-external ___block_descriptor_tmp
+01401f40 (__DATA,__const) non-external ___block_descriptor_tmp
+01401f68 (__DATA,__const) non-external ___block_literal_global
+01401fc0 (__DATA,__const) non-external ___block_descriptor_tmp
+01402b00 (__DATA,__const) non-external ___block_descriptor_tmp
+01402b90 (__DATA,__const) non-external ___block_descriptor_tmp
+01402ba0 (__DATA,__const) non-external ___block_literal_global
+01402c60 (__DATA,__const) non-external ___block_descriptor_tmp
+01402d38 (__DATA,__const) non-external ___block_descriptor_tmp
+01402d48 (__DATA,__const) non-external ___block_literal_global
+014037ec (__DATA,__objc_nlclslist) non-external (was a private external) __non_lazy_classes
+014162e0 (__DATA,__objc_const) non-external _OBJC_CLASS_RO_$___ARCLite__
+01416308 (__DATA,__objc_const) non-external _OBJC_METACLASS_RO_$___ARCLite__
+01416330 (__DATA,__objc_const) non-external _OBJC_$_CLASS_METHODS___ARCLite__
+01419f58 (__DATA,__objc_data) non-external _OBJC_CLASS_$___ARCLite__
+01419f6c (__DATA,__objc_data) non-external _OBJC_METACLASS_$___ARCLite__
+0141e060 (__DATA,__data) non-external __MergedGlobals
+0141e4c0 (__DATA,__data) non-external __MergedGlobals
+0142fc58 (__DATA,__data) non-external __MergedGlobals
+01431720 (__DATA,__data) non-external __MergedGlobals
+01431e20 (__DATA,__data) non-external __MergedGlobals
+01432920 (__DATA,__data) non-external __MergedGlobals
+01433350 (__DATA,__data) non-external __MergedGlobals
+01433d50 (__DATA,__data) non-external __MergedGlobals
+014345b0 (__DATA,__data) non-external __MergedGlobals
+014349f0 (__DATA,__data) non-external __MergedGlobals
+01437b90 (__DATA,__data) non-external __MergedGlobals
+01438060 (__DATA,__data) non-external __MergedGlobals
+014381e0 (__DATA,__data) non-external __MergedGlobals
+01438b70 (__DATA,__data) non-external __MergedGlobals
+01438d70 (__DATA,__data) non-external __MergedGlobals
+01438f50 (__DATA,__data) non-external __MergedGlobals
+01439090 (__DATA,__data) non-external __MergedGlobals
+014390e0 (__DATA,__data) non-external __MergedGlobals
+01439210 (__DATA,__data) non-external __MergedGlobals
+01439270 (__DATA,__data) non-external __MergedGlobals
+01439330 (__DATA,__data) non-external __MergedGlobals
+01439440 (__DATA,__data) non-external __MergedGlobals
+01439600 (__DATA,__data) non-external __MergedGlobals
+01439aa0 (__DATA,__data) non-external __MergedGlobals
+01439af0 (__DATA,__data) non-external __MergedGlobals
+01439b80 (__DATA,__data) non-external __MergedGlobals
+01439e00 (__DATA,__data) non-external __MergedGlobals
+0143a060 (__DATA,__data) non-external __MergedGlobals
+0143a370 (__DATA,__data) non-external __MergedGlobals
+0143a8e0 (__DATA,__data) non-external __MergedGlobals
+0143d160 (__DATA,__data) non-external __MergedGlobals
+01443c00 (__DATA,__data) non-external __MergedGlobals
+014464f0 (__DATA,__data) non-external __MergedGlobals
+01446550 (__DATA,__data) non-external __MergedGlobals
+014466e0 (__DATA,__data) non-external __MergedGlobals
+01446840 (__DATA,__data) non-external __MergedGlobals
+014469f0 (__DATA,__data) non-external __MergedGlobals
+01446c50 (__DATA,__data) non-external __MergedGlobals
+01446d50 (__DATA,__data) non-external __MergedGlobals
+014473b0 (__DATA,__data) non-external __MergedGlobals
+01447fa0 (__DATA,__data) non-external __MergedGlobals
+01448fb0 (__DATA,__data) non-external __MergedGlobals
+01449080 (__DATA,__data) non-external __MergedGlobals
+01449280 (__DATA,__data) non-external __MergedGlobals
+01449390 (__DATA,__data) non-external __MergedGlobals
+01449790 (__DATA,__data) non-external __MergedGlobals
+014499c0 (__DATA,__data) non-external __MergedGlobals
+0144a1e0 (__DATA,__data) non-external __MergedGlobals
+0144c9b0 (__DATA,__data) non-external __MergedGlobals
+0144d890 (__DATA,__bss) non-external __MergedGlobals
+0144d8d8 (__DATA,__bss) non-external __MergedGlobals
+0144dad0 (__DATA,__bss) non-external __MergedGlobals
+0144daf0 (__DATA,__bss) non-external __MergedGlobals
+0144dbf0 (__DATA,__bss) non-external __MergedGlobals
+0144dc20 (__DATA,__bss) non-external __MergedGlobals
+0145e1f0 (__DATA,__bss) non-external __MergedGlobals
+0145e200 (__DATA,__bss) non-external __MergedGlobals
+0145e210 (__DATA,__bss) non-external __MergedGlobals
+0145e220 (__DATA,__bss) non-external __MergedGlobals
+0145e230 (__DATA,__bss) non-external __MergedGlobals
+0145e240 (__DATA,__bss) non-external __MergedGlobals
+0145e250 (__DATA,__bss) non-external __MergedGlobals
+0145e260 (__DATA,__bss) non-external __MergedGlobals
+0145e270 (__DATA,__bss) non-external __MergedGlobals
+0145e280 (__DATA,__bss) non-external __MergedGlobals
+0145e290 (__DATA,__bss) non-external __MergedGlobals
+0145e2a0 (__DATA,__bss) non-external __MergedGlobals
+0145e2b0 (__DATA,__bss) non-external __MergedGlobals
+0145e2c0 (__DATA,__bss) non-external __MergedGlobals
+0145e2d0 (__DATA,__bss) non-external __MergedGlobals
+0145e2e0 (__DATA,__bss) non-external __MergedGlobals
+0145e2f0 (__DATA,__bss) non-external __MergedGlobals
+0145e300 (__DATA,__bss) non-external __MergedGlobals
+0145e310 (__DATA,__bss) non-external __MergedGlobals
+0145e320 (__DATA,__bss) non-external __MergedGlobals
+0145e330 (__DATA,__bss) non-external __MergedGlobals
+0145e340 (__DATA,__bss) non-external __MergedGlobals
+0145e350 (__DATA,__bss) non-external __MergedGlobals
+0145e360 (__DATA,__bss) non-external __MergedGlobals
+0145e370 (__DATA,__bss) non-external __MergedGlobals
+0145e380 (__DATA,__bss) non-external __MergedGlobals
+0145e390 (__DATA,__bss) non-external __MergedGlobals
+0145e3a0 (__DATA,__bss) non-external __MergedGlobals
+0145e3b0 (__DATA,__bss) non-external __MergedGlobals
+0145e3c0 (__DATA,__bss) non-external __MergedGlobals
+0145e3d0 (__DATA,__bss) non-external __MergedGlobals
+0145e3e0 (__DATA,__bss) non-external __MergedGlobals
+0145e3f0 (__DATA,__bss) non-external __MergedGlobals
+0145e400 (__DATA,__bss) non-external __MergedGlobals
+0145e410 (__DATA,__bss) non-external __MergedGlobals
+0145e420 (__DATA,__bss) non-external __MergedGlobals
+0145e430 (__DATA,__bss) non-external __MergedGlobals
+0145e440 (__DATA,__bss) non-external __MergedGlobals
+0145e450 (__DATA,__bss) non-external __MergedGlobals
+0145e460 (__DATA,__bss) non-external __MergedGlobals
+0145e470 (__DATA,__bss) non-external __MergedGlobals
+0145e480 (__DATA,__bss) non-external __MergedGlobals
+0145e490 (__DATA,__bss) non-external __MergedGlobals
+0145e4a0 (__DATA,__bss) non-external __MergedGlobals
+0145e4b0 (__DATA,__bss) non-external __MergedGlobals
+0145e4c0 (__DATA,__bss) non-external __MergedGlobals
+0145e4d0 (__DATA,__bss) non-external __MergedGlobals
+0145e4e0 (__DATA,__bss) non-external __MergedGlobals
+0145e4f0 (__DATA,__bss) non-external __MergedGlobals
+0145e500 (__DATA,__bss) non-external __MergedGlobals
+0145e510 (__DATA,__bss) non-external __MergedGlobals
+0145e520 (__DATA,__bss) non-external __MergedGlobals
+0145e530 (__DATA,__bss) non-external __MergedGlobals
+0145e540 (__DATA,__bss) non-external __MergedGlobals
+0145e550 (__DATA,__bss) non-external __MergedGlobals
+0145e560 (__DATA,__bss) non-external __MergedGlobals
+0145e570 (__DATA,__bss) non-external __MergedGlobals
+0145e580 (__DATA,__bss) non-external __MergedGlobals
+0145e590 (__DATA,__bss) non-external __MergedGlobals
+0145e5a0 (__DATA,__bss) non-external __MergedGlobals
+0145e5b0 (__DATA,__bss) non-external __MergedGlobals
+0145e5c0 (__DATA,__bss) non-external __MergedGlobals
+0145e5d0 (__DATA,__bss) non-external __MergedGlobals
+0145e5e0 (__DATA,__bss) non-external __MergedGlobals
+0145e5f0 (__DATA,__bss) non-external __MergedGlobals
+0145e600 (__DATA,__bss) non-external __MergedGlobals
+0145e610 (__DATA,__bss) non-external __MergedGlobals
+0145e620 (__DATA,__bss) non-external __MergedGlobals
+0145e630 (__DATA,__bss) non-external __MergedGlobals
+0145e640 (__DATA,__bss) non-external __MergedGlobals
+0145e650 (__DATA,__bss) non-external __MergedGlobals
+0145e660 (__DATA,__bss) non-external __MergedGlobals
+0145e670 (__DATA,__bss) non-external __MergedGlobals
+0145e680 (__DATA,__bss) non-external __MergedGlobals
+0145e690 (__DATA,__bss) non-external __MergedGlobals
+0145e6a0 (__DATA,__bss) non-external __MergedGlobals
+0145e6b0 (__DATA,__bss) non-external __MergedGlobals
+0145e6c0 (__DATA,__bss) non-external __MergedGlobals
+0145e6d0 (__DATA,__bss) non-external __MergedGlobals
+0145e6e0 (__DATA,__bss) non-external __MergedGlobals
+0145e6f0 (__DATA,__bss) non-external __MergedGlobals
+0145e700 (__DATA,__bss) non-external __MergedGlobals
+0145e710 (__DATA,__bss) non-external __MergedGlobals
+0145e720 (__DATA,__bss) non-external __MergedGlobals
+0145e730 (__DATA,__bss) non-external __MergedGlobals
+0145e740 (__DATA,__bss) non-external __MergedGlobals
+0145e750 (__DATA,__bss) non-external __MergedGlobals
+0145e760 (__DATA,__bss) non-external __MergedGlobals
+0145e770 (__DATA,__bss) non-external __MergedGlobals
+0145e780 (__DATA,__bss) non-external __MergedGlobals
+0145e790 (__DATA,__bss) non-external __MergedGlobals
+0145e7a0 (__DATA,__bss) non-external __MergedGlobals
+0145e7b0 (__DATA,__bss) non-external __MergedGlobals
+0145e7c0 (__DATA,__bss) non-external __MergedGlobals
+0145e7d0 (__DATA,__bss) non-external __MergedGlobals
+0145e7e0 (__DATA,__bss) non-external __MergedGlobals
+0145e7f0 (__DATA,__bss) non-external __MergedGlobals
+0145e800 (__DATA,__bss) non-external __MergedGlobals
+0145e810 (__DATA,__bss) non-external __MergedGlobals
+0145e820 (__DATA,__bss) non-external __MergedGlobals
+0145e830 (__DATA,__bss) non-external __MergedGlobals
+0145e840 (__DATA,__bss) non-external __MergedGlobals
+0145e850 (__DATA,__bss) non-external __MergedGlobals
+0145e860 (__DATA,__bss) non-external __MergedGlobals
+0145e870 (__DATA,__bss) non-external __MergedGlobals
+0145e880 (__DATA,__bss) non-external __MergedGlobals
+0145e890 (__DATA,__bss) non-external __MergedGlobals
+0145e8a0 (__DATA,__bss) non-external __MergedGlobals
+0145e8b0 (__DATA,__bss) non-external __MergedGlobals
+0145e8c0 (__DATA,__bss) non-external __MergedGlobals
+0145e8d0 (__DATA,__bss) non-external __MergedGlobals
+0145e8e0 (__DATA,__bss) non-external __MergedGlobals
+0145e8f0 (__DATA,__bss) non-external __MergedGlobals
+0145e900 (__DATA,__bss) non-external __MergedGlobals
+0145e910 (__DATA,__bss) non-external __MergedGlobals
+0145e920 (__DATA,__bss) non-external __MergedGlobals
+0145e930 (__DATA,__bss) non-external __MergedGlobals
+0145e940 (__DATA,__bss) non-external __MergedGlobals
+0145e950 (__DATA,__bss) non-external __MergedGlobals
+0145e960 (__DATA,__bss) non-external __MergedGlobals
+0145e970 (__DATA,__bss) non-external __MergedGlobals
+0145e980 (__DATA,__bss) non-external __MergedGlobals
+0145e990 (__DATA,__bss) non-external __MergedGlobals
+0145e9a0 (__DATA,__bss) non-external __MergedGlobals
+0145e9b0 (__DATA,__bss) non-external __MergedGlobals
+0145e9c0 (__DATA,__bss) non-external __MergedGlobals
+0145e9d0 (__DATA,__bss) non-external __MergedGlobals
+0145e9e0 (__DATA,__bss) non-external __MergedGlobals
+0145e9f0 (__DATA,__bss) non-external __MergedGlobals
+0145ea00 (__DATA,__bss) non-external __MergedGlobals
+0145ea10 (__DATA,__bss) non-external __MergedGlobals
+0145ea20 (__DATA,__bss) non-external __MergedGlobals
+0145ea30 (__DATA,__bss) non-external __MergedGlobals
+0145ea40 (__DATA,__bss) non-external __MergedGlobals
+0145ea50 (__DATA,__bss) non-external __MergedGlobals
+0145ea60 (__DATA,__bss) non-external __MergedGlobals
+0145ea70 (__DATA,__bss) non-external __MergedGlobals
+0145ea80 (__DATA,__bss) non-external __MergedGlobals
+0145ea90 (__DATA,__bss) non-external __MergedGlobals
+0145eaa0 (__DATA,__bss) non-external __MergedGlobals
+0145eab0 (__DATA,__bss) non-external __MergedGlobals
+0145eac0 (__DATA,__bss) non-external __MergedGlobals
+0145ead0 (__DATA,__bss) non-external __MergedGlobals
+0145eae0 (__DATA,__bss) non-external __MergedGlobals
+0145eaf0 (__DATA,__bss) non-external __MergedGlobals
+0145eb00 (__DATA,__bss) non-external __MergedGlobals
+0145eb10 (__DATA,__bss) non-external __MergedGlobals
+0145eb20 (__DATA,__bss) non-external __MergedGlobals
+0145eb30 (__DATA,__bss) non-external __MergedGlobals
+0145eb40 (__DATA,__bss) non-external __MergedGlobals
+0145eb50 (__DATA,__bss) non-external __MergedGlobals
+0145eb60 (__DATA,__bss) non-external __MergedGlobals
+0145eb70 (__DATA,__bss) non-external __MergedGlobals
+0145eb80 (__DATA,__bss) non-external __MergedGlobals
+0145eb90 (__DATA,__bss) non-external __MergedGlobals
+0145eba0 (__DATA,__bss) non-external __MergedGlobals
+0145ebb0 (__DATA,__bss) non-external __MergedGlobals
+0145ebc0 (__DATA,__bss) non-external __MergedGlobals
+0145ebd0 (__DATA,__bss) non-external __MergedGlobals
+0145ebe0 (__DATA,__bss) non-external __MergedGlobals
+0145ebf0 (__DATA,__bss) non-external __MergedGlobals
+0145ec00 (__DATA,__bss) non-external __MergedGlobals
+0145ec10 (__DATA,__bss) non-external __MergedGlobals
+0145ec20 (__DATA,__bss) non-external __MergedGlobals
+0145ec30 (__DATA,__bss) non-external __MergedGlobals
+0145ec40 (__DATA,__bss) non-external __MergedGlobals
+0145ec50 (__DATA,__bss) non-external __MergedGlobals
+0145ec60 (__DATA,__bss) non-external __MergedGlobals
+0145ec70 (__DATA,__bss) non-external __MergedGlobals
+0145ec80 (__DATA,__bss) non-external __MergedGlobals
+0145ec90 (__DATA,__bss) non-external __MergedGlobals
+0145eca0 (__DATA,__bss) non-external __MergedGlobals
+0145ecb0 (__DATA,__bss) non-external __MergedGlobals
+0145ecc0 (__DATA,__bss) non-external __MergedGlobals
+0145ecd0 (__DATA,__bss) non-external __MergedGlobals
+0145ece0 (__DATA,__bss) non-external __MergedGlobals
+0145ecf0 (__DATA,__bss) non-external __MergedGlobals
+0145ed00 (__DATA,__bss) non-external __MergedGlobals
+0145ed10 (__DATA,__bss) non-external __MergedGlobals
+0145ed20 (__DATA,__bss) non-external __MergedGlobals
+0145ed30 (__DATA,__bss) non-external __MergedGlobals
+0145ed40 (__DATA,__bss) non-external __MergedGlobals
+0145ed50 (__DATA,__bss) non-external __MergedGlobals
+0145ed60 (__DATA,__bss) non-external __MergedGlobals
+0145ed70 (__DATA,__bss) non-external __MergedGlobals
+0145ed80 (__DATA,__bss) non-external __MergedGlobals
+0145ed90 (__DATA,__bss) non-external __MergedGlobals
+0145eda0 (__DATA,__bss) non-external __MergedGlobals
+0145edb0 (__DATA,__bss) non-external __MergedGlobals
+0145edc0 (__DATA,__bss) non-external __MergedGlobals
+0145edd0 (__DATA,__bss) non-external __MergedGlobals
+0145ede0 (__DATA,__bss) non-external __MergedGlobals
+0145edf0 (__DATA,__bss) non-external __MergedGlobals
+0145ee00 (__DATA,__bss) non-external __MergedGlobals
+0145ee10 (__DATA,__bss) non-external __MergedGlobals
+0145ee20 (__DATA,__bss) non-external __MergedGlobals
+0145ee30 (__DATA,__bss) non-external __MergedGlobals
+0145ee40 (__DATA,__bss) non-external __MergedGlobals
+0145ee50 (__DATA,__bss) non-external __MergedGlobals
+0145ee60 (__DATA,__bss) non-external __MergedGlobals
+0145ee70 (__DATA,__bss) non-external __MergedGlobals
+0145ee80 (__DATA,__bss) non-external __MergedGlobals
+0145ee90 (__DATA,__bss) non-external __MergedGlobals
+0145eea0 (__DATA,__bss) non-external __MergedGlobals
+0145eeb0 (__DATA,__bss) non-external __MergedGlobals
+0145eec0 (__DATA,__bss) non-external __MergedGlobals
+0145eed0 (__DATA,__bss) non-external __MergedGlobals
+0145eee0 (__DATA,__bss) non-external __MergedGlobals
+0145eef0 (__DATA,__bss) non-external __MergedGlobals
+0145ef00 (__DATA,__bss) non-external __MergedGlobals
+0145ef10 (__DATA,__bss) non-external __MergedGlobals
+0145ef20 (__DATA,__bss) non-external __MergedGlobals
+0145ef30 (__DATA,__bss) non-external __MergedGlobals
+0145ef40 (__DATA,__bss) non-external __MergedGlobals
+0145ef50 (__DATA,__bss) non-external __MergedGlobals
+0145ef60 (__DATA,__bss) non-external __MergedGlobals
+0145ef70 (__DATA,__bss) non-external __MergedGlobals
+0145ef80 (__DATA,__bss) non-external __MergedGlobals
+0145ef90 (__DATA,__bss) non-external __MergedGlobals
+0145efa0 (__DATA,__bss) non-external __MergedGlobals
+0145efb0 (__DATA,__bss) non-external __MergedGlobals
+0145efc0 (__DATA,__bss) non-external __MergedGlobals
+0145efd0 (__DATA,__bss) non-external __MergedGlobals
+0145efe0 (__DATA,__bss) non-external __MergedGlobals
+0145eff0 (__DATA,__bss) non-external __MergedGlobals
+0145f000 (__DATA,__bss) non-external __MergedGlobals
+0145f010 (__DATA,__bss) non-external __MergedGlobals
+0145f020 (__DATA,__bss) non-external __MergedGlobals
+0145f030 (__DATA,__bss) non-external __MergedGlobals
+0145f040 (__DATA,__bss) non-external __MergedGlobals
+0145f050 (__DATA,__bss) non-external __MergedGlobals
+0145f060 (__DATA,__bss) non-external __MergedGlobals
+0145f070 (__DATA,__bss) non-external __MergedGlobals
+0145f080 (__DATA,__bss) non-external __MergedGlobals
+0145f090 (__DATA,__bss) non-external __MergedGlobals
+0145f0a0 (__DATA,__bss) non-external __MergedGlobals
+0145f0b0 (__DATA,__bss) non-external __MergedGlobals
+0145f0c0 (__DATA,__bss) non-external __MergedGlobals
+0145f0d0 (__DATA,__bss) non-external __MergedGlobals
+0145f0e0 (__DATA,__bss) non-external __MergedGlobals
+0145f0f0 (__DATA,__bss) non-external __MergedGlobals
+0145f100 (__DATA,__bss) non-external __MergedGlobals
+0145f110 (__DATA,__bss) non-external __MergedGlobals
+0145f120 (__DATA,__bss) non-external __MergedGlobals
+0145f130 (__DATA,__bss) non-external __MergedGlobals
+0145f140 (__DATA,__bss) non-external __MergedGlobals
+0145f150 (__DATA,__bss) non-external __MergedGlobals
+0145f160 (__DATA,__bss) non-external __MergedGlobals
+0145f170 (__DATA,__bss) non-external __MergedGlobals
+0145f180 (__DATA,__bss) non-external __MergedGlobals
+0145f190 (__DATA,__bss) non-external __MergedGlobals
+0145f1a0 (__DATA,__bss) non-external __MergedGlobals
+0145f1b0 (__DATA,__bss) non-external __MergedGlobals
+0145f1c0 (__DATA,__bss) non-external __MergedGlobals
+0145f1d0 (__DATA,__bss) non-external __MergedGlobals
+0145f1e0 (__DATA,__bss) non-external __MergedGlobals
+0145f1f0 (__DATA,__bss) non-external __MergedGlobals
+0145f200 (__DATA,__bss) non-external __MergedGlobals
+0145f210 (__DATA,__bss) non-external __MergedGlobals
+0145f220 (__DATA,__bss) non-external __MergedGlobals
+0145f230 (__DATA,__bss) non-external __MergedGlobals
+0145f240 (__DATA,__bss) non-external __MergedGlobals
+0145f250 (__DATA,__bss) non-external __MergedGlobals
+0145f260 (__DATA,__bss) non-external __MergedGlobals
+0145f270 (__DATA,__bss) non-external __MergedGlobals
+0145f280 (__DATA,__bss) non-external __MergedGlobals
+0145f290 (__DATA,__bss) non-external __MergedGlobals
+0145f2a0 (__DATA,__bss) non-external __MergedGlobals
+0145f2b0 (__DATA,__bss) non-external __MergedGlobals
+0145f2c0 (__DATA,__bss) non-external __MergedGlobals
+0145f2d0 (__DATA,__bss) non-external __MergedGlobals
+0145f2e0 (__DATA,__bss) non-external __MergedGlobals
+0145f2f0 (__DATA,__bss) non-external __MergedGlobals
+0145f300 (__DATA,__bss) non-external __MergedGlobals
+0145f310 (__DATA,__bss) non-external __MergedGlobals
+0145f320 (__DATA,__bss) non-external __MergedGlobals
+0145f330 (__DATA,__bss) non-external __MergedGlobals
+0145f340 (__DATA,__bss) non-external __MergedGlobals
+0145f350 (__DATA,__bss) non-external __MergedGlobals
+0145f360 (__DATA,__bss) non-external __MergedGlobals
+0145f370 (__DATA,__bss) non-external __MergedGlobals
+0145f380 (__DATA,__bss) non-external __MergedGlobals
+0145f390 (__DATA,__bss) non-external __MergedGlobals
+0145f3a0 (__DATA,__bss) non-external __MergedGlobals
+0145f3b0 (__DATA,__bss) non-external __MergedGlobals
+0145f3c0 (__DATA,__bss) non-external __MergedGlobals
+0145f3d0 (__DATA,__bss) non-external __MergedGlobals
+0145f3e0 (__DATA,__bss) non-external __MergedGlobals
+0145f3f0 (__DATA,__bss) non-external __MergedGlobals
+0145f400 (__DATA,__bss) non-external __MergedGlobals
+0145f410 (__DATA,__bss) non-external __MergedGlobals
+0145f420 (__DATA,__bss) non-external __MergedGlobals
+0145f430 (__DATA,__bss) non-external __MergedGlobals
+0145f440 (__DATA,__bss) non-external __MergedGlobals
+0145f450 (__DATA,__bss) non-external __MergedGlobals
+0145f460 (__DATA,__bss) non-external __MergedGlobals
+0145f470 (__DATA,__bss) non-external __MergedGlobals
+0145f480 (__DATA,__bss) non-external __MergedGlobals
+0145f490 (__DATA,__bss) non-external __MergedGlobals
+0145f4a0 (__DATA,__bss) non-external __MergedGlobals
+0145f4b0 (__DATA,__bss) non-external __MergedGlobals
+0145f4c0 (__DATA,__bss) non-external __MergedGlobals
+0145f4d0 (__DATA,__bss) non-external __MergedGlobals
+0145f4e0 (__DATA,__bss) non-external __MergedGlobals
+0145f4f0 (__DATA,__bss) non-external __MergedGlobals
+0145f500 (__DATA,__bss) non-external __MergedGlobals
+0145f510 (__DATA,__bss) non-external __MergedGlobals
+0145f520 (__DATA,__bss) non-external __MergedGlobals
+0145f530 (__DATA,__bss) non-external __MergedGlobals
+0145f540 (__DATA,__bss) non-external __MergedGlobals
+0145f550 (__DATA,__bss) non-external __MergedGlobals
+0145f560 (__DATA,__bss) non-external __MergedGlobals
+0145f570 (__DATA,__bss) non-external __MergedGlobals
+0145f580 (__DATA,__bss) non-external __MergedGlobals
+0145f590 (__DATA,__bss) non-external __MergedGlobals
+0145f5a0 (__DATA,__bss) non-external __MergedGlobals
+0145f5b0 (__DATA,__bss) non-external __MergedGlobals
+0145f5c0 (__DATA,__bss) non-external __MergedGlobals
+0145f5d0 (__DATA,__bss) non-external __MergedGlobals
+0145f5e0 (__DATA,__bss) non-external __MergedGlobals
+0145f5f0 (__DATA,__bss) non-external __MergedGlobals
+0145f600 (__DATA,__bss) non-external __MergedGlobals
+0145f610 (__DATA,__bss) non-external __MergedGlobals
+0145f620 (__DATA,__bss) non-external __MergedGlobals
+0145f630 (__DATA,__bss) non-external __MergedGlobals
+0145f640 (__DATA,__bss) non-external __MergedGlobals
+0145f650 (__DATA,__bss) non-external __MergedGlobals
+0145f660 (__DATA,__bss) non-external __MergedGlobals
+0145f670 (__DATA,__bss) non-external __MergedGlobals
+0145f680 (__DATA,__bss) non-external __MergedGlobals
+0145f690 (__DATA,__bss) non-external __MergedGlobals
+0145f6a0 (__DATA,__bss) non-external __MergedGlobals
+0145f6b0 (__DATA,__bss) non-external __MergedGlobals
+0145f6c0 (__DATA,__bss) non-external __MergedGlobals
+0145f6d0 (__DATA,__bss) non-external __MergedGlobals
+0145f6e0 (__DATA,__bss) non-external __MergedGlobals
+0145f6f0 (__DATA,__bss) non-external __MergedGlobals
+0145f700 (__DATA,__bss) non-external __MergedGlobals
+0145f710 (__DATA,__bss) non-external __MergedGlobals
+0145f720 (__DATA,__bss) non-external __MergedGlobals
+0145f730 (__DATA,__bss) non-external __MergedGlobals
+0145f740 (__DATA,__bss) non-external __MergedGlobals
+0145f750 (__DATA,__bss) non-external __MergedGlobals
+0145f760 (__DATA,__bss) non-external __MergedGlobals
+0145f770 (__DATA,__bss) non-external __MergedGlobals
+0145f780 (__DATA,__bss) non-external __MergedGlobals
+0145f790 (__DATA,__bss) non-external __MergedGlobals
+0145f7a0 (__DATA,__bss) non-external __MergedGlobals
+0145f7b0 (__DATA,__bss) non-external __MergedGlobals
+0145f7c0 (__DATA,__bss) non-external __MergedGlobals
+0145f7d0 (__DATA,__bss) non-external __MergedGlobals
+0145f7e0 (__DATA,__bss) non-external __MergedGlobals
+0145f7f0 (__DATA,__bss) non-external __MergedGlobals
+0145f800 (__DATA,__bss) non-external __MergedGlobals
+0145f810 (__DATA,__bss) non-external __MergedGlobals
+0145f820 (__DATA,__bss) non-external __MergedGlobals
+0145f830 (__DATA,__bss) non-external __MergedGlobals
+0145f840 (__DATA,__bss) non-external __MergedGlobals
+0145f850 (__DATA,__bss) non-external __MergedGlobals
+0145f860 (__DATA,__bss) non-external __MergedGlobals
+0145f870 (__DATA,__bss) non-external __MergedGlobals
+0145f880 (__DATA,__bss) non-external __MergedGlobals
+0145f890 (__DATA,__bss) non-external __MergedGlobals
+0145f8a0 (__DATA,__bss) non-external __MergedGlobals
+0145f8b0 (__DATA,__bss) non-external __MergedGlobals
+0145f8c0 (__DATA,__bss) non-external __MergedGlobals
+0145f8d0 (__DATA,__bss) non-external __MergedGlobals
+0145f8e0 (__DATA,__bss) non-external __MergedGlobals
+0145f8f0 (__DATA,__bss) non-external __MergedGlobals
+0145f900 (__DATA,__bss) non-external __MergedGlobals
+0145f910 (__DATA,__bss) non-external __MergedGlobals
+0145f920 (__DATA,__bss) non-external __MergedGlobals
+0145f930 (__DATA,__bss) non-external __MergedGlobals
+0145f940 (__DATA,__bss) non-external __MergedGlobals
+0145f950 (__DATA,__bss) non-external __MergedGlobals
+0145f960 (__DATA,__bss) non-external __MergedGlobals
+0145f970 (__DATA,__bss) non-external __MergedGlobals
+0145f980 (__DATA,__bss) non-external __MergedGlobals
+0145f990 (__DATA,__bss) non-external __MergedGlobals
+0145f9a0 (__DATA,__bss) non-external __MergedGlobals
+0145f9b0 (__DATA,__bss) non-external __MergedGlobals
+0145f9c0 (__DATA,__bss) non-external __MergedGlobals
+0145f9d0 (__DATA,__bss) non-external __MergedGlobals
+0145f9e0 (__DATA,__bss) non-external __MergedGlobals
+0145f9f0 (__DATA,__bss) non-external __MergedGlobals
+0145fa00 (__DATA,__bss) non-external __MergedGlobals
+0145fa10 (__DATA,__bss) non-external __MergedGlobals
+0145fa20 (__DATA,__bss) non-external __MergedGlobals
+0145fa30 (__DATA,__bss) non-external __MergedGlobals
+0145fa40 (__DATA,__bss) non-external __MergedGlobals
+0145fa50 (__DATA,__bss) non-external __MergedGlobals
+0145fa60 (__DATA,__bss) non-external __MergedGlobals
+0145fa70 (__DATA,__bss) non-external __MergedGlobals
+0145fa80 (__DATA,__bss) non-external __MergedGlobals
+0145fa90 (__DATA,__bss) non-external __MergedGlobals
+0145faa0 (__DATA,__bss) non-external __MergedGlobals
+0145fab0 (__DATA,__bss) non-external __MergedGlobals
+0145fac0 (__DATA,__bss) non-external __MergedGlobals
+0145fad0 (__DATA,__bss) non-external __MergedGlobals
+0145fae0 (__DATA,__bss) non-external __MergedGlobals
+0145faf0 (__DATA,__bss) non-external __MergedGlobals
+0145fb00 (__DATA,__bss) non-external __MergedGlobals
+0145fb10 (__DATA,__bss) non-external __MergedGlobals
+0145fb20 (__DATA,__bss) non-external __MergedGlobals
+0145fb30 (__DATA,__bss) non-external __MergedGlobals
+0145fb40 (__DATA,__bss) non-external __MergedGlobals
+0145fb50 (__DATA,__bss) non-external __MergedGlobals
+0145fb60 (__DATA,__bss) non-external __MergedGlobals
+0145fb70 (__DATA,__bss) non-external __MergedGlobals
+0145fb80 (__DATA,__bss) non-external __MergedGlobals
+0145fb90 (__DATA,__bss) non-external __MergedGlobals
+0145fbc0 (__DATA,__bss) non-external __MergedGlobals
+0145fbf0 (__DATA,__bss) non-external __MergedGlobals
+014674f0 (__DATA,__bss) non-external __MergedGlobals
+014674f8 (__DATA,__bss) non-external __MergedGlobals
+01467500 (__DATA,__bss) non-external __MergedGlobals
+01467510 (__DATA,__bss) non-external __MergedGlobals
+01467550 (__DATA,__bss) non-external __MergedGlobals
+014675a0 (__DATA,__bss) non-external __MergedGlobals
+014675a8 (__DATA,__bss) non-external __MergedGlobals
+014675b8 (__DATA,__bss) non-external __MergedGlobals
+014675d0 (__DATA,__bss) non-external __MergedGlobals
+01467600 (__DATA,__bss) non-external __MergedGlobals
+01467878 (__DATA,__bss) non-external __MergedGlobals
+01467880 (__DATA,__bss) non-external __MergedGlobals
+01467890 (__DATA,__bss) non-external __MergedGlobals
+014678b0 (__DATA,__bss) non-external __MergedGlobals
+014678b8 (__DATA,__bss) non-external __MergedGlobals
+014678c0 (__DATA,__bss) non-external __MergedGlobals
+014678d0 (__DATA,__bss) non-external __MergedGlobals
+01467d10 (__DATA,__bss) non-external __MergedGlobals
+01467d20 (__DATA,__bss) non-external __MergedGlobals
+01467d60 (__DATA,__bss) non-external __MergedGlobals
+01468080 (__DATA,__bss) non-external __MergedGlobals
+01468090 (__DATA,__bss) non-external __MergedGlobals
+0146a4a0 (__DATA,__bss) non-external __MergedGlobals
+0146a5c0 (__DATA,__bss) non-external __MergedGlobals
+0146a5dc (__DATA,__bss) non-external __MergedGlobals
+0146a600 (__DATA,__bss) non-external __MergedGlobals
+0146bc30 (__DATA,__bss) non-external __MergedGlobals
+0146bc70 (__DATA,__bss) non-external __MergedGlobals
+0146bcd0 (__DATA,__bss) non-external __MergedGlobals
+0146bce0 (__DATA,__bss) non-external __MergedGlobals
+0146bd90 (__DATA,__bss) non-external __MergedGlobals
+0146c070 (__DATA,__bss) non-external __MergedGlobals
+0146c0b0 (__DATA,__bss) non-external __MergedGlobals
+0146c0e0 (__DATA,__bss) non-external __MergedGlobals
+0146c560 (__DATA,__bss) non-external __MergedGlobals
+0146c57c (__DATA,__bss) non-external __MergedGlobals
+0146c58c (__DATA,__bss) non-external __MergedGlobals
+0146c5a0 (__DATA,__bss) non-external __MergedGlobals
+0146c600 (__DATA,__bss) non-external __MergedGlobals
+0146c86c (__DATA,__bss) non-external __MergedGlobals
+0146c880 (__DATA,__bss) non-external __MergedGlobals
+0146c888 (__DATA,__bss) non-external __MergedGlobals
+0146c890 (__DATA,__bss) non-external __MergedGlobals
+0146c8c0 (__DATA,__bss) non-external __MergedGlobals
+0146c910 (__DATA,__bss) non-external __MergedGlobals
+0146c970 (__DATA,__bss) non-external __MergedGlobals
+0146ca80 (__DATA,__bss) non-external __MergedGlobals
+0146cb90 (__DATA,__bss) non-external __MergedGlobals
+0146cbb0 (__DATA,__bss) non-external __MergedGlobals
+0146d520 (__DATA,__bss) non-external __MergedGlobals
+0146e5d0 (__DATA,__bss) non-external __MergedGlobals
+0146e760 (__DATA,__bss) non-external __MergedGlobals
+0146e870 (__DATA,__bss) non-external __MergedGlobals
+0146e8a0 (__DATA,__bss) non-external __MergedGlobals

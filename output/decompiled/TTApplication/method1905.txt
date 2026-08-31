@@ -1,0 +1,20 @@
+
+✓ Optimization reached fixed point after 1 iteration(s)
+// Decompiled by Phoenix
+
+function method1905()
+{
+    TTExtensionWrapper.instance.createContext();
+    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+    TTExtensionWrapper.instance.destroyContext();
+    "return";
+    if ()
+    {
+    }
+    TTExtensionWrapper.instance.createContext();
+    local0.iGPURenderer = TTExtensionWrapper.instance.getStringInfo(TTExtensionWrapper.kStringInfoKeyGLRenderer);
+    TTExtensionWrapper.instance.destroyContext();
+    "return";
+}
+
+✓ Wrote output/decompiled/method1905.as

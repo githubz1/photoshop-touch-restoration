@@ -1,0 +1,1625 @@
+[
+  {
+    "abc": "doabc_000.abc",
+    "classes": [
+      "_76da1967c48c0ffca308f95d7e353667187edcfb344909d968df614ccba7e6ed_flash_display_Sprite"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_001.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCameraUI"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "cameraui"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "launch",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 4,
+        "operation": "getImage",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_002.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCameraCapabilities"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_003.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureProvider"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_004.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureProviderJaja"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 8,
+        "operation": "provider_start",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 9,
+        "operation": "provider_stop",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_005.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTBigDataExtension"
+    ],
+    "contexts": [
+      {
+        "method": 5,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "bigdata"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 9,
+        "operation": "preflight",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      }
+    ]
+  },
+  {
+    "abc": "doabc_006.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCameraParameters"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_007.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.iap::TTStore"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_008.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 8,
+        "operation": "canMakePurchases",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 9,
+        "operation": "closeStore",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 10,
+        "operation": "openStore",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 11,
+        "operation": "purchaseProduct",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 12,
+        "operation": "transferPurchasedProducts",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 13,
+        "operation": "acknowledgeTransaction",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 14,
+        "operation": "queryProducts",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_009.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureSource"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_010.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureSourceJaja"
+    ],
+    "contexts": [],
+    "native_calls": [
+      {
+        "method": 7,
+        "operation": "provider_getButtonState",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 8,
+        "operation": "provider_getPressure",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_011.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCameraRoll"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "cameraroll"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "browseImages",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 4,
+        "operation": "requestThumbnail",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 5,
+        "operation": "getThumbnail",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 6,
+        "operation": "getImage",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 7,
+        "operation": "getExifHeader",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 8,
+        "operation": "requestImage",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 9,
+        "operation": "cancelPendingRequests",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 10,
+        "operation": "addImage",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 11,
+        "operation": "pickImage",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 12,
+        "operation": "getPickedImage",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 13,
+        "operation": "accessCheck",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_012.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTImpExp"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "impexp"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "startEncodeZLib",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 4,
+        "operation": "startEncodeLz4",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 5,
+        "operation": "startEncodeJPEG",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 6,
+        "operation": "startEncodePNG",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 7,
+        "operation": "getEncodingProgress",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 8,
+        "operation": "getEncodedDataSize",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 9,
+        "operation": "getEncodedData",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 10,
+        "operation": "requestCancel",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 11,
+        "operation": "hasFinishedEncoding",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 12,
+        "operation": "waitFinishedEncoding",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 13,
+        "operation": "clearEncodedData",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_013.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTWebServer"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "modifyPasswdFile",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 4,
+        "operation": "start",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 5,
+        "operation": "stop",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_014.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTPreflightResult"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_015.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 12,
+        "operation": "provider_start",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 13,
+        "operation": "provider_stop",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 14,
+        "operation": "provider_invokeConfigureUI",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 15,
+        "operation": "provider_createPressureSource",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      }
+    ]
+  },
+  {
+    "abc": "doabc_016.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTBonjour"
+    ],
+    "contexts": [
+      {
+        "method": 12,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 4,
+        "operation": "open",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 5,
+        "operation": "close",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 6,
+        "operation": "isOpen",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 7,
+        "operation": "publishService",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 8,
+        "operation": "unpublishService",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 9,
+        "operation": "startBrowse",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 10,
+        "operation": "stopBrowse",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      }
+    ]
+  },
+  {
+    "abc": "doabc_017.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.iap::TTStoreManager"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_018.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTPrinter"
+    ],
+    "contexts": [
+      {
+        "method": 5,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 2,
+        "operation": "isPrintingAvailable",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 3,
+        "operation": "print",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 4,
+        "operation": "cleanup",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_019.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTLicensing"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 0,
+        "strings": []
+      },
+      {
+        "method": 3,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "licensing"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 5,
+        "operation": "c",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_020.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+    ],
+    "contexts": [],
+    "native_calls": [
+      {
+        "method": 5,
+        "operation": "provider_connect",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 6,
+        "operation": "provider_disconnect",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 7,
+        "operation": "provider_getButtonState",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 8,
+        "operation": "provider_getPressure",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 9,
+        "operation": "provider_updatePressureSource",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_021.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTActivityUI"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "activityui"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "showActivityUI",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 4,
+        "operation": "hideActivityUI",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_022.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTGL"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "gl"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "createContext",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 4,
+        "operation": "destroyContext",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 5,
+        "operation": "getLastGLErrorCode",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 6,
+        "operation": "getStringInfo",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 7,
+        "operation": "createFilter",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 8,
+        "operation": "prepareTextureEmpty",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 9,
+        "operation": "prepareTextureFromBitmapData",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 10,
+        "operation": "updateTextureFromBitmapData",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 11,
+        "operation": "setParamFloat",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 12,
+        "operation": "setParamInt",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 13,
+        "operation": "setParamFloatMulti",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 14,
+        "operation": "setParamIntMulti",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 15,
+        "operation": "applyFilter",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 16,
+        "operation": "getShaderInfoLog",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 17,
+        "operation": "getNumVertices",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 18,
+        "operation": "setNumVertices",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 19,
+        "operation": "setVertexAttribDataFloat",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 20,
+        "operation": "clearVertexAttribData",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 21,
+        "operation": "getVertexAttribDataRangeStart",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 22,
+        "operation": "getVertexAttribDataRangeCount",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 23,
+        "operation": "setVertexAttribDataRange",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 24,
+        "operation": "setDrawMode",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 25,
+        "operation": "enableVertexAttrib",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 26,
+        "operation": "drawArrays",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 27,
+        "operation": "readPixels",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 28,
+        "operation": "destroyFilter",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 29,
+        "operation": "clear",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 30,
+        "operation": "setParamFloatMatrix",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 31,
+        "operation": "executeSequence",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 32,
+        "operation": "asyncExecuteSequence",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 33,
+        "operation": "asyncJoin",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 34,
+        "operation": "asyncInterrupt",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 35,
+        "operation": "asyncReadPixels",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 36,
+        "operation": "shaderCreate",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 37,
+        "operation": "shaderDispose",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 38,
+        "operation": "programCreate",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 39,
+        "operation": "programDispose",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 40,
+        "operation": "programUse",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_023.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTQuickSelection"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "quickselection"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "createQuickSelectTool",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 4,
+        "operation": "disposeQuickSelectTool",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 5,
+        "operation": "setMask",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 6,
+        "operation": "setMaskWithARGB",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 7,
+        "operation": "brushHit",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 8,
+        "operation": "brushHits",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 9,
+        "operation": "qsBrushHits",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 10,
+        "operation": "getMask",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 11,
+        "operation": "mouseUp",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 12,
+        "operation": "reset",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 13,
+        "operation": "switchMode",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_024.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureProviderEvent"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_025.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTGLCommandSequence"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_026.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureSourceEvent"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_027.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCameraFpsRange"
+    ],
+    "contexts": [],
+    "native_calls": []
+  },
+  {
+    "abc": "doabc_028.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTAM"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "am"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "init",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 4,
+        "operation": "run",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 5,
+        "operation": "getProgress",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 6,
+        "operation": "getResult",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 7,
+        "operation": "release",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_029.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureSourceJotTouch"
+    ],
+    "contexts": [],
+    "native_calls": [
+      {
+        "method": 7,
+        "operation": "provider_getButtonState",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 8,
+        "operation": "provider_getPressure",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_030.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTSS"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "ss"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "init",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 4,
+        "operation": "run",
+        "extension_call_argc": 7,
+        "native_argc": 6
+      },
+      {
+        "method": 5,
+        "operation": "getProgress",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 6,
+        "operation": "getResult",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 7,
+        "operation": "release",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_031.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCamera"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "camera[static]"
+        ]
+      },
+      {
+        "method": 11,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "camera"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 4,
+        "operation": "enumerateCameras",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 10,
+        "operation": "getCapabilities",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 13,
+        "operation": "open",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 14,
+        "operation": "cancel",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 15,
+        "operation": "getParameters",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 16,
+        "operation": "setParameters",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 17,
+        "operation": "startPreview",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 18,
+        "operation": "stopPreview",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 19,
+        "operation": "takePicture",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 20,
+        "operation": "getPictureData",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 21,
+        "operation": "getNextPreviewFrame",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 22,
+        "operation": "getFinishCode",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_032.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTCAF"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "caf"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "CAFGetResult",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      }
+    ]
+  },
+  {
+    "abc": "doabc_033.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTMail"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "email"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "sendMail",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 4,
+        "operation": "saveFile",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 5,
+        "operation": "copyFile",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 6,
+        "operation": "releaseFile",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_034.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureProviderJotTouch"
+    ],
+    "contexts": [
+      {
+        "method": 2,
+        "argc": 2,
+        "strings": []
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 10,
+        "operation": "provider_start",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 11,
+        "operation": "provider_stop",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      }
+    ]
+  },
+  {
+    "abc": "doabc_035.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension::TTNEUtils"
+    ],
+    "contexts": [
+      {
+        "method": 1,
+        "argc": 2,
+        "strings": [
+          "com.adobe.ttpixel.extension",
+          "utils"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "method": 3,
+        "operation": "getTimestamp",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 4,
+        "operation": "trace",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 5,
+        "operation": "getDeviceID",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 6,
+        "operation": "getDeviceName",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 7,
+        "operation": "canLaunchApp",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 8,
+        "operation": "launchApp",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 9,
+        "operation": "setStatusBarHidden",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 10,
+        "operation": "leaveApp",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 11,
+        "operation": "isolateColor",
+        "extension_call_argc": 8,
+        "native_argc": 7
+      },
+      {
+        "method": 12,
+        "operation": "clipboardHasFormat",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 13,
+        "operation": "clipboardSetFormatData",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 14,
+        "operation": "clipboardSetMultiData",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 15,
+        "operation": "clipboardGetFormatData",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 16,
+        "operation": "plistToXMLString",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 17,
+        "operation": "copyURIContentToFile",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 18,
+        "operation": "resolveImageContentURI",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 19,
+        "operation": "compressBitmapRLE",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 20,
+        "operation": "getPixelsEx",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 21,
+        "operation": "setPixelsEx",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 22,
+        "operation": "lz4Compress",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 23,
+        "operation": "lz4Uncompress",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 24,
+        "operation": "lz4Deflate",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 25,
+        "operation": "lz4Inflate",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 26,
+        "operation": "getPixelsBitmapEx",
+        "extension_call_argc": 6,
+        "native_argc": 5
+      },
+      {
+        "method": 27,
+        "operation": "getMemoryStatsEx",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 28,
+        "operation": "getScaledPixelsEx",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 29,
+        "operation": "alphaBlend",
+        "extension_call_argc": 7,
+        "native_argc": 6
+      },
+      {
+        "method": 30,
+        "operation": "uncompressBitmapDataEx",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 31,
+        "operation": "bitmapDataToFileEx",
+        "extension_call_argc": 4,
+        "native_argc": 3
+      },
+      {
+        "method": 32,
+        "operation": "bitmapDataFromFileEx",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 33,
+        "operation": "bitmapFileCreateEmpty",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 34,
+        "operation": "bitmapFileCreateFromBitmapData",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 35,
+        "operation": "bitmapFileWrite",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 36,
+        "operation": "bitmapFileRead",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 37,
+        "operation": "bitmapFileResample",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 38,
+        "operation": "bitmapDataCopy",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 39,
+        "operation": "bitmapDataResample",
+        "extension_call_argc": 5,
+        "native_argc": 4
+      },
+      {
+        "method": 40,
+        "operation": "getSystemInfo",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 41,
+        "operation": "setWakeLock",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 42,
+        "operation": "getNetworkState",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 43,
+        "operation": "getLocalIP",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 44,
+        "operation": "openPath",
+        "extension_call_argc": 3,
+        "native_argc": 2
+      },
+      {
+        "method": 45,
+        "operation": "setRequestedOrientation",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 46,
+        "operation": "getRequestedOrientation",
+        "extension_call_argc": 1,
+        "native_argc": 0
+      },
+      {
+        "method": 47,
+        "operation": "showNetworkActivityIndicator",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      },
+      {
+        "method": 48,
+        "operation": "showNetworkActivityIndicator",
+        "extension_call_argc": 2,
+        "native_argc": 1
+      }
+    ]
+  },
+  {
+    "abc": "doabc_036.abc",
+    "classes": [
+      "com.adobe.ttpixel.extension.pressure::TTPressureProviderManager"
+    ],
+    "contexts": [],
+    "native_calls": []
+  }
+]

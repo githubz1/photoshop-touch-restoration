@@ -1,0 +1,138 @@
+====================================================================================================
+com.adobe.ttpixel.app.TTApplication
+====================================================================================================
+Class index       : 547
+Superclass        : com.adobe.cab.application.CABApplication
+Instance init     : method 1895
+                    params=() return=* internal_name='' flags=0x08
+Static init       : method 1876
+                    params=() return=* internal_name='' flags=0x00
+
+INSTANCE TRAITS
+----------------------------------------------------------------------------------------------------
+  0  slot     com.adobe.ttpixel.app:TTApplication.iMainWindow         slot=0   type=com.adobe.cab.view.CABWindow default_index=0 default_kind=0
+  1  slot     com.adobe.ttpixel.app:TTApplication.iProgressView       slot=0   type=com.adobe.ttpixel.ui.TTProgressView default_index=0 default_kind=0
+  2  slot     com.adobe.ttpixel.app:TTApplication.iContentView        slot=0   type=com.adobe.cab.view.CABView default_index=0 default_kind=0
+  3  slot     com.adobe.ttpixel.app:TTApplication.iModel              slot=0   type=com.adobe.ttpixel.editor.app.TTModel default_index=0 default_kind=0
+  4  slot     com.adobe.ttpixel.app:TTApplication.iClipboard          slot=0   type=com.adobe.ttpixel.utils.TTClipboard default_index=0 default_kind=0
+  5  slot     com.adobe.ttpixel.app:TTApplication.iGallery            slot=0   type=com.adobe.ttpixel.gallery.TTGallery default_index=0 default_kind=0
+  6  slot     com.adobe.ttpixel.app:TTApplication.iStoragePath        slot=0   type=com.adobe.cab.io.core.CABFile default_index=0 default_kind=0
+  7  slot     com.adobe.ttpixel.app:TTApplication.iThumbnailStoragePath slot=0   type=com.adobe.cab.io.core.CABFile default_index=0 default_kind=0
+  8  slot     com.adobe.ttpixel.app:TTApplication.iShowMode           slot=0   type=int default_index=0 default_kind=0
+  9  slot     com.adobe.ttpixel.app:TTApplication.iShowWelcomePanel   slot=0   type=Boolean default_index=0 default_kind=0
+ 10  slot     com.adobe.ttpixel.app:TTApplication.iIsNewlyCreatedFile slot=0   type=Boolean default_index=0 default_kind=0
+ 11  slot     com.adobe.ttpixel.app:TTApplication.iImpExBusyLock      slot=0   type=int default_index=0 default_kind=0
+ 12  slot     com.adobe.ttpixel.app:TTApplication.iEulaAndOptInState  slot=0   type=Object default_index=0 default_kind=0
+ 13  slot     com.adobe.ttpixel.app:TTApplication.iEulaAndOptInNew    slot=0   type=Object default_index=0 default_kind=0
+ 14  slot     com.adobe.ttpixel.app:TTApplication.iStartupDialogsPassed slot=0   type=Boolean default_index=0 default_kind=0
+ 15  slot     com.adobe.ttpixel.app:TTApplication.iSlideTimer         slot=0   type=flash.utils.Timer default_index=0 default_kind=0
+ 16  slot     com.adobe.ttpixel.app:TTApplication.iSlideBitmap        slot=0   type=flash.display.Bitmap default_index=0 default_kind=0
+ 17  slot     com.adobe.ttpixel.app:TTApplication.iHasShownSyncPanel  slot=0   type=Boolean default_index=0 default_kind=0
+ 18  slot     com.adobe.ttpixel.app:TTApplication.iRAMKilobytes       slot=0   type=int default_index=0 default_kind=0
+ 19  slot     com.adobe.ttpixel.app:TTApplication.iGPURenderer        slot=0   type=String default_index=0 default_kind=0
+ 20  slot     com.adobe.ttpixel.app:TTApplication.iDebugPanel         slot=0   type=com.adobe.ttpixel.ui.TTBasePanelModule default_index=0 default_kind=0
+ 21  getter   mainWindow                                              method=1885  params=() return=com.adobe.cab.view.CABWindow internal_name='' flags=0x00
+ 22  setter   mainWindow                                              method=1886  params=() return=void internal_name='' flags=0x00
+ 23  getter   contentView                                             method=1887  params=() return=com.adobe.cab.view.CABView internal_name='' flags=0x00
+ 24  getter   storagePath                                             method=1888  params=() return=com.adobe.cab.io.core.CABFile internal_name='' flags=0x00
+ 25  getter   gallery                                                 method=1889  params=() return=com.adobe.ttpixel.gallery.TTGallery internal_name='' flags=0x00
+ 26  getter   model                                                   method=1890  params=() return=com.adobe.ttpixel.editor.app.TTModel internal_name='' flags=0x00
+ 27  getter   clipboard                                               method=1891  params=() return=com.adobe.ttpixel.utils.TTClipboard internal_name='' flags=0x00
+ 28  getter   ramKilobytes                                            method=1892  params=() return=int internal_name='' flags=0x00
+ 29  getter   gpuRenderer                                             method=1893  params=() return=String internal_name='' flags=0x00
+ 30  getter   startupDialogsPassed                                    method=1894  params=() return=Boolean internal_name='' flags=0x00
+ 31  method   com.adobe.ttpixel.app:TTApplication.readPrefs           method=1896  params=() return=void internal_name='' flags=0x00
+ 32  method   com.adobe.ttpixel.app:TTApplication.writePrefs          method=1897  params=() return=void internal_name='' flags=0x00
+ 33  method   readXML                                                 method=1898  params=() return=void internal_name='' flags=0x00
+ 34  method   postCreate                                              method=1899  params=() return=void internal_name='' flags=0x00
+ 35  method   applicationDidInit                                      method=1900  params=() return=void internal_name='' flags=0x00
+ 36  method   applicationWillRun                                      method=1901  params=() return=void internal_name='' flags=0x00
+ 37  method   com.adobe.ttpixel.app:TTApplication.setupOSNotificationObserver method=1902  params=() return=void internal_name='' flags=0x00
+ 38  method   com.adobe.ttpixel.app:TTApplication.handleOSNotification method=1903  params=() return=void internal_name='' flags=0x00
+ 39  method   com.adobe.ttpixel.app:TTApplication.handleMemoryWarning method=1904  params=() return=void internal_name='' flags=0x00
+ 40  method   com.adobe.ttpixel.app:TTApplication.obtainGPURenderer   method=1905  params=() return=void internal_name='' flags=0x00
+ 41  method   loadDocumentFromFile                                    method=1906  params=() return=void internal_name='' flags=0x08
+ 42  method   com.adobe.ttpixel.app:TTApplication.loadExternalImageFromPath method=1907  params=() return=void internal_name='' flags=0x00
+ 43  method   com.adobe.ttpixel.app:TTApplication.saveEulaState       method=1908  params=() return=Boolean internal_name='' flags=0x00
+ 44  method   com.adobe.ttpixel.app:TTApplication.eulaPassed          method=1909  params=() return=void internal_name='' flags=0x00
+ 45  method   com.adobe.ttpixel.app:TTApplication.saveOptInState      method=1910  params=() return=void internal_name='' flags=0x00
+ 46  method   com.adobe.ttpixel.app:TTApplication.omniturePassed      method=1911  params=() return=void internal_name='' flags=0x00
+ 47  method   com.adobe.ttpixel.app:TTApplication.allDialogsPassed    method=1912  params=() return=void internal_name='' flags=0x00
+ 48  method   applicationWillTerminate                                method=1913  params=() return=void internal_name='' flags=0x00
+ 49  method   showWelcomePanel                                        method=1914  params=() return=void internal_name='' flags=0x08
+ 50  method   com.adobe.ttpixel.app:TTApplication.onWelcomePanelTransition method=1915  params=() return=Boolean internal_name='' flags=0x00
+ 51  method   getCurrentContainerView                                 method=1916  params=() return=com.adobe.ttpixel.ui.TTBaseContainerView internal_name='' flags=0x00
+ 52  method   debugStr                                                method=1917  params=() return=void internal_name='' flags=0x08
+ 53  method   createModel                                             method=1918  params=() return=void internal_name='' flags=0x00
+ 54  method   deleteModel                                             method=1919  params=() return=void internal_name='' flags=0x00
+ 55  method   getLocalFilesystem                                      method=1920  params=() return=com.adobe.cab.io.core.CABFileSystem internal_name='' flags=0x00
+ 56  method   progressStart                                           method=1921  params=() return=void internal_name='' flags=0x08
+ 57  method   progressRunning                                         method=1922  params=() return=Boolean internal_name='' flags=0x00
+ 58  method   progressBusy                                            method=1923  params=() return=void internal_name='' flags=0x00
+ 59  method   progressState                                           method=1924  params=() return=void internal_name='' flags=0x00
+ 60  method   progressEnd                                             method=1925  params=() return=void internal_name='' flags=0x00
+ 61  method   startBusy                                               method=1926  params=() return=void internal_name='' flags=0x00
+ 62  method   endBusy                                                 method=1927  params=() return=void internal_name='' flags=0x00
+ 63  method   openModelWithBitmap                                     method=1928  params=() return=void internal_name='' flags=0x08
+ 64  method   openModelWithUrl                                        method=1929  params=() return=void internal_name='' flags=0x00
+ 65  method   openModelWithMethod                                     method=1930  params=() return=void internal_name='' flags=0x00
+ 66  method   openModelWithNewByteArray                               method=1931  params=() return=void internal_name='' flags=0x00
+ 67  method   openModelWithByteArray                                  method=1932  params=() return=void internal_name='' flags=0x08
+ 68  method   openTutorial                                            method=1936  params=() return=void internal_name='' flags=0x0A
+ 69  method   doOpenModelWithTutorial                                 method=1937  params=() return=void internal_name='' flags=0x00
+ 70  method   showTutorial                                            method=1938  params=() return=void internal_name='' flags=0x00
+ 71  method   saveModel                                               method=1940  params=() return=void internal_name='' flags=0x0A
+ 72  method   saveTemporaryModelForRecovery                           method=1941  params=() return=void internal_name='' flags=0x00
+ 73  method   getThumbnailForFile                                     method=1942  params=() return=com.adobe.cab.io.core.CABFile internal_name='' flags=0x00
+ 74  method   getThumbnailForFilename                                 method=1943  params=() return=com.adobe.cab.io.core.CABFile internal_name='' flags=0x00
+ 75  method   updateShowMode                                          method=1944  params=() return=void internal_name='' flags=0x00
+ 76  method   slideShowModeEnterFrame                                 method=1945  params=() return=void internal_name='' flags=0x00
+ 77  method   slideShowModeTimer                                      method=1946  params=() return=void internal_name='' flags=0x00
+ 78  method   slideShowMode                                           method=1947  params=() return=void internal_name='' flags=0x00
+ 79  method   endSlideShowMode                                        method=1948  params=() return=void internal_name='' flags=0x00
+ 80  method   startWriteModelToFile                                   method=1949  params=() return=Object internal_name='' flags=0x00
+ 81  method   progressWriteModelToFile                                method=1950  params=() return=Boolean internal_name='' flags=0x00
+ 82  method   completeWriteModelToFile                                method=1951  params=() return=Boolean internal_name='' flags=0x00
+ 83  method   writeModelToFile                                        method=1952  params=() return=void internal_name='' flags=0x00
+ 84  method   com.adobe.ttpixel.app:TTApplication.handleModelImpex    method=1953  params=() return=void internal_name='' flags=0x00
+ 85  method   keyEvent                                                method=1954  params=() return=Boolean internal_name='' flags=0x00
+ 86  method   eventMessage                                            method=1955  params=() return=Boolean internal_name='' flags=0x00
+ 87  method   com.adobe.ttpixel.app:TTApplication.onAddLayerFromExternalImage method=1956  params=() return=Boolean internal_name='' flags=0x00
+ 88  method   controlMessage                                          method=1957  params=() return=Boolean internal_name='' flags=0x00
+ 89  method   stateMessage                                            method=1958  params=() return=Boolean internal_name='' flags=0x00
+ 90  method   setupClipboard                                          method=1959  params=() return=void internal_name='' flags=0x00
+ 91  method   com.adobe.ttpixel.app:TTApplication.handleAndroidInvokeArguments method=1960  params=() return=void internal_name='' flags=0x00
+ 92  method   com.adobe.ttpixel.app:TTApplication.handleIOSInvokeArguments method=1961  params=() return=void internal_name='' flags=0x00
+ 93  method   checkInvokeArguments                                    method=1962  params=() return=void internal_name='' flags=0x00
+ 94  method   checkOpenExternalPossible                               method=1963  params=() return=Boolean internal_name='' flags=0x08
+ 95  method   trackDeviceInfo                                         method=1964  params=() return=void internal_name='' flags=0x00
+
+STATIC TRAITS
+----------------------------------------------------------------------------------------------------
+  0  const    ENABLE_SYNC                                             slot=1   type=Boolean default_index=10 default_kind=10
+  1  const    SHOW_MODE_GALLERY                                       slot=2   type=int default_index=2 default_kind=3
+  2  const    SHOW_MODE_EDITOR                                        slot=3   type=int default_index=3 default_kind=3
+  3  const    SELECTOR_NETWORK_CHANGE                                 slot=4   type=String default_index=10092 default_kind=1
+  4  const    SELECTOR_HARDWARE_BACK                                  slot=5   type=String default_index=10094 default_kind=1
+  5  const    SELECTOR_HARDWARE_MENU                                  slot=6   type=String default_index=10096 default_kind=1
+  6  const    SELECTOR_HARDWARE_SEARCH                                slot=7   type=String default_index=10098 default_kind=1
+  7  const    SELECTOR_STARTUP_DIALOGS_PASSED                         slot=8   type=String default_index=10100 default_kind=1
+  8  const    GPU_RENDERER_MALI                                       slot=9   type=String default_index=10102 default_kind=1
+  9  const    com.adobe.ttpixel.app:TTApplication.SELECTOR_EULA       slot=10  type=String default_index=10104 default_kind=1
+ 10  const    com.adobe.ttpixel.app:TTApplication.SELECTOR_OMNITURE   slot=11  type=String default_index=10106 default_kind=1
+ 11  const    EXTENSION                                               slot=12  type=String default_index=10108 default_kind=1
+ 12  const    cStartupProbeExp                                        slot=13  type=int default_index=4 default_kind=3
+ 13  slot     com.adobe.ttpixel.app:TTApplication.cSplashClip         slot=14  type=flash.display.MovieClip default_index=0 default_kind=0
+ 14  slot     com.adobe.ttpixel.app:TTApplication.cInvokeArguments    slot=15  type=Array default_index=12 default_kind=12
+ 15  slot     com.adobe.ttpixel.app:TTApplication.cVMStartupTime      slot=16  type=Number default_index=7 default_kind=6
+ 16  slot     cStartupErrorString                                     slot=17  type=String default_index=1 default_kind=1
+ 17  slot     com.adobe.ttpixel.app:TTApplication.cStage              slot=18  type=flash.display.Stage default_index=12 default_kind=12
+ 18  slot     showStorageWarning                                      slot=19  type=Boolean default_index=11 default_kind=11
+ 19  const    REQUIRED_MIN_STORAGE_SPACE_IN_MEGABYTE                  slot=20  type=int default_index=24 default_kind=3
+ 20  getter   instance                                                method=1877  params=() return=com.adobe.ttpixel.app.TTApplication internal_name='' flags=0x00
+ 21  getter   vmStartupTime                                           method=1878  params=() return=Number internal_name='' flags=0x00
+ 22  method   setupUIScaling                                          method=1879  params=() return=void internal_name='' flags=0x00
+ 23  method   resizeHandler                                           method=1880  params=() return=void internal_name='' flags=0x00
+ 24  method   showSplash                                              method=1882  params=() return=void internal_name='' flags=0x02
+ 25  method   registerHandlers                                        method=1883  params=() return=void internal_name='' flags=0x00
+ 26  method   invokeHandler                                           method=1884  params=() return=void internal_name='' flags=0x01

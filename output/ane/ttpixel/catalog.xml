@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.6.0" build="23201" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="_76da1967c48c0ffca308f95d7e353667187edcfb344909d968df614ccba7e6ed_flash_display_Sprite" mod="1425560047869" signatureChecksum="878148517" >
+        <def id="_76da1967c48c0ffca308f95d7e353667187edcfb344909d968df614ccba7e6ed_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCameraUI" mod="1422551157000" signatureChecksum="567962752" >
+        <def id="com.adobe.ttpixel.extension:TTCameraUI" /> 
+        <dep id="flash.display:BitmapData" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCameraCapabilities" mod="1422551157000" signatureChecksum="4293977163" >
+        <def id="com.adobe.ttpixel.extension:TTCameraCapabilities" /> 
+        <dep id="__AS3__.vec:Vector" type="e" /> 
+        <dep id="flash.geom:Rectangle" type="e" /> 
+        <dep id="Math" type="e" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension:TTCameraFpsRange" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureProvider" mod="1422551157000" signatureChecksum="993878744" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourceEvent" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderEvent" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderManager" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:EventDispatcher" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureProviderJaja" mod="1422551157000" signatureChecksum="3993363272" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJaja" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="e" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourceJaja" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderManager" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourceJaja" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTBigDataExtension" mod="1422551157000" signatureChecksum="408205976" >
+        <def id="com.adobe.ttpixel.extension:TTBigDataExtension" /> 
+        <dep id="com.adobe.ttpixel.extension:TTPreflightResult" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension:TTPreflightResult" type="s" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCameraParameters" mod="1422551157000" signatureChecksum="3277601560" >
+        <def id="com.adobe.ttpixel.extension:TTCameraParameters" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension:TTCameraFpsRange" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/iap/TTStore" mod="1422551157000" signatureChecksum="430223733" >
+        <def id="com.adobe.ttpixel.extension.iap:TTStore" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.events:IEventDispatcher" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/iap/appstore/TTAppStore" mod="1422551157000" signatureChecksum="1563846459" >
+        <def id="com.adobe.ttpixel.extension.iap.appstore:TTAppStore" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.iap:TTStoreManager" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.events:IEventDispatcher" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.iap:TTStore" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureSource" mod="1422551157000" signatureChecksum="1008118101" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureSource" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourceEvent" type="e" /> 
+        <dep id="Math" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:EventDispatcher" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureSourceJaja" mod="1422551157000" signatureChecksum="2039994563" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureSourceJaja" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJaja" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="s" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJaja" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCameraRoll" mod="1422551157000" signatureChecksum="4192214202" >
+        <def id="com.adobe.ttpixel.extension:TTCameraRoll" /> 
+        <dep id="flash.utils:ByteArray" type="e" /> 
+        <dep id="flash.display:BitmapData" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTImpExp" mod="1422551157000" signatureChecksum="221524559" >
+        <def id="com.adobe.ttpixel.extension:TTImpExp" /> 
+        <dep id="flash.display:BitmapData" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.geom:Point" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTWebServer" mod="1422551157000" signatureChecksum="1901189734" >
+        <def id="com.adobe.ttpixel.extension:TTWebServer" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTPreflightResult" mod="1422551157000" signatureChecksum="1628760531" >
+        <def id="com.adobe.ttpixel.extension:TTPreflightResult" /> 
+        <dep id="flash.geom:Rectangle" type="e" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureProviderPogo" mod="1422551157000" signatureChecksum="701191315" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureProviderPogo" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension:TTNEUtils" type="e" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourcePogo" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderManager" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="RegExp" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourcePogo" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTBonjour" mod="1422551157000" signatureChecksum="931586877" >
+        <def id="com.adobe.ttpixel.extension:TTBonjour" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/iap/TTStoreManager" mod="1422551157000" signatureChecksum="525455137" >
+        <def id="com.adobe.ttpixel.extension.iap:TTStoreManager" /> 
+        <dep id="com.adobe.ttpixel.extension.iap:TTStore" type="e" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="__AS3__.vec:Vector" type="e" /> 
+        <dep id="flash.system:Capabilities" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.iap.appstore:TTAppStore" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.iap:TTStore" type="s" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTPrinter" mod="1422551157000" signatureChecksum="4275011617" >
+        <def id="com.adobe.ttpixel.extension:TTPrinter" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTLicensing" mod="1422551157000" signatureChecksum="3257930499" >
+        <def id="com.adobe.ttpixel.extension:TTLicensing" /> 
+        <dep id="flash.events:Event" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.desktop:NativeApplication" type="e" /> 
+        <dep id="flash.events:Event" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureSourcePogo" mod="1422551157000" signatureChecksum="484567617" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureSourcePogo" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderPogo" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderPogo" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="s" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTActivityUI" mod="1422551157000" signatureChecksum="1713928457" >
+        <def id="com.adobe.ttpixel.extension:TTActivityUI" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="flash.geom:Point" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTGL" mod="1422551157000" signatureChecksum="2409746727" >
+        <def id="com.adobe.ttpixel.extension:TTGL" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="flash.geom:Point" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTQuickSelection" mod="1422551157000" signatureChecksum="2561431315" >
+        <def id="com.adobe.ttpixel.extension:TTQuickSelection" /> 
+        <dep id="flash.utils:ByteArray" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureProviderEvent" mod="1422551157000" signatureChecksum="1698787414" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureProviderEvent" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:Event" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTGLCommandSequence" mod="1422551157000" signatureChecksum="2423841054" >
+        <def id="com.adobe.ttpixel.extension:TTGLCommandSequence" /> 
+        <dep id="flash.utils:ByteArray" type="e" /> 
+        <dep id="flash.utils:Endian" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureSourceEvent" mod="1422551157000" signatureChecksum="3689573396" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureSourceEvent" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:Event" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCameraFpsRange" mod="1422551157000" signatureChecksum="1622097750" >
+        <def id="com.adobe.ttpixel.extension:TTCameraFpsRange" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTAM" mod="1422551157000" signatureChecksum="167608524" >
+        <def id="com.adobe.ttpixel.extension:TTAM" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureSourceJotTouch" mod="1422551157000" signatureChecksum="1091156943" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureSourceJotTouch" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJotTouch" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="s" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJotTouch" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTSS" mod="1422551157000" signatureChecksum="1282444370" >
+        <def id="com.adobe.ttpixel.extension:TTSS" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCamera" mod="1422551157000" signatureChecksum="2586125783" >
+        <def id="com.adobe.ttpixel.extension:TTCamera" /> 
+        <dep id="com.adobe.ttpixel.extension:TTCameraCapabilities" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension:TTCameraParameters" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension:TTCameraCapabilities" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension:TTCameraParameters" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTCAF" mod="1422551157000" signatureChecksum="2706862257" >
+        <def id="com.adobe.ttpixel.extension:TTCAF" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTMail" mod="1422551157000" signatureChecksum="4201160211" >
+        <def id="com.adobe.ttpixel.extension:TTMail" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureProviderJotTouch" mod="1422551157000" signatureChecksum="2032400967" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJotTouch" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSource" type="e" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourceJotTouch" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderManager" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureSourceJotTouch" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/TTNEUtils" mod="1422551157000" signatureChecksum="1076291489" >
+        <def id="com.adobe.ttpixel.extension:TTNEUtils" /> 
+        <dep id="flash.utils:ByteArray" type="e" /> 
+        <dep id="Date" type="e" /> 
+        <dep id="flash.display:BitmapData" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
+        <dep id="flash.display:BitmapData" type="s" /> 
+        <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.filesystem:File" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="Error" type="s" /> 
+        <dep id="flash.geom:Point" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="com/adobe/ttpixel/extension/pressure/TTPressureProviderManager" mod="1422551157000" signatureChecksum="2469378283" >
+        <def id="com.adobe.ttpixel.extension.pressure:TTPressureProviderManager" /> 
+        <dep id="flash.errors:IllegalOperationError" type="e" /> 
+        <dep id="__AS3__.vec:Vector" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderPogo" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJotTouch" type="e" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProviderJaja" type="e" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="com.adobe.ttpixel.extension.pressure:TTPressureProvider" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="f5eaf4f01aa0846213df919da058c52a48e3240816c3ece2276fd0ca0d2628a5"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>

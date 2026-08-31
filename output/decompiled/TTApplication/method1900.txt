@@ -1,0 +1,38 @@
+
+✓ Optimization reached fixed point after 1 iteration(s)
+// Decompiled by Phoenix
+
+function method1900()
+{
+    TTPressureManager.instance.initialize();
+    local0.obtainGPURenderer();
+    com.adobe.ttpixel.media.creativecloud.account::TTAccountModel.create();
+    local1 = TTExtensionWrapper.instance.getSystemInfo(TTExtensionWrapper.SYSINFO_HW_MEMORY);
+    if (!(local1 == null))
+    {
+        local0.iRAMKilobytes = local1.valueOf();
+        local0.readPrefs();
+        local0.iProgressView.removeFromSuperview();
+        local0.setupClipboard();
+        flash.ui::Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
+        local0.iMainWindow.moveTo(0, 0);
+        local0.iMainWindow.sizeTo(CABApplication.instance.workspace.width, CABApplication.instance.workspace.height);
+        local0.iMainWindow.sizeBehaveX = CABView.SIZE_BEHAVIOUR_SCALE;
+        local0.iMainWindow.sizeBehaveY = CABView.SIZE_BEHAVIOUR_SCALE;
+        local2 = com.adobe.cab.application::CABModule.createFromResource("imageProcessorManager");
+        com.adobe.ttpixel.tutorial::TTTutorialInfo.setupTutorialInfos();
+        local3 = new com.adobe.cab.core::CABStateMessage.CABStateMessage("gallery", local0);
+        com.adobe.cab.application::CABModule.createFromResource("gallery").iGallery = com.adobe.ttpixel.gallery::TTGallery;
+        local0.iGallery.setupGallery(local0.iContentView, local3);
+        local0.iGallery.show();
+        local0.iGallery.deleteWindows();
+        cSplashClip.parent.removeChild(com.adobe.ttpixel.app:TTApplication::cSplashClip);
+        local0.debugStr(cStartupErrorString);
+        local0.iStartupDialogsPassed = false;
+        local0.setupOSNotificationObserver();
+        com.adobe.ttpixel.app:TTApplication::cStage.removeEventListener(Event.RESIZE, resizeHandler);
+    }
+    "return";
+}
+
+✓ Wrote output/decompiled/method1900.as

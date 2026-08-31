@@ -1,0 +1,16 @@
+NATIVE EXTENSION CLASS SEARCH
+====================================================================================================
+
+DEFINITIONS
+----------------------------------------------------------------------------------------------------
+No definitions found.
+
+REFERENCES
+----------------------------------------------------------------------------------------------------
+com.adobe.ttpixel.extension.TTNEUtils                   output/abc/frame1.abc multiname=13482
+com.adobe.ttpixel.extension.TTGL                        output/abc/frame1.abc multiname=13552
+com.adobe.ttpixel.extension.TTCameraRoll                output/abc/frame1.abc multiname=13569
+
+PARSE FAILURES
+----------------------------------------------------------------------------------------------------
+None

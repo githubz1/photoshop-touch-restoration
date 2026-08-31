@@ -1,0 +1,24 @@
+==========================================================================================
+GHIDRA ENTRY POINTS
+==========================================================================================
+
+     MISSING  setFREContext:
+     MISSING  initWithFREContext:
+     MISSING  initWithExtensionContext:
+     MISSING  ContextNativeData
+     MISSING  iExtensionContext
+     MISSING  storeImageBits:
+     MISSING  requestTakePictureWithCommandId:
+     MISSING  getPictureImageInBuffer:width:height:
+     MISSING  createPreviewBitmapContext
+     MISSING  updateStillImageRotationForOrientation:
+
+Suggested analysis order
+------------------------
+1. setFREContext:
+2. initWithFREContext:
+3. initWithExtensionContext:
+4. storeImageBits:
+5. createPreviewBitmapContext
+6. requestTakePictureWithCommandId:
+7. getPictureImageInBuffer:width:height:

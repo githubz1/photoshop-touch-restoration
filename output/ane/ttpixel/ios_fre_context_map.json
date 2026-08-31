@@ -1,0 +1,771 @@
+{
+  "native_record_count": 186,
+  "contexts": [
+    {
+      "abc": "doabc_001.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTCameraUI"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "cameraui"
+          ]
+        }
+      ],
+      "operations": [
+        "launch",
+        "getImage"
+      ],
+      "matches": [
+        {
+          "record_index": 136,
+          "start_vm": 20981920,
+          "end_vm": 20981943,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "abc": "doabc_004.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.pressure::TTPressureProviderJaja"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "provider_start",
+        "provider_stop"
+      ],
+      "matches": [
+        {
+          "record_index": 151,
+          "start_vm": 20982100,
+          "end_vm": 20982123,
+          "count": 2
+        },
+        {
+          "record_index": 160,
+          "start_vm": 20982208,
+          "end_vm": 20982231,
+          "count": 2
+        },
+        {
+          "record_index": 164,
+          "start_vm": 20982256,
+          "end_vm": 20982279,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "abc": "doabc_005.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTBigDataExtension"
+      ],
+      "contexts": [
+        {
+          "method": 5,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "bigdata"
+          ]
+        }
+      ],
+      "operations": [
+        "preflight"
+      ],
+      "matches": [
+        {
+          "record_index": 138,
+          "start_vm": 20981944,
+          "end_vm": 20981955,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "abc": "doabc_008.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.iap.appstore::TTAppStore"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "canMakePurchases",
+        "closeStore",
+        "openStore",
+        "purchaseProduct",
+        "transferPurchasedProducts",
+        "acknowledgeTransaction",
+        "queryProducts"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_010.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.pressure::TTPressureSourceJaja"
+      ],
+      "contexts": [],
+      "operations": [
+        "provider_getButtonState",
+        "provider_getPressure"
+      ],
+      "matches": [
+        {
+          "record_index": 158,
+          "start_vm": 20982184,
+          "end_vm": 20982207,
+          "count": 2
+        },
+        {
+          "record_index": 162,
+          "start_vm": 20982232,
+          "end_vm": 20982255,
+          "count": 2
+        },
+        {
+          "record_index": 166,
+          "start_vm": 20982280,
+          "end_vm": 20982303,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "abc": "doabc_011.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTCameraRoll"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "cameraroll"
+          ]
+        }
+      ],
+      "operations": [
+        "browseImages",
+        "requestThumbnail",
+        "getThumbnail",
+        "getImage",
+        "getExifHeader",
+        "requestImage",
+        "cancelPendingRequests",
+        "addImage",
+        "pickImage",
+        "getPickedImage",
+        "accessCheck"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_012.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTImpExp"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "impexp"
+          ]
+        }
+      ],
+      "operations": [
+        "startEncodeZLib",
+        "startEncodeLz4",
+        "startEncodeJPEG",
+        "startEncodePNG",
+        "getEncodingProgress",
+        "getEncodedDataSize",
+        "getEncodedData",
+        "requestCancel",
+        "hasFinishedEncoding",
+        "waitFinishedEncoding",
+        "clearEncodedData"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_013.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTWebServer"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "modifyPasswdFile",
+        "start",
+        "stop"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_015.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "provider_start",
+        "provider_stop",
+        "provider_invokeConfigureUI",
+        "provider_createPressureSource"
+      ],
+      "matches": [
+        {
+          "record_index": 151,
+          "start_vm": 20982100,
+          "end_vm": 20982147,
+          "count": 4
+        }
+      ]
+    },
+    {
+      "abc": "doabc_016.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTBonjour"
+      ],
+      "contexts": [
+        {
+          "method": 12,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "open",
+        "close",
+        "isOpen",
+        "publishService",
+        "unpublishService",
+        "startBrowse",
+        "stopBrowse"
+      ],
+      "matches": [
+        {
+          "record_index": 144,
+          "start_vm": 20982016,
+          "end_vm": 20982099,
+          "count": 7
+        }
+      ]
+    },
+    {
+      "abc": "doabc_018.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTPrinter"
+      ],
+      "contexts": [
+        {
+          "method": 5,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "isPrintingAvailable",
+        "print",
+        "cleanup"
+      ],
+      "matches": [
+        {
+          "record_index": 133,
+          "start_vm": 20981884,
+          "end_vm": 20981919,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "abc": "doabc_019.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTLicensing"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 0,
+          "strings": []
+        },
+        {
+          "method": 3,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "licensing"
+          ]
+        }
+      ],
+      "operations": [
+        "c"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_020.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo"
+      ],
+      "contexts": [],
+      "operations": [
+        "provider_connect",
+        "provider_disconnect",
+        "provider_getButtonState",
+        "provider_getPressure",
+        "provider_updatePressureSource"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_021.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTActivityUI"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "activityui"
+          ]
+        }
+      ],
+      "operations": [
+        "showActivityUI",
+        "hideActivityUI"
+      ],
+      "matches": [
+        {
+          "record_index": 139,
+          "start_vm": 20981956,
+          "end_vm": 20981979,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "abc": "doabc_022.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTGL"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "gl"
+          ]
+        }
+      ],
+      "operations": [
+        "createContext",
+        "destroyContext",
+        "getLastGLErrorCode",
+        "getStringInfo",
+        "createFilter",
+        "prepareTextureEmpty",
+        "prepareTextureFromBitmapData",
+        "updateTextureFromBitmapData",
+        "setParamFloat",
+        "setParamInt",
+        "setParamFloatMulti",
+        "setParamIntMulti",
+        "applyFilter",
+        "getShaderInfoLog",
+        "getNumVertices",
+        "setNumVertices",
+        "setVertexAttribDataFloat",
+        "clearVertexAttribData",
+        "getVertexAttribDataRangeStart",
+        "getVertexAttribDataRangeCount",
+        "setVertexAttribDataRange",
+        "setDrawMode",
+        "enableVertexAttrib",
+        "drawArrays",
+        "readPixels",
+        "destroyFilter",
+        "clear",
+        "setParamFloatMatrix",
+        "executeSequence",
+        "asyncExecuteSequence",
+        "asyncJoin",
+        "asyncInterrupt",
+        "asyncReadPixels",
+        "shaderCreate",
+        "shaderDispose",
+        "programCreate",
+        "programDispose",
+        "programUse"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_023.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTQuickSelection"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "quickselection"
+          ]
+        }
+      ],
+      "operations": [
+        "createQuickSelectTool",
+        "disposeQuickSelectTool",
+        "setMask",
+        "setMaskWithARGB",
+        "brushHit",
+        "brushHits",
+        "qsBrushHits",
+        "getMask",
+        "mouseUp",
+        "reset",
+        "switchMode"
+      ],
+      "matches": [
+        {
+          "record_index": 175,
+          "start_vm": 20982388,
+          "end_vm": 20982519,
+          "count": 11
+        }
+      ]
+    },
+    {
+      "abc": "doabc_028.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTAM"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "am"
+          ]
+        }
+      ],
+      "operations": [
+        "init",
+        "run",
+        "getProgress",
+        "getResult",
+        "release"
+      ],
+      "matches": [
+        {
+          "record_index": 51,
+          "start_vm": 20980900,
+          "end_vm": 20980959,
+          "count": 5
+        },
+        {
+          "record_index": 56,
+          "start_vm": 20980960,
+          "end_vm": 20981019,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "abc": "doabc_029.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.pressure::TTPressureSourceJotTouch"
+      ],
+      "contexts": [],
+      "operations": [
+        "provider_getButtonState",
+        "provider_getPressure"
+      ],
+      "matches": [
+        {
+          "record_index": 158,
+          "start_vm": 20982184,
+          "end_vm": 20982207,
+          "count": 2
+        },
+        {
+          "record_index": 162,
+          "start_vm": 20982232,
+          "end_vm": 20982255,
+          "count": 2
+        },
+        {
+          "record_index": 166,
+          "start_vm": 20982280,
+          "end_vm": 20982303,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "abc": "doabc_030.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTSS"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "ss"
+          ]
+        }
+      ],
+      "operations": [
+        "init",
+        "run",
+        "getProgress",
+        "getResult",
+        "release"
+      ],
+      "matches": [
+        {
+          "record_index": 51,
+          "start_vm": 20980900,
+          "end_vm": 20980959,
+          "count": 5
+        },
+        {
+          "record_index": 56,
+          "start_vm": 20980960,
+          "end_vm": 20981019,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "abc": "doabc_031.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTCamera"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "camera[static]"
+          ]
+        },
+        {
+          "method": 11,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "camera"
+          ]
+        }
+      ],
+      "operations": [
+        "enumerateCameras",
+        "getCapabilities",
+        "open",
+        "cancel",
+        "getParameters",
+        "setParameters",
+        "startPreview",
+        "stopPreview",
+        "takePicture",
+        "getPictureData",
+        "getNextPreviewFrame",
+        "getFinishCode"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_032.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTCAF"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "caf"
+          ]
+        }
+      ],
+      "operations": [
+        "CAFGetResult"
+      ],
+      "matches": []
+    },
+    {
+      "abc": "doabc_033.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTMail"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "email"
+          ]
+        }
+      ],
+      "operations": [
+        "sendMail",
+        "saveFile",
+        "copyFile",
+        "releaseFile"
+      ],
+      "matches": [
+        {
+          "record_index": 61,
+          "start_vm": 20981020,
+          "end_vm": 20981067,
+          "count": 4
+        }
+      ]
+    },
+    {
+      "abc": "doabc_034.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension.pressure::TTPressureProviderJotTouch"
+      ],
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operations": [
+        "provider_start",
+        "provider_stop"
+      ],
+      "matches": [
+        {
+          "record_index": 151,
+          "start_vm": 20982100,
+          "end_vm": 20982123,
+          "count": 2
+        },
+        {
+          "record_index": 160,
+          "start_vm": 20982208,
+          "end_vm": 20982231,
+          "count": 2
+        },
+        {
+          "record_index": 164,
+          "start_vm": 20982256,
+          "end_vm": 20982279,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "abc": "doabc_035.abc",
+      "classes": [
+        "com.adobe.ttpixel.extension::TTNEUtils"
+      ],
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "utils"
+          ]
+        }
+      ],
+      "operations": [
+        "getTimestamp",
+        "trace",
+        "getDeviceID",
+        "getDeviceName",
+        "canLaunchApp",
+        "launchApp",
+        "setStatusBarHidden",
+        "leaveApp",
+        "isolateColor",
+        "clipboardHasFormat",
+        "clipboardSetFormatData",
+        "clipboardSetMultiData",
+        "clipboardGetFormatData",
+        "plistToXMLString",
+        "copyURIContentToFile",
+        "resolveImageContentURI",
+        "compressBitmapRLE",
+        "getPixelsEx",
+        "setPixelsEx",
+        "lz4Compress",
+        "lz4Uncompress",
+        "lz4Deflate",
+        "lz4Inflate",
+        "getPixelsBitmapEx",
+        "getMemoryStatsEx",
+        "getScaledPixelsEx",
+        "alphaBlend",
+        "uncompressBitmapDataEx",
+        "bitmapDataToFileEx",
+        "bitmapDataFromFileEx",
+        "bitmapFileCreateEmpty",
+        "bitmapFileCreateFromBitmapData",
+        "bitmapFileWrite",
+        "bitmapFileRead",
+        "bitmapFileResample",
+        "bitmapDataCopy",
+        "bitmapDataResample",
+        "getSystemInfo",
+        "setWakeLock",
+        "getNetworkState",
+        "getLocalIP",
+        "openPath",
+        "setRequestedOrientation",
+        "getRequestedOrientation",
+        "showNetworkActivityIndicator",
+        "showNetworkActivityIndicator"
+      ],
+      "matches": []
+    }
+  ]
+}

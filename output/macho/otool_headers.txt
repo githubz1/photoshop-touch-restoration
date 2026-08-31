@@ -1,0 +1,4 @@
+output/extracted/ios/PSTouchPhone:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+   MH_MAGIC      ARM         V7  0x00     EXECUTE    43       4876   NOUNDEFS DYLDLINK TWOLEVEL BINDS_TO_WEAK

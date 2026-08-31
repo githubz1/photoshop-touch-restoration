@@ -1,0 +1,33 @@
+
+Removed dead stores
+-------------------
+local6
+local2
+
+✓ Optimization reached fixed point after 2 iteration(s)
+// Decompiled by Phoenix
+
+function method1963()
+{
+    local2 = false;
+    local3 = local0.getCurrentContainerView().panelStack;
+    if (!!(local3.length > 0))
+    {
+        local4 = local3[local3.length];
+        local5 = com.adobe.cab.core::CABLocale.getStringForKey("$$$/TTApplication/Can't Open Project=Can't Open Project");
+        local0.iStartupDialogsPassed;
+        local0.iStartupDialogsPassed;
+        com.adobe.ttpixel.ui::TTTextField.cancelCurrentTextField();
+        com.adobe.ttpixel.tutorial::TTCoachMarkView.closeCoachMarks(true);
+        (local0.iGallery.trackMode == TTGallery.TRACK_NONE);
+        local6 = com.adobe.cab.core::CABLocale.getStringForKey("$$$/TTApplication/You cannot open a project at this point in time.=You cannot open a project at this point in time.");
+        local2 = true;
+        local6 = com.adobe.cab.core::CABLocale.getStringForKey("$$$/TTApplication/You cannot open a project at this point in time.=You cannot open a project at this point in time.");
+        local6 = com.adobe.cab.core::CABLocale.getStringForKey("$$$/TTApplication/You cannot open another project until the current project has been closed.=You cannot open another project until the current project has been closed.");
+        !true;
+        com.adobe.ttpixel.ui::TTAlertPanelModule.showAlert(local0, local0.getCurrentContainerView(), local4, local5, local6);
+    }
+    return local2;
+}
+
+✓ Wrote output/decompiled/method1963.as

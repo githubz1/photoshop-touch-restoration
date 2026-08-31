@@ -1,0 +1,46 @@
+
+✓ Optimization reached fixed point after 1 iteration(s)
+// Decompiled by Phoenix
+
+function method1895()
+{
+    local0.iMainWindow = null;
+    local0.iStoragePath = null;
+    local0.iThumbnailStoragePath = null;
+    local0.iDebugPanel = null;
+    local0.iShowMode = SHOW_MODE_GALLERY;
+    local0.iImpExBusyLock = 0;
+    local0.iModel = null;
+    local0.iShowWelcomePanel = false;
+    local0.iEulaAndOptInState = null;
+    local0.iEulaAndOptInNew = null;
+    local0.iHasShownSyncPanel = false;
+    local0.iRAMKilobytes = 0;
+    local0.iSlideBitmap = null;
+    local0.iSlideTimer = null;
+    local0.iGPURenderer = null;
+    com.adobe.cab.view::CABView.cIgnoreAutoLayout = true;
+    "return";
+    if ()
+    {
+    }
+    local0.iMainWindow = null;
+    local0.iStoragePath = null;
+    local0.iThumbnailStoragePath = null;
+    local0.iDebugPanel = null;
+    local0.iShowMode = SHOW_MODE_GALLERY;
+    local0.iImpExBusyLock = 0;
+    local0.iModel = null;
+    local0.iShowWelcomePanel = false;
+    local0.iEulaAndOptInState = null;
+    local0.iEulaAndOptInNew = null;
+    local0.iHasShownSyncPanel = false;
+    local0.iRAMKilobytes = 0;
+    local0.iSlideBitmap = null;
+    local0.iSlideTimer = null;
+    local0.iGPURenderer = null;
+    com.adobe.cab.view::CABView.cIgnoreAutoLayout = true;
+    "return";
+}
+
+✓ Wrote output/decompiled/method1895.as

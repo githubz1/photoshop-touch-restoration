@@ -1,0 +1,1775 @@
+{
+  "native_records": 186,
+  "analysis": [
+    {
+      "class": "com.adobe.ttpixel.extension::TTCameraUI",
+      "abc": "doabc_001.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "cameraui"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "launch",
+        "getImage"
+      ],
+      "native_names_found": [
+        "getImage",
+        "launch"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 136,
+          "entry_vm": 20981920,
+          "operation": "launch",
+          "function_vm": 16577700
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureProviderJaja",
+      "abc": "doabc_004.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "provider_start",
+        "provider_stop"
+      ],
+      "native_names_found": [
+        "provider_start",
+        "provider_stop"
+      ],
+      "missing": [],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTBigDataExtension",
+      "abc": "doabc_005.abc",
+      "contexts": [
+        {
+          "method": 5,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "bigdata"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "preflight"
+      ],
+      "native_names_found": [
+        "preflight"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 138,
+          "entry_vm": 20981944,
+          "operation": "preflight",
+          "function_vm": 16564728
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.iap.appstore::TTAppStore",
+      "abc": "doabc_008.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "canMakePurchases",
+        "closeStore",
+        "openStore",
+        "purchaseProduct",
+        "transferPurchasedProducts",
+        "acknowledgeTransaction",
+        "queryProducts"
+      ],
+      "native_names_found": [
+        "acknowledgeTransaction",
+        "canMakePurchases",
+        "closeStore",
+        "openStore",
+        "purchaseProduct",
+        "queryProducts",
+        "transferPurchasedProducts"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 168,
+          "entry_vm": 20982304,
+          "operation": "openStore",
+          "function_vm": 16563456
+        },
+        {
+          "record_index": 169,
+          "entry_vm": 20982316,
+          "operation": "canMakePurchases",
+          "function_vm": 16563580
+        },
+        {
+          "record_index": 170,
+          "entry_vm": 20982328,
+          "operation": "queryProducts",
+          "function_vm": 16563672
+        },
+        {
+          "record_index": 171,
+          "entry_vm": 20982340,
+          "operation": "purchaseProduct",
+          "function_vm": 16564064
+        },
+        {
+          "record_index": 172,
+          "entry_vm": 20982352,
+          "operation": "acknowledgeTransaction",
+          "function_vm": 16564284
+        },
+        {
+          "record_index": 173,
+          "entry_vm": 20982364,
+          "operation": "transferPurchasedProducts",
+          "function_vm": 16564480
+        },
+        {
+          "record_index": 174,
+          "entry_vm": 20982376,
+          "operation": "closeStore",
+          "function_vm": 16564604
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureSourceJaja",
+      "abc": "doabc_010.abc",
+      "contexts": [],
+      "as3_operations": [
+        "provider_getButtonState",
+        "provider_getPressure"
+      ],
+      "native_names_found": [
+        "provider_getButtonState",
+        "provider_getPressure"
+      ],
+      "missing": [],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTCameraRoll",
+      "abc": "doabc_011.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "cameraroll"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "browseImages",
+        "requestThumbnail",
+        "getThumbnail",
+        "getImage",
+        "getExifHeader",
+        "requestImage",
+        "cancelPendingRequests",
+        "addImage",
+        "pickImage",
+        "getPickedImage",
+        "accessCheck"
+      ],
+      "native_names_found": [
+        "accessCheck",
+        "addImage",
+        "browseImages",
+        "cancelPendingRequests",
+        "getExifHeader",
+        "getImage",
+        "getPickedImage",
+        "getThumbnail",
+        "pickImage",
+        "requestImage",
+        "requestThumbnail"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 122,
+          "entry_vm": 20981752,
+          "operation": "browseImages",
+          "function_vm": 16567524
+        },
+        {
+          "record_index": 123,
+          "entry_vm": 20981764,
+          "operation": "getThumbnail",
+          "function_vm": 16568584
+        },
+        {
+          "record_index": 125,
+          "entry_vm": 20981788,
+          "operation": "getExifHeader",
+          "function_vm": 16569352
+        },
+        {
+          "record_index": 126,
+          "entry_vm": 20981800,
+          "operation": "requestImage",
+          "function_vm": 16568812
+        },
+        {
+          "record_index": 127,
+          "entry_vm": 20981812,
+          "operation": "requestThumbnail",
+          "function_vm": 16568272
+        },
+        {
+          "record_index": 128,
+          "entry_vm": 20981824,
+          "operation": "cancelPendingRequests",
+          "function_vm": 16569616
+        },
+        {
+          "record_index": 129,
+          "entry_vm": 20981836,
+          "operation": "addImage",
+          "function_vm": 16569696
+        },
+        {
+          "record_index": 130,
+          "entry_vm": 20981848,
+          "operation": "pickImage",
+          "function_vm": 16570464
+        },
+        {
+          "record_index": 131,
+          "entry_vm": 20981860,
+          "operation": "getPickedImage",
+          "function_vm": 16570960
+        },
+        {
+          "record_index": 132,
+          "entry_vm": 20981872,
+          "operation": "accessCheck",
+          "function_vm": 16567344
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTImpExp",
+      "abc": "doabc_012.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "impexp"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "startEncodeZLib",
+        "startEncodeLz4",
+        "startEncodeJPEG",
+        "startEncodePNG",
+        "getEncodingProgress",
+        "getEncodedDataSize",
+        "getEncodedData",
+        "requestCancel",
+        "hasFinishedEncoding",
+        "waitFinishedEncoding",
+        "clearEncodedData"
+      ],
+      "native_names_found": [
+        "clearEncodedData",
+        "getEncodedData",
+        "getEncodedDataSize",
+        "getEncodingProgress",
+        "hasFinishedEncoding",
+        "requestCancel",
+        "startEncodeJPEG",
+        "startEncodeLz4",
+        "startEncodePNG",
+        "startEncodeZLib",
+        "waitFinishedEncoding"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 2,
+          "entry_vm": 20980312,
+          "operation": "startEncodeLz4",
+          "function_vm": 16640528
+        },
+        {
+          "record_index": 3,
+          "entry_vm": 20980324,
+          "operation": "startEncodeZLib",
+          "function_vm": 16641404
+        },
+        {
+          "record_index": 4,
+          "entry_vm": 20980336,
+          "operation": "startEncodeJPEG",
+          "function_vm": 16642032
+        },
+        {
+          "record_index": 5,
+          "entry_vm": 20980348,
+          "operation": "startEncodePNG",
+          "function_vm": 16642800
+        },
+        {
+          "record_index": 6,
+          "entry_vm": 20980360,
+          "operation": "getEncodingProgress",
+          "function_vm": 16643460
+        },
+        {
+          "record_index": 7,
+          "entry_vm": 20980372,
+          "operation": "getEncodedDataSize",
+          "function_vm": 16643560
+        },
+        {
+          "record_index": 8,
+          "entry_vm": 20980384,
+          "operation": "getEncodedData",
+          "function_vm": 16643656
+        },
+        {
+          "record_index": 9,
+          "entry_vm": 20980396,
+          "operation": "requestCancel",
+          "function_vm": 16643832
+        },
+        {
+          "record_index": 10,
+          "entry_vm": 20980408,
+          "operation": "hasFinishedEncoding",
+          "function_vm": 16643944
+        },
+        {
+          "record_index": 11,
+          "entry_vm": 20980420,
+          "operation": "waitFinishedEncoding",
+          "function_vm": 16644040
+        },
+        {
+          "record_index": 12,
+          "entry_vm": 20980432,
+          "operation": "clearEncodedData",
+          "function_vm": 16644140
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTWebServer",
+      "abc": "doabc_013.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "modifyPasswdFile",
+        "start",
+        "stop"
+      ],
+      "native_names_found": [
+        "modifyPasswdFile",
+        "start",
+        "stop"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 143,
+          "entry_vm": 20982004,
+          "operation": "modifyPasswdFile",
+          "function_vm": 16588952
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo",
+      "abc": "doabc_015.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "provider_start",
+        "provider_stop",
+        "provider_invokeConfigureUI",
+        "provider_createPressureSource"
+      ],
+      "native_names_found": [
+        "provider_createPressureSource",
+        "provider_invokeConfigureUI",
+        "provider_start",
+        "provider_stop"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 153,
+          "entry_vm": 20982124,
+          "operation": "provider_invokeConfigureUI",
+          "function_vm": 16646828
+        },
+        {
+          "record_index": 154,
+          "entry_vm": 20982136,
+          "operation": "provider_createPressureSource",
+          "function_vm": 16647204
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTBonjour",
+      "abc": "doabc_016.abc",
+      "contexts": [
+        {
+          "method": 12,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "open",
+        "close",
+        "isOpen",
+        "publishService",
+        "unpublishService",
+        "startBrowse",
+        "stopBrowse"
+      ],
+      "native_names_found": [
+        "close",
+        "isOpen",
+        "open",
+        "publishService",
+        "startBrowse",
+        "stopBrowse",
+        "unpublishService"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 145,
+          "entry_vm": 20982028,
+          "operation": "close",
+          "function_vm": 16565400
+        },
+        {
+          "record_index": 146,
+          "entry_vm": 20982040,
+          "operation": "isOpen",
+          "function_vm": 16565564
+        },
+        {
+          "record_index": 147,
+          "entry_vm": 20982052,
+          "operation": "publishService",
+          "function_vm": 16565688
+        },
+        {
+          "record_index": 148,
+          "entry_vm": 20982064,
+          "operation": "unpublishService",
+          "function_vm": 16566524
+        },
+        {
+          "record_index": 149,
+          "entry_vm": 20982076,
+          "operation": "startBrowse",
+          "function_vm": 16566728
+        },
+        {
+          "record_index": 150,
+          "entry_vm": 20982088,
+          "operation": "stopBrowse",
+          "function_vm": 16567036
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTPrinter",
+      "abc": "doabc_018.abc",
+      "contexts": [
+        {
+          "method": 5,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "isPrintingAvailable",
+        "print",
+        "cleanup"
+      ],
+      "native_names_found": [
+        "cleanup",
+        "isPrintingAvailable",
+        "print"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 133,
+          "entry_vm": 20981884,
+          "operation": "isPrintingAvailable",
+          "function_vm": 16649216
+        },
+        {
+          "record_index": 134,
+          "entry_vm": 20981896,
+          "operation": "print",
+          "function_vm": 16649568
+        },
+        {
+          "record_index": 135,
+          "entry_vm": 20981908,
+          "operation": "cleanup",
+          "function_vm": 16650660
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTLicensing",
+      "abc": "doabc_019.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 0,
+          "strings": []
+        },
+        {
+          "method": 3,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "licensing"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "c"
+      ],
+      "native_names_found": [],
+      "missing": [
+        "c"
+      ],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo",
+      "abc": "doabc_020.abc",
+      "contexts": [],
+      "as3_operations": [
+        "provider_connect",
+        "provider_disconnect",
+        "provider_getButtonState",
+        "provider_getPressure",
+        "provider_updatePressureSource"
+      ],
+      "native_names_found": [
+        "provider_connect",
+        "provider_disconnect",
+        "provider_getButtonState",
+        "provider_getPressure",
+        "provider_updatePressureSource"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 155,
+          "entry_vm": 20982148,
+          "operation": "provider_updatePressureSource",
+          "function_vm": 16648832
+        },
+        {
+          "record_index": 156,
+          "entry_vm": 20982160,
+          "operation": "provider_connect",
+          "function_vm": 16647728
+        },
+        {
+          "record_index": 157,
+          "entry_vm": 20982172,
+          "operation": "provider_disconnect",
+          "function_vm": 16647988
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTActivityUI",
+      "abc": "doabc_021.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "activityui"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "showActivityUI",
+        "hideActivityUI"
+      ],
+      "native_names_found": [
+        "hideActivityUI",
+        "showActivityUI"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 139,
+          "entry_vm": 20981956,
+          "operation": "showActivityUI",
+          "function_vm": 16560532
+        },
+        {
+          "record_index": 140,
+          "entry_vm": 20981968,
+          "operation": "hideActivityUI",
+          "function_vm": 16562252
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTGL",
+      "abc": "doabc_022.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "gl"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "createContext",
+        "destroyContext",
+        "getLastGLErrorCode",
+        "getStringInfo",
+        "createFilter",
+        "prepareTextureEmpty",
+        "prepareTextureFromBitmapData",
+        "updateTextureFromBitmapData",
+        "setParamFloat",
+        "setParamInt",
+        "setParamFloatMulti",
+        "setParamIntMulti",
+        "applyFilter",
+        "getShaderInfoLog",
+        "getNumVertices",
+        "setNumVertices",
+        "setVertexAttribDataFloat",
+        "clearVertexAttribData",
+        "getVertexAttribDataRangeStart",
+        "getVertexAttribDataRangeCount",
+        "setVertexAttribDataRange",
+        "setDrawMode",
+        "enableVertexAttrib",
+        "drawArrays",
+        "readPixels",
+        "destroyFilter",
+        "clear",
+        "setParamFloatMatrix",
+        "executeSequence",
+        "asyncExecuteSequence",
+        "asyncJoin",
+        "asyncInterrupt",
+        "asyncReadPixels",
+        "shaderCreate",
+        "shaderDispose",
+        "programCreate",
+        "programDispose",
+        "programUse"
+      ],
+      "native_names_found": [
+        "applyFilter",
+        "asyncExecuteSequence",
+        "asyncInterrupt",
+        "asyncJoin",
+        "asyncReadPixels",
+        "clear",
+        "clearVertexAttribData",
+        "createContext",
+        "createFilter",
+        "destroyContext",
+        "destroyFilter",
+        "drawArrays",
+        "enableVertexAttrib",
+        "executeSequence",
+        "getLastGLErrorCode",
+        "getNumVertices",
+        "getShaderInfoLog",
+        "getStringInfo",
+        "getVertexAttribDataRangeCount",
+        "getVertexAttribDataRangeStart",
+        "prepareTextureEmpty",
+        "prepareTextureFromBitmapData",
+        "programCreate",
+        "programDispose",
+        "programUse",
+        "readPixels",
+        "setDrawMode",
+        "setNumVertices",
+        "setParamFloat",
+        "setParamFloatMatrix",
+        "setParamFloatMulti",
+        "setParamInt",
+        "setParamIntMulti",
+        "setVertexAttribDataFloat",
+        "setVertexAttribDataRange",
+        "shaderCreate",
+        "shaderDispose",
+        "updateTextureFromBitmapData"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 13,
+          "entry_vm": 20980444,
+          "operation": "createContext",
+          "function_vm": 16580868
+        },
+        {
+          "record_index": 14,
+          "entry_vm": 20980456,
+          "operation": "destroyContext",
+          "function_vm": 16580956
+        },
+        {
+          "record_index": 15,
+          "entry_vm": 20980468,
+          "operation": "getLastGLErrorCode",
+          "function_vm": 16581044
+        },
+        {
+          "record_index": 16,
+          "entry_vm": 20980480,
+          "operation": "getStringInfo",
+          "function_vm": 16587588
+        },
+        {
+          "record_index": 17,
+          "entry_vm": 20980492,
+          "operation": "createFilter",
+          "function_vm": 16581152
+        },
+        {
+          "record_index": 18,
+          "entry_vm": 20980504,
+          "operation": "setParamFloat",
+          "function_vm": 16581420
+        },
+        {
+          "record_index": 19,
+          "entry_vm": 20980516,
+          "operation": "setParamFloatMulti",
+          "function_vm": 16581612
+        },
+        {
+          "record_index": 20,
+          "entry_vm": 20980528,
+          "operation": "setParamInt",
+          "function_vm": 16581956
+        },
+        {
+          "record_index": 21,
+          "entry_vm": 20980540,
+          "operation": "setParamIntMulti",
+          "function_vm": 16582132
+        },
+        {
+          "record_index": 22,
+          "entry_vm": 20980552,
+          "operation": "prepareTextureEmpty",
+          "function_vm": 16582464
+        },
+        {
+          "record_index": 23,
+          "entry_vm": 20980564,
+          "operation": "prepareTextureFromBitmapData",
+          "function_vm": 16582728
+        },
+        {
+          "record_index": 24,
+          "entry_vm": 20980576,
+          "operation": "updateTextureFromBitmapData",
+          "function_vm": 16583064
+        },
+        {
+          "record_index": 25,
+          "entry_vm": 20980588,
+          "operation": "applyFilter",
+          "function_vm": 16583676
+        },
+        {
+          "record_index": 26,
+          "entry_vm": 20980600,
+          "operation": "getShaderInfoLog",
+          "function_vm": 16583948
+        },
+        {
+          "record_index": 27,
+          "entry_vm": 20980612,
+          "operation": "getNumVertices",
+          "function_vm": 16584084
+        },
+        {
+          "record_index": 28,
+          "entry_vm": 20980624,
+          "operation": "setNumVertices",
+          "function_vm": 16584188
+        },
+        {
+          "record_index": 29,
+          "entry_vm": 20980636,
+          "operation": "setVertexAttribDataFloat",
+          "function_vm": 16584320
+        },
+        {
+          "record_index": 30,
+          "entry_vm": 20980648,
+          "operation": "clearVertexAttribData",
+          "function_vm": 16584680
+        },
+        {
+          "record_index": 31,
+          "entry_vm": 20980660,
+          "operation": "getVertexAttribDataRangeStart",
+          "function_vm": 16584812
+        },
+        {
+          "record_index": 32,
+          "entry_vm": 20980672,
+          "operation": "getVertexAttribDataRangeCount",
+          "function_vm": 16584924
+        },
+        {
+          "record_index": 33,
+          "entry_vm": 20980684,
+          "operation": "setVertexAttribDataRange",
+          "function_vm": 16585040
+        },
+        {
+          "record_index": 34,
+          "entry_vm": 20980696,
+          "operation": "setDrawMode",
+          "function_vm": 16585196
+        },
+        {
+          "record_index": 35,
+          "entry_vm": 20980708,
+          "operation": "enableVertexAttrib",
+          "function_vm": 16585328
+        },
+        {
+          "record_index": 36,
+          "entry_vm": 20980720,
+          "operation": "destroyFilter",
+          "function_vm": 16585492
+        },
+        {
+          "record_index": 37,
+          "entry_vm": 20980732,
+          "operation": "drawArrays",
+          "function_vm": 16585588
+        },
+        {
+          "record_index": 38,
+          "entry_vm": 20980744,
+          "operation": "readPixels",
+          "function_vm": 16585752
+        },
+        {
+          "record_index": 39,
+          "entry_vm": 20980756,
+          "operation": "clear",
+          "function_vm": 16586200
+        },
+        {
+          "record_index": 40,
+          "entry_vm": 20980768,
+          "operation": "setParamFloatMatrix",
+          "function_vm": 16586320
+        },
+        {
+          "record_index": 41,
+          "entry_vm": 20980780,
+          "operation": "executeSequence",
+          "function_vm": 16586712
+        },
+        {
+          "record_index": 42,
+          "entry_vm": 20980792,
+          "operation": "asyncExecuteSequence",
+          "function_vm": 16586868
+        },
+        {
+          "record_index": 43,
+          "entry_vm": 20980804,
+          "operation": "asyncJoin",
+          "function_vm": 16587272
+        },
+        {
+          "record_index": 44,
+          "entry_vm": 20980816,
+          "operation": "asyncInterrupt",
+          "function_vm": 16587176
+        },
+        {
+          "record_index": 45,
+          "entry_vm": 20980828,
+          "operation": "asyncReadPixels",
+          "function_vm": 16587368
+        },
+        {
+          "record_index": 46,
+          "entry_vm": 20980840,
+          "operation": "shaderCreate",
+          "function_vm": 16587744
+        },
+        {
+          "record_index": 47,
+          "entry_vm": 20980852,
+          "operation": "shaderDispose",
+          "function_vm": 16587960
+        },
+        {
+          "record_index": 48,
+          "entry_vm": 20980864,
+          "operation": "programCreate",
+          "function_vm": 16588116
+        },
+        {
+          "record_index": 49,
+          "entry_vm": 20980876,
+          "operation": "programDispose",
+          "function_vm": 16588336
+        },
+        {
+          "record_index": 50,
+          "entry_vm": 20980888,
+          "operation": "programUse",
+          "function_vm": 16588492
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTQuickSelection",
+      "abc": "doabc_023.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "quickselection"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "createQuickSelectTool",
+        "disposeQuickSelectTool",
+        "setMask",
+        "setMaskWithARGB",
+        "brushHit",
+        "brushHits",
+        "qsBrushHits",
+        "getMask",
+        "mouseUp",
+        "reset",
+        "switchMode"
+      ],
+      "native_names_found": [
+        "brushHit",
+        "brushHits",
+        "createQuickSelectTool",
+        "disposeQuickSelectTool",
+        "getMask",
+        "mouseUp",
+        "qsBrushHits",
+        "reset",
+        "setMask",
+        "setMaskWithARGB",
+        "switchMode"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 175,
+          "entry_vm": 20982388,
+          "operation": "createQuickSelectTool",
+          "function_vm": 16650668
+        },
+        {
+          "record_index": 176,
+          "entry_vm": 20982400,
+          "operation": "disposeQuickSelectTool",
+          "function_vm": 16650892
+        },
+        {
+          "record_index": 177,
+          "entry_vm": 20982412,
+          "operation": "setMask",
+          "function_vm": 16651004
+        },
+        {
+          "record_index": 178,
+          "entry_vm": 20982424,
+          "operation": "setMaskWithARGB",
+          "function_vm": 16651180
+        },
+        {
+          "record_index": 179,
+          "entry_vm": 20982436,
+          "operation": "brushHit",
+          "function_vm": 16651460
+        },
+        {
+          "record_index": 180,
+          "entry_vm": 20982448,
+          "operation": "brushHits",
+          "function_vm": 16652032
+        },
+        {
+          "record_index": 181,
+          "entry_vm": 20982460,
+          "operation": "qsBrushHits",
+          "function_vm": 16652668
+        },
+        {
+          "record_index": 182,
+          "entry_vm": 20982472,
+          "operation": "getMask",
+          "function_vm": 16653264
+        },
+        {
+          "record_index": 183,
+          "entry_vm": 20982484,
+          "operation": "mouseUp",
+          "function_vm": 16653776
+        },
+        {
+          "record_index": 184,
+          "entry_vm": 20982496,
+          "operation": "reset",
+          "function_vm": 16654000
+        },
+        {
+          "record_index": 185,
+          "entry_vm": 20982508,
+          "operation": "switchMode",
+          "function_vm": 16654128
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTAM",
+      "abc": "doabc_028.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "am"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "init",
+        "run",
+        "getProgress",
+        "getResult",
+        "release"
+      ],
+      "native_names_found": [
+        "getProgress",
+        "getResult",
+        "init",
+        "release",
+        "run"
+      ],
+      "missing": [],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureSourceJotTouch",
+      "abc": "doabc_029.abc",
+      "contexts": [],
+      "as3_operations": [
+        "provider_getButtonState",
+        "provider_getPressure"
+      ],
+      "native_names_found": [
+        "provider_getButtonState",
+        "provider_getPressure"
+      ],
+      "missing": [],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTSS",
+      "abc": "doabc_030.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "ss"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "init",
+        "run",
+        "getProgress",
+        "getResult",
+        "release"
+      ],
+      "native_names_found": [
+        "getProgress",
+        "getResult",
+        "init",
+        "release",
+        "run"
+      ],
+      "missing": [],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTCamera",
+      "abc": "doabc_031.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "camera[static]"
+          ]
+        },
+        {
+          "method": 11,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "camera"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "enumerateCameras",
+        "getCapabilities",
+        "open",
+        "cancel",
+        "getParameters",
+        "setParameters",
+        "startPreview",
+        "stopPreview",
+        "takePicture",
+        "getPictureData",
+        "getNextPreviewFrame",
+        "getFinishCode"
+      ],
+      "native_names_found": [
+        "cancel",
+        "enumerateCameras",
+        "getCapabilities",
+        "getFinishCode",
+        "getNextPreviewFrame",
+        "getParameters",
+        "getPictureData",
+        "open",
+        "setParameters",
+        "startPreview",
+        "stopPreview",
+        "takePicture"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 110,
+          "entry_vm": 20981608,
+          "operation": "enumerateCameras",
+          "function_vm": 16639936
+        },
+        {
+          "record_index": 112,
+          "entry_vm": 20981632,
+          "operation": "startPreview",
+          "function_vm": 16634480
+        },
+        {
+          "record_index": 113,
+          "entry_vm": 20981644,
+          "operation": "stopPreview",
+          "function_vm": 16634708
+        },
+        {
+          "record_index": 114,
+          "entry_vm": 20981656,
+          "operation": "cancel",
+          "function_vm": 16634936
+        },
+        {
+          "record_index": 115,
+          "entry_vm": 20981668,
+          "operation": "getCapabilities",
+          "function_vm": 16635048
+        },
+        {
+          "record_index": 116,
+          "entry_vm": 20981680,
+          "operation": "getParameters",
+          "function_vm": 16637068
+        },
+        {
+          "record_index": 117,
+          "entry_vm": 20981692,
+          "operation": "setParameters",
+          "function_vm": 16637828
+        },
+        {
+          "record_index": 118,
+          "entry_vm": 20981704,
+          "operation": "getNextPreviewFrame",
+          "function_vm": 16639060
+        },
+        {
+          "record_index": 119,
+          "entry_vm": 20981716,
+          "operation": "takePicture",
+          "function_vm": 16639276
+        },
+        {
+          "record_index": 120,
+          "entry_vm": 20981728,
+          "operation": "getPictureData",
+          "function_vm": 16639468
+        },
+        {
+          "record_index": 121,
+          "entry_vm": 20981740,
+          "operation": "getFinishCode",
+          "function_vm": 16639684
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTCAF",
+      "abc": "doabc_032.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "caf"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "CAFGetResult"
+      ],
+      "native_names_found": [],
+      "missing": [
+        "CAFGetResult"
+      ],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTMail",
+      "abc": "doabc_033.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "email"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "sendMail",
+        "saveFile",
+        "copyFile",
+        "releaseFile"
+      ],
+      "native_names_found": [
+        "copyFile",
+        "releaseFile",
+        "saveFile",
+        "sendMail"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 61,
+          "entry_vm": 20981020,
+          "operation": "sendMail",
+          "function_vm": 16589168
+        },
+        {
+          "record_index": 62,
+          "entry_vm": 20981032,
+          "operation": "saveFile",
+          "function_vm": 16590224
+        },
+        {
+          "record_index": 63,
+          "entry_vm": 20981044,
+          "operation": "copyFile",
+          "function_vm": 16591188
+        },
+        {
+          "record_index": 64,
+          "entry_vm": 20981056,
+          "operation": "releaseFile",
+          "function_vm": 16592212
+        }
+      ]
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureProviderJotTouch",
+      "abc": "doabc_034.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "as3_operations": [
+        "provider_start",
+        "provider_stop"
+      ],
+      "native_names_found": [
+        "provider_start",
+        "provider_stop"
+      ],
+      "missing": [],
+      "unique_anchors": []
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTNEUtils",
+      "abc": "doabc_035.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "utils"
+          ]
+        }
+      ],
+      "as3_operations": [
+        "getTimestamp",
+        "trace",
+        "getDeviceID",
+        "getDeviceName",
+        "canLaunchApp",
+        "launchApp",
+        "setStatusBarHidden",
+        "leaveApp",
+        "isolateColor",
+        "clipboardHasFormat",
+        "clipboardSetFormatData",
+        "clipboardSetMultiData",
+        "clipboardGetFormatData",
+        "plistToXMLString",
+        "copyURIContentToFile",
+        "resolveImageContentURI",
+        "compressBitmapRLE",
+        "getPixelsEx",
+        "setPixelsEx",
+        "lz4Compress",
+        "lz4Uncompress",
+        "lz4Deflate",
+        "lz4Inflate",
+        "getPixelsBitmapEx",
+        "getMemoryStatsEx",
+        "getScaledPixelsEx",
+        "alphaBlend",
+        "uncompressBitmapDataEx",
+        "bitmapDataToFileEx",
+        "bitmapDataFromFileEx",
+        "bitmapFileCreateEmpty",
+        "bitmapFileCreateFromBitmapData",
+        "bitmapFileWrite",
+        "bitmapFileRead",
+        "bitmapFileResample",
+        "bitmapDataCopy",
+        "bitmapDataResample",
+        "getSystemInfo",
+        "setWakeLock",
+        "getNetworkState",
+        "getLocalIP",
+        "openPath",
+        "setRequestedOrientation",
+        "getRequestedOrientation",
+        "showNetworkActivityIndicator",
+        "showNetworkActivityIndicator"
+      ],
+      "native_names_found": [
+        "alphaBlend",
+        "bitmapDataCopy",
+        "bitmapDataFromFileEx",
+        "bitmapDataResample",
+        "bitmapDataToFileEx",
+        "bitmapFileCreateEmpty",
+        "bitmapFileCreateFromBitmapData",
+        "bitmapFileRead",
+        "bitmapFileResample",
+        "bitmapFileWrite",
+        "canLaunchApp",
+        "clipboardGetFormatData",
+        "clipboardHasFormat",
+        "clipboardSetFormatData",
+        "clipboardSetMultiData",
+        "compressBitmapRLE",
+        "copyURIContentToFile",
+        "getDeviceID",
+        "getDeviceName",
+        "getLocalIP",
+        "getMemoryStatsEx",
+        "getNetworkState",
+        "getPixelsBitmapEx",
+        "getPixelsEx",
+        "getRequestedOrientation",
+        "getScaledPixelsEx",
+        "getSystemInfo",
+        "getTimestamp",
+        "isolateColor",
+        "launchApp",
+        "leaveApp",
+        "lz4Compress",
+        "lz4Deflate",
+        "lz4Inflate",
+        "lz4Uncompress",
+        "openPath",
+        "plistToXMLString",
+        "resolveImageContentURI",
+        "setPixelsEx",
+        "setRequestedOrientation",
+        "setStatusBarHidden",
+        "setWakeLock",
+        "showNetworkActivityIndicator",
+        "trace",
+        "uncompressBitmapDataEx"
+      ],
+      "missing": [],
+      "unique_anchors": [
+        {
+          "record_index": 65,
+          "entry_vm": 20981068,
+          "operation": "trace",
+          "function_vm": 16593120
+        },
+        {
+          "record_index": 66,
+          "entry_vm": 20981080,
+          "operation": "getDeviceName",
+          "function_vm": 16594244
+        },
+        {
+          "record_index": 67,
+          "entry_vm": 20981092,
+          "operation": "getDeviceID",
+          "function_vm": 16593220
+        },
+        {
+          "record_index": 68,
+          "entry_vm": 20981104,
+          "operation": "canLaunchApp",
+          "function_vm": 16594372
+        },
+        {
+          "record_index": 69,
+          "entry_vm": 20981116,
+          "operation": "launchApp",
+          "function_vm": 16594576
+        },
+        {
+          "record_index": 70,
+          "entry_vm": 20981128,
+          "operation": "leaveApp",
+          "function_vm": 16594776
+        },
+        {
+          "record_index": 71,
+          "entry_vm": 20981140,
+          "operation": "setStatusBarHidden",
+          "function_vm": 16594816
+        },
+        {
+          "record_index": 72,
+          "entry_vm": 20981152,
+          "operation": "getNetworkState",
+          "function_vm": 16595080
+        },
+        {
+          "record_index": 73,
+          "entry_vm": 20981164,
+          "operation": "resolveImageContentURI",
+          "function_vm": 16598200
+        },
+        {
+          "record_index": 74,
+          "entry_vm": 20981176,
+          "operation": "copyURIContentToFile",
+          "function_vm": 16598236
+        },
+        {
+          "record_index": 75,
+          "entry_vm": 20981188,
+          "operation": "isolateColor",
+          "function_vm": 16595300
+        },
+        {
+          "record_index": 76,
+          "entry_vm": 20981200,
+          "operation": "clipboardHasFormat",
+          "function_vm": 16595604
+        },
+        {
+          "record_index": 77,
+          "entry_vm": 20981212,
+          "operation": "clipboardSetFormatData",
+          "function_vm": 16596172
+        },
+        {
+          "record_index": 78,
+          "entry_vm": 20981224,
+          "operation": "clipboardSetMultiData",
+          "function_vm": 16596900
+        },
+        {
+          "record_index": 79,
+          "entry_vm": 20981236,
+          "operation": "clipboardGetFormatData",
+          "function_vm": 16597640
+        },
+        {
+          "record_index": 80,
+          "entry_vm": 20981248,
+          "operation": "plistToXMLString",
+          "function_vm": 16598272
+        },
+        {
+          "record_index": 81,
+          "entry_vm": 20981260,
+          "operation": "compressBitmapRLE",
+          "function_vm": 16598636
+        },
+        {
+          "record_index": 82,
+          "entry_vm": 20981272,
+          "operation": "getPixelsEx",
+          "function_vm": 16598840
+        },
+        {
+          "record_index": 83,
+          "entry_vm": 20981284,
+          "operation": "setPixelsEx",
+          "function_vm": 16599488
+        },
+        {
+          "record_index": 84,
+          "entry_vm": 20981296,
+          "operation": "lz4Compress",
+          "function_vm": 16600108
+        },
+        {
+          "record_index": 85,
+          "entry_vm": 20981308,
+          "operation": "lz4Uncompress",
+          "function_vm": 16600624
+        },
+        {
+          "record_index": 86,
+          "entry_vm": 20981320,
+          "operation": "lz4Deflate",
+          "function_vm": 16600816
+        },
+        {
+          "record_index": 87,
+          "entry_vm": 20981332,
+          "operation": "lz4Inflate",
+          "function_vm": 16601156
+        },
+        {
+          "record_index": 88,
+          "entry_vm": 20981344,
+          "operation": "getPixelsBitmapEx",
+          "function_vm": 16601488
+        },
+        {
+          "record_index": 89,
+          "entry_vm": 20981356,
+          "operation": "getMemoryStatsEx",
+          "function_vm": 16604488
+        },
+        {
+          "record_index": 90,
+          "entry_vm": 20981368,
+          "operation": "uncompressBitmapDataEx",
+          "function_vm": 16602108
+        },
+        {
+          "record_index": 91,
+          "entry_vm": 20981380,
+          "operation": "bitmapDataToFileEx",
+          "function_vm": 16602692
+        },
+        {
+          "record_index": 92,
+          "entry_vm": 20981392,
+          "operation": "bitmapDataFromFileEx",
+          "function_vm": 16603188
+        },
+        {
+          "record_index": 93,
+          "entry_vm": 20981404,
+          "operation": "getScaledPixelsEx",
+          "function_vm": 16603684
+        },
+        {
+          "record_index": 94,
+          "entry_vm": 20981416,
+          "operation": "bitmapFileCreateEmpty",
+          "function_vm": 16604712
+        },
+        {
+          "record_index": 95,
+          "entry_vm": 20981428,
+          "operation": "bitmapFileCreateFromBitmapData",
+          "function_vm": 16604868
+        },
+        {
+          "record_index": 96,
+          "entry_vm": 20981440,
+          "operation": "bitmapFileWrite",
+          "function_vm": 16605000
+        },
+        {
+          "record_index": 97,
+          "entry_vm": 20981452,
+          "operation": "bitmapFileRead",
+          "function_vm": 16605596
+        },
+        {
+          "record_index": 98,
+          "entry_vm": 20981464,
+          "operation": "bitmapFileResample",
+          "function_vm": 16606240
+        },
+        {
+          "record_index": 99,
+          "entry_vm": 20981476,
+          "operation": "bitmapDataCopy",
+          "function_vm": 16608440
+        },
+        {
+          "record_index": 100,
+          "entry_vm": 20981488,
+          "operation": "bitmapDataResample",
+          "function_vm": 16609068
+        },
+        {
+          "record_index": 101,
+          "entry_vm": 20981500,
+          "operation": "getSystemInfo",
+          "function_vm": 16607024
+        },
+        {
+          "record_index": 102,
+          "entry_vm": 20981512,
+          "operation": "setWakeLock",
+          "function_vm": 16609880
+        },
+        {
+          "record_index": 103,
+          "entry_vm": 20981524,
+          "operation": "getLocalIP",
+          "function_vm": 16610020
+        },
+        {
+          "record_index": 104,
+          "entry_vm": 20981536,
+          "operation": "alphaBlend",
+          "function_vm": 16610516
+        },
+        {
+          "record_index": 105,
+          "entry_vm": 20981548,
+          "operation": "getTimestamp",
+          "function_vm": 16611500
+        },
+        {
+          "record_index": 106,
+          "entry_vm": 20981560,
+          "operation": "openPath",
+          "function_vm": 16611568
+        },
+        {
+          "record_index": 107,
+          "entry_vm": 20981572,
+          "operation": "setRequestedOrientation",
+          "function_vm": 16612048
+        },
+        {
+          "record_index": 108,
+          "entry_vm": 20981584,
+          "operation": "getRequestedOrientation",
+          "function_vm": 16612056
+        },
+        {
+          "record_index": 109,
+          "entry_vm": 20981596,
+          "operation": "showNetworkActivityIndicator",
+          "function_vm": 16612112
+        }
+      ]
+    }
+  ]
+}

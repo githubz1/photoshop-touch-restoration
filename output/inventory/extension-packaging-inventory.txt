@@ -1,0 +1,39 @@
+PHOTOSHOP TOUCH EXTENSION PACKAGING INVENTORY
+====================================================================================================
+
+INTERESTING FILES
+----------------------------------------------------------------------------------------------------
+output/abc/frame1.abc
+output/decompiled/classes/com/adobe/ttpixel/editor/processor/TTDeviceExtensionWrapper.as
+output/decompiled/classes/com/adobe/ttpixel/editor/processor/TTExtensionWrapper.as
+output/inventory/TTExtensionWrapper-xrefs.txt
+output/inventory/native-extension-class-search.txt
+
+FILES CONTAINING EXTENSION SYMBOLS
+----------------------------------------------------------------------------------------------------
+output/abc/frame1.abc
+    TTNEUtils, TTCameraRoll, ExtensionContext
+output/decompiled/method1902.as
+    TTNEUtils, ExtensionContext
+output/decompiled/classes/com/adobe/ttpixel/app/TTApplication.as
+    TTNEUtils, ExtensionContext
+output/decompiled/classes/com/adobe/ttpixel/editor/processor/TTDeviceExtensionWrapper.as
+    TTNEUtils, TTCameraRoll, ExtensionContext
+output/decompiled/classes/com/adobe/ttpixel/editor/processor/TTExtensionWrapper.as
+    TTNEUtils, ExtensionContext
+output/decompiled/TTApplication/method1902.as
+    TTNEUtils, ExtensionContext
+output/decompiled/TTApplication/method1902.txt
+    TTNEUtils, ExtensionContext
+output/inventory/classes.txt
+    TTCameraRoll
+output/inventory/TTApplication-startup-dependencies.txt
+    TTNEUtils, ExtensionContext
+output/inventory/native-extension-class-search.txt
+    com.adobe.ttpixel.extension.TTNEUtils, com.adobe.ttpixel.extension.TTGL, com.adobe.ttpixel.extension.TTCameraRoll, TTNEUtils, TTCameraRoll
+output/inventory/TTExtensionWrapper-xrefs.txt
+    TTNEUtils, ExtensionContext
+
+ARCHIVE CONTENTS / SYMBOL HITS
+----------------------------------------------------------------------------------------------------
+None

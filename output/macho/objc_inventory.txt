@@ -1,0 +1,246 @@
+            name    0x131e0b1 initWithContext:
+            types   0x133c461 @12@0:4^v8
+            imp     0xe77d70
+        baseProtocols  0x0
+        ivars          0x140a7e8
+            entsize   20
+            count     3
+            offset    0x144cf18 4
+            name      0x131e0c2 extensionContext
+            type      0x133c446 ^v
+            alignment 2
+            size      4
+            offset    0x144cf1c 8
+            name      0x131dfd3 lastMessageType
+            type      0x132f6de @"NSString"
+            offset    0x144cf20 12
+            name      0x131dff7 lastMessageBody
+        weakIvarLayout 0x0
+        baseProperties 0x140a82c
+----------------------------------------------------------------------------------------------------
+    superclass 0x1419b48
+    cache      0x0 __objc_empty_cache
+    vtable     0x0
+    data       0x1413e40
+        flags          0x0
+        instanceStart  56
+        instanceSize   64
+        ivarLayout     0x0
+        name           0x132965e TTCameraRollPhotoAsset
+        baseMethods    0x1413dd8
+            entsize 12
+            count   4
+            name    0x1317ab7 init
+            types   0x132f69a @8@0:4
+            imp     0xfcdfd4
+            name    0x132619b storeImageBits:
+            types   0x133df9d v12@0:4^{CGImage=}8
+            imp     0xfce040
+            name    0x1327462 copyToFlashBitmap:
+            types   0x133e330 v12@0:4^{?=IIIII^I}8
+            imp     0xfce08c
+            name    0x1317b37 dealloc
+            types   0x132f6a1 v8@0:4
+            imp     0xfce100
+----------------------------------------------------------------------------------------------------
+    superclass 0x1419b5c
+    data       0x1413db0
+        flags          0x1 RO_META
+        instanceStart  20
+        instanceSize   20
+        baseMethods    0x0
+        ivars          0x0
+        baseProperties 0x0
+014037b4 0x1419d3c
+    isa        0x1419d50
+    superclass 0x1419c10
+    data       0x1413fac
+        instanceStart  64
+        instanceSize   84
+----------------------------------------------------------------------------------------------------
+        name           0x1329675 TTCameraRollAssetsHelper
+        baseMethods    0x1413e90
+            count   14
+            imp     0xfce1a0
+            name    0x13272cd setBrowseAvailableCB:withContext:
+            types   0x133e345 v16@0:4^?8^v12
+            imp     0xfce2a8
+            name    0x13272ef setThumbAvailableCB:withContext:
+            imp     0xfce2cc
+            name    0x132732b setImageAvailableCB:withContext:
+            imp     0xfce2f0
+----------------------------------------------------------------------------------------------------
+    superclass 0x1419c24
+    data       0x1413e68
+014037b8 0x1419d00
+    isa        0x1419d64
+    superclass 0x0 _OBJC_CLASS_$_NSObject
+    data       0x14143c8
+        instanceStart  4
+        instanceSize   25
+----------------------------------------------------------------------------------------------------
+        instanceStart  158
+        instanceSize   181
+        name           0x13296a1 TTPixelHolderUIViewController
+        baseMethods    0x14145ec
+            count   9
+            name    0x1327647 setCtxNativeData:
+            types   0x133e3ff v12@0:4^{ContextNativeData=i(ContextNativeDataUnion={ContextNativeDataImpExp=^v}{ContextNativeDataGL=^{ECGLContext}^{ECGLFilter}}{ContextNativeDataAM=^{ECAlphaMattingData}}{ContextNativeDataSS=^{ECScribbleSegmentData}}{ContextNativeDataMAIL=@}{ContextNativeDataCamera=@}{ContextNativeDataCameraRoll=@@@}{ContextNativeDataPrinter=}{ContextNativeDataCameraUI=^v}{ContextNativeDataBigData=^{ecutils_preflight_t}}{ContextNativeDataActivityUI=@^{dispatch_queue_s}}{ContextNativeDataHttpd=}{ContextNativeDataBonjour=@@}{ContextNativeDataPressurePogoConnect=@}{ContextNativeDataPressureJaJa=@}{ContextNativeDataPressureJotTouch=@}{ContextNativeDataUtils=@}{ContextNativeDataIAPAppStore=@}{ContextNativeDataQuickSelection=@})}8
+            imp     0xfcfac4
+            name    0x1327638 setFREContext:
+            types   0x13365db v12@0:4^v8
+            imp     0xfcfad8
+            name    0x13275fc setSaveRootViewController:
+            types   0x132f6d4 v12@0:4@8
+            imp     0xfcfaec
+            name    0x1327617 setSaveView:
+            imp     0xfcfb24
+            name    0x1327624 setLockToLandscape:
+            types   0x133ae23 v12@0:4I8
+            imp     0xfcfb5c
+            name    0x131b8e4 shouldAutorotateToInterfaceOrientation:
+            types   0x132b62a c12@0:4i8
+----------------------------------------------------------------------------------------------------
+            offset    0x144d64c 168
+            name      0x13276a8 mContext
+            offset    0x144d648 172
+            name      0x13276b1 mCtxNativeData
+            type      0x133e6e3 ^{ContextNativeData=i(ContextNativeDataUnion={ContextNativeDataImpExp=^v}{ContextNativeDataGL=^{ECGLContext}^{ECGLFilter}}{ContextNativeDataAM=^{ECAlphaMattingData}}{ContextNativeDataSS=^{ECScribbleSegmentData}}{ContextNativeDataMAIL=@}{ContextNativeDataCamera=@}{ContextNativeDataCameraRoll=@@@}{ContextNativeDataPrinter=}{ContextNativeDataCameraUI=^v}{ContextNativeDataBigData=^{ecutils_preflight_t}}{ContextNativeDataActivityUI=@^{dispatch_queue_s}}{ContextNativeDataHttpd=}{ContextNativeDataBonjour=@@}{ContextNativeDataPressurePogoConnect=@}{ContextNativeDataPressureJaJa=@}{ContextNativeDataPressureJotTouch=@}{ContextNativeDataUtils=@}{ContextNativeDataIAPAppStore=@}{ContextNativeDataQuickSelection=@})}
+            offset    0x144d660 176
+            name      0x13276c0 cameraController
+            type      0x133e9ab @"TTPixelCamerUIViewController"
+            offset    0x144d658 180
+            name      0x13276d1 mLockToLandscape
+            type      0x132f73b c
+            alignment 0
+            size      1
+Meta Class
+----------------------------------------------------------------------------------------------------
+            imp     0xfd8c68
+            name    0x1327989 createPreviewBitmapContextForWidth:andHeight:
+            types   0x133ea8a c16@0:4i8i12
+            imp     0xfd8cd4
+            name    0x1327c31 createPreviewBitmapContext
+            types   0x132f6a8 c8@0:4
+            imp     0xfd8e10
+            name    0x1327d6e initWithExtensionContext:deviceId:previewWidth:previewHeight:
+            types   0x133ea97 @24@0:4^v8@12i16i20
+            imp     0xfd8e40
+            name    0x1327dac getParameters
+            imp     0xfd9248
+            name    0x1327dba requestTakePictureWithCommandId:
+            types   0x133543b c12@0:4@8
+            imp     0xfd93ac
+            name    0x1327ddb getPictureImageInBuffer:width:height:
+            types   0x133eaab c20@0:4^I8i12i16
+            imp     0xfd95b4
+            name    0x1327e01 requestStartPreviewWithCommandId:
+            imp     0xfd9828
+            name    0x1327e23 requestStopPreviewWithCommandId:
+----------------------------------------------------------------------------------------------------
+            offset    0x144d6bc 40
+            name      0x1327f73 captureDeviceId
+            offset    0x144d680 44
+            offset    0x144d6a0 48
+            name      0x1327f83 dispatchQueue
+            type      0x133d0fd ^{dispatch_queue_s=}
+            offset    0x144d6cc 52
+            name      0x1327f91 previewDispatchQueue
+            offset    0x144d6d0 56
+            name      0x1327fa6 parametersSemaphore
+----------------------------------------------------------------------------------------------------
+        name           0x132970b TTCameraTask360
+        baseMethods    0x1415088
+            name    0x1328013 getDeviceOrientation
+            types   0x132f6af i8@0:4
+            imp     0xfdaf10
+            imp     0xfdaff4
+            imp     0xfdb13c
+            name    0x1327961 updateStillImageRotationForOrientation:
+            types   0x1335538 v12@0:4i8
+            imp     0xfdb1a0
+            name    0x132793c updatePreviewRotationForOrientation:
+            imp     0xfdb1a4
+            name    0x1328028 onDeviceOrientationDidChange:
+            imp     0xfdb1a8
+            name    0x1327903 dispatchCommandFinishMessageForId:andType:andResultCode:
+----------------------------------------------------------------------------------------------------
+        instanceSize   12
+        name           0x132976d TTOSNotificationObserver
+        baseMethods    0x1415aa0
+            count   8
+            name    0x1328652 initWithExtensionContext:
+            imp     0xfdcbd0
+            imp     0xfdccb8
+            name    0x1328347 setupOSNotificationObserver
+            imp     0xfdcd48
+            name    0x1328363 releaseOSNotificationObserver
+            imp     0xfdcdbc
+            name    0x1328381 handleMemoryWarning:
+            imp     0xfdce1c
+            name    0x132866c openPath:withOrigin:
+----------------------------------------------------------------------------------------------------
+                    types   0x133ee14 c16@0:4@8:12
+                    imp     0x0
+                optionalClassMethods 0x0
+                instanceProperties 0x0
+        ivars          0x1415b08
+            count     2
+            offset    0x144d70c 4
+            name      0x1328681 iExtensionContext
+            offset    0x144d710 8
+            name      0x1328693 iDocInteractionController
+            type      0x133ee7b @"UIDocumentInteractionController"
+    isa        0x0 _OBJC_METACLASS_$_NSObject
+    superclass 0x0 _OBJC_METACLASS_$_NSObject
+----------------------------------------------------------------------------------------------------
+    0x1326ef2 stringsForAddressesOfNetService:
+    0x1326f13 TXTRecordData
+    0x1326f21 hostName
+    0x1326f2a jsonValueForArrayOfStrings:
+    0x1326f46 jsonValueForInteger:
+    0x1326f5b jsonValueForDictionary:
+    0x1326f73 jsonValueForNetService:withQualifiedName:
+    0x1326b87 getUTF8StringForThreadState:
+    0x1328652 initWithExtensionContext:
+    0x1326f9d initWithFREContext:
+    0x1326fed addSublayer:
+    0x1326ffa animationWithKeyPath:
+    0x1327010 setPath:
+    0x1327019 setCalculationMode:
+    0x132702d setFillMode:
+    0x132703a setRemovedOnCompletion:
+    0x1327052 setDuration:
+    0x132705f setRepeatCount:
+    0x132706f removeAnimationForKey:
+    0x1327086 setBeginTime:
+    0x1327094 setFromValue:
+    0x13270a2 setToValue:
+    0x13270ae addAnimation:forKey:
+    0x13270c3 makePathAnimation:offIdx:
+----------------------------------------------------------------------------------------------------
+    0x1327c76 destroyPreviewBitmapContext
+    0x1327c92 destroyPictureImage
+    0x1327ca6 doClose
+    0x1327cae onDidStopRunningAfterClose:
+    0x1327cca deviceWithUniqueID:
+    0x1327cde defaultDeviceWithMediaType:
+    0x1328013 getDeviceOrientation
+    0x1328028 onDeviceOrientationDidChange:
+    0x1327d6e initWithExtensionContext:deviceId:previewWidth:previewHeight:
+    0x1328046 commandFinished:cmdId:andType:andResultCode:
+    0x1327ebf captureDevice
+    0x1327e9e cameraTaskState
+    0x1328073 didOpen:success:
+    0x1327dba requestTakePictureWithCommandId:
+    0x1328084 scaleForRectWithAspectRatioWidth:andHeight:inRect:fill:
+    0x13280bc makeCGImage:width:height:bytesPerRow:
+    0x13280e2 getRotation
+    0x13280ee fitRectWithAspectRatioWidth:andHeight:inRect:fill:
+    0x132819f setInternalConnectionState:
+    0x13281eb stopThread
+    0x13281f6 stopReadingBlueToothData
+    0x132820f startReadingBlueToothData
+    0x1328229 startThread
+    0x1328235 id
+----------------------------------------------------------------------------------------------------

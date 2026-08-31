@@ -1,0 +1,40 @@
+====================================================================================================
+AIR BRIDGE INVENTORY
+====================================================================================================
+
+CLASSES
+----------------------------------------------------------------------------------------------------
+TTCameraRollAssetsHelper
+TTCameraRollPhotoAsset
+TTCameraTask360
+TTOSNotificationObserver
+TTPixelHolderUIViewController
+iExtensionContext
+initWithExtensionContext
+
+INTERESTING LINES
+----------------------------------------------------------------------------------------------------
+        name           0x132965e TTCameraRollPhotoAsset
+        name           0x1329675 TTCameraRollAssetsHelper
+            types   0x133e3ff v12@0:4^{ContextNativeData=i(ContextNativeDataUnion={ContextNativeDataImpExp=^v}{ContextNativeDataGL=^{ECGLContext}^{ECGLFilter}}{ContextNativeDataAM=^{ECAlphaMattingData}}{ContextNativeDataSS=^{ECScribbleSegmentData}}{ContextNativeDataMAIL=@}{ContextNativeDataCamera=@}{ContextNativeDataCameraRoll=@@@}{ContextNativeDataPrinter=}{ContextNativeDataCameraUI=^v}{ContextNativeDataBigData=^{ecutils_preflight_t}}{ContextNativeDataActivityUI=@^{dispatch_queue_s}}{ContextNativeDataHttpd=}{ContextNativeDataBonjour=@@}{ContextNativeDataPressurePogoConnect=@}{ContextNativeDataPressureJaJa=@}{ContextNativeDataPressureJotTouch=@}{ContextNativeDataUtils=@}{ContextNativeDataIAPAppStore=@}{ContextNativeDataQuickSelection=@})}8
+            name    0x1327638 setFREContext:
+            type      0x133e6e3 ^{ContextNativeData=i(ContextNativeDataUnion={ContextNativeDataImpExp=^v}{ContextNativeDataGL=^{ECGLContext}^{ECGLFilter}}{ContextNativeDataAM=^{ECAlphaMattingData}}{ContextNativeDataSS=^{ECScribbleSegmentData}}{ContextNativeDataMAIL=@}{ContextNativeDataCamera=@}{ContextNativeDataCameraRoll=@@@}{ContextNativeDataPrinter=}{ContextNativeDataCameraUI=^v}{ContextNativeDataBigData=^{ecutils_preflight_t}}{ContextNativeDataActivityUI=@^{dispatch_queue_s}}{ContextNativeDataHttpd=}{ContextNativeDataBonjour=@@}{ContextNativeDataPressurePogoConnect=@}{ContextNativeDataPressureJaJa=@}{ContextNativeDataPressureJotTouch=@}{ContextNativeDataUtils=@}{ContextNativeDataIAPAppStore=@}{ContextNativeDataQuickSelection=@})}
+            name    0x1327d6e initWithExtensionContext:deviceId:previewWidth:previewHeight:
+            name    0x1328652 initWithExtensionContext:
+            name      0x1328681 iExtensionContext
+    0x1328652 initWithExtensionContext:
+    0x1326f9d initWithFREContext:
+    0x1327d6e initWithExtensionContext:deviceId:previewWidth:previewHeight:
+
+METHOD IMPLEMENTATIONS
+----------------------------------------------------------------------------------------------------
+    0xe77d70  initWithContext:
+    0xfce040  storeImageBits:
+    0xfce2a8  setBrowseAvailableCB:withContext:
+    0xfcfad8  setFREContext:
+    0xfd8cd4  createPreviewBitmapContextForWidth:andHeight:
+    0xfd8e10  createPreviewBitmapContext
+    0xfd8e40  initWithExtensionContext:deviceId:previewWidth:previewHeight:
+    0xfd93ac  requestTakePictureWithCommandId:
+    0xfd95b4  getPictureImageInBuffer:width:height:
+    0xfdb1a0  updateStillImageRotationForOrientation:

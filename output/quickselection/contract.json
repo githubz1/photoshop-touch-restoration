@@ -1,0 +1,92 @@
+{
+  "status": "reverse-engineering complete",
+  "native_class": "QuickSelectTool",
+  "fre_api": {
+    "createQuickSelectTool": "0x00FE11AC",
+    "disposeQuickSelectTool": "0x00FE128C",
+    "setMask": "0x00FE12FC",
+    "setMaskWithARGB": "0x00FE13AC",
+    "brushHit": "0x00FE14C4",
+    "brushHits": "0x00FE1700",
+    "qsBrushHits": "0x00FE197C",
+    "getMask": "0x00FE1BD0",
+    "mouseUp": "0x00FE1DD0",
+    "reset": "0x00FE1EB0",
+    "switchMode": "0x00FE1F30"
+  },
+  "native_methods": {
+    "ClearMasks": "0x00FFCAE0",
+    "BrushHit_single": "0x00FFCE80",
+    "BrushHit_batch": "0x00FFD238",
+    "switchMode": "0x00FFD5DC",
+    "qsBrushHit": "0x00FFD680",
+    "qsSetCurrMask": "0x00FFDA74",
+    "Reset": "0x00FFDB7C",
+    "MouseUp": "0x00FFDC98",
+    "GetMask": "0x00FFDD44",
+    "RefineEdgesSegmentation": "0x00FF9758",
+    "RefineEdges": "0x00FF9C90"
+  },
+  "brush_contract": {
+    "coordinates": "alternating x,y integer pairs from AS3 Array",
+    "batch_native_signature": [
+      "int *x",
+      "int *y",
+      "int *radius",
+      "int *mode",
+      "int count",
+      "unsigned char *&mask"
+    ],
+    "qs_batch_native_signature": [
+      "int *x",
+      "int *y",
+      "int *radius",
+      "int mode",
+      "int count",
+      "unsigned char *&mask"
+    ]
+  },
+  "mode_semantics": {
+    "0": {
+      "meaning": "foreground/add",
+      "foreground_constraint": "0xFF",
+      "background_constraint": "0x00",
+      "segmentation_class": 1,
+      "output_mask": "0xFF"
+    },
+    "nonzero": {
+      "meaning": "background/remove",
+      "foreground_constraint": "0x00",
+      "background_constraint": "0xFF",
+      "segmentation_class": 0,
+      "output_mask": "0x00"
+    }
+  },
+  "object_offsets": {
+    "0x68": "final selection mask returned by MouseUp",
+    "0x74": "foreground scribble/constraint mask",
+    "0x78": "background scribble/constraint mask",
+    "0xEC": "mode/refinement polarity boolean (mode == 0)"
+  },
+  "graph_cut": {
+    "terminal_0": {
+      "meaning": "background",
+      "segmentation_class": 0,
+      "output": "0x00"
+    },
+    "terminal_1": {
+      "meaning": "foreground",
+      "segmentation_class": 1,
+      "output": "0xFF"
+    },
+    "unassigned_class": 2,
+    "output_conversion": "ReadSegmentationMask writes 0xFF iff segmentation class == 1; otherwise 0x00"
+  },
+  "active_as3_path": {
+    "tool": "TTQuickSelectionTool.processNewTouchEvents",
+    "brush_call": "QSBrushHits(points, 0, iRealBrushRadious)",
+    "brush_mode": "foreground/add",
+    "completion": "QSMouseUp(kQSResultARGB)",
+    "result": "applySelection(result)"
+  }
+}

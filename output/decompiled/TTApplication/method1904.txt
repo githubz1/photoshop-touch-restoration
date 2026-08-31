@@ -1,0 +1,14 @@
+
+✓ Optimization reached fixed point after 1 iteration(s)
+// Decompiled by Phoenix
+
+function method1904()
+{
+    "return";
+    if ()
+    {
+    }
+    "return";
+}
+
+✓ Wrote output/decompiled/method1904.as

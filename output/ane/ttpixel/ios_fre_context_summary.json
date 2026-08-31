@@ -1,0 +1,453 @@
+{
+  "contexts": [
+    {
+      "class": "com.adobe.ttpixel.extension::TTCameraUI",
+      "abc": "doabc_001.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "cameraui"
+          ]
+        }
+      ],
+      "operation_count": 2,
+      "native_unique_names_found": 2,
+      "missing": [],
+      "start_vm": 20981920,
+      "end_vm": 20981931,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureProviderJaja",
+      "abc": "doabc_004.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 2,
+      "native_unique_names_found": 2,
+      "missing": [],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "ambiguous-duplicates"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTBigDataExtension",
+      "abc": "doabc_005.abc",
+      "contexts": [
+        {
+          "method": 5,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "bigdata"
+          ]
+        }
+      ],
+      "operation_count": 1,
+      "native_unique_names_found": 1,
+      "missing": [],
+      "start_vm": 20981944,
+      "end_vm": 20981955,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.iap.appstore::TTAppStore",
+      "abc": "doabc_008.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 7,
+      "native_unique_names_found": 7,
+      "missing": [],
+      "start_vm": 20982304,
+      "end_vm": 20982387,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureSourceJaja",
+      "abc": "doabc_010.abc",
+      "contexts": [],
+      "operation_count": 2,
+      "native_unique_names_found": 2,
+      "missing": [],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "ambiguous-duplicates"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTCameraRoll",
+      "abc": "doabc_011.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "cameraroll"
+          ]
+        }
+      ],
+      "operation_count": 11,
+      "native_unique_names_found": 11,
+      "missing": [],
+      "start_vm": 20981752,
+      "end_vm": 20981883,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTImpExp",
+      "abc": "doabc_012.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "impexp"
+          ]
+        }
+      ],
+      "operation_count": 11,
+      "native_unique_names_found": 11,
+      "missing": [],
+      "start_vm": 20980312,
+      "end_vm": 20980443,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTWebServer",
+      "abc": "doabc_013.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 3,
+      "native_unique_names_found": 3,
+      "missing": [],
+      "start_vm": 20982004,
+      "end_vm": 20982015,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureProviderPogo",
+      "abc": "doabc_015.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 4,
+      "native_unique_names_found": 4,
+      "missing": [],
+      "start_vm": 20982124,
+      "end_vm": 20982147,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTBonjour",
+      "abc": "doabc_016.abc",
+      "contexts": [
+        {
+          "method": 12,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 7,
+      "native_unique_names_found": 7,
+      "missing": [],
+      "start_vm": 20982028,
+      "end_vm": 20982099,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTPrinter",
+      "abc": "doabc_018.abc",
+      "contexts": [
+        {
+          "method": 5,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 3,
+      "native_unique_names_found": 3,
+      "missing": [],
+      "start_vm": 20981884,
+      "end_vm": 20981919,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTLicensing",
+      "abc": "doabc_019.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 0,
+          "strings": []
+        },
+        {
+          "method": 3,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "licensing"
+          ]
+        }
+      ],
+      "operation_count": 1,
+      "native_unique_names_found": 0,
+      "missing": [
+        "c"
+      ],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "unmapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureSourcePogo",
+      "abc": "doabc_020.abc",
+      "contexts": [],
+      "operation_count": 5,
+      "native_unique_names_found": 5,
+      "missing": [],
+      "start_vm": 20982148,
+      "end_vm": 20982183,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTActivityUI",
+      "abc": "doabc_021.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "activityui"
+          ]
+        }
+      ],
+      "operation_count": 2,
+      "native_unique_names_found": 2,
+      "missing": [],
+      "start_vm": 20981956,
+      "end_vm": 20981979,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTGL",
+      "abc": "doabc_022.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "gl"
+          ]
+        }
+      ],
+      "operation_count": 38,
+      "native_unique_names_found": 38,
+      "missing": [],
+      "start_vm": 20980444,
+      "end_vm": 20980899,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTQuickSelection",
+      "abc": "doabc_023.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "quickselection"
+          ]
+        }
+      ],
+      "operation_count": 11,
+      "native_unique_names_found": 11,
+      "missing": [],
+      "start_vm": 20982388,
+      "end_vm": 20982519,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTAM",
+      "abc": "doabc_028.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "am"
+          ]
+        }
+      ],
+      "operation_count": 5,
+      "native_unique_names_found": 5,
+      "missing": [],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "ambiguous-duplicates"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureSourceJotTouch",
+      "abc": "doabc_029.abc",
+      "contexts": [],
+      "operation_count": 2,
+      "native_unique_names_found": 2,
+      "missing": [],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "ambiguous-duplicates"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTSS",
+      "abc": "doabc_030.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "ss"
+          ]
+        }
+      ],
+      "operation_count": 5,
+      "native_unique_names_found": 5,
+      "missing": [],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "ambiguous-duplicates"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTCamera",
+      "abc": "doabc_031.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "camera[static]"
+          ]
+        },
+        {
+          "method": 11,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "camera"
+          ]
+        }
+      ],
+      "operation_count": 12,
+      "native_unique_names_found": 12,
+      "missing": [],
+      "start_vm": 20981608,
+      "end_vm": 20981751,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTCAF",
+      "abc": "doabc_032.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "caf"
+          ]
+        }
+      ],
+      "operation_count": 1,
+      "native_unique_names_found": 0,
+      "missing": [
+        "CAFGetResult"
+      ],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "unmapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTMail",
+      "abc": "doabc_033.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "email"
+          ]
+        }
+      ],
+      "operation_count": 4,
+      "native_unique_names_found": 4,
+      "missing": [],
+      "start_vm": 20981020,
+      "end_vm": 20981067,
+      "status": "mapped"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension.pressure::TTPressureProviderJotTouch",
+      "abc": "doabc_034.abc",
+      "contexts": [
+        {
+          "method": 2,
+          "argc": 2,
+          "strings": []
+        }
+      ],
+      "operation_count": 2,
+      "native_unique_names_found": 2,
+      "missing": [],
+      "start_vm": null,
+      "end_vm": null,
+      "status": "ambiguous-duplicates"
+    },
+    {
+      "class": "com.adobe.ttpixel.extension::TTNEUtils",
+      "abc": "doabc_035.abc",
+      "contexts": [
+        {
+          "method": 1,
+          "argc": 2,
+          "strings": [
+            "com.adobe.ttpixel.extension",
+            "utils"
+          ]
+        }
+      ],
+      "operation_count": 46,
+      "native_unique_names_found": 45,
+      "missing": [],
+      "start_vm": 20981068,
+      "end_vm": 20981607,
+      "status": "mapped"
+    }
+  ]
+}

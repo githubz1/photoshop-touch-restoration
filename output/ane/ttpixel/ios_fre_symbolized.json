@@ -1,0 +1,2984 @@
+{
+  "binary": "output/extracted/ios/PSTouchPhone",
+  "symbol_count": 19066,
+  "fre_record_count": 186,
+  "exact_symbol_hits": 186,
+  "records": [
+    {
+      "entry_vm": 20944828,
+      "operation": "start",
+      "name_vm": 19979972,
+      "function_data": 0,
+      "function_vm": 15181032,
+      "symbols": [
+        {
+          "name": "_ASE_start",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21435972
+        }
+      ]
+    },
+    {
+      "entry_vm": 20944840,
+      "operation": "stop",
+      "name_vm": 19979978,
+      "function_data": 0,
+      "function_vm": 15182044,
+      "symbols": [
+        {
+          "name": "_ASE_stop",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21436020
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980312,
+      "operation": "startEncodeLz4",
+      "name_vm": 19981755,
+      "function_data": 0,
+      "function_vm": 16640528,
+      "symbols": [
+        {
+          "name": "_ImpExp_startEncodeLz4",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552816
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980324,
+      "operation": "startEncodeZLib",
+      "name_vm": 19981770,
+      "function_data": 0,
+      "function_vm": 16641404,
+      "symbols": [
+        {
+          "name": "_ImpExp_startEncodeZLib",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552984
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980336,
+      "operation": "startEncodeJPEG",
+      "name_vm": 19981786,
+      "function_data": 0,
+      "function_vm": 16642032,
+      "symbols": [
+        {
+          "name": "_ImpExp_startEncodeJPEG",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553032
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980348,
+      "operation": "startEncodePNG",
+      "name_vm": 19981802,
+      "function_data": 0,
+      "function_vm": 16642800,
+      "symbols": [
+        {
+          "name": "_ImpExp_startEncodePNG",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553080
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980360,
+      "operation": "getEncodingProgress",
+      "name_vm": 19981817,
+      "function_data": 0,
+      "function_vm": 16643460,
+      "symbols": [
+        {
+          "name": "_ImpExp_getEncodingProgress",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553128
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980372,
+      "operation": "getEncodedDataSize",
+      "name_vm": 19981837,
+      "function_data": 0,
+      "function_vm": 16643560,
+      "symbols": [
+        {
+          "name": "_ImpExp_getEncodedDataSize",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553176
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980384,
+      "operation": "getEncodedData",
+      "name_vm": 19981856,
+      "function_data": 0,
+      "function_vm": 16643656,
+      "symbols": [
+        {
+          "name": "_ImpExp_getEncodedData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553236
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980396,
+      "operation": "requestCancel",
+      "name_vm": 19981871,
+      "function_data": 0,
+      "function_vm": 16643832,
+      "symbols": [
+        {
+          "name": "_ImpExp_requestCancel",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553284
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980408,
+      "operation": "hasFinishedEncoding",
+      "name_vm": 19981885,
+      "function_data": 0,
+      "function_vm": 16643944,
+      "symbols": [
+        {
+          "name": "_ImpExp_hasFinishedEncoding",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553332
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980420,
+      "operation": "waitFinishedEncoding",
+      "name_vm": 19981905,
+      "function_data": 0,
+      "function_vm": 16644040,
+      "symbols": [
+        {
+          "name": "_ImpExp_waitFinishedEncoding",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553380
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980432,
+      "operation": "clearEncodedData",
+      "name_vm": 19981926,
+      "function_data": 0,
+      "function_vm": 16644140,
+      "symbols": [
+        {
+          "name": "_ImpExp_clearEncodedData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553428
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980444,
+      "operation": "createContext",
+      "name_vm": 19981118,
+      "function_data": 0,
+      "function_vm": 16580868,
+      "symbols": [
+        {
+          "name": "_GL_createContext",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21538884
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980456,
+      "operation": "destroyContext",
+      "name_vm": 19981132,
+      "function_data": 0,
+      "function_vm": 16580956,
+      "symbols": [
+        {
+          "name": "_GL_destroyContext",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21538944
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980468,
+      "operation": "getLastGLErrorCode",
+      "name_vm": 19981147,
+      "function_data": 0,
+      "function_vm": 16581044,
+      "symbols": [
+        {
+          "name": "_GL_getLastGLErrorCode",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21538992
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980480,
+      "operation": "getStringInfo",
+      "name_vm": 19981166,
+      "function_data": 0,
+      "function_vm": 16587588,
+      "symbols": [
+        {
+          "name": "_GL_getStringInfo",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540480
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980492,
+      "operation": "createFilter",
+      "name_vm": 19981180,
+      "function_data": 0,
+      "function_vm": 16581152,
+      "symbols": [
+        {
+          "name": "_GL_createFilter",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539040
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980504,
+      "operation": "setParamFloat",
+      "name_vm": 19981193,
+      "function_data": 0,
+      "function_vm": 16581420,
+      "symbols": [
+        {
+          "name": "_GL_setParamFloat",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539088
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980516,
+      "operation": "setParamFloatMulti",
+      "name_vm": 19981207,
+      "function_data": 0,
+      "function_vm": 16581612,
+      "symbols": [
+        {
+          "name": "_GL_setParamFloatMulti",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539136
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980528,
+      "operation": "setParamInt",
+      "name_vm": 19981226,
+      "function_data": 0,
+      "function_vm": 16581956,
+      "symbols": [
+        {
+          "name": "_GL_setParamInt",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539184
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980540,
+      "operation": "setParamIntMulti",
+      "name_vm": 19981238,
+      "function_data": 0,
+      "function_vm": 16582132,
+      "symbols": [
+        {
+          "name": "_GL_setParamIntMulti",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539232
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980552,
+      "operation": "prepareTextureEmpty",
+      "name_vm": 19981255,
+      "function_data": 0,
+      "function_vm": 16582464,
+      "symbols": [
+        {
+          "name": "_GL_prepareTextureEmpty",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539280
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980564,
+      "operation": "prepareTextureFromBitmapData",
+      "name_vm": 19981275,
+      "function_data": 0,
+      "function_vm": 16582728,
+      "symbols": [
+        {
+          "name": "_GL_prepareTextureFromBitmapData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539328
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980576,
+      "operation": "updateTextureFromBitmapData",
+      "name_vm": 19981304,
+      "function_data": 0,
+      "function_vm": 16583064,
+      "symbols": [
+        {
+          "name": "_GL_updateTextureFromBitmapData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539376
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980588,
+      "operation": "applyFilter",
+      "name_vm": 19981332,
+      "function_data": 0,
+      "function_vm": 16583676,
+      "symbols": [
+        {
+          "name": "_GL_applyFilter",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539424
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980600,
+      "operation": "getShaderInfoLog",
+      "name_vm": 19981344,
+      "function_data": 0,
+      "function_vm": 16583948,
+      "symbols": [
+        {
+          "name": "_GL_getShaderInfoLog",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539472
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980612,
+      "operation": "getNumVertices",
+      "name_vm": 19981361,
+      "function_data": 0,
+      "function_vm": 16584084,
+      "symbols": [
+        {
+          "name": "_GL_getNumVertices",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539520
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980624,
+      "operation": "setNumVertices",
+      "name_vm": 19981376,
+      "function_data": 0,
+      "function_vm": 16584188,
+      "symbols": [
+        {
+          "name": "_GL_setNumVertices",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539568
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980636,
+      "operation": "setVertexAttribDataFloat",
+      "name_vm": 19981391,
+      "function_data": 0,
+      "function_vm": 16584320,
+      "symbols": [
+        {
+          "name": "_GL_setVertexAttribDataFloat",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539616
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980648,
+      "operation": "clearVertexAttribData",
+      "name_vm": 19981416,
+      "function_data": 0,
+      "function_vm": 16584680,
+      "symbols": [
+        {
+          "name": "_GL_clearVertexAttribData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539664
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980660,
+      "operation": "getVertexAttribDataRangeStart",
+      "name_vm": 19981438,
+      "function_data": 0,
+      "function_vm": 16584812,
+      "symbols": [
+        {
+          "name": "_GL_getVertexAttribDataRangeStart",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539712
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980672,
+      "operation": "getVertexAttribDataRangeCount",
+      "name_vm": 19981468,
+      "function_data": 0,
+      "function_vm": 16584924,
+      "symbols": [
+        {
+          "name": "_GL_getVertexAttribDataRangeCount",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539760
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980684,
+      "operation": "setVertexAttribDataRange",
+      "name_vm": 19981498,
+      "function_data": 0,
+      "function_vm": 16585040,
+      "symbols": [
+        {
+          "name": "_GL_setVertexAttribDataRange",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539808
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980696,
+      "operation": "setDrawMode",
+      "name_vm": 19981523,
+      "function_data": 0,
+      "function_vm": 16585196,
+      "symbols": [
+        {
+          "name": "_GL_setDrawMode",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539856
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980708,
+      "operation": "enableVertexAttrib",
+      "name_vm": 19981535,
+      "function_data": 0,
+      "function_vm": 16585328,
+      "symbols": [
+        {
+          "name": "_GL_enableVertexAttrib",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539904
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980720,
+      "operation": "destroyFilter",
+      "name_vm": 19981554,
+      "function_data": 0,
+      "function_vm": 16585492,
+      "symbols": [
+        {
+          "name": "_GL_destroyFilter",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21539952
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980732,
+      "operation": "drawArrays",
+      "name_vm": 19981568,
+      "function_data": 0,
+      "function_vm": 16585588,
+      "symbols": [
+        {
+          "name": "_GL_drawArrays",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540000
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980744,
+      "operation": "readPixels",
+      "name_vm": 19981579,
+      "function_data": 0,
+      "function_vm": 16585752,
+      "symbols": [
+        {
+          "name": "_GL_readPixels",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540048
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980756,
+      "operation": "clear",
+      "name_vm": 19979265,
+      "function_data": 0,
+      "function_vm": 16586200,
+      "symbols": [
+        {
+          "name": "_GL_clear",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540096
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980768,
+      "operation": "setParamFloatMatrix",
+      "name_vm": 19981590,
+      "function_data": 0,
+      "function_vm": 16586320,
+      "symbols": [
+        {
+          "name": "_GL_setParamFloatMatrix",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540144
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980780,
+      "operation": "executeSequence",
+      "name_vm": 19981610,
+      "function_data": 0,
+      "function_vm": 16586712,
+      "symbols": [
+        {
+          "name": "_GL_executeSequence",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540192
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980792,
+      "operation": "asyncExecuteSequence",
+      "name_vm": 19981626,
+      "function_data": 0,
+      "function_vm": 16586868,
+      "symbols": [
+        {
+          "name": "_GL_asyncExecuteSequence",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540240
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980804,
+      "operation": "asyncJoin",
+      "name_vm": 19981647,
+      "function_data": 0,
+      "function_vm": 16587272,
+      "symbols": [
+        {
+          "name": "_GL_asyncJoin",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540384
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980816,
+      "operation": "asyncInterrupt",
+      "name_vm": 19981657,
+      "function_data": 0,
+      "function_vm": 16587176,
+      "symbols": [
+        {
+          "name": "_GL_asyncInterrupt",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540336
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980828,
+      "operation": "asyncReadPixels",
+      "name_vm": 19981672,
+      "function_data": 0,
+      "function_vm": 16587368,
+      "symbols": [
+        {
+          "name": "_GL_asyncReadPixels",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540432
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980840,
+      "operation": "shaderCreate",
+      "name_vm": 19981688,
+      "function_data": 0,
+      "function_vm": 16587744,
+      "symbols": [
+        {
+          "name": "_GL_shaderCreate",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540528
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980852,
+      "operation": "shaderDispose",
+      "name_vm": 19981701,
+      "function_data": 0,
+      "function_vm": 16587960,
+      "symbols": [
+        {
+          "name": "_GL_shaderDispose",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540576
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980864,
+      "operation": "programCreate",
+      "name_vm": 19981715,
+      "function_data": 0,
+      "function_vm": 16588116,
+      "symbols": [
+        {
+          "name": "_GL_programCreate",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540624
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980876,
+      "operation": "programDispose",
+      "name_vm": 19981729,
+      "function_data": 0,
+      "function_vm": 16588336,
+      "symbols": [
+        {
+          "name": "_GL_programDispose",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540672
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980888,
+      "operation": "programUse",
+      "name_vm": 19981744,
+      "function_data": 0,
+      "function_vm": 16588492,
+      "symbols": [
+        {
+          "name": "_GL_programUse",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540720
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980900,
+      "operation": "init",
+      "name_vm": 19981079,
+      "function_data": 0,
+      "function_vm": 16562800,
+      "symbols": [
+        {
+          "name": "_AM_init",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533124
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980912,
+      "operation": "run",
+      "name_vm": 19981084,
+      "function_data": 0,
+      "function_vm": 16563032,
+      "symbols": [
+        {
+          "name": "_AM_run",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533184
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980924,
+      "operation": "getProgress",
+      "name_vm": 19981088,
+      "function_data": 0,
+      "function_vm": 16563120,
+      "symbols": [
+        {
+          "name": "_AM_getProgress",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533232
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980936,
+      "operation": "getResult",
+      "name_vm": 19981100,
+      "function_data": 0,
+      "function_vm": 16563204,
+      "symbols": [
+        {
+          "name": "_AM_getResult",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533280
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980948,
+      "operation": "release",
+      "name_vm": 19981110,
+      "function_data": 0,
+      "function_vm": 16563368,
+      "symbols": [
+        {
+          "name": "_AM_release",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533328
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980960,
+      "operation": "init",
+      "name_vm": 19981079,
+      "function_data": 0,
+      "function_vm": 16592456,
+      "symbols": [
+        {
+          "name": "_SS_init",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541284
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980972,
+      "operation": "run",
+      "name_vm": 19981084,
+      "function_data": 0,
+      "function_vm": 16592544,
+      "symbols": [
+        {
+          "name": "_SS_run",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541344
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980984,
+      "operation": "getProgress",
+      "name_vm": 19981088,
+      "function_data": 0,
+      "function_vm": 16592856,
+      "symbols": [
+        {
+          "name": "_SS_getProgress",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541392
+        }
+      ]
+    },
+    {
+      "entry_vm": 20980996,
+      "operation": "getResult",
+      "name_vm": 19981100,
+      "function_data": 0,
+      "function_vm": 16592940,
+      "symbols": [
+        {
+          "name": "_SS_getResult",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541440
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981008,
+      "operation": "release",
+      "name_vm": 19981110,
+      "function_data": 0,
+      "function_vm": 16593028,
+      "symbols": [
+        {
+          "name": "_SS_release",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541488
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981020,
+      "operation": "sendMail",
+      "name_vm": 19981040,
+      "function_data": 0,
+      "function_vm": 16589168,
+      "symbols": [
+        {
+          "name": "_MAIL_sendMail",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541020
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981032,
+      "operation": "saveFile",
+      "name_vm": 19981049,
+      "function_data": 0,
+      "function_vm": 16590224,
+      "symbols": [
+        {
+          "name": "_MAIL_saveFile",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541080
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981044,
+      "operation": "copyFile",
+      "name_vm": 19981058,
+      "function_data": 0,
+      "function_vm": 16591188,
+      "symbols": [
+        {
+          "name": "_MAIL_copyFile",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541128
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981056,
+      "operation": "releaseFile",
+      "name_vm": 19981067,
+      "function_data": 0,
+      "function_vm": 16592212,
+      "symbols": [
+        {
+          "name": "_MAIL_releaseFile",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541176
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981068,
+      "operation": "trace",
+      "name_vm": 19980306,
+      "function_data": 0,
+      "function_vm": 16593120,
+      "symbols": [
+        {
+          "name": "_UTILS_trace",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541584
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981080,
+      "operation": "getDeviceName",
+      "name_vm": 19980312,
+      "function_data": 0,
+      "function_vm": 16594244,
+      "symbols": [
+        {
+          "name": "_UTILS_getDeviceName",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541692
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981092,
+      "operation": "getDeviceID",
+      "name_vm": 19980326,
+      "function_data": 0,
+      "function_vm": 16593220,
+      "symbols": [
+        {
+          "name": "_UTILS_getDeviceID",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541644
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981104,
+      "operation": "canLaunchApp",
+      "name_vm": 19980338,
+      "function_data": 0,
+      "function_vm": 16594372,
+      "symbols": [
+        {
+          "name": "_UTILS_canLaunchApp",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541740
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981116,
+      "operation": "launchApp",
+      "name_vm": 19980351,
+      "function_data": 0,
+      "function_vm": 16594576,
+      "symbols": [
+        {
+          "name": "_UTILS_launchApp",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541788
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981128,
+      "operation": "leaveApp",
+      "name_vm": 19980361,
+      "function_data": 0,
+      "function_vm": 16594776,
+      "symbols": [
+        {
+          "name": "_UTILS_leaveApp",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541836
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981140,
+      "operation": "setStatusBarHidden",
+      "name_vm": 19980370,
+      "function_data": 0,
+      "function_vm": 16594816,
+      "symbols": [
+        {
+          "name": "_UTILS_setStatusBarHidden",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541884
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981152,
+      "operation": "getNetworkState",
+      "name_vm": 19850322,
+      "function_data": 0,
+      "function_vm": 16595080,
+      "symbols": [
+        {
+          "name": "_UTILS_getNetworkState",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541932
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981164,
+      "operation": "resolveImageContentURI",
+      "name_vm": 19980389,
+      "function_data": 0,
+      "function_vm": 16598200,
+      "symbols": [
+        {
+          "name": "_UTILS_resolveImageContentURI",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542220
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981176,
+      "operation": "copyURIContentToFile",
+      "name_vm": 19980412,
+      "function_data": 0,
+      "function_vm": 16598236,
+      "symbols": [
+        {
+          "name": "_UTILS_copyURIContentToFile",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542268
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981188,
+      "operation": "isolateColor",
+      "name_vm": 19980433,
+      "function_data": 0,
+      "function_vm": 16595300,
+      "symbols": [
+        {
+          "name": "_UTILS_isolateColor",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21541980
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981200,
+      "operation": "clipboardHasFormat",
+      "name_vm": 19980446,
+      "function_data": 0,
+      "function_vm": 16595604,
+      "symbols": [
+        {
+          "name": "_UTILS_clipboardHasFormat",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542028
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981212,
+      "operation": "clipboardSetFormatData",
+      "name_vm": 19980465,
+      "function_data": 0,
+      "function_vm": 16596172,
+      "symbols": [
+        {
+          "name": "_UTILS_clipboardSetFormatData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542076
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981224,
+      "operation": "clipboardSetMultiData",
+      "name_vm": 19980488,
+      "function_data": 0,
+      "function_vm": 16596900,
+      "symbols": [
+        {
+          "name": "_UTILS_clipboardSetMultiData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542124
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981236,
+      "operation": "clipboardGetFormatData",
+      "name_vm": 19980510,
+      "function_data": 0,
+      "function_vm": 16597640,
+      "symbols": [
+        {
+          "name": "_UTILS_clipboardGetFormatData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542172
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981248,
+      "operation": "plistToXMLString",
+      "name_vm": 19980533,
+      "function_data": 0,
+      "function_vm": 16598272,
+      "symbols": [
+        {
+          "name": "_Utils_plistToXMLString",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542316
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981260,
+      "operation": "compressBitmapRLE",
+      "name_vm": 19980550,
+      "function_data": 0,
+      "function_vm": 16598636,
+      "symbols": [
+        {
+          "name": "_Utils_compressBitmapRLE",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542364
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981272,
+      "operation": "getPixelsEx",
+      "name_vm": 19980568,
+      "function_data": 0,
+      "function_vm": 16598840,
+      "symbols": [
+        {
+          "name": "_UTILS_getPixelsEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542412
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981284,
+      "operation": "setPixelsEx",
+      "name_vm": 19980580,
+      "function_data": 0,
+      "function_vm": 16599488,
+      "symbols": [
+        {
+          "name": "_UTILS_setPixelsEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542460
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981296,
+      "operation": "lz4Compress",
+      "name_vm": 19980592,
+      "function_data": 0,
+      "function_vm": 16600108,
+      "symbols": [
+        {
+          "name": "_UTILS_lz4Compress",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542508
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981308,
+      "operation": "lz4Uncompress",
+      "name_vm": 19980604,
+      "function_data": 0,
+      "function_vm": 16600624,
+      "symbols": [
+        {
+          "name": "_UTILS_lz4Uncompress",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542556
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981320,
+      "operation": "lz4Deflate",
+      "name_vm": 19980618,
+      "function_data": 0,
+      "function_vm": 16600816,
+      "symbols": [
+        {
+          "name": "_UTILS_lz4Deflate",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542604
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981332,
+      "operation": "lz4Inflate",
+      "name_vm": 19980629,
+      "function_data": 0,
+      "function_vm": 16601156,
+      "symbols": [
+        {
+          "name": "_UTILS_lz4Inflate",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542652
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981344,
+      "operation": "getPixelsBitmapEx",
+      "name_vm": 19980640,
+      "function_data": 0,
+      "function_vm": 16601488,
+      "symbols": [
+        {
+          "name": "_UTILS_getPixelsBitmapEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542700
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981356,
+      "operation": "getMemoryStatsEx",
+      "name_vm": 19980658,
+      "function_data": 0,
+      "function_vm": 16604488,
+      "symbols": [
+        {
+          "name": "_UTILS_getMemoryStatsEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542940
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981368,
+      "operation": "uncompressBitmapDataEx",
+      "name_vm": 19980675,
+      "function_data": 0,
+      "function_vm": 16602108,
+      "symbols": [
+        {
+          "name": "_UTILS_uncompressBitmapDataEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542748
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981380,
+      "operation": "bitmapDataToFileEx",
+      "name_vm": 19980698,
+      "function_data": 0,
+      "function_vm": 16602692,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapDataToFileEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542796
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981392,
+      "operation": "bitmapDataFromFileEx",
+      "name_vm": 19980717,
+      "function_data": 0,
+      "function_vm": 16603188,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapDataFromFileEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542844
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981404,
+      "operation": "getScaledPixelsEx",
+      "name_vm": 19980738,
+      "function_data": 0,
+      "function_vm": 16603684,
+      "symbols": [
+        {
+          "name": "_UTILS_getScaledPixelsEx",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542892
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981416,
+      "operation": "bitmapFileCreateEmpty",
+      "name_vm": 19980756,
+      "function_data": 0,
+      "function_vm": 16604712,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapFileCreateEmpty",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21542988
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981428,
+      "operation": "bitmapFileCreateFromBitmapData",
+      "name_vm": 19980778,
+      "function_data": 0,
+      "function_vm": 16604868,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapFileCreateFromBitmapData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543036
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981440,
+      "operation": "bitmapFileWrite",
+      "name_vm": 19980809,
+      "function_data": 0,
+      "function_vm": 16605000,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapFileWrite",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543084
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981452,
+      "operation": "bitmapFileRead",
+      "name_vm": 19980825,
+      "function_data": 0,
+      "function_vm": 16605596,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapFileRead",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543132
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981464,
+      "operation": "bitmapFileResample",
+      "name_vm": 19980840,
+      "function_data": 0,
+      "function_vm": 16606240,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapFileResample",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543180
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981476,
+      "operation": "bitmapDataCopy",
+      "name_vm": 19980859,
+      "function_data": 0,
+      "function_vm": 16608440,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapDataCopy",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543276
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981488,
+      "operation": "bitmapDataResample",
+      "name_vm": 19980874,
+      "function_data": 0,
+      "function_vm": 16609068,
+      "symbols": [
+        {
+          "name": "_UTILS_bitmapDataResample",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543324
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981500,
+      "operation": "getSystemInfo",
+      "name_vm": 19980893,
+      "function_data": 0,
+      "function_vm": 16607024,
+      "symbols": [
+        {
+          "name": "_UTILS_getSystemInfo",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543228
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981512,
+      "operation": "setWakeLock",
+      "name_vm": 19980907,
+      "function_data": 0,
+      "function_vm": 16609880,
+      "symbols": [
+        {
+          "name": "_UTILS_setWakeLock",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543372
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981524,
+      "operation": "getLocalIP",
+      "name_vm": 19980919,
+      "function_data": 0,
+      "function_vm": 16610020,
+      "symbols": [
+        {
+          "name": "_UTILS_getLocalIP",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543420
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981536,
+      "operation": "alphaBlend",
+      "name_vm": 19980930,
+      "function_data": 0,
+      "function_vm": 16610516,
+      "symbols": [
+        {
+          "name": "_UTILS_alphaBlend",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543468
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981548,
+      "operation": "getTimestamp",
+      "name_vm": 19980941,
+      "function_data": 0,
+      "function_vm": 16611500,
+      "symbols": [
+        {
+          "name": "_UTILS_getTimestamp",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543516
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981560,
+      "operation": "openPath",
+      "name_vm": 19980954,
+      "function_data": 0,
+      "function_vm": 16611568,
+      "symbols": [
+        {
+          "name": "_UTILS_openPath",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543564
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981572,
+      "operation": "setRequestedOrientation",
+      "name_vm": 19980963,
+      "function_data": 0,
+      "function_vm": 16612048,
+      "symbols": [
+        {
+          "name": "_UTILS_setRequestedOrientation",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543612
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981584,
+      "operation": "getRequestedOrientation",
+      "name_vm": 19980987,
+      "function_data": 0,
+      "function_vm": 16612056,
+      "symbols": [
+        {
+          "name": "_UTILS_getRequestedOrientation",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543660
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981596,
+      "operation": "showNetworkActivityIndicator",
+      "name_vm": 19981011,
+      "function_data": 0,
+      "function_vm": 16612112,
+      "symbols": [
+        {
+          "name": "_UTILS_showNetworkActivityIndicator",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21543708
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981608,
+      "operation": "enumerateCameras",
+      "name_vm": 19980289,
+      "function_data": 0,
+      "function_vm": 16639936,
+      "symbols": [
+        {
+          "name": "_CameraStatic_enumerateCameras",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552648
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981620,
+      "operation": "open",
+      "name_vm": 19983507,
+      "function_data": 0,
+      "function_vm": 16633996,
+      "symbols": [
+        {
+          "name": "_Camera_open",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21551772
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981632,
+      "operation": "startPreview",
+      "name_vm": 19983562,
+      "function_data": 0,
+      "function_vm": 16634480,
+      "symbols": [
+        {
+          "name": "_Camera_startPreview",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21551832
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981644,
+      "operation": "stopPreview",
+      "name_vm": 19983575,
+      "function_data": 0,
+      "function_vm": 16634708,
+      "symbols": [
+        {
+          "name": "_Camera_stopPreview",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21551880
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981656,
+      "operation": "cancel",
+      "name_vm": 19980203,
+      "function_data": 0,
+      "function_vm": 16634936,
+      "symbols": [
+        {
+          "name": "_Camera_cancel",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21551928
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981668,
+      "operation": "getCapabilities",
+      "name_vm": 19980210,
+      "function_data": 0,
+      "function_vm": 16635048,
+      "symbols": [
+        {
+          "name": "_Camera_getCapabilities",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21551976
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981680,
+      "operation": "getParameters",
+      "name_vm": 19980226,
+      "function_data": 0,
+      "function_vm": 16637068,
+      "symbols": [
+        {
+          "name": "_Camera_getParameters",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552024
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981692,
+      "operation": "setParameters",
+      "name_vm": 19983734,
+      "function_data": 0,
+      "function_vm": 16637828,
+      "symbols": [
+        {
+          "name": "_Camera_setParameters",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552072
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981704,
+      "operation": "getNextPreviewFrame",
+      "name_vm": 19980240,
+      "function_data": 0,
+      "function_vm": 16639060,
+      "symbols": [
+        {
+          "name": "_Camera_getNextPreviewFrame",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552120
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981716,
+      "operation": "takePicture",
+      "name_vm": 19983722,
+      "function_data": 0,
+      "function_vm": 16639276,
+      "symbols": [
+        {
+          "name": "_Camera_takePicture",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552168
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981728,
+      "operation": "getPictureData",
+      "name_vm": 19980260,
+      "function_data": 0,
+      "function_vm": 16639468,
+      "symbols": [
+        {
+          "name": "_Camera_getPictureData",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552216
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981740,
+      "operation": "getFinishCode",
+      "name_vm": 19980275,
+      "function_data": 0,
+      "function_vm": 16639684,
+      "symbols": [
+        {
+          "name": "_Camera_getFinishCode",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21552264
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981752,
+      "operation": "browseImages",
+      "name_vm": 19982520,
+      "function_data": 0,
+      "function_vm": 16567524,
+      "symbols": [
+        {
+          "name": "_CameraRoll_browseImages",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534456
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981764,
+      "operation": "getThumbnail",
+      "name_vm": 19980090,
+      "function_data": 0,
+      "function_vm": 16568584,
+      "symbols": [
+        {
+          "name": "_CameraRoll_getThumbnail",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534648
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981776,
+      "operation": "getImage",
+      "name_vm": 19980047,
+      "function_data": 0,
+      "function_vm": 16569124,
+      "symbols": [
+        {
+          "name": "_CameraRoll_getImage",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534792
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981788,
+      "operation": "getExifHeader",
+      "name_vm": 19980103,
+      "function_data": 0,
+      "function_vm": 16569352,
+      "symbols": [
+        {
+          "name": "_CameraRoll_getExifHeader",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534840
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981800,
+      "operation": "requestImage",
+      "name_vm": 19980117,
+      "function_data": 0,
+      "function_vm": 16568812,
+      "symbols": [
+        {
+          "name": "_CameraRoll_requestImage",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534696
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981812,
+      "operation": "requestThumbnail",
+      "name_vm": 19980130,
+      "function_data": 0,
+      "function_vm": 16568272,
+      "symbols": [
+        {
+          "name": "_CameraRoll_requestThumbnail",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534552
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981824,
+      "operation": "cancelPendingRequests",
+      "name_vm": 19980147,
+      "function_data": 0,
+      "function_vm": 16569616,
+      "symbols": [
+        {
+          "name": "_CameraRoll_cancelPendingRequests",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534888
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981836,
+      "operation": "addImage",
+      "name_vm": 19980169,
+      "function_data": 0,
+      "function_vm": 16569696,
+      "symbols": [
+        {
+          "name": "_CameraRoll_addImage",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534936
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981848,
+      "operation": "pickImage",
+      "name_vm": 19980178,
+      "function_data": 0,
+      "function_vm": 16570464,
+      "symbols": [
+        {
+          "name": "_CameraRoll_pickImage",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21535032
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981860,
+      "operation": "getPickedImage",
+      "name_vm": 19980188,
+      "function_data": 0,
+      "function_vm": 16570960,
+      "symbols": [
+        {
+          "name": "_CameraRoll_getPickedImage",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21535080
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981872,
+      "operation": "accessCheck",
+      "name_vm": 19982533,
+      "function_data": 0,
+      "function_vm": 16567344,
+      "symbols": [
+        {
+          "name": "_CameraRoll_accessCheck",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534348
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981884,
+      "operation": "isPrintingAvailable",
+      "name_vm": 19980056,
+      "function_data": 0,
+      "function_vm": 16649216,
+      "symbols": [
+        {
+          "name": "_Printer_isPrintingAvailable",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554568
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981896,
+      "operation": "print",
+      "name_vm": 19980076,
+      "function_data": 0,
+      "function_vm": 16649568,
+      "symbols": [
+        {
+          "name": "_Printer_print",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554640
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981908,
+      "operation": "cleanup",
+      "name_vm": 19980082,
+      "function_data": 0,
+      "function_vm": 16650660,
+      "symbols": [
+        {
+          "name": "_Printer_cleanup",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554736
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981920,
+      "operation": "launch",
+      "name_vm": 19980040,
+      "function_data": 0,
+      "function_vm": 16577700,
+      "symbols": [
+        {
+          "name": "_CameraUI_launch",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21537852
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981932,
+      "operation": "getImage",
+      "name_vm": 19980047,
+      "function_data": 0,
+      "function_vm": 16578172,
+      "symbols": [
+        {
+          "name": "_CameraUI_getImage",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21537912
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981944,
+      "operation": "preflight",
+      "name_vm": 19980030,
+      "function_data": 0,
+      "function_vm": 16564728,
+      "symbols": [
+        {
+          "name": "_BigData_preflight",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533820
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981956,
+      "operation": "showActivityUI",
+      "name_vm": 19980000,
+      "function_data": 0,
+      "function_vm": 16560532,
+      "symbols": [
+        {
+          "name": "_ActivityUI_show",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21532692
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981968,
+      "operation": "hideActivityUI",
+      "name_vm": 19980015,
+      "function_data": 0,
+      "function_vm": 16562252,
+      "symbols": [
+        {
+          "name": "_ActivityUI_hide",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21532740
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981980,
+      "operation": "start",
+      "name_vm": 19979972,
+      "function_data": 0,
+      "function_vm": 16588648,
+      "symbols": [
+        {
+          "name": "_Httpd_start",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540816
+        }
+      ]
+    },
+    {
+      "entry_vm": 20981992,
+      "operation": "stop",
+      "name_vm": 19979978,
+      "function_data": 0,
+      "function_vm": 16588932,
+      "symbols": [
+        {
+          "name": "_Httpd_stop",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540876
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982004,
+      "operation": "modifyPasswdFile",
+      "name_vm": 19979983,
+      "function_data": 0,
+      "function_vm": 16588952,
+      "symbols": [
+        {
+          "name": "_Httpd_modifyPasswdFile",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21540924
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982016,
+      "operation": "open",
+      "name_vm": 19983507,
+      "function_data": 0,
+      "function_vm": 16565276,
+      "symbols": [
+        {
+          "name": "_Bonjour_open",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533952
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982028,
+      "operation": "close",
+      "name_vm": 19979911,
+      "function_data": 0,
+      "function_vm": 16565400,
+      "symbols": [
+        {
+          "name": "_Bonjour_close",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534012
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982040,
+      "operation": "isOpen",
+      "name_vm": 19979016,
+      "function_data": 0,
+      "function_vm": 16565564,
+      "symbols": [
+        {
+          "name": "_Bonjour_isOpen",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534060
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982052,
+      "operation": "publishService",
+      "name_vm": 19979917,
+      "function_data": 0,
+      "function_vm": 16565688,
+      "symbols": [
+        {
+          "name": "_Bonjour_publishService",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534108
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982064,
+      "operation": "unpublishService",
+      "name_vm": 19979932,
+      "function_data": 0,
+      "function_vm": 16566524,
+      "symbols": [
+        {
+          "name": "_Bonjour_unpublishService",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534156
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982076,
+      "operation": "startBrowse",
+      "name_vm": 19979949,
+      "function_data": 0,
+      "function_vm": 16566728,
+      "symbols": [
+        {
+          "name": "_Bonjour_startBrowse",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534204
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982088,
+      "operation": "stopBrowse",
+      "name_vm": 19979961,
+      "function_data": 0,
+      "function_vm": 16567036,
+      "symbols": [
+        {
+          "name": "_Bonjour_stopBrowse",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21534252
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982100,
+      "operation": "provider_start",
+      "name_vm": 19979713,
+      "function_data": 0,
+      "function_vm": 16646196,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_start",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554076
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982112,
+      "operation": "provider_stop",
+      "name_vm": 19979728,
+      "function_data": 0,
+      "function_vm": 16646512,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_stop",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554136
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982124,
+      "operation": "provider_invokeConfigureUI",
+      "name_vm": 19979787,
+      "function_data": 0,
+      "function_vm": 16646828,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_invokeConfigureUI",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554184
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982136,
+      "operation": "provider_createPressureSource",
+      "name_vm": 19979814,
+      "function_data": 0,
+      "function_vm": 16647204,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_createPressureSource",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554232
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982148,
+      "operation": "provider_updatePressureSource",
+      "name_vm": 19979844,
+      "function_data": 0,
+      "function_vm": 16648832,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_updatePressureSource",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554472
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982160,
+      "operation": "provider_connect",
+      "name_vm": 19979874,
+      "function_data": 0,
+      "function_vm": 16647728,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_connect",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554280
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982172,
+      "operation": "provider_disconnect",
+      "name_vm": 19979891,
+      "function_data": 0,
+      "function_vm": 16647988,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_disconnect",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554328
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982184,
+      "operation": "provider_getButtonState",
+      "name_vm": 19979742,
+      "function_data": 0,
+      "function_vm": 16648248,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_getButtonState",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554376
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982196,
+      "operation": "provider_getPressure",
+      "name_vm": 19979766,
+      "function_data": 0,
+      "function_vm": 16648532,
+      "symbols": [
+        {
+          "name": "_PogoConnect_provider_getPressure",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554424
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982208,
+      "operation": "provider_start",
+      "name_vm": 19979713,
+      "function_data": 0,
+      "function_vm": 16644244,
+      "symbols": [
+        {
+          "name": "_JaJa_provider_start",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553572
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982220,
+      "operation": "provider_stop",
+      "name_vm": 19979728,
+      "function_data": 0,
+      "function_vm": 16644560,
+      "symbols": [
+        {
+          "name": "_JaJa_provider_stop",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553632
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982232,
+      "operation": "provider_getButtonState",
+      "name_vm": 19979742,
+      "function_data": 0,
+      "function_vm": 16644876,
+      "symbols": [
+        {
+          "name": "_JaJa_provider_getButtonState",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553680
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982244,
+      "operation": "provider_getPressure",
+      "name_vm": 19979766,
+      "function_data": 0,
+      "function_vm": 16645044,
+      "symbols": [
+        {
+          "name": "_JaJa_provider_getPressure",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553728
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982256,
+      "operation": "provider_start",
+      "name_vm": 19979713,
+      "function_data": 0,
+      "function_vm": 16645220,
+      "symbols": [
+        {
+          "name": "_JotTouch_provider_start",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553824
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982268,
+      "operation": "provider_stop",
+      "name_vm": 19979728,
+      "function_data": 0,
+      "function_vm": 16645536,
+      "symbols": [
+        {
+          "name": "_JotTouch_provider_stop",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553884
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982280,
+      "operation": "provider_getButtonState",
+      "name_vm": 19979742,
+      "function_data": 0,
+      "function_vm": 16645852,
+      "symbols": [
+        {
+          "name": "_JotTouch_provider_getButtonState",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553932
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982292,
+      "operation": "provider_getPressure",
+      "name_vm": 19979766,
+      "function_data": 0,
+      "function_vm": 16646020,
+      "symbols": [
+        {
+          "name": "_JotTouch_provider_getPressure",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21553980
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982304,
+      "operation": "openStore",
+      "name_vm": 19979596,
+      "function_data": 0,
+      "function_vm": 16563456,
+      "symbols": [
+        {
+          "name": "_AppStore_openStore",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533424
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982316,
+      "operation": "canMakePurchases",
+      "name_vm": 19979606,
+      "function_data": 0,
+      "function_vm": 16563580,
+      "symbols": [
+        {
+          "name": "_AppStore_canMakePurchases",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533484
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982328,
+      "operation": "queryProducts",
+      "name_vm": 19979623,
+      "function_data": 0,
+      "function_vm": 16563672,
+      "symbols": [
+        {
+          "name": "_AppStore_queryProducts",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533532
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982340,
+      "operation": "purchaseProduct",
+      "name_vm": 19979637,
+      "function_data": 0,
+      "function_vm": 16564064,
+      "symbols": [
+        {
+          "name": "_AppStore_purchaseProduct",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533580
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982352,
+      "operation": "acknowledgeTransaction",
+      "name_vm": 19979653,
+      "function_data": 0,
+      "function_vm": 16564284,
+      "symbols": [
+        {
+          "name": "_AppStore_acknowledgeTransaction",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533628
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982364,
+      "operation": "transferPurchasedProducts",
+      "name_vm": 19979676,
+      "function_data": 0,
+      "function_vm": 16564480,
+      "symbols": [
+        {
+          "name": "_AppStore_transferPurchasedProducts",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533676
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982376,
+      "operation": "closeStore",
+      "name_vm": 19979702,
+      "function_data": 0,
+      "function_vm": 16564604,
+      "symbols": [
+        {
+          "name": "_AppStore_closeStore",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21533724
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982388,
+      "operation": "createQuickSelectTool",
+      "name_vm": 19979463,
+      "function_data": 0,
+      "function_vm": 16650668,
+      "symbols": [
+        {
+          "name": "_QuickSelection_createQuickSelectTool",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554868
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982400,
+      "operation": "disposeQuickSelectTool",
+      "name_vm": 19979485,
+      "function_data": 0,
+      "function_vm": 16650892,
+      "symbols": [
+        {
+          "name": "_QuickSelection_disposeQuickSelectTool",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554928
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982412,
+      "operation": "setMask",
+      "name_vm": 19979508,
+      "function_data": 0,
+      "function_vm": 16651004,
+      "symbols": [
+        {
+          "name": "_QuickSelection_setMask",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21554976
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982424,
+      "operation": "setMaskWithARGB",
+      "name_vm": 19979516,
+      "function_data": 0,
+      "function_vm": 16651180,
+      "symbols": [
+        {
+          "name": "_QuickSelection_setMaskWithARGB",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555024
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982436,
+      "operation": "brushHit",
+      "name_vm": 19979532,
+      "function_data": 0,
+      "function_vm": 16651460,
+      "symbols": [
+        {
+          "name": "_QuickSelection_brushHit",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555072
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982448,
+      "operation": "brushHits",
+      "name_vm": 19979541,
+      "function_data": 0,
+      "function_vm": 16652032,
+      "symbols": [
+        {
+          "name": "_QuickSelection_brushHits",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555168
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982460,
+      "operation": "qsBrushHits",
+      "name_vm": 19979551,
+      "function_data": 0,
+      "function_vm": 16652668,
+      "symbols": [
+        {
+          "name": "_QuickSelection_qsBrushHits",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555216
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982472,
+      "operation": "getMask",
+      "name_vm": 19979563,
+      "function_data": 0,
+      "function_vm": 16653264,
+      "symbols": [
+        {
+          "name": "_QuickSelection_getMask",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555264
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982484,
+      "operation": "mouseUp",
+      "name_vm": 19979571,
+      "function_data": 0,
+      "function_vm": 16653776,
+      "symbols": [
+        {
+          "name": "_QuickSelection_mouseUp",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555360
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982496,
+      "operation": "reset",
+      "name_vm": 19979579,
+      "function_data": 0,
+      "function_vm": 16654000,
+      "symbols": [
+        {
+          "name": "_QuickSelection_reset",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555408
+        }
+      ]
+    },
+    {
+      "entry_vm": 20982508,
+      "operation": "switchMode",
+      "name_vm": 19979585,
+      "function_data": 0,
+      "function_vm": 16654128,
+      "symbols": [
+        {
+          "name": "_QuickSelection_switchMode",
+          "n_type": 36,
+          "n_sect": 1,
+          "n_desc": 0,
+          "nlist_file": 21555456
+        }
+      ]
+    }
+  ]
+}
