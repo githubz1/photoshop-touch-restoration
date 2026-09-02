@@ -77,6 +77,13 @@ private:
     // ARMv7 +0x74 -> foreground constraint/scribble mask
     // ARMv7 +0x78 -> background constraint/scribble mask
     std::vector<Byte> selectionMask_;
+
+    // Adobe qsSetCurrMask() does not turn an existing selection into a hard
+    // scribble.  It supplies the mask to ImageGraph::SetLocalEnergies(), where
+    // each byte contributes a graded soft terminal prior.
+    std::vector<Byte> initialMask_;
+    bool hasInitialMask_ = false;
+
     std::vector<Byte> foregroundConstraints_;
     std::vector<Byte> backgroundConstraints_;
 

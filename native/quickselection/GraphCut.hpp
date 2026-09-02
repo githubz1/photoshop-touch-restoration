@@ -23,6 +23,7 @@ public:
         int height,
         const Byte* foregroundConstraints,
         const Byte* backgroundConstraints,
+        const Byte* initialMask,
         std::vector<Byte>& outputMask
     );
 };

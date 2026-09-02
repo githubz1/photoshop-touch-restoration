@@ -50,11 +50,43 @@ void QuickSelectTool::setCurrentMask(
     std::size_t size
 )
 {
-    if (mask == nullptr || size < pixelCount()) {
-        throw std::invalid_argument("QuickSelectTool: invalid mask");
+    if (!mask || size != pixelCount()) {
+        throw std::invalid_argument(
+            "QuickSelectTool::setCurrentMask: invalid mask"
+        );
     }
 
-    std::copy_n(mask, pixelCount(), selectionMask_.begin());
+    // Recovered Adobe qsSetCurrMask() behavior:
+    //
+    //   +0xEC = 1
+    //   ClearMasks()
+    //   ReBuildNodesFromSegmentation()
+    //   SetLocalEnergies(..., currentMask, ...)
+    //
+    // The supplied mask is a SOFT graph prior, not a hard scribble
+    // constraint and not simply the final output mask.
+    foregroundMode_ = true;
+
+    std::fill(
+        foregroundConstraints_.begin(),
+        foregroundConstraints_.end(),
+        0
+    );
+
+    std::fill(
+        backgroundConstraints_.begin(),
+        backgroundConstraints_.end(),
+        0
+    );
+
+    std::fill(
+        selectionMask_.begin(),
+        selectionMask_.end(),
+        0
+    );
+
+    initialMask_.assign(mask, mask + size);
+    hasInitialMask_ = true;
 }
 
 static void stampCircle(
@@ -198,6 +230,7 @@ QuickSelectTool::mouseUp()
         height_,
         foregroundConstraints_.data(),
         backgroundConstraints_.data(),
+        hasInitialMask_ ? initialMask_.data() : nullptr,
         selectionMask_
     );
 

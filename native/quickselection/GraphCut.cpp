@@ -213,6 +213,7 @@ void GraphCut::segment(
     int height,
     const Byte* foregroundConstraints,
     const Byte* backgroundConstraints,
+    const Byte* initialMask,
     std::vector<Byte>& outputMask
 )
 {
@@ -241,6 +242,17 @@ void GraphCut::segment(
     // Hard scribble constraints must dominate all ordinary image edges.
     constexpr double hardConstraint = 1.0e12;
 
+    // Adobe QuickSelectTool +0xD0 = 0.7.
+    //
+    // SetLocalEnergies calculates:
+    //
+    //     0.7 * 6.234410762786865
+    //
+    // as the maximum existing-mask terminal bias.
+    constexpr double initialMaskBias =
+        4.364087533950806;
+
+
     // Initial contrast-sensitive neighborhood model.
     //
     // Similar neighboring pixels receive strong edges.
@@ -258,6 +270,32 @@ void GraphCut::segment(
             const int current = node(x, y);
             const std::size_t index =
                 static_cast<std::size_t>(current);
+
+            // Existing selection mask = soft Adobe terminal prior.
+            if (initialMask != nullptr) {
+                const unsigned int m =
+                    static_cast<unsigned int>(initialMask[index]);
+
+                if ((m & 0x80U) != 0U) {
+                    // 80..FF -> foreground / terminal 1.
+                    const double strength =
+                        initialMaskBias *
+                        ((static_cast<double>(m) - 128.0) / 127.0);
+
+                    if (strength > 0.0) {
+                        graph.addEdge(source, current, strength);
+                    }
+                } else {
+                    // 00..7F -> background / terminal 0.
+                    const double strength =
+                        initialMaskBias *
+                        ((127.0 - static_cast<double>(m)) / 127.0);
+
+                    if (strength > 0.0) {
+                        graph.addEdge(current, sink, strength);
+                    }
+                }
+            }
 
             if (foregroundConstraints[index] != 0) {
                 // Foreground is terminal/class 1 and must become FF.
