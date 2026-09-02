@@ -13,6 +13,17 @@ public:
     // Exact Photoshop Touch QuickSelect 4-neighbor n-link energy.
     static double adobeNeighborWeight(double rgbDistanceSquared);
 
+    struct TerminalWeights {
+        double terminal0;
+        double terminal1;
+    };
+
+    // Exact active QuickSelect SetLocalEnergies param_7 == 1 path.
+    static TerminalWeights adobeTerminalWeights(
+        bool foregroundConstraint,
+        bool backgroundConstraint
+    );
+
     // Produces the binary Quick Selection mask:
     //
     //   foreground / terminal 1 -> 0xFF

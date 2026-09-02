@@ -231,6 +231,66 @@ double GraphCut::adobeNeighborWeight(
            );
 }
 
+GraphCut::TerminalWeights GraphCut::adobeTerminalWeights(
+    bool foregroundConstraint,
+    bool backgroundConstraint
+)
+{
+    // Recovered from Adobe ARMv7:
+    //
+    // QuickSelect calls SetLocalEnergies with:
+    //
+    //   param_6 = 0.7
+    //   param_7 = 1
+    //   param_8 = 1
+    //
+    // Default:
+    //
+    //   terminal0 = 0.7 * 6.234410762786865
+    //   terminal1 = 0
+    //
+    // Foreground scribble (+0x74):
+    //   terminal0 = 0
+    //   terminal1 = HUGE
+    //
+    // Background scribble (+0x78):
+    //   terminal0 = HUGE
+    //   terminal1 = 0
+    //
+    // Adobe ARMv7 QuickSelect passes param_14 = 5 to
+    // ImageGraph::BuildNodesSegmentation.
+    //
+    // BuildNodesSegmentation stores:
+    //   ImageGraph + 0x54 = ((2 * param_14) + 1)^2
+    //                     = 11^2
+    //                     = 121
+    //
+    // SetLocalEnergies then computes HUGE as:
+    //   FLT_MAX / (2 * 121)
+    //   = FLT_MAX / 242
+    constexpr double localEnergyScale =
+        6.234410762786865;
+
+    constexpr double localEnergyParameter =
+        0.7;
+
+    constexpr double hardConstraint =
+        static_cast<double>(std::numeric_limits<float>::max()) / 242.0;
+
+    if (foregroundConstraint) {
+        return {0.0, hardConstraint};
+    }
+
+    if (backgroundConstraint) {
+        return {hardConstraint, 0.0};
+    }
+
+    return {
+        localEnergyParameter * localEnergyScale,
+        0.0
+    };
+}
+
 void GraphCut::segment(
     const Byte* imageRGB,
     int width,
@@ -261,9 +321,6 @@ void GraphCut::segment(
     const int sink = source + 1;
 
     FlowGraph graph(sink + 1);
-
-    // Hard scribble constraints must dominate all ordinary image edges.
-    constexpr double hardConstraint = 1.0e12;
 
     // Adobe Photoshop Touch QuickSelect neighbor-energy model.
     //
@@ -304,14 +361,42 @@ void GraphCut::segment(
             const std::size_t index =
                 static_cast<std::size_t>(current);
 
-            if (foregroundConstraints[index] != 0) {
-                // Foreground is terminal/class 1 and must become FF.
-                graph.addEdge(source, current, hardConstraint);
+            const TerminalWeights terminal =
+                adobeTerminalWeights(
+                    foregroundConstraints[index] != 0,
+                    backgroundConstraints[index] != 0
+                );
+
+            // Adobe terminal/class polarity:
+            //
+            // terminal 0 = background
+            // terminal 1 = foreground
+            //
+            // FlowGraph represents class 1 as source-reachable.
+            // Therefore Adobe's terminal capacities map as:
+            //
+            // terminal0 -> pixel -> sink
+            // terminal1 -> source -> pixel
+            //
+            // A large terminal0 cost forces the pixel to the sink side
+            // (background/class 0).
+            //
+            // A large terminal1 cost forces the pixel to remain
+            // source-reachable (foreground/class 1).
+            if (terminal.terminal0 > 0.0) {
+                graph.addEdge(
+                    current,
+                    sink,
+                    terminal.terminal0
+                );
             }
 
-            if (backgroundConstraints[index] != 0) {
-                // Background is terminal/class 0 and must become 00.
-                graph.addEdge(current, sink, hardConstraint);
+            if (terminal.terminal1 > 0.0) {
+                graph.addEdge(
+                    source,
+                    current,
+                    terminal.terminal1
+                );
             }
 
             if (x + 1 < width) {
