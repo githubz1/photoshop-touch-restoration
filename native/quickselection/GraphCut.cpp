@@ -207,13 +207,36 @@ double colorDistanceSquared(
 
 } // namespace
 
+double GraphCut::adobeNeighborWeight(
+    double rgbDistanceSquared
+)
+{
+    // Adobe ARMv7 QuickSelect n-link:
+    //
+    // strength = 500
+    // sigma = 16
+    // beta = 0.5 / (16 * 16) = 1 / 512
+    // exponent = 0.5
+    //
+    // w = 500 * exp(-sqrt(RGB_distance_squared / 512))
+    constexpr double neighborStrength = 500.0;
+    constexpr double rgbNormalization = 512.0;
+
+    return neighborStrength *
+           std::exp(
+               -std::sqrt(
+                   rgbDistanceSquared /
+                   rgbNormalization
+               )
+           );
+}
+
 void GraphCut::segment(
     const Byte* imageRGB,
     int width,
     int height,
     const Byte* foregroundConstraints,
     const Byte* backgroundConstraints,
-    const Byte* initialMask,
     std::vector<Byte>& outputMask
 )
 {
@@ -242,24 +265,34 @@ void GraphCut::segment(
     // Hard scribble constraints must dominate all ordinary image edges.
     constexpr double hardConstraint = 1.0e12;
 
-    // Adobe QuickSelectTool +0xD0 = 0.7.
+    // Adobe Photoshop Touch QuickSelect neighbor-energy model.
     //
-    // SetLocalEnergies calculates:
+    // Recovered from:
+    //   ImageGraph::SetNeighborEnergiesRGBType<unsigned char>()
+    //   ImageGraph::SetNeighborInverseDistances()
+    //   ImageGraph::Create()
     //
-    //     0.7 * 6.234410762786865
+    // QuickSelect configures neighborhood type 4:
+    // horizontal + vertical edges only.
     //
-    // as the maximum existing-mask terminal bias.
-    constexpr double initialMaskBias =
-        4.364087533950806;
-
-
-    // Initial contrast-sensitive neighborhood model.
+    // Adobe parameters:
+    //   strength = 500.0
+    //   sigma input = 16.0 / 255.0
+    //   sigma after internal *255 = 16.0
+    //   beta = 0.5 / (16 * 16) = 1 / 512
+    //   exponent = 0.5
     //
-    // Similar neighboring pixels receive strong edges.
-    // Strong color boundaries receive weak edges, making them natural
-    // locations for the minimum cut.
-    constexpr double beta = 1.0 / 1500.0;
-    constexpr double minimumWeight = 1.0e-3;
+    // Therefore:
+    //
+    //   weight = 500 * exp(-sqrt(RGB_distance_squared / 512))
+    //
+    auto neighborWeight =
+        [&](std::size_t a, std::size_t b) -> double
+    {
+        return GraphCut::adobeNeighborWeight(
+            colorDistanceSquared(imageRGB, a, b)
+        );
+    };
 
     auto node = [width](int x, int y) -> int {
         return y * width + x;
@@ -270,32 +303,6 @@ void GraphCut::segment(
             const int current = node(x, y);
             const std::size_t index =
                 static_cast<std::size_t>(current);
-
-            // Existing selection mask = soft Adobe terminal prior.
-            if (initialMask != nullptr) {
-                const unsigned int m =
-                    static_cast<unsigned int>(initialMask[index]);
-
-                if ((m & 0x80U) != 0U) {
-                    // 80..FF -> foreground / terminal 1.
-                    const double strength =
-                        initialMaskBias *
-                        ((static_cast<double>(m) - 128.0) / 127.0);
-
-                    if (strength > 0.0) {
-                        graph.addEdge(source, current, strength);
-                    }
-                } else {
-                    // 00..7F -> background / terminal 0.
-                    const double strength =
-                        initialMaskBias *
-                        ((127.0 - static_cast<double>(m)) / 127.0);
-
-                    if (strength > 0.0) {
-                        graph.addEdge(current, sink, strength);
-                    }
-                }
-            }
 
             if (foregroundConstraints[index] != 0) {
                 // Foreground is terminal/class 1 and must become FF.
@@ -310,16 +317,10 @@ void GraphCut::segment(
             if (x + 1 < width) {
                 const int right = node(x + 1, y);
 
-                const double difference = colorDistanceSquared(
-                    imageRGB,
-                    index,
-                    static_cast<std::size_t>(right)
-                );
-
                 const double weight =
-                    std::max(
-                        minimumWeight,
-                        std::exp(-beta * difference)
+                    neighborWeight(
+                        index,
+                        static_cast<std::size_t>(right)
                     );
 
                 graph.addUndirectedEdge(current, right, weight);
@@ -328,16 +329,10 @@ void GraphCut::segment(
             if (y + 1 < height) {
                 const int below = node(x, y + 1);
 
-                const double difference = colorDistanceSquared(
-                    imageRGB,
-                    index,
-                    static_cast<std::size_t>(below)
-                );
-
                 const double weight =
-                    std::max(
-                        minimumWeight,
-                        std::exp(-beta * difference)
+                    neighborWeight(
+                        index,
+                        static_cast<std::size_t>(below)
                     );
 
                 graph.addUndirectedEdge(current, below, weight);

@@ -10,6 +10,9 @@ class GraphCut {
 public:
     using Byte = std::uint8_t;
 
+    // Exact Photoshop Touch QuickSelect 4-neighbor n-link energy.
+    static double adobeNeighborWeight(double rgbDistanceSquared);
+
     // Produces the binary Quick Selection mask:
     //
     //   foreground / terminal 1 -> 0xFF
@@ -23,7 +26,6 @@ public:
         int height,
         const Byte* foregroundConstraints,
         const Byte* backgroundConstraints,
-        const Byte* initialMask,
         std::vector<Byte>& outputMask
     );
 };

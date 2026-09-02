@@ -56,15 +56,25 @@ void QuickSelectTool::setCurrentMask(
         );
     }
 
-    // Recovered Adobe qsSetCurrMask() behavior:
+    // Adobe QuickSelectTool::qsSetCurrMask(unsigned char*)
     //
+    // Recovered configuration:
     //   +0xEC = 1
     //   ClearMasks()
     //   ReBuildNodesFromSegmentation()
-    //   SetLocalEnergies(..., currentMask, ...)
+    //   SetLocalEnergies(...)
     //
-    // The supplied mask is a SOFT graph prior, not a hard scribble
-    // constraint and not simply the final output mask.
+    // QuickSelectTool constructor fixes +0xD8 to 1.  This becomes
+    // SetLocalEnergies param_7 == 1, which skips the param_18
+    // current-mask processing branches.  The supplied mask pointer
+    // therefore does not contribute the previously assumed graded
+    // soft terminal prior.
+    //
+    // Keep the recovered reset semantics here.  The mask argument is
+    // validated for API compatibility but is intentionally not copied
+    // into the segmentation or converted into terminal constraints.
+    (void)mask;
+
     foregroundMode_ = true;
 
     std::fill(
@@ -84,9 +94,6 @@ void QuickSelectTool::setCurrentMask(
         selectionMask_.end(),
         0
     );
-
-    initialMask_.assign(mask, mask + size);
-    hasInitialMask_ = true;
 }
 
 static void stampCircle(
@@ -230,7 +237,6 @@ QuickSelectTool::mouseUp()
         height_,
         foregroundConstraints_.data(),
         backgroundConstraints_.data(),
-        hasInitialMask_ ? initialMask_.data() : nullptr,
         selectionMask_
     );
 
