@@ -12,9 +12,9 @@ int main()
         return EXIT_FAILURE;
     }
 
-    std::cout << "✓ capacity increase preserves existing flow\n";
-    std::cout << "✓ capacity decrease clamps flow to new capacity\n";
-    std::cout << "✓ persistent capacity primitive passed\n";
+    std::cout << "✓ Adobe positive capacity delta updates residual\n";
+    std::cout << "✓ Adobe negative capacity delta clamps residual at zero\n";
+    std::cout << "✓ Adobe persistent terminal delta primitive passed\n";
 
     return EXIT_SUCCESS;
 }

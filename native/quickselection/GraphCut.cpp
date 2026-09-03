@@ -71,7 +71,7 @@ public:
         (void)addEdge(b, a, capacity);
     }
 
-    void updateEdgeCapacity(
+    void updateAdobeTerminalCapacity(
         const EdgeHandle& handle,
         double newCapacity
     )
@@ -80,27 +80,23 @@ public:
             graph_[static_cast<std::size_t>(handle.from)]
                   [static_cast<std::size_t>(handle.index)];
 
-        Edge& reverse =
-            graph_[static_cast<std::size_t>(forward.to)]
-                  [static_cast<std::size_t>(forward.reverse)];
-
-        // The reverse residual records the amount of flow currently
-        // carried by this directed edge.
-        const double oldFlow = reverse.capacity;
-
-        // If the new capacity is smaller than the existing flow, that
-        // flow cannot remain feasible on this edge. Clamp it for now.
+        // Adobe SetFrozenEnergies:
         //
-        // This gives us a well-defined persistent-capacity primitive.
-        // Adobe's update_tweights behavior will be layered on top of
-        // this rather than rebuilding the complete graph.
-        const double retainedFlow =
-            oldFlow < newCapacity ? oldFlow : newCapacity;
+        //     delta = newCapacity - oldCapacity
+        //     oldCapacity = newCapacity
+        //     residual = max(0, residual + delta)
+        //
+        // This operates on the retained residual graph.
+        const double delta =
+            newCapacity - forward.originalCapacity;
 
         forward.originalCapacity = newCapacity;
-        forward.capacity = newCapacity - retainedFlow;
 
-        reverse.capacity = retainedFlow;
+        forward.capacity =
+            std::max(
+                0.0,
+                forward.capacity + delta
+            );
     }
 
     double maxFlow(int source, int sink)
@@ -157,10 +153,9 @@ public:
     {
         FlowGraph graph(2);
 
-        const EdgeHandle edge = graph.addEdge(0, 1, 10.0);
+        const EdgeHandle edge =
+            graph.addEdge(0, 1, 10.0);
 
-        // Simulate 4 units of flow:
-        // forward residual = 6, reverse residual = 4.
         Edge& forward =
             graph.graph_[static_cast<std::size_t>(edge.from)]
                         [static_cast<std::size_t>(edge.index)];
@@ -169,11 +164,22 @@ public:
             graph.graph_[static_cast<std::size_t>(forward.to)]
                         [static_cast<std::size_t>(forward.reverse)];
 
+        // Existing Adobe state:
+        //
+        // defined capacity = 10
+        // forward residual = 6
+        // reverse residual = 4
         forward.capacity = 6.0;
         reverse.capacity = 4.0;
 
-        // Increase 10 -> 15. Existing flow 4 must survive.
-        graph.updateEdgeCapacity(edge, 15.0);
+        // 10 -> 15:
+        //
+        // delta = +5
+        // residual = 6 + 5 = 11
+        graph.updateAdobeTerminalCapacity(
+            edge,
+            15.0
+        );
 
         if (forward.originalCapacity != 15.0 ||
             forward.capacity != 11.0 ||
@@ -181,13 +187,18 @@ public:
             return false;
         }
 
-        // Decrease 15 -> 3. Existing flow 4 no longer fits,
-        // so this primitive clamps it to 3.
-        graph.updateEdgeCapacity(edge, 3.0);
+        // 15 -> 3:
+        //
+        // delta = -12
+        // residual = max(0, 11 - 12) = 0
+        graph.updateAdobeTerminalCapacity(
+            edge,
+            3.0
+        );
 
         if (forward.originalCapacity != 3.0 ||
             forward.capacity != 0.0 ||
-            reverse.capacity != 3.0) {
+            reverse.capacity != 4.0) {
             return false;
         }
 
@@ -593,12 +604,12 @@ void GraphCut::segment(
                     backgroundConstraints[index] != 0
                 );
 
-            graph.updateEdgeCapacity(
+            graph.updateAdobeTerminalCapacity(
                 impl_->terminal0Edges[index],
                 terminal.terminal0
             );
 
-            graph.updateEdgeCapacity(
+            graph.updateAdobeTerminalCapacity(
                 impl_->terminal1Edges[index],
                 terminal.terminal1
             );
