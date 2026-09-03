@@ -450,6 +450,263 @@ GraphCut::TerminalWeights GraphCut::adobeTerminalWeights(
     };
 }
 
+void GraphCut::initialize(
+    const Byte* imageRGB,
+    int width,
+    int height,
+    const Byte* foregroundConstraints,
+    const Byte* backgroundConstraints
+)
+{
+    if (!imageRGB ||
+        !foregroundConstraints ||
+        !backgroundConstraints ||
+        width <= 0 ||
+        height <= 0) {
+        throw std::invalid_argument(
+            "GraphCut::initialize received invalid input"
+        );
+    }
+
+    impl_->clear();
+
+    const std::size_t pixelCount =
+        static_cast<std::size_t>(width) *
+        static_cast<std::size_t>(height);
+
+    const int source =
+        static_cast<int>(pixelCount);
+
+    const int sink =
+        source + 1;
+
+    impl_->width = width;
+    impl_->height = height;
+    impl_->source = source;
+    impl_->sink = sink;
+
+    impl_->graph =
+        std::make_unique<FlowGraph>(sink + 1);
+
+    impl_->terminal0Edges.resize(pixelCount);
+    impl_->terminal1Edges.resize(pixelCount);
+
+    FlowGraph& graph = *impl_->graph;
+
+    auto neighborWeight =
+        [&](std::size_t a, std::size_t b) -> double
+    {
+        return GraphCut::adobeNeighborWeight(
+            colorDistanceSquared(imageRGB, a, b)
+        );
+    };
+
+    auto node = [width](int x, int y) -> int {
+        return y * width + x;
+    };
+
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            const int current =
+                node(x, y);
+
+            const std::size_t index =
+                static_cast<std::size_t>(current);
+
+            const TerminalWeights terminal =
+                adobeTerminalWeights(
+                    foregroundConstraints[index] != 0,
+                    backgroundConstraints[index] != 0
+                );
+
+            // Adobe terminal 0 = background.
+            // Adobe terminal 1 = foreground.
+            //
+            // terminal0 -> pixel -> sink
+            // terminal1 -> source -> pixel
+            impl_->terminal0Edges[index] =
+                graph.addEdge(
+                    current,
+                    sink,
+                    terminal.terminal0
+                );
+
+            impl_->terminal1Edges[index] =
+                graph.addEdge(
+                    source,
+                    current,
+                    terminal.terminal1
+                );
+
+            // Exact active QuickSelect topology:
+            // four-neighbor horizontal/vertical n-links.
+            if (x + 1 < width) {
+                const int right =
+                    node(x + 1, y);
+
+                const double weight =
+                    neighborWeight(
+                        index,
+                        static_cast<std::size_t>(right)
+                    );
+
+                graph.addUndirectedEdge(
+                    current,
+                    right,
+                    weight
+                );
+            }
+
+            if (y + 1 < height) {
+                const int below =
+                    node(x, y + 1);
+
+                const double weight =
+                    neighborWeight(
+                        index,
+                        static_cast<std::size_t>(below)
+                    );
+
+                graph.addUndirectedEdge(
+                    current,
+                    below,
+                    weight
+                );
+            }
+        }
+    }
+
+    impl_->initialized = true;
+}
+
+
+void GraphCut::updateFrozenEnergies(
+    const Byte* foregroundConstraints,
+    const Byte* backgroundConstraints,
+    int x,
+    int y,
+    int width,
+    int height
+)
+{
+    if (!impl_->initialized || !impl_->graph) {
+        throw std::logic_error(
+            "GraphCut::updateFrozenEnergies called before initialize"
+        );
+    }
+
+    if (!foregroundConstraints ||
+        !backgroundConstraints) {
+        throw std::invalid_argument(
+            "GraphCut::updateFrozenEnergies received null mask"
+        );
+    }
+
+    if (width <= 0 || height <= 0) {
+        return;
+    }
+
+    // Clip the requested SetFrozenEnergies region to ImageGraph.
+    const int minX =
+        std::max(0, x);
+
+    const int minY =
+        std::max(0, y);
+
+    const int maxX =
+        std::min(impl_->width, x + width);
+
+    const int maxY =
+        std::min(impl_->height, y + height);
+
+    if (minX >= maxX || minY >= maxY) {
+        return;
+    }
+
+    FlowGraph& graph =
+        *impl_->graph;
+
+    for (int py = minY; py < maxY; ++py) {
+        for (int px = minX; px < maxX; ++px) {
+            const std::size_t index =
+                static_cast<std::size_t>(py) *
+                    static_cast<std::size_t>(impl_->width) +
+                static_cast<std::size_t>(px);
+
+            // Adobe ImageGraph::SetFrozenEnergies only touches a node
+            // when one of the frozen masks exceeds the 0x7f threshold.
+            // Pixels inside the update rectangle that are unconstrained
+            // retain their existing terminal energies/residual state.
+            const bool foreground =
+                foregroundConstraints[index] > 0x7f;
+
+            const bool background =
+                backgroundConstraints[index] > 0x7f;
+
+            if (!foreground && !background) {
+                continue;
+            }
+
+            // Adobe gives the foreground mask precedence when both masks
+            // are set for the same pixel.
+            const TerminalWeights terminal =
+                adobeTerminalWeights(
+                    foreground,
+                    foreground ? false : background
+                );
+
+            graph.updateAdobeTerminalCapacity(
+                impl_->terminal0Edges[index],
+                terminal.terminal0
+            );
+
+            graph.updateAdobeTerminalCapacity(
+                impl_->terminal1Edges[index],
+                terminal.terminal1
+            );
+        }
+    }
+}
+
+
+void GraphCut::calculateMinimumCut(
+    std::vector<Byte>& outputMask
+)
+{
+    if (!impl_->initialized || !impl_->graph) {
+        throw std::logic_error(
+            "GraphCut::calculateMinimumCut called before initialize"
+        );
+    }
+
+    FlowGraph& graph =
+        *impl_->graph;
+
+    // Adobe equivalent:
+    // mincut_adjlist_graph<float>::CalculateMinimumCut()
+    graph.maxFlow(
+        impl_->source,
+        impl_->sink
+    );
+
+    const std::vector<bool> foreground =
+        graph.sourceReachable(
+            impl_->source
+        );
+
+    const std::size_t pixelCount =
+        static_cast<std::size_t>(impl_->width) *
+        static_cast<std::size_t>(impl_->height);
+
+    outputMask.resize(pixelCount);
+
+    for (std::size_t i = 0; i < pixelCount; ++i) {
+        outputMask[i] =
+            foreground[i] ? 0xFF : 0x00;
+    }
+}
+
+
 void GraphCut::segment(
     const Byte* imageRGB,
     int width,
@@ -464,171 +721,41 @@ void GraphCut::segment(
         !backgroundConstraints ||
         width <= 0 ||
         height <= 0) {
-        throw std::invalid_argument("GraphCut: invalid input");
+        throw std::invalid_argument(
+            "GraphCut::segment received invalid input"
+        );
     }
-
-    const std::size_t pixelCount =
-        static_cast<std::size_t>(width) *
-        static_cast<std::size_t>(height);
-
-    if (pixelCount >
-        static_cast<std::size_t>(std::numeric_limits<int>::max() - 2)) {
-        throw std::overflow_error("GraphCut: image too large");
-    }
-
-    const int source = static_cast<int>(pixelCount);
-    const int sink = source + 1;
 
     const bool canReuse =
         impl_->initialized &&
         impl_->graph &&
         impl_->width == width &&
-        impl_->height == height &&
-        impl_->source == source &&
-        impl_->sink == sink &&
-        impl_->terminal0Edges.size() == pixelCount &&
-        impl_->terminal1Edges.size() == pixelCount;
+        impl_->height == height;
 
     if (!canReuse) {
-        // Adobe baseline lifecycle:
-        //
-        // Create / ReBuildNodesFromSegmentation
-        //   -> SetLocalEnergies
-        //   -> SetNeighborEnergies
-        //
-        // Build topology and energy edges once.
-        impl_->clear();
-
-        impl_->width = width;
-        impl_->height = height;
-        impl_->source = source;
-        impl_->sink = sink;
-
-        impl_->graph = std::make_unique<FlowGraph>(sink + 1);
-        impl_->terminal0Edges.resize(pixelCount);
-        impl_->terminal1Edges.resize(pixelCount);
-
-        FlowGraph& graph = *impl_->graph;
-
-        auto neighborWeight =
-            [&](std::size_t a, std::size_t b) -> double
-        {
-            return GraphCut::adobeNeighborWeight(
-                colorDistanceSquared(imageRGB, a, b)
-            );
-        };
-
-        auto node = [width](int x, int y) -> int {
-            return y * width + x;
-        };
-
-        for (int y = 0; y < height; ++y) {
-            for (int x = 0; x < width; ++x) {
-                const int current = node(x, y);
-                const std::size_t index =
-                    static_cast<std::size_t>(current);
-
-                const TerminalWeights terminal =
-                    adobeTerminalWeights(
-                        foregroundConstraints[index] != 0,
-                        backgroundConstraints[index] != 0
-                    );
-
-                // Adobe terminal 0 = background.
-                // Adobe terminal 1 = foreground.
-                //
-                // Our source-reachable class is foreground:
-                //
-                // terminal0 -> pixel -> sink
-                // terminal1 -> source -> pixel
-                impl_->terminal0Edges[index] =
-                    graph.addEdge(
-                        current,
-                        sink,
-                        terminal.terminal0
-                    );
-
-                impl_->terminal1Edges[index] =
-                    graph.addEdge(
-                        source,
-                        current,
-                        terminal.terminal1
-                    );
-
-                if (x + 1 < width) {
-                    const int right = node(x + 1, y);
-
-                    const double weight =
-                        neighborWeight(
-                            index,
-                            static_cast<std::size_t>(right)
-                        );
-
-                    graph.addUndirectedEdge(
-                        current,
-                        right,
-                        weight
-                    );
-                }
-
-                if (y + 1 < height) {
-                    const int below = node(x, y + 1);
-
-                    const double weight =
-                        neighborWeight(
-                            index,
-                            static_cast<std::size_t>(below)
-                        );
-
-                    graph.addUndirectedEdge(
-                        current,
-                        below,
-                        weight
-                    );
-                }
-            }
-        }
-
-        impl_->initialized = true;
+        initialize(
+            imageRGB,
+            width,
+            height,
+            foregroundConstraints,
+            backgroundConstraints
+        );
     }
     else {
-        // Adobe BrushHits uses SetFrozenEnergies on the existing
-        // ImageGraph. Stage 1 updates all terminal pairs; affected-region
-        // tracking comes next.
-        FlowGraph& graph = *impl_->graph;
-
-        for (std::size_t index = 0; index < pixelCount; ++index) {
-            const TerminalWeights terminal =
-                adobeTerminalWeights(
-                    foregroundConstraints[index] != 0,
-                    backgroundConstraints[index] != 0
-                );
-
-            graph.updateAdobeTerminalCapacity(
-                impl_->terminal0Edges[index],
-                terminal.terminal0
-            );
-
-            graph.updateAdobeTerminalCapacity(
-                impl_->terminal1Edges[index],
-                terminal.terminal1
-            );
-        }
+        // Compatibility behavior: update the complete ImageGraph.
+        // QuickSelectTool will use updateFrozenEnergies() directly
+        // with per-brush affected rectangles.
+        updateFrozenEnergies(
+            foregroundConstraints,
+            backgroundConstraints,
+            0,
+            0,
+            width,
+            height
+        );
     }
 
-    FlowGraph& graph = *impl_->graph;
-
-    // CalculateMinimumCut on the retained graph/residual network.
-    graph.maxFlow(impl_->source, impl_->sink);
-
-    const std::vector<bool> foreground =
-        graph.sourceReachable(impl_->source);
-
-    outputMask.resize(pixelCount);
-
-    for (std::size_t i = 0; i < pixelCount; ++i) {
-        outputMask[i] = foreground[i] ? 0xFF : 0x00;
-    }
+    calculateMinimumCut(outputMask);
 }
 
 } // namespace pstouch::quickselection
