@@ -14,7 +14,19 @@ namespace {
 struct Edge {
     int to;
     int reverse;
+
+    // Current residual capacity used by the max-flow solver.
     double capacity;
+
+    // Capacity assigned when this directed edge was created.
+    // Keeping this separately lets the persistent Quick Selection graph
+    // distinguish its energy definition from post-cut residual state.
+    double originalCapacity;
+};
+
+struct EdgeHandle {
+    int from;
+    int index;
 };
 
 class FlowGraph {
@@ -26,28 +38,69 @@ public:
     {
     }
 
-    void addEdge(int from, int to, double capacity)
+    EdgeHandle addEdge(int from, int to, double capacity)
     {
+        const int forwardIndex =
+            static_cast<int>(
+                graph_[static_cast<std::size_t>(from)].size()
+            );
+
         Edge forward{
             to,
             static_cast<int>(graph_[static_cast<std::size_t>(to)].size()),
+            capacity,
             capacity
         };
 
         Edge reverse{
             from,
-            static_cast<int>(graph_[static_cast<std::size_t>(from)].size()),
+            forwardIndex,
+            0.0,
             0.0
         };
 
         graph_[static_cast<std::size_t>(from)].push_back(forward);
         graph_[static_cast<std::size_t>(to)].push_back(reverse);
+
+        return EdgeHandle{from, forwardIndex};
     }
 
     void addUndirectedEdge(int a, int b, double capacity)
     {
-        addEdge(a, b, capacity);
-        addEdge(b, a, capacity);
+        (void)addEdge(a, b, capacity);
+        (void)addEdge(b, a, capacity);
+    }
+
+    void updateEdgeCapacity(
+        const EdgeHandle& handle,
+        double newCapacity
+    )
+    {
+        Edge& forward =
+            graph_[static_cast<std::size_t>(handle.from)]
+                  [static_cast<std::size_t>(handle.index)];
+
+        Edge& reverse =
+            graph_[static_cast<std::size_t>(forward.to)]
+                  [static_cast<std::size_t>(forward.reverse)];
+
+        // The reverse residual records the amount of flow currently
+        // carried by this directed edge.
+        const double oldFlow = reverse.capacity;
+
+        // If the new capacity is smaller than the existing flow, that
+        // flow cannot remain feasible on this edge. Clamp it for now.
+        //
+        // This gives us a well-defined persistent-capacity primitive.
+        // Adobe's update_tweights behavior will be layered on top of
+        // this rather than rebuilding the complete graph.
+        const double retainedFlow =
+            oldFlow < newCapacity ? oldFlow : newCapacity;
+
+        forward.originalCapacity = newCapacity;
+        forward.capacity = newCapacity - retainedFlow;
+
+        reverse.capacity = retainedFlow;
     }
 
     double maxFlow(int source, int sink)
@@ -98,6 +151,47 @@ public:
         }
 
         return seen;
+    }
+
+    static bool testPersistentCapacityUpdate()
+    {
+        FlowGraph graph(2);
+
+        const EdgeHandle edge = graph.addEdge(0, 1, 10.0);
+
+        // Simulate 4 units of flow:
+        // forward residual = 6, reverse residual = 4.
+        Edge& forward =
+            graph.graph_[static_cast<std::size_t>(edge.from)]
+                        [static_cast<std::size_t>(edge.index)];
+
+        Edge& reverse =
+            graph.graph_[static_cast<std::size_t>(forward.to)]
+                        [static_cast<std::size_t>(forward.reverse)];
+
+        forward.capacity = 6.0;
+        reverse.capacity = 4.0;
+
+        // Increase 10 -> 15. Existing flow 4 must survive.
+        graph.updateEdgeCapacity(edge, 15.0);
+
+        if (forward.originalCapacity != 15.0 ||
+            forward.capacity != 11.0 ||
+            reverse.capacity != 4.0) {
+            return false;
+        }
+
+        // Decrease 15 -> 3. Existing flow 4 no longer fits,
+        // so this primitive clamps it to 3.
+        graph.updateEdgeCapacity(edge, 3.0);
+
+        if (forward.originalCapacity != 3.0 ||
+            forward.capacity != 0.0 ||
+            reverse.capacity != 3.0) {
+            return false;
+        }
+
+        return true;
     }
 
 private:
@@ -231,6 +325,60 @@ double GraphCut::adobeNeighborWeight(
            );
 }
 
+
+struct GraphCut::Impl {
+    // Persistent graph state owned for the lifetime of GraphCut.
+    std::unique_ptr<FlowGraph> graph;
+
+    int width = 0;
+    int height = 0;
+    int source = -1;
+    int sink = -1;
+
+    // Stable handles for Adobe terminal 0 and terminal 1 edges.
+    // Indexed by image pixel.
+    std::vector<EdgeHandle> terminal0Edges;
+    std::vector<EdgeHandle> terminal1Edges;
+
+    bool initialized = false;
+
+    void clear()
+    {
+        graph.reset();
+
+        width = 0;
+        height = 0;
+        source = -1;
+        sink = -1;
+
+        terminal0Edges.clear();
+        terminal1Edges.clear();
+
+        initialized = false;
+    }
+};
+
+GraphCut::GraphCut()
+    : impl_(std::make_unique<Impl>())
+{
+}
+
+GraphCut::~GraphCut() = default;
+
+GraphCut::GraphCut(GraphCut&&) noexcept = default;
+
+GraphCut& GraphCut::operator=(GraphCut&&) noexcept = default;
+
+void GraphCut::reset()
+{
+    impl_->clear();
+}
+
+bool GraphCut::testPersistentCapacityUpdate()
+{
+    return FlowGraph::testPersistentCapacityUpdate();
+}
+
 GraphCut::TerminalWeights GraphCut::adobeTerminalWeights(
     bool foregroundConstraint,
     bool backgroundConstraint
@@ -320,123 +468,154 @@ void GraphCut::segment(
     const int source = static_cast<int>(pixelCount);
     const int sink = source + 1;
 
-    FlowGraph graph(sink + 1);
+    const bool canReuse =
+        impl_->initialized &&
+        impl_->graph &&
+        impl_->width == width &&
+        impl_->height == height &&
+        impl_->source == source &&
+        impl_->sink == sink &&
+        impl_->terminal0Edges.size() == pixelCount &&
+        impl_->terminal1Edges.size() == pixelCount;
 
-    // Adobe Photoshop Touch QuickSelect neighbor-energy model.
-    //
-    // Recovered from:
-    //   ImageGraph::SetNeighborEnergiesRGBType<unsigned char>()
-    //   ImageGraph::SetNeighborInverseDistances()
-    //   ImageGraph::Create()
-    //
-    // QuickSelect configures neighborhood type 4:
-    // horizontal + vertical edges only.
-    //
-    // Adobe parameters:
-    //   strength = 500.0
-    //   sigma input = 16.0 / 255.0
-    //   sigma after internal *255 = 16.0
-    //   beta = 0.5 / (16 * 16) = 1 / 512
-    //   exponent = 0.5
-    //
-    // Therefore:
-    //
-    //   weight = 500 * exp(-sqrt(RGB_distance_squared / 512))
-    //
-    auto neighborWeight =
-        [&](std::size_t a, std::size_t b) -> double
-    {
-        return GraphCut::adobeNeighborWeight(
-            colorDistanceSquared(imageRGB, a, b)
-        );
-    };
+    if (!canReuse) {
+        // Adobe baseline lifecycle:
+        //
+        // Create / ReBuildNodesFromSegmentation
+        //   -> SetLocalEnergies
+        //   -> SetNeighborEnergies
+        //
+        // Build topology and energy edges once.
+        impl_->clear();
 
-    auto node = [width](int x, int y) -> int {
-        return y * width + x;
-    };
+        impl_->width = width;
+        impl_->height = height;
+        impl_->source = source;
+        impl_->sink = sink;
 
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
-            const int current = node(x, y);
-            const std::size_t index =
-                static_cast<std::size_t>(current);
+        impl_->graph = std::make_unique<FlowGraph>(sink + 1);
+        impl_->terminal0Edges.resize(pixelCount);
+        impl_->terminal1Edges.resize(pixelCount);
 
+        FlowGraph& graph = *impl_->graph;
+
+        auto neighborWeight =
+            [&](std::size_t a, std::size_t b) -> double
+        {
+            return GraphCut::adobeNeighborWeight(
+                colorDistanceSquared(imageRGB, a, b)
+            );
+        };
+
+        auto node = [width](int x, int y) -> int {
+            return y * width + x;
+        };
+
+        for (int y = 0; y < height; ++y) {
+            for (int x = 0; x < width; ++x) {
+                const int current = node(x, y);
+                const std::size_t index =
+                    static_cast<std::size_t>(current);
+
+                const TerminalWeights terminal =
+                    adobeTerminalWeights(
+                        foregroundConstraints[index] != 0,
+                        backgroundConstraints[index] != 0
+                    );
+
+                // Adobe terminal 0 = background.
+                // Adobe terminal 1 = foreground.
+                //
+                // Our source-reachable class is foreground:
+                //
+                // terminal0 -> pixel -> sink
+                // terminal1 -> source -> pixel
+                impl_->terminal0Edges[index] =
+                    graph.addEdge(
+                        current,
+                        sink,
+                        terminal.terminal0
+                    );
+
+                impl_->terminal1Edges[index] =
+                    graph.addEdge(
+                        source,
+                        current,
+                        terminal.terminal1
+                    );
+
+                if (x + 1 < width) {
+                    const int right = node(x + 1, y);
+
+                    const double weight =
+                        neighborWeight(
+                            index,
+                            static_cast<std::size_t>(right)
+                        );
+
+                    graph.addUndirectedEdge(
+                        current,
+                        right,
+                        weight
+                    );
+                }
+
+                if (y + 1 < height) {
+                    const int below = node(x, y + 1);
+
+                    const double weight =
+                        neighborWeight(
+                            index,
+                            static_cast<std::size_t>(below)
+                        );
+
+                    graph.addUndirectedEdge(
+                        current,
+                        below,
+                        weight
+                    );
+                }
+            }
+        }
+
+        impl_->initialized = true;
+    }
+    else {
+        // Adobe BrushHits uses SetFrozenEnergies on the existing
+        // ImageGraph. Stage 1 updates all terminal pairs; affected-region
+        // tracking comes next.
+        FlowGraph& graph = *impl_->graph;
+
+        for (std::size_t index = 0; index < pixelCount; ++index) {
             const TerminalWeights terminal =
                 adobeTerminalWeights(
                     foregroundConstraints[index] != 0,
                     backgroundConstraints[index] != 0
                 );
 
-            // Adobe terminal/class polarity:
-            //
-            // terminal 0 = background
-            // terminal 1 = foreground
-            //
-            // FlowGraph represents class 1 as source-reachable.
-            // Therefore Adobe's terminal capacities map as:
-            //
-            // terminal0 -> pixel -> sink
-            // terminal1 -> source -> pixel
-            //
-            // A large terminal0 cost forces the pixel to the sink side
-            // (background/class 0).
-            //
-            // A large terminal1 cost forces the pixel to remain
-            // source-reachable (foreground/class 1).
-            if (terminal.terminal0 > 0.0) {
-                graph.addEdge(
-                    current,
-                    sink,
-                    terminal.terminal0
-                );
-            }
+            graph.updateEdgeCapacity(
+                impl_->terminal0Edges[index],
+                terminal.terminal0
+            );
 
-            if (terminal.terminal1 > 0.0) {
-                graph.addEdge(
-                    source,
-                    current,
-                    terminal.terminal1
-                );
-            }
-
-            if (x + 1 < width) {
-                const int right = node(x + 1, y);
-
-                const double weight =
-                    neighborWeight(
-                        index,
-                        static_cast<std::size_t>(right)
-                    );
-
-                graph.addUndirectedEdge(current, right, weight);
-            }
-
-            if (y + 1 < height) {
-                const int below = node(x, y + 1);
-
-                const double weight =
-                    neighborWeight(
-                        index,
-                        static_cast<std::size_t>(below)
-                    );
-
-                graph.addUndirectedEdge(current, below, weight);
-            }
+            graph.updateEdgeCapacity(
+                impl_->terminal1Edges[index],
+                terminal.terminal1
+            );
         }
     }
 
-    graph.maxFlow(source, sink);
+    FlowGraph& graph = *impl_->graph;
+
+    // CalculateMinimumCut on the retained graph/residual network.
+    graph.maxFlow(impl_->source, impl_->sink);
 
     const std::vector<bool> foreground =
-        graph.sourceReachable(source);
+        graph.sourceReachable(impl_->source);
 
     outputMask.resize(pixelCount);
 
     for (std::size_t i = 0; i < pixelCount; ++i) {
-        // Recovered Adobe output contract:
-        //
-        // segmentation class 1 (foreground) -> FF
-        // segmentation class 0 (background) -> 00
         outputMask[i] = foreground[i] ? 0xFF : 0x00;
     }
 }

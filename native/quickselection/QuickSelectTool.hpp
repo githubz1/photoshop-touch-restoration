@@ -4,6 +4,8 @@
 #include <cstdint>
 #include <vector>
 
+#include "GraphCut.hpp"
+
 namespace pstouch::quickselection {
 
 class QuickSelectTool {
@@ -54,6 +56,13 @@ public:
     int height() const noexcept { return height_; }
 
 private:
+    void stampBrushHit(
+        int x,
+        int y,
+        int radius,
+        int mode
+    );
+
     static bool isForegroundMode(int mode) noexcept
     {
         // Proven from the ARMv7 implementation:
@@ -80,6 +89,13 @@ private:
 
     std::vector<Byte> foregroundConstraints_;
     std::vector<Byte> backgroundConstraints_;
+
+    // Persistent segmentation graph.
+    //
+    // Adobe's QuickSelectTool owns its ImageGraph for the lifetime of
+    // the tool. Brush updates modify that existing graph rather than
+    // constructing a new graph for every stroke batch.
+    GraphCut graphCut_;
 
     // Semantic equivalent of ARMv7 QuickSelectTool +0xEC.
     bool foregroundMode_ = true;

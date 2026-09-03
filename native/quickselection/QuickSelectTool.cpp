@@ -94,6 +94,9 @@ void QuickSelectTool::setCurrentMask(
         selectionMask_.end(),
         0
     );
+
+    // qsSetCurrMask rebuilds Adobe's ImageGraph state.
+    graphCut_.reset();
 }
 
 static void stampCircle(
@@ -135,7 +138,7 @@ static void stampCircle(
     }
 }
 
-void QuickSelectTool::brushHit(
+void QuickSelectTool::stampBrushHit(
     int x,
     int y,
     int radius,
@@ -175,6 +178,26 @@ void QuickSelectTool::brushHit(
     );
 }
 
+void QuickSelectTool::brushHit(
+    int x,
+    int y,
+    int radius,
+    int mode
+)
+{
+    stampBrushHit(x, y, radius, mode);
+
+    // Adobe single BrushHit produces its cut before MouseUp.
+    graphCut_.segment(
+        imageRGB_.data(),
+        width_,
+        height_,
+        foregroundConstraints_.data(),
+        backgroundConstraints_.data(),
+        selectionMask_
+    );
+}
+
 void QuickSelectTool::brushHits(
     const int* x,
     const int* y,
@@ -188,8 +211,19 @@ void QuickSelectTool::brushHits(
     }
 
     for (int i = 0; i < count; ++i) {
-        brushHit(x[i], y[i], radius[i], mode[i]);
+        stampBrushHit(x[i], y[i], radius[i], mode[i]);
     }
+
+    // Adobe BrushHits applies all brush samples first, then performs
+    // CalculateMinimumCut exactly once for the complete batch.
+    graphCut_.segment(
+        imageRGB_.data(),
+        width_,
+        height_,
+        foregroundConstraints_.data(),
+        backgroundConstraints_.data(),
+        selectionMask_
+    );
 }
 
 void QuickSelectTool::qsBrushHits(
@@ -207,8 +241,18 @@ void QuickSelectTool::qsBrushHits(
     }
 
     for (int i = 0; i < count; ++i) {
-        brushHit(x[i], y[i], radius[i], mode);
+        stampBrushHit(x[i], y[i], radius[i], mode);
     }
+
+    // Active Photoshop Touch QS path: solve once after the complete batch.
+    graphCut_.segment(
+        imageRGB_.data(),
+        width_,
+        height_,
+        foregroundConstraints_.data(),
+        backgroundConstraints_.data(),
+        selectionMask_
+    );
 }
 
 void QuickSelectTool::switchMode(int mode)
@@ -220,6 +264,11 @@ void QuickSelectTool::reset(int mode)
 {
     foregroundMode_ = isForegroundMode(mode);
     clearMasks();
+
+    // Adobe Reset rebuilds/reinitializes ImageGraph state.
+    // Discard our persistent graph so the next brush operation
+    // reconstructs the baseline local and neighbor energies.
+    graphCut_.reset();
 }
 
 const QuickSelectTool::Byte*
@@ -231,15 +280,8 @@ QuickSelectTool::getMask() const noexcept
 const QuickSelectTool::Byte*
 QuickSelectTool::mouseUp()
 {
-    GraphCut::segment(
-        imageRGB_.data(),
-        width_,
-        height_,
-        foregroundConstraints_.data(),
-        backgroundConstraints_.data(),
-        selectionMask_
-    );
-
+    // Adobe MouseUp returns the segmentation produced by BrushHits.
+    // It does not calculate another minimum cut.
     return selectionMask_.data();
 }
 

@@ -2,12 +2,26 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <memory>
 #include <vector>
 
 namespace pstouch::quickselection {
 
 class GraphCut {
 public:
+    GraphCut();
+    ~GraphCut();
+
+    GraphCut(const GraphCut&) = delete;
+    GraphCut& operator=(const GraphCut&) = delete;
+
+    GraphCut(GraphCut&&) noexcept;
+    GraphCut& operator=(GraphCut&&) noexcept;
+
+    void reset();
+
+    static bool testPersistentCapacityUpdate();
+
     using Byte = std::uint8_t;
 
     // Exact Photoshop Touch QuickSelect 4-neighbor n-link energy.
@@ -31,7 +45,7 @@ public:
     //
     // This preserves the polarity recovered from
     // TiledImageGraph::ReadSegmentationMask<unsigned char>().
-    static void segment(
+    void segment(
         const Byte* imageRGB,
         int width,
         int height,
@@ -39,6 +53,10 @@ public:
         const Byte* backgroundConstraints,
         std::vector<Byte>& outputMask
     );
+private:
+    struct Impl;
+    std::unique_ptr<Impl> impl_;
+
 };
 
 } // namespace pstouch::quickselection
