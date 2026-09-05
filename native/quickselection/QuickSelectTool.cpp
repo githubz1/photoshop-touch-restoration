@@ -97,6 +97,7 @@ void QuickSelectTool::setCurrentMask(
 
     // qsSetCurrMask rebuilds Adobe's ImageGraph state.
     graphCut_.reset();
+    graphInitialized_ = false;
 }
 
 static void stampCircle(
@@ -138,24 +139,35 @@ static void stampCircle(
     }
 }
 
-void QuickSelectTool::stampBrushHit(
+void QuickSelectTool::ensureGraphInitialized()
+{
+    if (graphInitialized_) {
+        return;
+    }
+
+    graphCut_.initialize(
+        imageRGB_.data(),
+        width_,
+        height_,
+        foregroundConstraints_.data(),
+        backgroundConstraints_.data()
+    );
+
+    graphInitialized_ = true;
+}
+
+
+QuickSelectTool::BrushRegion QuickSelectTool::stampBrushHit(
     int x,
     int y,
     int radius,
     int mode
 )
 {
-    const bool foreground = isForegroundMode(mode);
+    ensureGraphInitialized();
 
-    // Proven ARMv7 behavior:
-    //
-    // mode 0:
-    //   foreground constraint = FF
-    //   background constraint = 00
-    //
-    // nonzero:
-    //   foreground constraint = 00
-    //   background constraint = FF
+    const bool foreground =
+        isForegroundMode(mode);
 
     stampCircle(
         foregroundConstraints_,
@@ -176,6 +188,42 @@ void QuickSelectTool::stampBrushHit(
         radius,
         foreground ? 0x00 : 0xFF
     );
+
+    const int minX =
+        std::max(0, x - radius);
+
+    const int maxX =
+        std::min(width_ - 1, x + radius);
+
+    const int minY =
+        std::max(0, y - radius);
+
+    const int maxY =
+        std::min(height_ - 1, y + radius);
+
+    if (minX > maxX || minY > maxY) {
+        return {};
+    }
+
+    BrushRegion region {
+        minX,
+        minY,
+        maxX - minX + 1,
+        maxY - minY + 1
+    };
+
+    // Adobe BrushHit calls SetFrozenEnergies immediately after
+    // stamping this sample, restricted to its affected rectangle.
+    graphCut_.updateFrozenEnergies(
+        foregroundConstraints_.data(),
+        backgroundConstraints_.data(),
+        region.x,
+        region.y,
+        region.width,
+        region.height
+    );
+
+    return region;
 }
 
 void QuickSelectTool::brushHit(
@@ -185,15 +233,16 @@ void QuickSelectTool::brushHit(
     int mode
 )
 {
-    stampBrushHit(x, y, radius, mode);
+    stampBrushHit(
+        x,
+        y,
+        radius,
+        mode
+    );
 
-    // Adobe single BrushHit produces its cut before MouseUp.
-    graphCut_.segment(
-        imageRGB_.data(),
-        width_,
-        height_,
-        foregroundConstraints_.data(),
-        backgroundConstraints_.data(),
+    // Adobe single BrushHit performs one minimum cut after
+    // SetFrozenEnergies for the affected brush region.
+    graphCut_.calculateMinimumCut(
         selectionMask_
     );
 }
@@ -211,17 +260,17 @@ void QuickSelectTool::brushHits(
     }
 
     for (int i = 0; i < count; ++i) {
-        stampBrushHit(x[i], y[i], radius[i], mode[i]);
+        stampBrushHit(
+            x[i],
+            y[i],
+            radius[i],
+            mode[i]
+        );
     }
 
-    // Adobe BrushHits applies all brush samples first, then performs
-    // CalculateMinimumCut exactly once for the complete batch.
-    graphCut_.segment(
-        imageRGB_.data(),
-        width_,
-        height_,
-        foregroundConstraints_.data(),
-        backgroundConstraints_.data(),
+    // Adobe multi-hit BrushHit calls SetFrozenEnergies after each
+    // individual stamp, then CalculateMinimumCut exactly once.
+    graphCut_.calculateMinimumCut(
         selectionMask_
     );
 }
@@ -234,23 +283,25 @@ void QuickSelectTool::qsBrushHits(
     int count
 )
 {
-    foregroundMode_ = isForegroundMode(mode);
+    foregroundMode_ =
+        isForegroundMode(mode);
 
     if (!x || !y || !radius || count <= 0) {
         return;
     }
 
     for (int i = 0; i < count; ++i) {
-        stampBrushHit(x[i], y[i], radius[i], mode);
+        stampBrushHit(
+            x[i],
+            y[i],
+            radius[i],
+            mode
+        );
     }
 
-    // Active Photoshop Touch QS path: solve once after the complete batch.
-    graphCut_.segment(
-        imageRGB_.data(),
-        width_,
-        height_,
-        foregroundConstraints_.data(),
-        backgroundConstraints_.data(),
+    // Active Photoshop Touch QS path:
+    // SetFrozenEnergies per sample, one CalculateMinimumCut per batch.
+    graphCut_.calculateMinimumCut(
         selectionMask_
     );
 }
@@ -269,6 +320,7 @@ void QuickSelectTool::reset(int mode)
     // Discard our persistent graph so the next brush operation
     // reconstructs the baseline local and neighbor energies.
     graphCut_.reset();
+    graphInitialized_ = false;
 }
 
 const QuickSelectTool::Byte*

@@ -1,3 +1,4 @@
+#include <list>
 #include "GraphCut.hpp"
 
 #include <algorithm>
@@ -287,6 +288,1159 @@ private:
     std::vector<int> level_;
     std::vector<std::size_t> next_;
 };
+
+
+//
+// Adobe Quick Selection persistent Boykov-Kolmogorov state.
+//
+// This is intentionally separate from FlowGraph while the recovered ARMv7
+// grow/augment/adopt/update behavior is reconstructed. FlowGraph remains the
+// reference backend until the BK implementation is complete.
+//
+class AdobeBKGraph {
+public:
+    enum class Tree : unsigned char {
+        Source = 0,
+        Sink   = 1,
+        Free   = 2
+    };
+
+    struct Edge {
+        int from = -1;
+        int to = -1;
+        int reverse = -1;
+
+        // Adobe Edge +0x0c: residual capacity.
+        float residual = 0.0f;
+
+        // Logical capacity assigned to this directed edge. This is retained
+        // for terminal-capacity delta updates.
+        float assignedCapacity = 0.0f;
+    };
+
+    struct EdgeHandle {
+        int from = -1;
+        int index = -1;
+
+        bool valid() const noexcept
+        {
+            return from >= 0 && index >= 0;
+        }
+    };
+
+    struct NodeState {
+        Tree tree = Tree::Free;
+
+        // Adobe Kolmogorov +0x40 parent-edge array.
+        EdgeHandle parentEdge{};
+        bool orphanParent = false;
+
+        // Adobe +0x68 per-node pair.
+        std::uint32_t distance = 0;
+        std::uint32_t timestamp = 0;
+
+        bool active = false;
+        bool orphan = false;
+    };
+
+    explicit AdobeBKGraph(std::size_t nodeCount)
+        : adjacency_(nodeCount),
+          nodes_(nodeCount)
+    {
+    }
+
+    std::size_t nodeCount() const noexcept
+    {
+        return nodes_.size();
+    }
+
+    float flow() const noexcept
+    {
+        return flow_;
+    }
+
+    std::uint32_t timestamp() const noexcept
+    {
+        return timestamp_;
+    }
+
+    EdgeHandle addEdge(
+        int from,
+        int to,
+        float forwardCapacity,
+        float reverseCapacity
+    )
+    {
+        if (from < 0 || to < 0 ||
+            static_cast<std::size_t>(from) >= adjacency_.size() ||
+            static_cast<std::size_t>(to) >= adjacency_.size()) {
+            throw std::out_of_range("AdobeBKGraph::addEdge node");
+        }
+
+        const int forwardIndex =
+            static_cast<int>(adjacency_[static_cast<std::size_t>(from)].size());
+
+        const int reverseIndex =
+            static_cast<int>(adjacency_[static_cast<std::size_t>(to)].size());
+
+        adjacency_[static_cast<std::size_t>(from)].push_back(
+            Edge{
+                from,
+                to,
+                reverseIndex,
+                forwardCapacity,
+                forwardCapacity
+            }
+        );
+
+        adjacency_[static_cast<std::size_t>(to)].push_back(
+            Edge{
+                to,
+                from,
+                forwardIndex,
+                reverseCapacity,
+                reverseCapacity
+            }
+        );
+
+        return EdgeHandle{from, forwardIndex};
+    }
+
+    Edge& edge(const EdgeHandle& handle)
+    {
+        if (!handle.valid() ||
+            static_cast<std::size_t>(handle.from) >= adjacency_.size() ||
+            static_cast<std::size_t>(handle.index) >=
+                adjacency_[static_cast<std::size_t>(handle.from)].size()) {
+            throw std::out_of_range("AdobeBKGraph::edge handle");
+        }
+
+        return adjacency_[static_cast<std::size_t>(handle.from)]
+                         [static_cast<std::size_t>(handle.index)];
+    }
+
+    const Edge& edge(const EdgeHandle& handle) const
+    {
+        if (!handle.valid() ||
+            static_cast<std::size_t>(handle.from) >= adjacency_.size() ||
+            static_cast<std::size_t>(handle.index) >=
+                adjacency_[static_cast<std::size_t>(handle.from)].size()) {
+            throw std::out_of_range("AdobeBKGraph::edge handle");
+        }
+
+        return adjacency_[static_cast<std::size_t>(handle.from)]
+                         [static_cast<std::size_t>(handle.index)];
+    }
+
+    Edge& reverseEdge(const EdgeHandle& handle)
+    {
+        Edge& forward = edge(handle);
+
+        return adjacency_[static_cast<std::size_t>(forward.to)]
+                         [static_cast<std::size_t>(forward.reverse)];
+    }
+
+    const Edge& reverseEdge(const EdgeHandle& handle) const
+    {
+        const Edge& forward = edge(handle);
+
+        return adjacency_[static_cast<std::size_t>(forward.to)]
+                         [static_cast<std::size_t>(forward.reverse)];
+    }
+
+    void setTerminals(int sourceTerminal, int sinkTerminal)
+    {
+        if (sourceTerminal < 0 || sinkTerminal < 0 ||
+            static_cast<std::size_t>(sourceTerminal) >= nodes_.size() ||
+            static_cast<std::size_t>(sinkTerminal) >= nodes_.size() ||
+            sourceTerminal == sinkTerminal) {
+            throw std::out_of_range("AdobeBKGraph::setTerminals");
+        }
+
+        sourceTerminal_ = sourceTerminal;
+        sinkTerminal_ = sinkTerminal;
+    }
+
+    float run()
+    {
+        // Adobe Kolmogorov::run():
+        //
+        // The constructor establishes the initial terminal state.
+        // process_length_two_paths() then reduces all direct
+        // SOURCE -> node -> SINK paths and constructs the initial forest.
+        initializeSolverState();
+        processLengthTwoPaths();
+
+        // Unlike update(), the initial run does NOT call adopt()
+        // before its first grow().
+        if (grow()) {
+            do {
+                // Adobe increments +0x64 immediately before augment().
+                ++timestamp_;
+
+                augment();
+                adopt();
+            }
+            while (grow());
+        }
+
+        return flow_;
+    }
+
+    void processLengthTwoPaths()
+    {
+        if (sourceTerminal_ < 0 || sinkTerminal_ < 0) {
+            throw std::logic_error(
+                "AdobeBKGraph::processLengthTwoPaths without terminals"
+            );
+        }
+
+        // Adobe process_length_two_paths():
+        //
+        // Walk every SOURCE -> node terminal path and locate the
+        // corresponding node -> SINK edge. Cancel the common residual
+        // immediately and use the remaining terminal residual to seed
+        // the initial BK search forest.
+        auto& sourceAdj =
+            adjacency_[static_cast<std::size_t>(sourceTerminal_)];
+
+        for (int sourceIndex = 0;
+             sourceIndex < static_cast<int>(sourceAdj.size());
+             ++sourceIndex) {
+
+            const EdgeHandle sourceHandle{
+                sourceTerminal_,
+                sourceIndex
+            };
+
+            Edge& sourceEdge = edge(sourceHandle);
+
+            const int node = sourceEdge.to;
+
+            // The terminal itself cannot be an image node.
+            if (node == sourceTerminal_ ||
+                node == sinkTerminal_) {
+                continue;
+            }
+
+            EdgeHandle sinkHandle{};
+
+            auto& nodeAdj =
+                adjacency_[static_cast<std::size_t>(node)];
+
+            for (int edgeIndex = 0;
+                 edgeIndex < static_cast<int>(nodeAdj.size());
+                 ++edgeIndex) {
+
+                if (nodeAdj[static_cast<std::size_t>(edgeIndex)].to ==
+                    sinkTerminal_) {
+                    sinkHandle = EdgeHandle{node, edgeIndex};
+                    break;
+                }
+            }
+
+            if (!sinkHandle.valid()) {
+                continue;
+            }
+
+            Edge& sinkEdge = edge(sinkHandle);
+
+            const float sourceResidual = sourceEdge.residual;
+            const float sinkResidual = sinkEdge.residual;
+
+            // Exact Adobe two-terminal path cancellation.
+            const float pushed =
+                std::min(sourceResidual, sinkResidual);
+
+            if (pushed > 0.0f) {
+                sourceEdge.residual -= pushed;
+                reverseEdge(sourceHandle).residual += pushed;
+
+                sinkEdge.residual -= pushed;
+                reverseEdge(sinkHandle).residual += pushed;
+
+                flow_ += pushed;
+            }
+
+            NodeState& state = nodeState(node);
+
+            // Adobe tests the remaining terminal residuals.
+            //
+            // SOURCE residual wins when positive. If SOURCE is exhausted,
+            // a positive SINK residual seeds the sink tree. Equal terminal
+            // capacities therefore cancel completely and leave the node
+            // FREE.
+            if (sourceEdge.residual > 0.0f) {
+                state.tree = Tree::Source;
+
+                // The constructor/grow representation stores the reverse
+                // edge as the SOURCE-side parent.
+                state.parentEdge =
+                    EdgeHandle{
+                        sourceEdge.to,
+                        sourceEdge.reverse
+                    };
+
+                state.orphanParent = false;
+                state.distance = 1;
+                state.timestamp = timestamp_;
+
+                activate(node);
+            }
+            else if (sinkEdge.residual > 0.0f) {
+                state.tree = Tree::Sink;
+                state.parentEdge = sinkHandle;
+                state.orphanParent = false;
+                state.distance = 1;
+                state.timestamp = timestamp_;
+
+                activate(node);
+            }
+        }
+
+        // Adobe explicitly removes both terminal nodes from the active
+        // list after constructing the initial forest.
+        deactivate(sourceTerminal_);
+        deactivate(sinkTerminal_);
+    }
+
+    void initializeSolverState()
+    {
+        if (sourceTerminal_ < 0 || sinkTerminal_ < 0) {
+            throw std::logic_error(
+                "AdobeBKGraph::initializeSolverState without terminals"
+            );
+        }
+
+        active_.clear();
+        orphans_.clear();
+        terminalRecheck_.clear();
+
+        bridge_ = {};
+        flow_ = 0.0f;
+
+        // Recovered Kolmogorov constructor:
+        //
+        //   +0x3c = Source = 0
+        //   +0x3d = Sink   = 1
+        //   +0x3e = Free   = 2
+        //
+        // Every node begins FREE with no parent and an invalid
+        // distance/timestamp cache.
+        for (std::size_t i = 0; i < nodes_.size(); ++i) {
+            NodeState& state = nodes_[i];
+
+            state.tree = Tree::Free;
+            state.parentEdge = {};
+            state.orphanParent = false;
+            state.distance = 0;
+            state.timestamp = 0;
+            state.active = false;
+            state.orphan = false;
+        }
+
+        // Adobe constructor inserts SINK first, then SOURCE into the
+        // active list.
+        activate(sinkTerminal_);
+        activate(sourceTerminal_);
+
+        NodeState& source = nodeState(sourceTerminal_);
+        source.tree = Tree::Source;
+        source.parentEdge = {};
+        source.orphanParent = false;
+        source.distance = 0;
+        source.timestamp = 1;
+
+        NodeState& sink = nodeState(sinkTerminal_);
+        sink.tree = Tree::Sink;
+        sink.parentEdge = {};
+        sink.orphanParent = false;
+        sink.distance = 0;
+        sink.timestamp = 1;
+
+        // Kolmogorov +0x64.
+        timestamp_ = 1;
+    }
+
+    void activate(int node)
+    {
+        NodeState& state = nodeState(node);
+
+        if (state.active) {
+            return;
+        }
+
+        state.active = true;
+        active_.push_back(node);
+    }
+
+    void deactivate(int node)
+    {
+        NodeState& state = nodeState(node);
+
+        if (!state.active) {
+            return;
+        }
+
+        state.active = false;
+
+        for (auto it = active_.begin(); it != active_.end(); ++it) {
+            if (*it == node) {
+                active_.erase(it);
+                break;
+            }
+        }
+    }
+
+    void makeOrphan(int node)
+    {
+        ++makeOrphanCallCount_;
+
+        NodeState& state = nodeState(node);
+
+        state.parentEdge = {};
+        state.orphanParent = true;
+
+        if (state.orphan) {
+            return;
+        }
+
+        state.orphan = true;
+        orphans_.push_back(node);
+    }
+
+    void initializeNode(
+        int node,
+        Tree tree,
+        EdgeHandle parentEdge,
+        std::uint32_t distance,
+        std::uint32_t timestamp,
+        bool active
+    )
+    {
+        NodeState& state = nodeState(node);
+
+        state.tree = tree;
+        state.parentEdge = parentEdge;
+        state.orphanParent = false;
+        state.distance = distance;
+        state.timestamp = timestamp;
+        state.orphan = false;
+
+        if (active) {
+            activate(node);
+        } else {
+            state.active = false;
+        }
+    }
+
+    bool grow()
+    {
+        bridge_ = {};
+
+        while (!active_.empty()) {
+            const int node = active_.front();
+            NodeState& nodeInfo = nodeState(node);
+
+            if (!nodeInfo.active) {
+                active_.pop_front();
+                continue;
+            }
+
+            auto& edges = adjacency_[static_cast<std::size_t>(node)];
+
+            for (int edgeIndex = 0;
+                 edgeIndex < static_cast<int>(edges.size());
+                 ++edgeIndex) {
+
+                const EdgeHandle handle{node, edgeIndex};
+                Edge& forward = edge(handle);
+
+                // Recovered Adobe grow():
+                // SOURCE tree tests the forward residual.
+                // SINK tree tests the reverse residual.
+                Edge& usable =
+                    nodeInfo.tree == Tree::Source
+                        ? forward
+                        : reverseEdge(handle);
+
+                if (!(usable.residual > 0.0f)) {
+                    continue;
+                }
+
+                const int neighbor = forward.to;
+                NodeState& neighborInfo = nodeState(neighbor);
+
+                if (neighborInfo.tree == Tree::Free) {
+                    neighborInfo.tree = nodeInfo.tree;
+
+                    // Adobe stores the reverse edge as the child's parent.
+                    Edge& reverse = reverseEdge(handle);
+                    neighborInfo.parentEdge =
+                        EdgeHandle{reverse.from, forward.reverse};
+                    neighborInfo.orphanParent = false;
+
+                    activate(neighbor);
+
+                    neighborInfo.distance = nodeInfo.distance + 1;
+                    neighborInfo.timestamp = nodeInfo.timestamp;
+                    continue;
+                }
+
+                if (neighborInfo.tree != nodeInfo.tree) {
+                    // SOURCE and SINK trees have met.
+                    bridge_ = handle;
+                    return true;
+                }
+
+                // Exact Adobe grow(): same-tree improvement changes
+                // only the parent edge. Distance/timestamp are not
+                // rewritten in this branch.
+                if (neighborInfo.timestamp <= nodeInfo.timestamp &&
+                    nodeInfo.distance < neighborInfo.distance) {
+
+                    Edge& reverse = reverseEdge(handle);
+                    neighborInfo.parentEdge =
+                        EdgeHandle{reverse.from, forward.reverse};
+                    neighborInfo.orphanParent = false;
+                }
+            }
+
+            deactivate(node);
+        }
+
+        return false;
+    }
+
+    static bool sameEdgeHandle(
+        const EdgeHandle& a,
+        const EdgeHandle& b
+    ) noexcept
+    {
+        return a.from == b.from &&
+               a.index == b.index;
+    }
+
+    bool originIsTerminal(
+        int node,
+        std::uint32_t& outDistance
+    )
+    {
+        outDistance = 0;
+
+        const Tree tree = nodeState(node).tree;
+
+        if (tree == Tree::Free) {
+            return false;
+        }
+
+        const int terminal =
+            tree == Tree::Source
+                ? sourceTerminal_
+                : sinkTerminal_;
+
+        int current = node;
+
+        NodeState& initial = nodeState(current);
+
+        if (initial.timestamp == timestamp_ ||
+            current == terminal) {
+
+            outDistance = initial.distance;
+        }
+        else {
+            std::uint32_t traversed = 0;
+
+            while (nodeState(current).timestamp != timestamp_ &&
+                   current != terminal) {
+
+                const NodeState& state = nodeState(current);
+
+                if (state.orphanParent ||
+                    !state.parentEdge.valid()) {
+                    return false;
+                }
+
+                current = edge(state.parentEdge).to;
+                ++traversed;
+            }
+
+            const int anchor = current;
+
+            outDistance =
+                nodeState(anchor).distance + traversed;
+
+            std::uint32_t distance = outDistance;
+            current = node;
+
+            // Cache the validated distance for each node on the path.
+            while (current != anchor) {
+                NodeState& state = nodeState(current);
+
+                state.distance = distance;
+                state.timestamp = timestamp_;
+
+                --distance;
+                current = edge(state.parentEdge).to;
+            }
+        }
+
+        if (current == terminal) {
+            NodeState& terminalState = nodeState(current);
+
+            terminalState.distance = 0;
+            terminalState.timestamp = timestamp_;
+        }
+
+        return true;
+    }
+
+    float augment()
+    {
+        if (!bridge_.valid()) {
+            throw std::logic_error("AdobeBKGraph::augment without bridge");
+        }
+
+        EdgeHandle bridge = bridge_;
+        Edge* bridgeEdge = &edge(bridge);
+
+        int sourceNode = bridge.from;
+        int sinkNode = bridgeEdge->to;
+
+        // Adobe orients +0x50 so that the bridge runs from the SOURCE
+        // tree toward the SINK tree.
+        if (nodeState(sinkNode).tree == Tree::Source) {
+            Edge& reverse = reverseEdge(bridge);
+            bridge = EdgeHandle{reverse.from, bridgeEdge->reverse};
+            bridge_ = bridge;
+            bridgeEdge = &edge(bridge);
+
+            sourceNode = bridge.from;
+            sinkNode = bridgeEdge->to;
+        }
+
+        float bottleneck = bridgeEdge->residual;
+
+        // SOURCE side.
+        //
+        // Adobe walks parent[node] toward the source terminal and tests
+        // the residual capacity of parent->reverse.
+        for (int node = sourceNode; node != sourceTerminal_;) {
+            const NodeState& state = nodeState(node);
+
+            if (!state.parentEdge.valid() || state.orphanParent) {
+                throw std::logic_error(
+                    "AdobeBKGraph::augment invalid SOURCE parent"
+                );
+            }
+
+            const Edge& parent = edge(state.parentEdge);
+            const Edge& reverse = reverseEdge(state.parentEdge);
+
+            if (reverse.residual < bottleneck) {
+                bottleneck = reverse.residual;
+            }
+
+            node = parent.to;
+        }
+
+        // SINK side.
+        //
+        // Adobe walks parent[node] toward the sink terminal and tests
+        // parent->residual directly.
+        for (int node = sinkNode; node != sinkTerminal_;) {
+            const NodeState& state = nodeState(node);
+
+            if (!state.parentEdge.valid() || state.orphanParent) {
+                throw std::logic_error(
+                    "AdobeBKGraph::augment invalid SINK parent"
+                );
+            }
+
+            const Edge& parent = edge(state.parentEdge);
+
+            if (parent.residual < bottleneck) {
+                bottleneck = parent.residual;
+            }
+
+            node = parent.to;
+        }
+
+        // Push through the SOURCE -> SINK bridge.
+        bridgeEdge = &edge(bridge);
+        Edge& bridgeReverse = reverseEdge(bridge);
+
+        bridgeEdge->residual -= bottleneck;
+        bridgeReverse.residual += bottleneck;
+
+        // Push through the SOURCE tree.
+        for (int node = sourceNode; node != sourceTerminal_;) {
+            NodeState& state = nodeState(node);
+            const EdgeHandle parentHandle = state.parentEdge;
+
+            Edge& parent = edge(parentHandle);
+            Edge& reverse = reverseEdge(parentHandle);
+
+            parent.residual += bottleneck;
+            reverse.residual -= bottleneck;
+
+            const int nextNode = parent.to;
+
+            // Exact Adobe behavior: direct float zero comparison.
+            if (reverse.residual == 0.0f) {
+                makeOrphan(node);
+            }
+
+            node = nextNode;
+        }
+
+        // Push through the SINK tree.
+        for (int node = sinkNode; node != sinkTerminal_;) {
+            NodeState& state = nodeState(node);
+            const EdgeHandle parentHandle = state.parentEdge;
+
+            Edge& parent = edge(parentHandle);
+            Edge& reverse = reverseEdge(parentHandle);
+
+            parent.residual -= bottleneck;
+            reverse.residual += bottleneck;
+
+            const int nextNode = parent.to;
+
+            // Exact Adobe behavior: direct float zero comparison.
+            if (parent.residual == 0.0f) {
+                makeOrphan(node);
+            }
+
+            node = nextNode;
+        }
+
+        // Adobe Kolmogorov +0x18.
+        flow_ += bottleneck;
+        return flow_;
+    }
+
+    void adopt()
+    {
+        ++adoptCallCount_;
+
+        while (!orphans_.empty()) {
+            const int orphan = orphans_.front();
+            orphans_.pop_front();
+
+            NodeState& orphanState = nodeState(orphan);
+            orphanState.orphan = false;
+
+            const Tree orphanTree = orphanState.tree;
+
+            if (orphanTree == Tree::Free) {
+                continue;
+            }
+
+            EdgeHandle bestParent{};
+            std::uint32_t bestDistance =
+                std::numeric_limits<std::uint32_t>::max();
+
+            // Search all adjacent nodes for the nearest valid parent
+            // belonging to the same tree.
+            auto& edges = adjacency_[static_cast<std::size_t>(orphan)];
+
+            for (int edgeIndex = 0;
+                 edgeIndex < static_cast<int>(edges.size());
+                 ++edgeIndex) {
+
+                const EdgeHandle outgoing{orphan, edgeIndex};
+                Edge& edgeToNeighbor = edge(outgoing);
+
+                const int neighbor = edgeToNeighbor.to;
+                NodeState& neighborState = nodeState(neighbor);
+
+                if (neighborState.tree != orphanTree) {
+                    continue;
+                }
+
+                // Adobe chooses residual direction according to tree:
+                //
+                // SOURCE orphan: neighbor -> orphan must have residual.
+                // SINK orphan:   orphan -> neighbor must have residual.
+                const float usableResidual =
+                    orphanTree == Tree::Source
+                        ? reverseEdge(outgoing).residual
+                        : edgeToNeighbor.residual;
+
+                if (!(usableResidual > 0.0f)) {
+                    continue;
+                }
+
+                std::uint32_t distance = 0;
+
+                if (!originIsTerminal(neighbor, distance)) {
+                    continue;
+                }
+
+                if (distance < bestDistance) {
+                    bestDistance = distance;
+
+                    // Parent edges point from child toward parent.
+                    bestParent = outgoing;
+                }
+            }
+
+            if (bestParent.valid()) {
+                orphanState.parentEdge = bestParent;
+                orphanState.orphanParent = false;
+                orphanState.distance = bestDistance + 1;
+                orphanState.timestamp = timestamp_;
+                continue;
+            }
+
+            // No valid parent exists. Adobe now detaches this node and
+            // examines same-tree neighbors for activation and orphaning.
+            for (int edgeIndex = 0;
+                 edgeIndex < static_cast<int>(edges.size());
+                 ++edgeIndex) {
+
+                const EdgeHandle outgoing{orphan, edgeIndex};
+                Edge& edgeToNeighbor = edge(outgoing);
+
+                const int neighbor = edgeToNeighbor.to;
+                NodeState& neighborState = nodeState(neighbor);
+
+                if (neighborState.tree != orphanTree) {
+                    continue;
+                }
+
+                const float usableResidual =
+                    orphanTree == Tree::Source
+                        ? reverseEdge(outgoing).residual
+                        : edgeToNeighbor.residual;
+
+                if (usableResidual > 0.0f) {
+                    activate(neighbor);
+                }
+
+                // If neighbor's parent edge leads to this orphan,
+                // neighbor becomes an orphan too.
+                if (neighborState.parentEdge.valid() &&
+                    !neighborState.orphanParent) {
+
+                    const Edge& neighborParent =
+                        edge(neighborState.parentEdge);
+
+                    if (neighborParent.to == orphan) {
+                        makeOrphan(neighbor);
+                    }
+                }
+            }
+
+            orphanState.tree = Tree::Free;
+            orphanState.parentEdge = {};
+            orphanState.orphanParent = false;
+
+            deactivate(orphan);
+
+            // Adobe stages detached nodes for the terminal-edge
+            // recheck performed after orphan adoption.
+            terminalRecheck_.push_back(orphan);
+        }
+
+        // Adobe adopt() second stage:
+        // reconsider detached nodes against the two terminal edges.
+        while (!terminalRecheck_.empty()) {
+            const int node = terminalRecheck_.front();
+            terminalRecheck_.pop_front();
+
+            NodeState& state = nodeState(node);
+
+            EdgeHandle sourceEdge{};
+            EdgeHandle sinkEdge{};
+
+            auto& edges =
+                adjacency_[static_cast<std::size_t>(node)];
+
+            for (int edgeIndex = 0;
+                 edgeIndex < static_cast<int>(edges.size());
+                 ++edgeIndex) {
+
+                const EdgeHandle handle{node, edgeIndex};
+                const Edge& candidate = edge(handle);
+
+                if (candidate.to == sourceTerminal_) {
+                    sourceEdge = handle;
+                }
+                else if (candidate.to == sinkTerminal_) {
+                    sinkEdge = handle;
+                }
+            }
+
+            // ARM 01000420 onward:
+            //
+            // For the source terminal Adobe takes the reverse of the
+            // node -> source edge, tests that reverse residual, and
+            // stores the reversed edge as the SOURCE-tree parent.
+            if (sourceEdge.valid()) {
+                const Edge& source = edge(sourceEdge);
+
+                const EdgeHandle sourceReverse{
+                    source.to,
+                    source.reverse
+                };
+
+                if (edge(sourceReverse).residual > 0.0f) {
+                    state.tree = Tree::Source;
+                    state.parentEdge = sourceReverse;
+                    state.orphanParent = false;
+
+                    activate(node);
+
+                    state.distance = 1;
+                    state.timestamp = timestamp_;
+                    continue;
+                }
+            }
+
+            // Sink is considered only when the source-terminal residual
+            // was not positive. Adobe stores this edge directly.
+            if (sinkEdge.valid() &&
+                edge(sinkEdge).residual > 0.0f) {
+
+                state.tree = Tree::Sink;
+                state.parentEdge = sinkEdge;
+                state.orphanParent = false;
+
+                activate(node);
+
+                state.distance = 1;
+                state.timestamp = timestamp_;
+            }
+        }
+    }
+
+    static void runRecoveredSolverSelfTest()
+    {
+        auto check = [](
+            const char* name,
+            float sourceCapacity,
+            float sinkCapacity,
+            float expectedFlow)
+        {
+            // Exact current AdobeBKGraph API:
+            // node 0 = source
+            // node 1 = pixel
+            // node 2 = sink
+            AdobeBKGraph graph(3);
+
+            const int source = 0;
+            const int pixel  = 1;
+            const int sink   = 2;
+
+            graph.setTerminals(source, sink);
+
+            graph.addEdge(
+                source,
+                pixel,
+                sourceCapacity,
+                0.0f
+            );
+
+            graph.addEdge(
+                pixel,
+                sink,
+                sinkCapacity,
+                0.0f
+            );
+
+            const float actual = graph.run();
+
+            if (std::fabs(actual - expectedFlow) > 1.0e-5f) {
+                throw std::runtime_error(
+                    std::string("AdobeBKGraph self-test failed: ") +
+                    name +
+                    " expected=" + std::to_string(expectedFlow) +
+                    " actual=" + std::to_string(actual)
+                );
+            }
+        };
+
+        check(
+            "balanced terminal path",
+            10.0f,
+            10.0f,
+            10.0f
+        );
+
+        check(
+            "sink bottleneck",
+            10.0f,
+            3.0f,
+            3.0f
+        );
+
+        check(
+            "source bottleneck",
+            3.0f,
+            10.0f,
+            3.0f
+        );
+
+
+        // This path cannot be completed by processLengthTwoPaths().
+        // It forces the recovered BK grow()/augment() path to execute.
+        {
+            AdobeBKGraph graph(4);
+
+            const int source = 0;
+            const int a      = 1;
+            const int b      = 2;
+            const int sink   = 3;
+
+            graph.setTerminals(source, sink);
+
+            // Adobe/ImageGraph topology gives every image node
+            // both terminal connections, including zero-capacity ones.
+            graph.addEdge(source, a, 10.0f, 0.0f);
+            graph.addEdge(a, sink,    0.0f, 0.0f);
+
+            graph.addEdge(source, b,  0.0f, 0.0f);
+            graph.addEdge(b, sink,   10.0f, 0.0f);
+
+            // N-link connecting the two image nodes.
+            graph.addEdge(a, b,       7.0f, 7.0f);
+
+            const float actual = graph.run();
+            const float expected = 7.0f;
+
+            if (std::fabs(actual - expected) > 1.0e-5f) {
+                throw std::runtime_error(
+                    std::string(
+                        "AdobeBKGraph grow/augment self-test failed"
+                    ) +
+                    " expected=" + std::to_string(expected) +
+                    " actual=" + std::to_string(actual)
+                );
+            }
+
+            if (graph.adoptCallCount_ == 0) {
+                throw std::runtime_error(
+                    "AdobeBKGraph diagnostic failed: adopt() was not called"
+                );
+            }
+
+        }
+
+        // Deliberately saturate a SOURCE-tree parent edge.
+        // processLengthTwoPaths() seeds A as SOURCE and B as SINK.
+        // grow() finds A -> B.  The 4-unit SOURCE parent is the
+        // bottleneck, so augment() must call makeOrphan(A).
+        {
+            AdobeBKGraph graph(4);
+
+            const int source = 0;
+            const int a = 1;
+            const int b = 2;
+            const int sink = 3;
+
+            graph.setTerminals(source, sink);
+
+            // Every image node has both Adobe terminal connections,
+            // including zero-capacity counterparts.
+            graph.addEdge(source, a, 4.0f, 0.0f);
+            graph.addEdge(a, sink, 0.0f, 0.0f);
+
+            graph.addEdge(source, b, 0.0f, 0.0f);
+            graph.addEdge(b, sink, 10.0f, 0.0f);
+
+            graph.addEdge(a, b, 10.0f, 10.0f);
+
+            const float actual = graph.run();
+            const float expected = 4.0f;
+
+            if (std::fabs(actual - expected) > 1.0e-5f) {
+                throw std::runtime_error(
+                    std::string(
+                        "AdobeBKGraph orphan self-test failed"
+                    ) +
+                    " expected=" + std::to_string(expected) +
+                    " actual=" + std::to_string(actual)
+                );
+            }
+
+            if (graph.makeOrphanCallCount_ == 0) {
+                throw std::runtime_error(
+                    "AdobeBKGraph orphan self-test failed: "
+                    "makeOrphan() was not called"
+                );
+            }
+
+            if (graph.adoptCallCount_ == 0) {
+                throw std::runtime_error(
+                    "AdobeBKGraph orphan self-test failed: "
+                    "adopt() was not called"
+                );
+            }
+        }
+    }
+
+private:
+    NodeState& nodeState(int node)
+    {
+        if (node < 0 ||
+            static_cast<std::size_t>(node) >= nodes_.size()) {
+            throw std::out_of_range("AdobeBKGraph node");
+        }
+
+        return nodes_[static_cast<std::size_t>(node)];
+    }
+
+    const NodeState& nodeState(int node) const
+    {
+        if (node < 0 ||
+            static_cast<std::size_t>(node) >= nodes_.size()) {
+            throw std::out_of_range("AdobeBKGraph node");
+        }
+
+        return nodes_[static_cast<std::size_t>(node)];
+    }
+
+    // Graph topology / residual network.
+    std::vector<std::vector<Edge>> adjacency_;
+
+    // Persistent BK tree state recovered from the ARMv7 solver.
+    std::vector<NodeState> nodes_;
+
+    // Adobe +0x2c active-node list.
+    std::list<int> active_;
+
+    // Adobe orphan processing performed by adopt().
+    std::list<int> orphans_;
+
+    // Detached nodes reconsidered against terminal edges after adoption.
+    std::list<int> terminalRecheck_;
+
+    // Adobe Kolmogorov +0x18.
+    float flow_ = 0.0f;
+
+    // Adobe Kolmogorov +0x64.
+    std::uint32_t timestamp_ = 0;
+
+    // Adobe Kolmogorov +0x50: edge joining source and sink trees.
+    EdgeHandle bridge_{};
+
+    // Terminal node IDs supplied to the Kolmogorov constructor.
+    int sourceTerminal_ = -1;
+    int sinkTerminal_ = -1;
+
+    // Temporary recovered-solver diagnostics.
+    std::uint32_t makeOrphanCallCount_ = 0;
+    std::uint32_t adoptCallCount_ = 0;
+};
+
+namespace {
+const bool adobeBKSelfTestPassed = []() {
+    AdobeBKGraph::runRecoveredSolverSelfTest();
+    return true;
+}();
+}
 
 double colorDistanceSquared(
     const GraphCut::Byte* image,

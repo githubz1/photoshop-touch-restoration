@@ -38,13 +38,45 @@ public:
         bool backgroundConstraint
     );
 
-    // Produces the binary Quick Selection mask:
+    // Build the persistent ImageGraph baseline.
     //
-    //   foreground / terminal 1 -> 0xFF
-    //   background / terminal 0 -> 0x00
+    // Adobe equivalent:
+    //   Create / BuildNodesSegmentation
+    //   SetLocalEnergies
+    //   SetNeighborEnergiesRGBType
+    void initialize(
+        const Byte* imageRGB,
+        int width,
+        int height,
+        const Byte* foregroundConstraints,
+        const Byte* backgroundConstraints
+    );
+
+    // Update frozen terminal energies only inside the supplied region.
     //
-    // This preserves the polarity recovered from
-    // TiledImageGraph::ReadSegmentationMask<unsigned char>().
+    // Adobe equivalent:
+    //   ImageGraph::SetFrozenEnergies<unsigned char>()
+    void updateFrozenEnergies(
+        const Byte* foregroundConstraints,
+        const Byte* backgroundConstraints,
+        int x,
+        int y,
+        int width,
+        int height
+    );
+
+    // Run one minimum cut on the retained graph and produce the
+    // binary Quick Selection mask.
+    //
+    // Adobe equivalent:
+    //   mincut_adjlist_graph<float>::CalculateMinimumCut()
+    void calculateMinimumCut(
+        std::vector<Byte>& outputMask
+    );
+
+    // Compatibility wrapper used by the existing tests/callers.
+    // First call initializes the graph. Later calls update the full
+    // image region, then perform one minimum cut.
     void segment(
         const Byte* imageRGB,
         int width,

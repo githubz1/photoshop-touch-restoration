@@ -56,7 +56,16 @@ public:
     int height() const noexcept { return height_; }
 
 private:
-    void stampBrushHit(
+    struct BrushRegion {
+        int x = 0;
+        int y = 0;
+        int width = 0;
+        int height = 0;
+    };
+
+    void ensureGraphInitialized();
+
+    BrushRegion stampBrushHit(
         int x,
         int y,
         int radius,
@@ -96,6 +105,7 @@ private:
     // the tool. Brush updates modify that existing graph rather than
     // constructing a new graph for every stroke batch.
     GraphCut graphCut_;
+    bool graphInitialized_ = false;
 
     // Semantic equivalent of ARMv7 QuickSelectTool +0xEC.
     bool foregroundMode_ = true;
