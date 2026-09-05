@@ -487,6 +487,137 @@ public:
         return flow_;
     }
 
+    float update()
+    {
+        // Adobe Kolmogorov::update():
+        //
+        // Dynamic terminal-capacity changes have already repaired/queued
+        // affected tree state before this entry point is called.
+        //
+        // Unlike run(), update() begins by advancing the timestamp and
+        // adopting any pending orphans before attempting to grow.
+        ++timestamp_;
+        adopt();
+
+        if (grow()) {
+            do {
+                ++timestamp_;
+
+                augment();
+                adopt();
+            }
+            while (grow());
+        }
+
+        return flow_;
+    }
+
+    void updateLengthTwoPath(
+        EdgeHandle sourceReverseHandle,
+        EdgeHandle sinkDirectHandle)
+    {
+        if (!sourceReverseHandle.valid() ||
+            !sinkDirectHandle.valid()) {
+            throw std::logic_error(
+                "AdobeBKGraph::updateLengthTwoPath invalid edge handle"
+            );
+        }
+
+        // Recovered Adobe Kolmogorov::update_length_two_path().
+        //
+        // sourceReverseHandle is the SOURCE -> node edge obtained by
+        // reversing the node -> SOURCE terminal edge.
+        //
+        // sinkDirectHandle is the node -> SINK terminal edge.
+        Edge& sourceEdge = edge(sourceReverseHandle);
+        Edge& sinkEdge = edge(sinkDirectHandle);
+
+        const int node = sourceEdge.to;
+
+        if (sinkEdge.from != node) {
+            throw std::logic_error(
+                "AdobeBKGraph::updateLengthTwoPath terminal-edge mismatch"
+            );
+        }
+
+        // Cancel any newly available SOURCE -> node -> SINK residual path.
+        const float pushed =
+            std::min(sourceEdge.residual, sinkEdge.residual);
+
+        if (pushed > 0.0f) {
+            sinkEdge.residual -= pushed;
+            reverseEdge(sinkDirectHandle).residual += pushed;
+
+            sourceEdge.residual -= pushed;
+            reverseEdge(sourceReverseHandle).residual += pushed;
+
+            flow_ += pushed;
+        }
+
+        NodeState& state = nodeState(node);
+
+        // If either updated terminal edge was the node's parent and its
+        // usable residual has just been exhausted, Adobe marks the node
+        // orphan for the next adopt() pass.
+        if (state.parentEdge.valid()) {
+            if (state.parentEdge.from == sourceReverseHandle.from &&
+                state.parentEdge.index == sourceReverseHandle.index &&
+                sourceEdge.residual == 0.0f) {
+                makeOrphan(node);
+            }
+            else if (
+                state.parentEdge.from == sinkDirectHandle.from &&
+                state.parentEdge.index == sinkDirectHandle.index &&
+                sinkEdge.residual == 0.0f) {
+                makeOrphan(node);
+            }
+        }
+
+        if (state.tree == Tree::Source) {
+            if (sinkEdge.residual > 0.0f) {
+                activate(node);
+            }
+
+            return;
+        }
+
+        if (state.tree == Tree::Sink) {
+            if (sourceEdge.residual > 0.0f) {
+                activate(node);
+            }
+
+            return;
+        }
+
+        if (state.tree != Tree::Free) {
+            return;
+        }
+
+        // SOURCE has precedence when both residuals are positive.
+        if (sourceEdge.residual > 0.0f) {
+            state.tree = Tree::Source;
+            state.parentEdge = sourceReverseHandle;
+            state.orphanParent = false;
+
+            activate(node);
+
+            state.distance = 1;
+            state.timestamp = timestamp_;
+            return;
+        }
+
+        if (sinkEdge.residual > 0.0f) {
+            state.tree = Tree::Sink;
+            state.parentEdge = sinkDirectHandle;
+            state.orphanParent = false;
+
+            activate(node);
+
+            state.distance = 1;
+            state.timestamp = timestamp_;
+        }
+    }
+
     void processLengthTwoPaths()
     {
         if (sourceTerminal_ < 0 || sinkTerminal_ < 0) {
@@ -1376,6 +1507,170 @@ public:
                 throw std::runtime_error(
                     "AdobeBKGraph orphan self-test failed: "
                     "adopt() was not called"
+                );
+            }
+        }
+
+        // Dynamic update_length_two_path() regression.
+        //
+        // Begin with a completely saturated 5-unit terminal path. Then
+        // expose three new residual units on both sides of the same image
+        // node and invoke Adobe's recovered dynamic length-two-path repair.
+        {
+            AdobeBKGraph graph(3);
+
+            const int source = 0;
+            const int pixel = 1;
+            const int sink = 2;
+
+            graph.setTerminals(source, sink);
+
+            const EdgeHandle sourceDirect =
+                graph.addEdge(source, pixel, 5.0f, 0.0f);
+
+            const EdgeHandle sinkDirect =
+                graph.addEdge(pixel, sink, 5.0f, 0.0f);
+
+            const float initialFlow = graph.run();
+
+            if (std::fabs(initialFlow - 5.0f) > 1.0e-5f) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic length-two-path self-test: "
+                    "initial flow mismatch"
+                );
+            }
+
+            // Adobe update_length_two_path() receives the reversed
+            // node->SOURCE terminal edge, i.e. SOURCE->node. In our graph
+            // that is exactly sourceDirect.
+            const EdgeHandle sourceTerminalEdge = sourceDirect;
+
+            // Simulate the residual state presented to
+            // update_length_two_path() after update_tweights().
+            graph.edge(sourceTerminalEdge).residual = 3.0f;
+            graph.edge(sinkDirect).residual = 3.0f;
+
+            graph.updateLengthTwoPath(
+                sourceTerminalEdge,
+                sinkDirect
+            );
+
+            if (std::fabs(graph.flow_ - 8.0f) > 1.0e-5f) {
+                throw std::runtime_error(
+                    std::string(
+                        "AdobeBKGraph dynamic length-two-path self-test: "
+                        "expected flow=8 actual="
+                    ) +
+                    std::to_string(graph.flow_)
+                );
+            }
+
+            if (graph.edge(sourceTerminalEdge).residual != 0.0f ||
+                graph.edge(sinkDirect).residual != 0.0f) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic length-two-path self-test: "
+                    "forward residuals were not cancelled"
+                );
+            }
+
+            if (std::fabs(
+                    graph.reverseEdge(sourceTerminalEdge).residual - 8.0f
+                ) > 1.0e-5f ||
+                std::fabs(
+                    graph.reverseEdge(sinkDirect).residual - 8.0f
+                ) > 1.0e-5f) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic length-two-path self-test: "
+                    "reverse residuals were not updated"
+                );
+            }
+        }
+
+
+        // Dynamic orphan regression.
+        //
+        // Construct an existing SOURCE-tree pixel whose parent is the
+        // SOURCE->pixel terminal edge.  update_length_two_path() then
+        // consumes the last residual unit on that parent edge. Adobe must
+        // immediately mark the pixel orphan; update() must subsequently
+        // enter adopt() and repair the queued dynamic state.
+        {
+            AdobeBKGraph graph(3);
+
+            const int source = 0;
+            const int pixel = 1;
+            const int sink = 2;
+
+            graph.setTerminals(source, sink);
+
+            const EdgeHandle sourceTerminalEdge =
+                graph.addEdge(source, pixel, 1.0f, 0.0f);
+
+            const EdgeHandle sinkDirect =
+                graph.addEdge(pixel, sink, 1.0f, 0.0f);
+
+            graph.initializeSolverState();
+
+            graph.initializeNode(
+                pixel,
+                Tree::Source,
+                sourceTerminalEdge,
+                1,
+                graph.timestamp_,
+                false
+            );
+
+            const std::size_t orphanCallsBefore =
+                graph.makeOrphanCallCount_;
+
+            const std::size_t adoptCallsBefore =
+                graph.adoptCallCount_;
+
+            graph.updateLengthTwoPath(
+                sourceTerminalEdge,
+                sinkDirect
+            );
+
+            if (graph.makeOrphanCallCount_ !=
+                orphanCallsBefore + 1) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic orphan self-test: "
+                    "parent saturation did not create orphan"
+                );
+            }
+
+            const NodeState& orphanState =
+                graph.nodeState(pixel);
+
+            if (!orphanState.orphan ||
+                !orphanState.orphanParent ||
+                orphanState.parentEdge.valid()) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic orphan self-test: "
+                    "orphan state mismatch"
+                );
+            }
+
+            if (std::fabs(graph.flow_ - 1.0f) > 1.0e-5f) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic orphan self-test: "
+                    "length-two flow mismatch"
+                );
+            }
+
+            const float updatedFlow = graph.update();
+
+            if (std::fabs(updatedFlow - 1.0f) > 1.0e-5f) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic orphan self-test: "
+                    "update changed completed flow"
+                );
+            }
+
+            if (graph.adoptCallCount_ <= adoptCallsBefore) {
+                throw std::runtime_error(
+                    "AdobeBKGraph dynamic orphan self-test: "
+                    "update did not enter adopt"
                 );
             }
         }
