@@ -461,6 +461,16 @@ public:
         sinkTerminal_ = sinkTerminal;
     }
 
+    float calculateMinimumCut()
+    {
+        // Adobe mincut_adjlist_graph<float>::CalculateMinimumCut():
+        // first solve constructs/runs the persistent solver;
+        // subsequent solves update that same solver state.
+        return solverInitialized_
+            ? update()
+            : run();
+    }
+
     float run()
     {
         // Adobe Kolmogorov::run():
@@ -2085,6 +2095,11 @@ public:
         }
     }
 
+    bool isSourceTree(int node) const
+    {
+        return nodeState(node).tree == Tree::Source;
+    }
+
 private:
     NodeState& nodeState(int node)
     {
@@ -2201,18 +2216,13 @@ double GraphCut::adobeNeighborWeight(
 
 
 struct GraphCut::Impl {
-    // Persistent graph state owned for the lifetime of GraphCut.
-    std::unique_ptr<FlowGraph> graph;
+    // Persistent Adobe Boykov-Kolmogorov graph state.
+    std::unique_ptr<AdobeBKGraph> graph;
 
     int width = 0;
     int height = 0;
     int source = -1;
     int sink = -1;
-
-    // Stable handles for Adobe terminal 0 and terminal 1 edges.
-    // Indexed by image pixel.
-    std::vector<EdgeHandle> terminal0Edges;
-    std::vector<EdgeHandle> terminal1Edges;
 
     bool initialized = false;
 
@@ -2224,9 +2234,6 @@ struct GraphCut::Impl {
         height = 0;
         source = -1;
         sink = -1;
-
-        terminal0Edges.clear();
-        terminal1Edges.clear();
 
         initialized = false;
     }
@@ -2349,12 +2356,12 @@ void GraphCut::initialize(
     impl_->sink = sink;
 
     impl_->graph =
-        std::make_unique<FlowGraph>(sink + 1);
+        std::make_unique<AdobeBKGraph>(
+            static_cast<std::size_t>(sink + 1)
+        );
 
-    impl_->terminal0Edges.resize(pixelCount);
-    impl_->terminal1Edges.resize(pixelCount);
-
-    FlowGraph& graph = *impl_->graph;
+    AdobeBKGraph& graph = *impl_->graph;
+    graph.setTerminals(source, sink);
 
     auto neighborWeight =
         [&](std::size_t a, std::size_t b) -> double
@@ -2387,19 +2394,19 @@ void GraphCut::initialize(
             //
             // terminal0 -> pixel -> sink
             // terminal1 -> source -> pixel
-            impl_->terminal0Edges[index] =
-                graph.addEdge(
-                    current,
-                    sink,
-                    terminal.terminal0
-                );
+            graph.addEdge(
+                current,
+                sink,
+                static_cast<float>(terminal.terminal0),
+                0.0f
+            );
 
-            impl_->terminal1Edges[index] =
-                graph.addEdge(
-                    source,
-                    current,
-                    terminal.terminal1
-                );
+            graph.addEdge(
+                source,
+                current,
+                static_cast<float>(terminal.terminal1),
+                0.0f
+            );
 
             // Exact active QuickSelect topology:
             // four-neighbor horizontal/vertical n-links.
@@ -2413,10 +2420,11 @@ void GraphCut::initialize(
                         static_cast<std::size_t>(right)
                     );
 
-                graph.addUndirectedEdge(
+                graph.addEdge(
                     current,
                     right,
-                    weight
+                    static_cast<float>(weight),
+                    static_cast<float>(weight)
                 );
             }
 
@@ -2430,10 +2438,11 @@ void GraphCut::initialize(
                         static_cast<std::size_t>(below)
                     );
 
-                graph.addUndirectedEdge(
+                graph.addEdge(
                     current,
                     below,
-                    weight
+                    static_cast<float>(weight),
+                    static_cast<float>(weight)
                 );
             }
         }
@@ -2486,7 +2495,7 @@ void GraphCut::updateFrozenEnergies(
         return;
     }
 
-    FlowGraph& graph =
+    AdobeBKGraph& graph =
         *impl_->graph;
 
     for (int py = minY; py < maxY; ++py) {
@@ -2518,14 +2527,14 @@ void GraphCut::updateFrozenEnergies(
                     foreground ? false : background
                 );
 
-            graph.updateAdobeTerminalCapacity(
-                impl_->terminal0Edges[index],
-                terminal.terminal0
-            );
-
-            graph.updateAdobeTerminalCapacity(
-                impl_->terminal1Edges[index],
-                terminal.terminal1
+            // update_tweights(node, sourceCapacity, sinkCapacity)
+            //
+            // Adobe terminal 1 = SOURCE -> pixel.
+            // Adobe terminal 0 = pixel -> SINK.
+            graph.updateTweights(
+                static_cast<int>(index),
+                static_cast<float>(terminal.terminal1),
+                static_cast<float>(terminal.terminal0)
             );
         }
     }
@@ -2542,20 +2551,16 @@ void GraphCut::calculateMinimumCut(
         );
     }
 
-    FlowGraph& graph =
+    AdobeBKGraph& graph =
         *impl_->graph;
 
     // Adobe equivalent:
-    // mincut_adjlist_graph<float>::CalculateMinimumCut()
-    graph.maxFlow(
-        impl_->source,
-        impl_->sink
-    );
-
-    const std::vector<bool> foreground =
-        graph.sourceReachable(
-            impl_->source
-        );
+    // mincut_adjlist_graph<float>::CalculateMinimumCut().
+    //
+    // The graph owns persistent solver state:
+    // first cut -> run()
+    // later cuts -> update()
+    graph.calculateMinimumCut();
 
     const std::size_t pixelCount =
         static_cast<std::size_t>(impl_->width) *
@@ -2564,8 +2569,11 @@ void GraphCut::calculateMinimumCut(
     outputMask.resize(pixelCount);
 
     for (std::size_t i = 0; i < pixelCount; ++i) {
+        // Adobe class 1 / SOURCE tree is the foreground result.
         outputMask[i] =
-            foreground[i] ? 0xFF : 0x00;
+            graph.isSourceTree(static_cast<int>(i))
+                ? 0xFF
+                : 0x00;
     }
 }
 
