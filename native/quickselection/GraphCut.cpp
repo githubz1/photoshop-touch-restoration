@@ -470,6 +470,7 @@ public:
         // SOURCE -> node -> SINK paths and constructs the initial forest.
         initializeSolverState();
         processLengthTwoPaths();
+        solverInitialized_ = true;
 
         // Unlike update(), the initial run does NOT call adopt()
         // before its first grow().
@@ -510,6 +511,197 @@ public:
         }
 
         return flow_;
+    }
+
+    void updateTweights(
+        int node,
+        float sourceCapacity,
+        float sinkCapacity)
+    {
+        if (sourceTerminal_ < 0 || sinkTerminal_ < 0) {
+            throw std::logic_error(
+                "AdobeBKGraph::updateTweights without terminals"
+            );
+        }
+
+        if (node < 0 ||
+            static_cast<std::size_t>(node) >= adjacency_.size() ||
+            node == sourceTerminal_ ||
+            node == sinkTerminal_) {
+            throw std::out_of_range(
+                "AdobeBKGraph::updateTweights node"
+            );
+        }
+
+        // Recovered Adobe
+        // mincut_adjlist_graph<float>::update_tweights().
+        //
+        // Locate the same terminal-edge orientations used by the ARM
+        // implementation:
+        //
+        //     SOURCE -> node
+        //     node -> SINK
+        EdgeHandle sourceHandle{};
+        EdgeHandle sinkHandle{};
+
+        auto& nodeAdj =
+            adjacency_[static_cast<std::size_t>(node)];
+
+        for (int edgeIndex = 0;
+             edgeIndex < static_cast<int>(nodeAdj.size());
+             ++edgeIndex) {
+
+            Edge& candidate =
+                nodeAdj[static_cast<std::size_t>(edgeIndex)];
+
+            if (candidate.to == sourceTerminal_) {
+                const EdgeHandle nodeToSource{
+                    node,
+                    edgeIndex
+                };
+
+                Edge& reverse = reverseEdge(nodeToSource);
+
+                sourceHandle = EdgeHandle{
+                    reverse.from,
+                    candidate.reverse
+                };
+            }
+            else if (candidate.to == sinkTerminal_) {
+                sinkHandle = EdgeHandle{
+                    node,
+                    edgeIndex
+                };
+            }
+        }
+
+        if (!sourceHandle.valid() ||
+            !sinkHandle.valid()) {
+            throw std::logic_error(
+                "AdobeBKGraph::updateTweights missing terminal edge"
+            );
+        }
+
+        Edge& sourceEdge = edge(sourceHandle);
+        Edge& sinkEdge = edge(sinkHandle);
+
+        // Adobe edge layout:
+        //
+        //   +0x08 assigned/original capacity
+        //   +0x0c residual capacity
+        //
+        // The ARM routine canonicalizes the two terminal edges as one
+        // coupled pair rather than independently applying capacity deltas.
+        if (sourceCapacity < sinkCapacity) {
+            float difference =
+                sourceEdge.assignedCapacity -
+                sourceEdge.residual;
+
+            if (difference > sourceCapacity) {
+                const float delta =
+                    difference - sourceCapacity;
+
+                sourceEdge.residual = 0.0f;
+
+                sinkEdge.assignedCapacity += delta;
+                sinkEdge.residual += delta;
+            }
+            else {
+                sourceEdge.assignedCapacity =
+                    sourceCapacity;
+
+                sourceEdge.residual =
+                    sourceCapacity - difference;
+            }
+
+            difference =
+                sinkEdge.assignedCapacity -
+                sinkEdge.residual;
+
+            const float target =
+                (sinkCapacity - sourceCapacity) +
+                sourceEdge.assignedCapacity;
+
+            if (difference > target) {
+                const float delta =
+                    difference - target;
+
+                sinkEdge.assignedCapacity =
+                    difference;
+
+                sinkEdge.residual = 0.0f;
+
+                sourceEdge.assignedCapacity += delta;
+                sourceEdge.residual += delta;
+            }
+            else {
+                sinkEdge.assignedCapacity =
+                    target;
+
+                sinkEdge.residual =
+                    target - difference;
+            }
+        }
+        else {
+            float difference =
+                sinkEdge.assignedCapacity -
+                sinkEdge.residual;
+
+            if (difference > sinkCapacity) {
+                const float delta =
+                    difference - sinkCapacity;
+
+                sinkEdge.residual = 0.0f;
+
+                sourceEdge.assignedCapacity += delta;
+                sourceEdge.residual += delta;
+            }
+            else {
+                sinkEdge.assignedCapacity =
+                    sinkCapacity;
+
+                sinkEdge.residual =
+                    sinkCapacity - difference;
+            }
+
+            difference =
+                sourceEdge.assignedCapacity -
+                sourceEdge.residual;
+
+            const float target =
+                (sourceCapacity - sinkCapacity) +
+                sinkEdge.assignedCapacity;
+
+            if (difference > target) {
+                const float delta =
+                    difference - target;
+
+                sourceEdge.assignedCapacity =
+                    difference;
+
+                sourceEdge.residual = 0.0f;
+
+                sinkEdge.assignedCapacity += delta;
+                sinkEdge.residual += delta;
+            }
+            else {
+                sourceEdge.assignedCapacity =
+                    target;
+
+                sourceEdge.residual =
+                    target - difference;
+            }
+        }
+
+        // Quick Selection creates its graph in Adobe's dynamic mode.
+        // Once a persistent Kolmogorov solver exists, update_tweights()
+        // performs exactly one dynamic two-terminal-path repair.
+        if (solverInitialized_) {
+            updateLengthTwoPath(
+                sourceHandle,
+                sinkHandle
+            );
+        }
     }
 
     void updateLengthTwoPath(
@@ -1674,6 +1866,223 @@ public:
                 );
             }
         }
+
+        // Recovered update_tweights() scalar regressions.
+        //
+        // Each vector is derived directly from the ARMv7 implementation.
+        // Keep solverInitialized_ false here so these cases test only the
+        // coupled terminal-capacity canonicalization, independently of
+        // updateLengthTwoPath().
+        struct TweightCase {
+            float sourceAssigned;
+            float sourceResidual;
+            float sinkAssigned;
+            float sinkResidual;
+            float newSource;
+            float newSink;
+
+            float expectedSourceAssigned;
+            float expectedSourceResidual;
+            float expectedSinkAssigned;
+            float expectedSinkResidual;
+        };
+
+        const TweightCase tweightCases[] = {
+            // sourceCapacity < sinkCapacity, first comparison <=
+            {5.0f, 3.0f, 7.0f, 2.0f, 4.0f, 9.0f,
+             4.0f, 2.0f, 9.0f, 4.0f},
+
+            // sourceCapacity < sinkCapacity, first comparison >
+            {10.0f, 2.0f, 7.0f, 3.0f, 4.0f, 9.0f,
+             10.0f, 0.0f, 15.0f, 11.0f},
+
+            // sourceCapacity >= sinkCapacity, first comparison <=
+            {7.0f, 2.0f, 5.0f, 3.0f, 9.0f, 4.0f,
+             9.0f, 4.0f, 4.0f, 2.0f},
+
+            // sourceCapacity >= sinkCapacity, first comparison >
+            {7.0f, 3.0f, 10.0f, 2.0f, 9.0f, 4.0f,
+             15.0f, 11.0f, 10.0f, 0.0f},
+        };
+
+        for (const TweightCase& test : tweightCases) {
+            AdobeBKGraph graph(3);
+
+            const int source = 0;
+            const int pixel = 1;
+            const int sink = 2;
+
+            graph.setTerminals(source, sink);
+
+            const EdgeHandle sourceDirect =
+                graph.addEdge(
+                    source,
+                    pixel,
+                    test.sourceAssigned,
+                    0.0f
+                );
+
+            const EdgeHandle sinkDirect =
+                graph.addEdge(
+                    pixel,
+                    sink,
+                    test.sinkAssigned,
+                    0.0f
+                );
+
+            Edge& sourceEdge = graph.edge(sourceDirect);
+            Edge& sinkEdge = graph.edge(sinkDirect);
+
+            sourceEdge.assignedCapacity =
+                test.sourceAssigned;
+            sourceEdge.residual =
+                test.sourceResidual;
+
+            sinkEdge.assignedCapacity =
+                test.sinkAssigned;
+            sinkEdge.residual =
+                test.sinkResidual;
+
+            graph.updateTweights(
+                pixel,
+                test.newSource,
+                test.newSink
+            );
+
+            const auto close = [](float a, float b) {
+                return std::fabs(a - b) <= 1.0e-5f;
+            };
+
+            if (!close(
+                    sourceEdge.assignedCapacity,
+                    test.expectedSourceAssigned) ||
+                !close(
+                    sourceEdge.residual,
+                    test.expectedSourceResidual) ||
+                !close(
+                    sinkEdge.assignedCapacity,
+                    test.expectedSinkAssigned) ||
+                !close(
+                    sinkEdge.residual,
+                    test.expectedSinkResidual)) {
+
+                throw std::runtime_error(
+                    "AdobeBKGraph update_tweights scalar self-test mismatch"
+                );
+            }
+        }
+
+        // Dynamic update_tweights() + update() must produce the same
+        // minimum cut as rebuilding the graph with the new terminal
+        // capacities and performing a fresh run().
+        struct DynamicTweightCase {
+            float sourceToA;
+            float aToSink;
+            float sourceToB;
+            float bToSink;
+        };
+
+        const DynamicTweightCase dynamicCases[] = {
+            {9.0f, 1.0f, 1.0f, 9.0f},
+            {2.0f, 8.0f, 8.0f, 2.0f},
+            {7.0f, 3.0f, 6.0f, 4.0f},
+            {1.0f, 10.0f, 10.0f, 1.0f},
+        };
+
+        for (const DynamicTweightCase& test : dynamicCases) {
+            constexpr int source = 0;
+            constexpr int nodeA = 1;
+            constexpr int nodeB = 2;
+            constexpr int sink = 3;
+
+            // Persistent graph starts from the topology/capacities already
+            // used by the recovered grow/augment/adopt regression.
+            AdobeBKGraph persistent(4);
+            persistent.setTerminals(source, sink);
+
+            persistent.addEdge(source, nodeA, 8.0f, 0.0f);
+            persistent.addEdge(nodeA, sink, 2.0f, 0.0f);
+
+            persistent.addEdge(source, nodeB, 3.0f, 0.0f);
+            persistent.addEdge(nodeB, sink, 7.0f, 0.0f);
+
+            persistent.addEdge(nodeA, nodeB, 5.0f, 5.0f);
+
+            persistent.run();
+
+            persistent.updateTweights(
+                nodeA,
+                test.sourceToA,
+                test.aToSink
+            );
+
+            persistent.updateTweights(
+                nodeB,
+                test.sourceToB,
+                test.bToSink
+            );
+
+            const float dynamicFlow =
+                persistent.update();
+
+            // Reference solve: identical topology, but constructed directly
+            // with the updated terminal capacities.
+            AdobeBKGraph fresh(4);
+            fresh.setTerminals(source, sink);
+
+            fresh.addEdge(
+                source,
+                nodeA,
+                test.sourceToA,
+                0.0f
+            );
+            fresh.addEdge(
+                nodeA,
+                sink,
+                test.aToSink,
+                0.0f
+            );
+
+            fresh.addEdge(
+                source,
+                nodeB,
+                test.sourceToB,
+                0.0f
+            );
+            fresh.addEdge(
+                nodeB,
+                sink,
+                test.bToSink,
+                0.0f
+            );
+
+            fresh.addEdge(nodeA, nodeB, 5.0f, 5.0f);
+
+            const float freshFlow =
+                fresh.run();
+
+            // The recovered dynamic path updates existing residual/flow
+            // state rather than rebuilding it. Validate the observable
+            // minimum-cut classification against a fresh solve here;
+            // retain both flow results only as diagnostic values.
+            (void)dynamicFlow;
+            (void)freshFlow;
+
+            for (const int node : {nodeA, nodeB}) {
+                const Tree dynamicTree =
+                    persistent.nodeState(node).tree;
+
+                const Tree freshTree =
+                    fresh.nodeState(node).tree;
+
+                if (dynamicTree != freshTree) {
+                    throw std::runtime_error(
+                        "AdobeBKGraph dynamic update_tweights self-test: "
+                        "cut differs from fresh solve"
+                    );
+                }
+            }
+        }
     }
 
 private:
@@ -1724,6 +2133,11 @@ private:
     // Terminal node IDs supplied to the Kolmogorov constructor.
     int sourceTerminal_ = -1;
     int sinkTerminal_ = -1;
+
+    // True after the initial recovered Kolmogorov run has established
+    // persistent residual/tree state. Dynamic terminal updates then repair
+    // that state through updateLengthTwoPath().
+    bool solverInitialized_ = false;
 
     // Temporary recovered-solver diagnostics.
     std::uint32_t makeOrphanCallCount_ = 0;
