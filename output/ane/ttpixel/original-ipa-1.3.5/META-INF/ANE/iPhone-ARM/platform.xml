@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<platform xmlns="http://ns.adobe.com/air/extension/3.5">
+    <sdkVersion>5.0</sdkVersion>
+    <linkerOptions>
+	    <!-- to use the Twitter framework -->
+        <!-- <option>-framework Twitter</option> -->
+		<!-- to link with the libiconv.dylib -->
+        <!-- <option>-liconv</option> -->
+		<option>-ios_version_min 5.0</option> 
+        <option>-no_pie</option>
+        <option>-framework CoreBluetooth</option>
+        <option>-framework JaJa-SDK</option>
+        <option>-framework CoreAudio</option>
+        <option>-framework AudioToolbox</option>
+        <option>-framework MessageUI</option>
+        <option>-framework AssetsLibrary</option>
+        <option>-framework Accelerate</option>
+        <option>-framework ImageIO</option>
+        <option>-framework AVFoundation</option>
+        <option>-framework StoreKit</option>
+        <option>-framework CoreImage</option>
+        <option>-framework Security</option>
+        <option>-lT1PogoManager</option>
+        <!-- for Content Aware Fill
+        <option>-lc++</option>
+        <option>-lLIR</option>
+        <option>-lAdbePMM</option>
+        <option>-lPNG_IO</option>
+        <option>-lPMMIOSCore</option>
+         -->
+    </linkerOptions>
+</platform>

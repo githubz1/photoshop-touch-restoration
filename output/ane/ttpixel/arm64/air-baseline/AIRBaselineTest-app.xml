@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://ns.adobe.com/air/application/51.3">
+    <id>com.kadiryalcin1994.ZONR</id>
+    <versionNumber>1.0.0</versionNumber>
+    <filename>AIRBaselineTest</filename>
+
+    <initialWindow>
+        <content>AIRBaselineTest.swf</content>
+        <visible>true</visible>
+    </initialWindow>
+</application>

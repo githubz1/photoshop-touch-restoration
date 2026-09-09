@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<extension xmlns="http://ns.adobe.com/air/extension/3.5">
+	<id>com.adobe.ttpixel.extension</id>
+	<versionNumber>1</versionNumber>
+	<platforms>
+		<platform name="iPhone-ARM">
+			<applicationDeployment>
+				<nativeLibrary>libTTPixelExtensionCocoaTouch.a</nativeLibrary>
+				<initializer>TTPixelExtensionInitializer</initializer>
+				<finalizer>TTPixelExtensionFinalizer</finalizer>
+			</applicationDeployment>
+		</platform>
+
+	</platforms>
+</extension>

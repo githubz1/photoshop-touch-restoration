@@ -118,6 +118,7 @@ class ConstantPool:
     ints: List[int] = field(default_factory=lambda: [0])
     uints: List[int] = field(default_factory=lambda: [0])
     doubles: List[float] = field(default_factory=lambda: [0.0])
+    floats: List[float] = field(default_factory=lambda: [0.0])
     strings: List[str] = field(default_factory=lambda: [""])
     namespaces: List[Optional[Namespace]] = field(
         default_factory=lambda: [None]

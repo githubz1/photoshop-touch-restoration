@@ -46,6 +46,9 @@ class BinaryReader:
     def read_u16_le(self) -> int:
         return struct.unpack("<H", self.read(2))[0]
 
+    def read_f32_le(self) -> float:
+        return struct.unpack("<f", self.read(4))[0]
+
     def read_f64_le(self) -> float:
         return struct.unpack("<d", self.read(8))[0]
 
@@ -166,6 +169,20 @@ class ABCParser:
         for _ in range(1, count):
             self.model.pool.doubles.append(
                 self.reader.read_f64_le()
+            )
+
+        return self
+
+    def parse_float_pool(self):
+        # ABC 47.16 introduced the float constant pool.
+        if (self.major, self.minor) < (47, 16):
+            return self
+
+        count = self.read_u30()
+
+        for _ in range(1, count):
+            self.model.pool.floats.append(
+                self.reader.read_f32_le()
             )
 
         return self
@@ -358,22 +375,22 @@ class ABCParser:
                 qname_index = self.read_u30()
                 parameter_count = self.read_u30()
 
-                validate_index(
-                    qname_index,
-                    self.model.pool.multinames,
-                    "Multiname",
-                )
+                if qname_index >= count:
+                    raise ValueError(
+                        f"Multiname index {qname_index} is out of range "
+                        f"at offset 0x{self.reader.offset:X}"
+                    )
 
                 parameter_indices = []
 
                 for _ in range(parameter_count):
                     parameter_index = self.read_u30()
 
-                    validate_index(
-                        parameter_index,
-                        self.model.pool.multinames,
-                        "Multiname",
-                    )
+                    if parameter_index >= count:
+                        raise ValueError(
+                            f"Multiname index {parameter_index} is out of range "
+                            f"at offset 0x{self.reader.offset:X}"
+                        )
 
                     parameter_indices.append(parameter_index)
 

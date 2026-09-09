@@ -1,0 +1,849 @@
+#include "QuickSelectionFRE.hpp"
+
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <cstring>
+#include <strings.h>
+#include <limits>
+#include <memory>
+#include <vector>
+
+#include "../quickselection/QuickSelectTool.hpp"
+
+namespace {
+
+using pstouch::quickselection::QuickSelectTool;
+
+struct QuickSelectionContext {
+    std::unique_ptr<QuickSelectTool> tool;
+};
+
+QuickSelectionContext* state(FREContext ctx)
+{
+    void* data = nullptr;
+
+    if (ctx == nullptr ||
+        FREGetContextNativeData(ctx, &data) != FRE_OK) {
+        return nullptr;
+    }
+
+    return static_cast<QuickSelectionContext*>(data);
+}
+
+FREObject makeBool(bool value)
+{
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromBool(value ? 1u : 0u, &result) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+bool getInt32(FREObject object, int& value)
+{
+    int32_t v = 0;
+
+    if (FREGetObjectAsInt32(object, &v) != FRE_OK) {
+        return false;
+    }
+
+    value = static_cast<int>(v);
+    return true;
+}
+
+bool getUint32(FREObject object, uint32_t& value)
+{
+    return FREGetObjectAsUint32(object, &value) == FRE_OK;
+}
+
+bool getBool(FREObject object, bool& value)
+{
+    uint32_t v = 0;
+
+    if (FREGetObjectAsBool(object, &v) != FRE_OK) {
+        return false;
+    }
+
+    value = v != 0;
+    return true;
+}
+
+bool checkedPixelCount(
+    int width,
+    int height,
+    std::size_t& count
+)
+{
+    if (width <= 0 || height <= 0) {
+        return false;
+    }
+
+    const std::size_t w = static_cast<std::size_t>(width);
+    const std::size_t h = static_cast<std::size_t>(height);
+
+    if (w > std::numeric_limits<std::size_t>::max() / h) {
+        return false;
+    }
+
+    count = w * h;
+    return true;
+}
+
+FREObject makeByteArray(
+    const uint8_t* bytes,
+    std::size_t size
+)
+{
+    if (bytes == nullptr ||
+        size > std::numeric_limits<uint32_t>::max()) {
+        return nullptr;
+    }
+
+    FREByteArray data{};
+    data.length = static_cast<uint32_t>(size);
+    data.bytes = const_cast<uint8_t*>(bytes);
+
+    FREObject result = nullptr;
+
+    if (FRENewByteArray(&data, &result) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+FREObject makeMaskResult(
+    const QuickSelectTool& tool,
+    const uint8_t* mask,
+    uint32_t format
+)
+{
+    if (mask == nullptr) {
+        return nullptr;
+    }
+
+    std::size_t count = 0;
+
+    if (!checkedPixelCount(tool.width(), tool.height(), count)) {
+        return nullptr;
+    }
+
+    // Recovered QuickSelectionCreateMaskResult behavior:
+    //
+    // format == 1:
+    //     zero     -> 0x00000000
+    //     non-zero -> 0xFFFFFFFF
+    //
+    // otherwise:
+    //     return the raw one-byte mask.
+    if (format != 1) {
+        return makeByteArray(mask, count);
+    }
+
+    if (count >
+        std::numeric_limits<std::size_t>::max() / 4u) {
+        return nullptr;
+    }
+
+    std::vector<uint8_t> argb(count * 4u);
+
+    for (std::size_t i = 0; i < count; ++i) {
+        const uint8_t value = mask[i] != 0 ? 0xFFu : 0x00u;
+
+        argb[i * 4u + 0u] = value;
+        argb[i * 4u + 1u] = value;
+        argb[i * 4u + 2u] = value;
+        argb[i * 4u + 3u] = value;
+    }
+
+    return makeByteArray(argb.data(), argb.size());
+}
+
+bool decodePoints(
+    FREObject array,
+    std::vector<int>& x,
+    std::vector<int>& y
+)
+{
+    uint32_t length = 0;
+
+    if (FREGetArrayLength(array, &length) != FRE_OK) {
+        return false;
+    }
+
+    // Original wrapper computes count = length >> 1.
+    const uint32_t count = length >> 1;
+
+    x.resize(count);
+    y.resize(count);
+
+    for (uint32_t i = 0; i < count; ++i) {
+        FREObject xObject = nullptr;
+        FREObject yObject = nullptr;
+
+        if (FREGetArrayElementAt(
+                array,
+                i * 2u,
+                &xObject
+            ) != FRE_OK ||
+            FREGetArrayElementAt(
+                array,
+                i * 2u + 1u,
+                &yObject
+            ) != FRE_OK) {
+            return false;
+        }
+
+        if (!getInt32(xObject, x[i]) ||
+            !getInt32(yObject, y[i])) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+FREObject createQuickSelectTool(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr || argc != 3) {
+        return makeBool(false);
+    }
+
+    int width = 0;
+    int height = 0;
+
+    if (!getInt32(argv[1], width) ||
+        !getInt32(argv[2], height)) {
+        return makeBool(false);
+    }
+
+    std::size_t pixelCount = 0;
+
+    if (!checkedPixelCount(width, height, pixelCount) ||
+        pixelCount >
+            std::numeric_limits<std::size_t>::max() / 4u ||
+        pixelCount >
+            std::numeric_limits<std::size_t>::max() / 3u) {
+        return makeBool(false);
+    }
+
+    FREByteArray input{};
+
+    if (FREAcquireByteArray(argv[0], &input) != FRE_OK) {
+        return makeBool(false);
+    }
+
+    const std::size_t requiredInput = pixelCount * 4u;
+
+    if (input.bytes == nullptr ||
+        static_cast<std::size_t>(input.length) < requiredInput) {
+        FREReleaseByteArray(argv[0]);
+        return makeBool(false);
+    }
+
+    // Exact TTQuickSelectToolManager conversion:
+    //
+    // input[i*4 + 0] ignored
+    // input[i*4 + 1] -> R plane
+    // input[i*4 + 2] -> G plane
+    // input[i*4 + 3] -> B plane
+    std::vector<uint8_t> planarRGB(pixelCount * 3u);
+
+    for (std::size_t i = 0; i < pixelCount; ++i) {
+        planarRGB[i] =
+            input.bytes[i * 4u + 1u];
+
+        planarRGB[pixelCount + i] =
+            input.bytes[i * 4u + 2u];
+
+        planarRGB[pixelCount * 2u + i] =
+            input.bytes[i * 4u + 3u];
+    }
+
+    FREReleaseByteArray(argv[0]);
+
+    try {
+        s->tool = std::make_unique<QuickSelectTool>(
+            planarRGB.data(),
+            width,
+            height
+        );
+    }
+    catch (...) {
+        s->tool.reset();
+        return makeBool(false);
+    }
+
+    return makeBool(true);
+}
+
+FREObject disposeQuickSelectTool(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr || argc != 0) {
+        return makeBool(false);
+    }
+
+    s->tool.reset();
+    return makeBool(true);
+}
+
+FREObject setMask(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 1) {
+        return makeBool(false);
+    }
+
+    std::size_t count = 0;
+
+    if (!checkedPixelCount(
+            s->tool->width(),
+            s->tool->height(),
+            count)) {
+        return makeBool(false);
+    }
+
+    FREByteArray input{};
+
+    if (FREAcquireByteArray(argv[0], &input) != FRE_OK) {
+        return makeBool(false);
+    }
+
+    if (input.bytes == nullptr ||
+        static_cast<std::size_t>(input.length) < count) {
+        FREReleaseByteArray(argv[0]);
+        return makeBool(false);
+    }
+
+    s->tool->setCurrentMask(input.bytes, count);
+
+    FREReleaseByteArray(argv[0]);
+    return makeBool(true);
+}
+
+FREObject setMaskWithARGB(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 2) {
+        return makeBool(false);
+    }
+
+    uint32_t requestedCount = 0;
+
+    if (!getUint32(argv[1], requestedCount)) {
+        return makeBool(false);
+    }
+
+    std::size_t toolCount = 0;
+
+    if (!checkedPixelCount(
+            s->tool->width(),
+            s->tool->height(),
+            toolCount)) {
+        return makeBool(false);
+    }
+
+    if (static_cast<std::size_t>(requestedCount) != toolCount ||
+        static_cast<std::size_t>(requestedCount) >
+            std::numeric_limits<std::size_t>::max() / 4u) {
+        return makeBool(false);
+    }
+
+    FREByteArray input{};
+
+    if (FREAcquireByteArray(argv[0], &input) != FRE_OK) {
+        return makeBool(false);
+    }
+
+    const std::size_t required =
+        static_cast<std::size_t>(requestedCount) * 4u;
+
+    if (input.bytes == nullptr ||
+        static_cast<std::size_t>(input.length) < required) {
+        FREReleaseByteArray(argv[0]);
+        return makeBool(false);
+    }
+
+    std::vector<uint8_t> mask(requestedCount);
+
+    for (std::size_t i = 0;
+         i < static_cast<std::size_t>(requestedCount);
+         ++i) {
+        mask[i] =
+            input.bytes[i * 4u] > 0x80u
+                ? 0xFFu
+                : 0x00u;
+    }
+
+    FREReleaseByteArray(argv[0]);
+
+    s->tool->setCurrentMask(mask.data(), mask.size());
+    return makeBool(true);
+}
+
+FREObject brushHit(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 5) {
+        return nullptr;
+    }
+
+    int x = 0;
+    int y = 0;
+    int radius = 0;
+    int mode = 0;
+    bool getResult = false;
+
+    if (!getInt32(argv[0], x) ||
+        !getInt32(argv[1], y) ||
+        !getInt32(argv[2], radius) ||
+        !getInt32(argv[3], mode) ||
+        !getBool(argv[4], getResult)) {
+        return nullptr;
+    }
+
+    s->tool->brushHit(x, y, radius, mode);
+
+    if (!getResult) {
+        return nullptr;
+    }
+
+    return makeMaskResult(
+        *s->tool,
+        s->tool->getMask(),
+        0
+    );
+}
+
+FREObject brushHits(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 4) {
+        return nullptr;
+    }
+
+    int mode = 0;
+    int radius = 0;
+    bool getResult = false;
+
+    if (!getInt32(argv[1], mode) ||
+        !getInt32(argv[2], radius) ||
+        !getBool(argv[3], getResult)) {
+        return nullptr;
+    }
+
+    std::vector<int> x;
+    std::vector<int> y;
+
+    if (!decodePoints(argv[0], x, y)) {
+        return nullptr;
+    }
+
+    if (x.size() >
+        static_cast<std::size_t>(
+            std::numeric_limits<int>::max())) {
+        return nullptr;
+    }
+
+    const int count = static_cast<int>(x.size());
+
+    std::vector<int> radii(x.size(), radius);
+    std::vector<int> modes(x.size(), mode);
+
+    s->tool->brushHits(
+        x.data(),
+        y.data(),
+        radii.data(),
+        modes.data(),
+        count
+    );
+
+    if (!getResult) {
+        return nullptr;
+    }
+
+    return makeMaskResult(
+        *s->tool,
+        s->tool->getMask(),
+        0
+    );
+}
+
+FREObject qsBrushHits(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 4) {
+        return nullptr;
+    }
+
+    int mode = 0;
+    int radius = 0;
+    bool getResult = false;
+
+    if (!getInt32(argv[1], mode) ||
+        !getInt32(argv[2], radius) ||
+        !getBool(argv[3], getResult)) {
+        return nullptr;
+    }
+
+    std::vector<int> x;
+    std::vector<int> y;
+
+    if (!decodePoints(argv[0], x, y)) {
+        return nullptr;
+    }
+
+    if (x.size() >
+        static_cast<std::size_t>(
+            std::numeric_limits<int>::max())) {
+        return nullptr;
+    }
+
+    const int count = static_cast<int>(x.size());
+    std::vector<int> radii(x.size(), radius);
+
+    s->tool->qsBrushHits(
+        x.data(),
+        y.data(),
+        radii.data(),
+        mode,
+        count
+    );
+
+    if (!getResult) {
+        return nullptr;
+    }
+
+    return makeMaskResult(
+        *s->tool,
+        s->tool->getMask(),
+        0
+    );
+}
+
+FREObject getMask(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 1) {
+        return nullptr;
+    }
+
+    uint32_t format = 0;
+
+    if (!getUint32(argv[0], format)) {
+        return nullptr;
+    }
+
+    return makeMaskResult(
+        *s->tool,
+        s->tool->getMask(),
+        format
+    );
+}
+
+FREObject mouseUp(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 1) {
+        return nullptr;
+    }
+
+    uint32_t format = 0;
+
+    if (!getUint32(argv[0], format)) {
+        return nullptr;
+    }
+
+    return makeMaskResult(
+        *s->tool,
+        s->tool->mouseUp(),
+        format
+    );
+}
+
+FREObject reset(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    // Exact ARMv7 wrapper behavior.
+    s->tool->reset(0);
+    return nullptr;
+}
+
+FREObject switchMode(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 1) {
+        return nullptr;
+    }
+
+    int mode = 0;
+
+    if (!getInt32(argv[0], mode)) {
+        return nullptr;
+    }
+
+    s->tool->switchMode(mode);
+    return nullptr;
+}
+
+const FRENamedFunction kQuickSelectionFunctions[] = {
+    {
+        reinterpret_cast<const uint8_t*>("createQuickSelectTool"),
+        nullptr,
+        &createQuickSelectTool
+    },
+    {
+        reinterpret_cast<const uint8_t*>("disposeQuickSelectTool"),
+        nullptr,
+        &disposeQuickSelectTool
+    },
+    {
+        reinterpret_cast<const uint8_t*>("setMask"),
+        nullptr,
+        &setMask
+    },
+    {
+        reinterpret_cast<const uint8_t*>("setMaskWithARGB"),
+        nullptr,
+        &setMaskWithARGB
+    },
+    {
+        reinterpret_cast<const uint8_t*>("brushHit"),
+        nullptr,
+        &brushHit
+    },
+    {
+        reinterpret_cast<const uint8_t*>("brushHits"),
+        nullptr,
+        &brushHits
+    },
+    {
+        reinterpret_cast<const uint8_t*>("qsBrushHits"),
+        nullptr,
+        &qsBrushHits
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getMask"),
+        nullptr,
+        &getMask
+    },
+    {
+        reinterpret_cast<const uint8_t*>("mouseUp"),
+        nullptr,
+        &mouseUp
+    },
+    {
+        reinterpret_cast<const uint8_t*>("reset"),
+        nullptr,
+        &reset
+    },
+    {
+        reinterpret_cast<const uint8_t*>("switchMode"),
+        nullptr,
+        &switchMode
+    },
+};
+
+void quickSelectionContextInitializer(
+    void* extData,
+    const uint8_t* ctxType,
+    FREContext ctx,
+    uint32_t* numFunctionsToSet,
+    const FRENamedFunction** functionsToSet
+)
+{
+    (void)extData;
+
+    if (numFunctionsToSet == nullptr ||
+        functionsToSet == nullptr) {
+        return;
+    }
+
+    *numFunctionsToSet = 0;
+    *functionsToSet = nullptr;
+
+    if (ctxType == nullptr ||
+        strcasecmp(
+            reinterpret_cast<const char*>(ctxType),
+            "quickselection"
+        ) != 0) {
+        return;
+    }
+
+    auto* s = new QuickSelectionContext();
+
+    if (FRESetContextNativeData(ctx, s) != FRE_OK) {
+        delete s;
+        return;
+    }
+
+    *numFunctionsToSet =
+        static_cast<uint32_t>(
+            sizeof(kQuickSelectionFunctions) /
+            sizeof(kQuickSelectionFunctions[0])
+        );
+
+    *functionsToSet = kQuickSelectionFunctions;
+}
+
+void quickSelectionContextFinalizer(FREContext ctx)
+{
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr) {
+        return;
+    }
+
+    s->tool.reset();
+    FRESetContextNativeData(ctx, nullptr);
+    delete s;
+}
+
+} // namespace
+
+extern "C" {
+
+void TTPixelExtensionInitializer(
+    void** extDataToSet,
+    FREContextInitializer* ctxInitializerToSet,
+    FREContextFinalizer* ctxFinalizerToSet
+)
+{
+    if (extDataToSet != nullptr) {
+        *extDataToSet = nullptr;
+    }
+
+    if (ctxInitializerToSet != nullptr) {
+        *ctxInitializerToSet =
+            &quickSelectionContextInitializer;
+    }
+
+    if (ctxFinalizerToSet != nullptr) {
+        *ctxFinalizerToSet =
+            &quickSelectionContextFinalizer;
+    }
+}
+
+void TTPixelExtensionFinalizer(void* extData)
+{
+    (void)extData;
+}
+
+}

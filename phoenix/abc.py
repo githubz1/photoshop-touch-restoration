@@ -13,6 +13,7 @@ class ABCFile:
     ints: list[int]
     uints: list[int]
     doubles: list[float]
+    floats: list[float]
     strings: list[str]
 
     namespaces: list
@@ -49,6 +50,7 @@ def parse(data: bytes) -> ABCFile:
         .parse_integer_pool()
         .parse_uint_pool()
         .parse_double_pool()
+        .parse_float_pool()
         .parse_string_pool()
         .parse_namespace_pool()
         .parse_namespace_sets()
@@ -67,6 +69,7 @@ def parse(data: bytes) -> ABCFile:
         ints=parser.pool.ints,
         uints=parser.pool.uints,
         doubles=parser.pool.doubles,
+        floats=parser.pool.floats,
         strings=parser.pool.strings,
         namespaces=parser.pool.namespaces,
         namespace_sets=parser.pool.namespace_sets,
