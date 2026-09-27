@@ -7,6 +7,8 @@
     <initialWindow>
         <content>TTPixelANETest.swf</content>
         <visible>true</visible>
+        <aspectRatio>landscape</aspectRatio>
+        <autoOrients>false</autoOrients>
     </initialWindow>
 
     <extensions>

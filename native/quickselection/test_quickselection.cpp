@@ -18,11 +18,14 @@ int main()
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             const std::uint8_t value = x < 5 ? 20 : 235;
-            const int i = (y * width + x) * 3;
+            const int pixel = y * width + x;
+            const int pixelCount = width * height;
 
-            image[i + 0] = value;
-            image[i + 1] = value;
-            image[i + 2] = value;
+            // ARMv7-verified QuickSelectTool input layout:
+            // R plane, followed by G plane, followed by B plane.
+            image[pixel] = value;
+            image[pixelCount + pixel] = value;
+            image[pixelCount * 2 + pixel] = value;
         }
     }
 
@@ -64,6 +67,61 @@ int main()
     std::cout << "\n✓ Quick Selection behavioral test passed\n";
     std::cout << "✓ mode 0 -> foreground -> FF\n";
     std::cout << "✓ nonzero -> background -> 00\n";
+
+    {
+        constexpr int pyramidTestWidth = 4097;
+        constexpr int pyramidTestHeight = 1024;
+
+        const std::size_t pyramidTestPixels =
+            static_cast<std::size_t>(pyramidTestWidth) *
+            static_cast<std::size_t>(pyramidTestHeight);
+
+        std::vector<std::uint8_t> pyramidInput(
+            pyramidTestPixels * 3,
+            0
+        );
+
+        // Give each 2x2 source block a known integer-average result.
+        //
+        // First output pixel:
+        //   10 20
+        //   30 40
+        // average = 25
+        pyramidInput[0] = 10;
+        pyramidInput[1] = 20;
+        pyramidInput[pyramidTestWidth] = 30;
+        pyramidInput[pyramidTestWidth + 1] = 40;
+
+        // Same coordinates in G and B prove the planar offsets too.
+        pyramidInput[pyramidTestPixels + 0] = 50;
+        pyramidInput[pyramidTestPixels + 1] = 60;
+        pyramidInput[pyramidTestPixels + pyramidTestWidth] = 70;
+        pyramidInput[pyramidTestPixels + pyramidTestWidth + 1] = 80;
+
+        pyramidInput[pyramidTestPixels * 2 + 0] = 90;
+        pyramidInput[pyramidTestPixels * 2 + 1] = 100;
+        pyramidInput[pyramidTestPixels * 2 + pyramidTestWidth] = 110;
+        pyramidInput[pyramidTestPixels * 2 + pyramidTestWidth + 1] = 120;
+
+        QuickSelectTool pyramidTool(
+            pyramidInput.data(),
+            pyramidTestWidth,
+            pyramidTestHeight
+        );
+
+        assert(pyramidTool.pyramidResizeRequired());
+        assert(pyramidTool.pyramidLevel() == 1);
+        assert(pyramidTool.pyramidWidth() == 2048);
+        assert(pyramidTool.pyramidHeight() == 512);
+
+        assert(pyramidTool.diagnosticPyramidRGB(0, 0, 0) == 25);
+        assert(pyramidTool.diagnosticPyramidRGB(1, 0, 0) == 65);
+        assert(pyramidTool.diagnosticPyramidRGB(2, 0, 0) == 105);
+
+        std::cout << "✓ Adobe pyramid threshold/halving passed\n";
+        std::cout << "✓ Adobe 2x2 integer box-average passed\n";
+        std::cout << "✓ planar RGB pyramid layout passed\n";
+    }
 
     return 0;
 }

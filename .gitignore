@@ -17,3 +17,10 @@ __pycache__/
 *.tmp
 *.swp
 *~
+
+# TTPixel ARM64 generated build products
+output/ane/ttpixel/arm64/*.ane
+output/ane/ttpixel/arm64/*.a
+output/ane/ttpixel/arm64/**/*.ipa
+output/ane/ttpixel/arm64/**/*.swf
+output/ane/ttpixel/arm64/**/*.dSYM/

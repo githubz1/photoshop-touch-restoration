@@ -26,10 +26,14 @@ int main()
             else
                 value = 230;
 
-            const int i = (y * width + x) * 3;
-            image[i + 0] = value;
-            image[i + 1] = value;
-            image[i + 2] = value;
+            const int pixel = y * width + x;
+            const int pixelCount = width * height;
+
+            // ARMv7-verified QuickSelectTool input layout:
+            // R plane, followed by G plane, followed by B plane.
+            image[pixel] = value;
+            image[pixelCount + pixel] = value;
+            image[pixelCount * 2 + pixel] = value;
         }
     }
 

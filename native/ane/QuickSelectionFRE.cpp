@@ -10,10 +10,13 @@
 #include <vector>
 
 #include "../quickselection/QuickSelectTool.hpp"
+#include "../quickselection/GraphCut.hpp"
 
 namespace {
 
 using pstouch::quickselection::QuickSelectTool;
+using pstouch::quickselection::adobeBKSelfTestPassed;
+using pstouch::quickselection::adobeBKSelfTestFailure;
 
 struct QuickSelectionContext {
     std::unique_ptr<QuickSelectTool> tool;
@@ -623,6 +626,314 @@ FREObject getMask(
     );
 }
 
+FREObject getFreshCutMismatchCount(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromInt32(
+            static_cast<int32_t>(
+                s->tool->freshCutMismatchCount()
+            ),
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+FREObject getRefinementChangedPixelCount(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromInt32(
+            static_cast<int32_t>(
+                s->tool->refinementChangedPixelCount()
+            ),
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+FREObject getDiagnosticSelfTestStatus(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)ctx;
+    (void)functionData;
+    (void)argv;
+
+    if (argc != 0) {
+        return nullptr;
+    }
+
+    std::string status;
+
+    if (adobeBKSelfTestPassed()) {
+        status = "PASS";
+    } else {
+        status = "FAIL: ";
+
+        const char* failure = adobeBKSelfTestFailure();
+        status +=
+            (failure != nullptr && failure[0] != '\0')
+                ? failure
+                : "unknown exception";
+    }
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromUTF8(
+            static_cast<uint32_t>(status.size()),
+            reinterpret_cast<const uint8_t*>(status.c_str()),
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+FREObject getDiagnosticTerminalCapacities(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    const auto& source =
+        s->tool->diagnosticSourceCapacities();
+
+    const auto& sink =
+        s->tool->diagnosticSinkCapacities();
+
+    if (source.size() != sink.size()) {
+        return nullptr;
+    }
+
+    std::vector<float> values;
+    values.reserve(source.size() * 2u);
+
+    for (std::size_t i = 0; i < source.size(); ++i) {
+        values.push_back(source[i]);
+        values.push_back(sink[i]);
+    }
+
+    if (values.empty()) {
+        return nullptr;
+    }
+
+    return makeByteArray(
+        reinterpret_cast<const uint8_t*>(values.data()),
+        values.size() * sizeof(float)
+    );
+}
+
+FREObject getDiagnosticRequestedTerminalCapacities(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    const auto& source =
+        s->tool->diagnosticRequestedSourceCapacities();
+
+    const auto& sink =
+        s->tool->diagnosticRequestedSinkCapacities();
+
+    if (source.size() != sink.size()) {
+        return nullptr;
+    }
+
+    std::vector<float> values;
+    values.reserve(source.size() * 2u);
+
+    for (std::size_t i = 0; i < source.size(); ++i) {
+        values.push_back(source[i]);
+        values.push_back(sink[i]);
+    }
+
+    if (values.empty()) {
+        return nullptr;
+    }
+
+    return makeByteArray(
+        reinterpret_cast<const uint8_t*>(values.data()),
+        values.size() * sizeof(float)
+    );
+}
+
+FREObject getDiagnosticUpdateTweightsCapacities(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    const auto& beforeSource =
+        s->tool->diagnosticBeforeUpdateSourceCapacities();
+
+    const auto& beforeSourceResidual =
+        s->tool->diagnosticBeforeUpdateSourceResiduals();
+
+    const auto& beforeSink =
+        s->tool->diagnosticBeforeUpdateSinkCapacities();
+
+    const auto& beforeSinkResidual =
+        s->tool->diagnosticBeforeUpdateSinkResiduals();
+
+    const auto& afterSource =
+        s->tool->diagnosticAfterUpdateSourceCapacities();
+
+    const auto& afterSourceResidual =
+        s->tool->diagnosticAfterUpdateSourceResiduals();
+
+    const auto& afterSink =
+        s->tool->diagnosticAfterUpdateSinkCapacities();
+
+    const auto& afterSinkResidual =
+        s->tool->diagnosticAfterUpdateSinkResiduals();
+
+    const std::size_t count = beforeSource.size();
+
+    if (beforeSourceResidual.size() != count ||
+        beforeSink.size() != count ||
+        beforeSinkResidual.size() != count ||
+        afterSource.size() != count ||
+        afterSourceResidual.size() != count ||
+        afterSink.size() != count ||
+        afterSinkResidual.size() != count) {
+        return nullptr;
+    }
+
+    std::vector<float> values;
+    values.reserve(count * 8u);
+
+    for (std::size_t i = 0; i < count; ++i) {
+        values.push_back(beforeSource[i]);
+        values.push_back(beforeSourceResidual[i]);
+        values.push_back(beforeSink[i]);
+        values.push_back(beforeSinkResidual[i]);
+
+        values.push_back(afterSource[i]);
+        values.push_back(afterSourceResidual[i]);
+        values.push_back(afterSink[i]);
+        values.push_back(afterSinkResidual[i]);
+    }
+
+    if (values.empty()) {
+        return nullptr;
+    }
+
+    return makeByteArray(
+        reinterpret_cast<const uint8_t*>(values.data()),
+        values.size() * sizeof(float)
+    );
+}
+
+FREObject getDiagnosticHorizontalCapacities(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argv;
+
+    QuickSelectionContext* s = state(ctx);
+
+    if (s == nullptr ||
+        s->tool == nullptr ||
+        argc != 0) {
+        return nullptr;
+    }
+
+    const auto& values =
+        s->tool->diagnosticHorizontalCapacities();
+
+    if (values.empty()) {
+        return nullptr;
+    }
+
+    return makeByteArray(
+        reinterpret_cast<const uint8_t*>(values.data()),
+        values.size() * sizeof(float)
+    );
+}
+
 FREObject mouseUp(
     FREContext ctx,
     void* functionData,
@@ -743,6 +1054,41 @@ const FRENamedFunction kQuickSelectionFunctions[] = {
         reinterpret_cast<const uint8_t*>("getMask"),
         nullptr,
         &getMask
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getFreshCutMismatchCount"),
+        nullptr,
+        &getFreshCutMismatchCount
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getRefinementChangedPixelCount"),
+        nullptr,
+        &getRefinementChangedPixelCount
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getDiagnosticSelfTestStatus"),
+        nullptr,
+        &getDiagnosticSelfTestStatus
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getDiagnosticTerminalCapacities"),
+        nullptr,
+        &getDiagnosticTerminalCapacities
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getDiagnosticRequestedTerminalCapacities"),
+        nullptr,
+        &getDiagnosticRequestedTerminalCapacities
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getDiagnosticUpdateTweightsCapacities"),
+        nullptr,
+        &getDiagnosticUpdateTweightsCapacities
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getDiagnosticHorizontalCapacities"),
+        nullptr,
+        &getDiagnosticHorizontalCapacities
     },
     {
         reinterpret_cast<const uint8_t*>("mouseUp"),
