@@ -108,6 +108,73 @@ package
                 utilsContext.dispose();
             }
 
+            // Original Photoshop Touch TTGL startup path:
+            //
+            // ExtensionContext:
+            //   com.adobe.ttpixel.extension / gl
+            //
+            // createContext()
+            // getStringInfo(kStringInfoKeyGLRenderer = 5)
+            // destroyContext()
+            var glContext:ExtensionContext =
+                ExtensionContext.createExtensionContext(
+                    "com.adobe.ttpixel.extension",
+                    "gl"
+                );
+
+            output.appendText(
+                "GL CTX: " +
+                (glContext != null) +
+                "\n"
+            );
+
+            if (glContext != null)
+            {
+                var glCreateStatus:int =
+                    int(glContext.call("createContext"));
+
+                output.appendText(
+                    "GL CREATE STATUS: " +
+                    glCreateStatus +
+                    "\n"
+                );
+
+                var glRenderer:Object =
+                    glContext.call(
+                        "getStringInfo",
+                        5
+                    );
+
+                output.appendText(
+                    "GL RENDERER: " +
+                    glRenderer +
+                    "\n"
+                );
+
+                var glDestroyStatus:int =
+                    int(glContext.call("destroyContext"));
+
+                output.appendText(
+                    "GL DESTROY STATUS: " +
+                    glDestroyStatus +
+                    "\n"
+                );
+
+                var glStartupPass:Boolean =
+                    glCreateStatus == 0 &&
+                    glRenderer != null &&
+                    String(glRenderer).length > 0 &&
+                    glDestroyStatus == 0;
+
+                output.appendText(
+                    "GL STARTUP: " +
+                    (glStartupPass ? "PASS" : "FAIL") +
+                    "\n"
+                );
+
+                glContext.dispose();
+            }
+
             var qsClass:Class = TTQuickSelection;
             output.appendText("CLASS: " + (qsClass != null) + "\n");
 

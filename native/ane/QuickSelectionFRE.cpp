@@ -12,6 +12,7 @@
 
 #include "../quickselection/QuickSelectTool.hpp"
 #include "../quickselection/GraphCut.hpp"
+#include "GLContextBridge.hpp"
 
 namespace {
 
@@ -1174,6 +1175,117 @@ FREObject getSystemInfo(
     return result;
 }
 
+FREObject glCreateContext(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argc;
+    (void)argv;
+
+    const int32_t status =
+        GLBridgeCreateContext(ctx) ? 0 : -1;
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromInt32(
+            status,
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+FREObject glDestroyContext(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+    (void)argc;
+    (void)argv;
+
+    GLBridgeDestroyContext(ctx);
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromInt32(
+            0,
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+FREObject glGetStringInfo(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)functionData;
+
+    if (argc != 1 || argv == nullptr) {
+        return nullptr;
+    }
+
+    int infoKey = 0;
+
+    if (!getInt32(argv[0], infoKey)) {
+        return nullptr;
+    }
+
+    std::string value;
+
+    if (!GLBridgeGetStringInfo(
+            ctx,
+            static_cast<std::int32_t>(infoKey),
+            value
+        )) {
+        return nullptr;
+    }
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromUTF8(
+            static_cast<uint32_t>(value.size()),
+            reinterpret_cast<const uint8_t*>(value.c_str()),
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+const FRENamedFunction kGLFunctions[] = {
+    {
+        reinterpret_cast<const uint8_t*>("createContext"),
+        nullptr,
+        &glCreateContext
+    },
+    {
+        reinterpret_cast<const uint8_t*>("destroyContext"),
+        nullptr,
+        &glDestroyContext
+    },
+    {
+        reinterpret_cast<const uint8_t*>("getStringInfo"),
+        nullptr,
+        &glGetStringInfo
+    },
+};
+
 const FRENamedFunction kUtilsFunctions[] = {
     {
         reinterpret_cast<const uint8_t*>("getSystemInfo"),
@@ -1218,6 +1330,17 @@ void quickSelectionContextInitializer(
         return;
     }
 
+    if (strcasecmp(contextType, "gl") == 0) {
+        *numFunctionsToSet =
+            static_cast<uint32_t>(
+                sizeof(kGLFunctions) /
+                sizeof(kGLFunctions[0])
+            );
+
+        *functionsToSet = kGLFunctions;
+        return;
+    }
+
     if (strcasecmp(contextType, "quickselection") != 0) {
         return;
     }
@@ -1240,6 +1363,8 @@ void quickSelectionContextInitializer(
 
 void quickSelectionContextFinalizer(FREContext ctx)
 {
+    GLBridgeDestroyContextIfPresent(ctx);
+
     QuickSelectionContext* s = state(ctx);
 
     if (s == nullptr) {
