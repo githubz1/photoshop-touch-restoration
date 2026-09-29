@@ -105,6 +105,27 @@ package
                     "\n"
                 );
 
+                var screenDPISquare:Object =
+                    utilsContext.call(
+                        "getSystemInfo",
+                        36
+                    );
+
+                output.appendText(
+                    "SCREEN DPI SQUARE: " +
+                    screenDPISquare +
+                    "\n"
+                );
+
+                output.appendText(
+                    "UTILS DPI: " +
+                    (
+                        screenDPISquare != null &&
+                        Number(screenDPISquare) > 0
+                    ) +
+                    "\n"
+                );
+
                 utilsContext.dispose();
             }
 

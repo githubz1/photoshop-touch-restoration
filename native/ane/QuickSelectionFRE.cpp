@@ -13,6 +13,7 @@
 #include "../quickselection/QuickSelectTool.hpp"
 #include "../quickselection/GraphCut.hpp"
 #include "GLContextBridge.hpp"
+#include "SystemInfoBridge.hpp"
 
 namespace {
 
@@ -1134,9 +1135,29 @@ FREObject getSystemInfo(
 
     // Original TTNEUtils ABI:
     // SYSINFO_HW_MEMORY = 1.
+    // SYSINFO_SCREEN_DPI_SQUARE = 36.
     //
-    // The ARMv7 implementation queries CTL_HW/HW_MEMSIZE and
-    // returns physical memory in KiB.
+    // Preserve the original TTPixel screen-DPI semantics:
+    // UIScreen.scale multiplied by Adobe's nominal device-class DPI.
+    // This is not a hardware-panel PPI measurement.
+    if (infoKey == 36) {
+        const double dpi =
+            SystemInfoScreenDPISquare();
+
+        FREObject result = nullptr;
+
+        if (FRENewObjectFromDouble(
+                dpi,
+                &result
+            ) != FRE_OK) {
+            return nullptr;
+        }
+
+        return result;
+    }
+
+    // The ARMv7 SYSINFO_HW_MEMORY implementation queries
+    // CTL_HW/HW_MEMSIZE and returns physical memory in KiB.
     if (infoKey != 1) {
         return nullptr;
     }
