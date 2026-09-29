@@ -63,6 +63,51 @@ package
             output.text = "TTPixel ANE Load Test\n\n";
             output.appendText("AIR started: PASS\n");
 
+            // Original Photoshop Touch TTNEUtils startup path:
+            //
+            // ExtensionContext:
+            //   com.adobe.ttpixel.extension / utils
+            //
+            // SYSINFO_HW_MEMORY = 1
+            // Return value is physical memory in KiB.
+            var utilsContext:ExtensionContext =
+                ExtensionContext.createExtensionContext(
+                    "com.adobe.ttpixel.extension",
+                    "utils"
+                );
+
+            output.appendText(
+                "UTILS CTX: " +
+                (utilsContext != null) +
+                "\n"
+            );
+
+            if (utilsContext != null)
+            {
+                var hardwareMemory:Object =
+                    utilsContext.call(
+                        "getSystemInfo",
+                        1
+                    );
+
+                output.appendText(
+                    "HW MEMORY KiB: " +
+                    hardwareMemory +
+                    "\n"
+                );
+
+                output.appendText(
+                    "UTILS getSystemInfo: " +
+                    (
+                        hardwareMemory != null &&
+                        Number(hardwareMemory) > 0
+                    ) +
+                    "\n"
+                );
+
+                utilsContext.dispose();
+            }
+
             var qsClass:Class = TTQuickSelection;
             output.appendText("CLASS: " + (qsClass != null) + "\n");
 

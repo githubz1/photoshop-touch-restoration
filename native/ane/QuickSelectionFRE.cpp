@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cstring>
 #include <strings.h>
+#include <sys/sysctl.h>
 #include <limits>
 #include <memory>
 #include <vector>
@@ -1107,6 +1108,80 @@ const FRENamedFunction kQuickSelectionFunctions[] = {
     },
 };
 
+FREObject getSystemInfo(
+    FREContext ctx,
+    void* functionData,
+    uint32_t argc,
+    FREObject argv[]
+)
+{
+    (void)ctx;
+    (void)functionData;
+
+    if (argc != 1 || argv == nullptr) {
+        return nullptr;
+    }
+
+    int32_t infoKey = 0;
+
+    if (FREGetObjectAsInt32(
+            argv[0],
+            &infoKey
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    // Original TTNEUtils ABI:
+    // SYSINFO_HW_MEMORY = 1.
+    //
+    // The ARMv7 implementation queries CTL_HW/HW_MEMSIZE and
+    // returns physical memory in KiB.
+    if (infoKey != 1) {
+        return nullptr;
+    }
+
+    int mib[2] = {
+        CTL_HW,
+        HW_MEMSIZE
+    };
+
+    uint64_t memoryBytes = 0;
+    size_t memoryBytesSize = sizeof(memoryBytes);
+
+    if (sysctl(
+            mib,
+            2,
+            &memoryBytes,
+            &memoryBytesSize,
+            nullptr,
+            0
+        ) != 0) {
+        return nullptr;
+    }
+
+    const uint64_t memoryKiB =
+        memoryBytes >> 10;
+
+    FREObject result = nullptr;
+
+    if (FRENewObjectFromInt32(
+            static_cast<int32_t>(memoryKiB),
+            &result
+        ) != FRE_OK) {
+        return nullptr;
+    }
+
+    return result;
+}
+
+const FRENamedFunction kUtilsFunctions[] = {
+    {
+        reinterpret_cast<const uint8_t*>("getSystemInfo"),
+        nullptr,
+        &getSystemInfo
+    },
+};
+
 void quickSelectionContextInitializer(
     void* extData,
     const uint8_t* ctxType,
@@ -1125,11 +1200,25 @@ void quickSelectionContextInitializer(
     *numFunctionsToSet = 0;
     *functionsToSet = nullptr;
 
-    if (ctxType == nullptr ||
-        strcasecmp(
-            reinterpret_cast<const char*>(ctxType),
-            "quickselection"
-        ) != 0) {
+    if (ctxType == nullptr) {
+        return;
+    }
+
+    const char* contextType =
+        reinterpret_cast<const char*>(ctxType);
+
+    if (strcasecmp(contextType, "utils") == 0) {
+        *numFunctionsToSet =
+            static_cast<uint32_t>(
+                sizeof(kUtilsFunctions) /
+                sizeof(kUtilsFunctions[0])
+            );
+
+        *functionsToSet = kUtilsFunctions;
+        return;
+    }
+
+    if (strcasecmp(contextType, "quickselection") != 0) {
         return;
     }
 

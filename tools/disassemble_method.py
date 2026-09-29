@@ -12,19 +12,29 @@ from phoenix.abc import parse
 from phoenix.disassembler import Disassembler
 
 
-ABC_PATH = Path("output/abc/frame1.abc")
+DEFAULT_ABC_PATH = Path("output/abc/frame1.abc")
 
 
 def main():
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    abc_path = DEFAULT_ABC_PATH
+
+    if len(args) == 3 and args[0] == "--abc":
+        abc_path = Path(args[1])
+        method_index = int(args[2])
+    elif len(args) == 1:
+        method_index = int(args[0])
+    else:
         raise SystemExit(
-            "Usage: ./tools/disassemble_method.py METHOD_BODY_INDEX"
+            "Usage: ./tools/disassemble_method.py "
+            "[--abc ABC_PATH] METHOD_BODY_INDEX"
         )
 
-    method_index = int(sys.argv[1])
+    if not abc_path.is_file():
+        raise SystemExit(f"ABC file not found: {abc_path}")
 
     abc = parse(
-        ABC_PATH.read_bytes()
+        abc_path.read_bytes()
     )
 
     if not 0 <= method_index < len(abc.method_bodies):
@@ -34,6 +44,7 @@ def main():
 
     body = abc.method_bodies[method_index]
 
+    print(f"ABC file         : {abc_path}")
     print(f"Method body index: {method_index}")
     print(f"Method index     : {body.method_index}")
     print(f"Max stack        : {body.max_stack}")
